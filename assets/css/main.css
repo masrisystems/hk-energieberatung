@@ -178,18 +178,14 @@ h6 {
 .header .logo {
   line-height: 1;
   padding-left: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .header .logo img {
-  max-height: 36px;
-  margin-right: 8px;
-}
-
-.header .logo h1 {
-  font-size: 24px;
-  margin: 0;
-  font-weight: 500;
-  color: var(--heading-color);
+  max-height: 42px;
+  width: auto;
+  display: inline-block;
 }
 
 .header .btn-getstarted,
