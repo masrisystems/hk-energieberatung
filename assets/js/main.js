@@ -37,25 +37,37 @@
   }
 
   /**
-   * Hide mobile nav on same-page/hash links
+   * Hide mobile nav on same-page/hash links (excluding dropdown triggers)
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
+    navmenu.addEventListener('click', function (e) {
+      if (this.parentNode.classList.contains('dropdown')) {
+        e.preventDefault();
+        this.classList.toggle('active');
+        const dropdownUl = this.nextElementSibling || (this.querySelector('.toggle-dropdown') && this.nextElementSibling);
+        if (dropdownUl) {
+          dropdownUl.classList.toggle('dropdown-active');
+        }
+        e.stopImmediatePropagation();
+        return;
+      }
       if (document.querySelector('.mobile-nav-active')) {
         mobileNavToogle();
       }
     });
-
   });
 
   /**
-   * Toggle mobile nav dropdowns
+   * Toggle mobile nav dropdowns via chevron icon
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
     navmenu.addEventListener('click', function (e) {
       e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+      const parentA = this.parentNode;
+      parentA.classList.toggle('active');
+      if (parentA.nextElementSibling) {
+        parentA.nextElementSibling.classList.toggle('dropdown-active');
+      }
       e.stopImmediatePropagation();
     });
   });
@@ -186,5 +198,15 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+
+  /**
+   * About Section Mobile Card Deck Swap
+   */
+  const aboutCardsDeck = document.querySelector('.about-cards-deck');
+  if (aboutCardsDeck) {
+    aboutCardsDeck.addEventListener('click', function () {
+      this.classList.toggle('cards-swapped');
+    });
+  }
 
 })();

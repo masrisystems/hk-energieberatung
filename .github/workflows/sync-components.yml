@@ -1,0 +1,28 @@
+name: Sync HTML Components
+
+on:
+  push:
+    paths:
+      - 'components/**'
+      - 'scripts/sync-components.js'
+
+jobs:
+  build-and-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Component Pre-Renderer
+        run: node scripts/sync-components.js
+
+      - name: Commit and Push Pre-Rendered HTML
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: pre-render static HTML components [skip ci]"
+          file_pattern: "*.html"

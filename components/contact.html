@@ -1,0 +1,90 @@
+<section id="contact" class="contact section light-background">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Kontakt</h2>
+    <p>Haben Sie Fragen oder möchten Sie mehr erfahren? Schreiben Sie uns - wir helfen Ihnen gerne weiter!</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row g-4 g-lg-5">
+      <div class="col-lg-5">
+        <div class="info-box" data-aos="fade-up" data-aos-delay="200">
+          <h3>Kontaktdaten</h3>
+          <p>Im Folgenden finden Sie alle wichtigen Kontaktdaten: Unsere Adresse, Telefonnummer sowie unsere E-Mail-Adresse. Zögern Sie nicht, uns jederzeit zu kontaktieren - wir freuen uns auf Ihre Anfrage!</p>
+
+          <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+            <a href="https://maps.app.goo.gl/38YXNdg3ipmPV2KX6" target="_blank" rel="noopener noreferrer">
+              <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
+              <div class="content">
+                <h4>Adresse</h4>
+                Bürgermeister-Smith Straße
+                <p>28195 Bremen - Deutschland</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="info-item" data-aos="fade-up" data-aos-delay="400">
+            <a href="tel:+491626985115">
+              <div class="icon-box"><i class="bi bi-telephone"></i></div>
+              <div class="content">
+                <h4>Kontakt</h4>
+                +49 162 6985115
+              </div>
+            </a>
+          </div>
+
+          <div class="info-item" data-aos="fade-up" data-aos-delay="500">
+            <a href="mailto:info@hk-energieberatung.de">
+              <div class="icon-box"><i class="bi bi-envelope"></i></div>
+              <div class="content">
+                <h4>Email Adresse</h4>
+                info@hk-energieberatung.de
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
+          <h3>Schicken Sie uns Ihr Anliegen!</h3>
+          <p>Bitte geben Sie hier Ihren Namen, Ihre E-Mail-Adresse und Ihre Nachricht ein:</p>
+
+          <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4">
+              <div class="col-md-6">
+                <input type="text" name="name" class="form-control" placeholder="Name" required>
+              </div>
+              <div class="col-md-6">
+                <input type="email" name="email" class="form-control" placeholder="Ihre Email" required>
+              </div>
+              <div class="col-12">
+                <input type="text" name="subject" class="form-control" placeholder="Betreff" required>
+              </div>
+              <div class="col-12">
+                <textarea name="message" class="form-control" rows="6" placeholder="Nachricht" required></textarea>
+              </div>
+
+              <div style="display:none;">
+                <input type="text" name="website" autocomplete="off">
+              </div>
+
+              <div class="col-12">
+                <input id="privacy" type="checkbox" name="privacy" required>
+                <label for="privacy">
+                  Ich akzeptiere die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>.
+                </label>
+              </div>
+
+              <div class="col-12 text-center">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Ihre Nachricht wurde erfolgreich abgeschickt. Vielen Dank!</div>
+                <button type="submit" class="btn">Senden</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

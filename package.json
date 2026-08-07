@@ -1,0 +1,13 @@
+{
+  "name": "hk-energieberatung",
+  "version": "1.0.0",
+  "description": "HK Energieberatung - Unabhängige Energieberater Bremen & Aurich",
+  "main": "assets/js/main.js",
+  "scripts": {
+    "sync": "node scripts/sync-components.js",
+    "build": "node scripts/sync-components.js"
+  },
+  "keywords": [],
+  "author": "Masri Systems",
+  "license": "ISC"
+}
