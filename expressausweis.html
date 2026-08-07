@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Express-Verbrauchsausweis – Angaben & Unterlagen | HK Energieberatung</title>
+  <meta name="description" content="Füllen Sie das Formular aus und laden Sie Ihre Unterlagen hoch. Energieausweis innerhalb von 48 Stunden per E-Mail. HK Energieberatung.">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.jpeg" rel="icon">
+  <link href="assets/img/logo.jpeg" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .express-hero {
+      padding-top: 150px;
+      padding-bottom: 50px;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 95%) 50%, color-mix(in srgb, var(--accent-color), transparent 98%) 25%, transparent 50%);
+    }
+
+    .express-form-container {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .express-fieldset {
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
+      border-radius: 16px;
+      padding: 28px 32px 18px;
+      margin-bottom: 28px;
+      background: var(--surface-color);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .express-fieldset legend {
+      float: none;
+      width: auto;
+      padding: 0 14px;
+      font-family: var(--heading-font);
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--heading-color);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 0;
+    }
+
+    .express-fieldset legend .step {
+      background: var(--accent-color);
+      color: var(--contrast-color);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .form-hint {
+      font-size: 0.875rem;
+      color: color-mix(in srgb, var(--default-color), transparent 35%);
+      margin-top: 4px;
+      margin-bottom: 18px;
+    }
+
+    .form-example {
+      font-size: 0.825rem;
+      color: color-mix(in srgb, var(--default-color), transparent 25%);
+      background: color-mix(in srgb, var(--accent-color), transparent 95%);
+      border-left: 3px solid var(--accent-color);
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-top: 8px;
+    }
+
+    .form-example strong {
+      color: var(--heading-color);
+    }
+
+    .form-tip {
+      margin-top: 6px;
+    }
+
+    .form-tip summary {
+      font-size: 0.8rem;
+      color: color-mix(in srgb, var(--accent-color), black 15%);
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: inline-block;
+    }
+
+    .form-tip summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .form-tip summary::before {
+      content: "+ Beispiel / Erklärung";
+    }
+
+    .form-tip[open] summary::before {
+      content: "– Beispiel / Erklärung";
+    }
+
+    .upload-box {
+      border: 1.5px dashed var(--accent-color);
+      border-radius: 12px;
+      padding: 20px;
+      background: color-mix(in srgb, var(--accent-color), transparent 96%);
+      margin-bottom: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .upload-box:hover {
+      background: color-mix(in srgb, var(--accent-color), transparent 92%);
+      border-color: color-mix(in srgb, var(--accent-color), black 15%);
+    }
+
+    .upload-box label.title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--heading-color);
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .upload-box .desc {
+      font-size: 0.825rem;
+      color: color-mix(in srgb, var(--default-color), transparent 35%);
+      margin-bottom: 10px;
+    }
+
+    .optional-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: color-mix(in srgb, var(--default-color), transparent 35%);
+      background: color-mix(in srgb, var(--default-color), transparent 92%);
+      padding: 3px 9px;
+      border-radius: 12px;
+      margin-left: 6px;
+    }
+
+    .warning-box {
+      display: none;
+      background: #fdeeec;
+      border: 1px solid #f0c6c0;
+      color: #8a3a30;
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      margin-top: 12px;
+    }
+
+    .warning-box.show {
+      display: block;
+    }
+
+    .ok-box {
+      display: none;
+      background: color-mix(in srgb, var(--accent-color), transparent 90%);
+      border: 1px solid var(--accent-color);
+      color: color-mix(in srgb, var(--accent-color), black 30%);
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      margin-top: 12px;
+    }
+
+    .ok-box.show {
+      display: block;
+    }
+
+    .radio-group, .check-group {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-top: 6px;
+    }
+
+    .radio-group label, .check-group label {
+      font-weight: 500;
+      font-size: 0.95rem;
+      cursor: pointer;
+      color: var(--default-color);
+    }
+
+    .btn-submit-express {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      font-family: var(--heading-font);
+      font-weight: 700;
+      font-size: 1.15rem;
+      padding: 15px 45px;
+      border-radius: 50px;
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 60%);
+      width: 100%;
+    }
+
+    .btn-submit-express:hover {
+      background-color: color-mix(in srgb, var(--accent-color), black 15%);
+      color: var(--contrast-color);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 40%);
+    }
+
+    .req {
+      color: #c65b4e;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <!-- Header -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename"><img src="assets/img/logo.jpeg" alt="HK Energieberatung Logo"></h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">ENERGIEBERATUNG</a></li>
+          <li><a href="index.html#about">ÜBER UNS</a></li>
+          <li><a href="expressausweis.html" class="active">EXPRESSAUSWEIS (48H)</a></li>
+          <li><a href="index.html#features">FÖRDERUNGEN</a></li>
+          <li class="dropdown"><a href="index.html#services"><span>LEISTUNGEN</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="expressausweis.html">Express Verbrauchsausweis (48h)</a></li>
+              <li><a href="index.html#services">Energieausweise</a></li>
+              <li><a href="index.html#services">Hydraulischer Abgleich</a></li>
+              <li><a href="index.html#services">Einzelmaßnahmen (BAFA)</a></li>
+              <li><a href="index.html#services">KfW Kreditanträge</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#pricing">KOSTEN</a></li>
+          <li><a href="index.html#contact">KONTAKT</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="index.html#contact">Jetzt Starten</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Express Hero Header -->
+    <section class="express-hero text-center">
+      <div class="container" data-aos="fade-up">
+        <div class="mb-3">
+          <img src="assets/img/48h.png" alt="48 Stunden Express Service" style="max-height: 140px; width: auto;" class="img-fluid">
+        </div>
+        <h1 class="display-5 fw-bold mb-2">Ihr Express-Verbrauchsausweis</h1>
+        <p class="lead text-muted max-w-2xl mx-auto mb-3">
+          Füllen Sie das Formular aus und laden Sie Ihre Unterlagen direkt hoch. Sobald alle Angaben vollständig vorliegen, erstellen wir Ihren Energieausweis in kürzester Zeit (innerhalb von 48h).
+        </p>
+        <div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+          <span class="badge bg-success-subtle text-success fs-6 px-3 py-2 rounded-pill fw-bold"><i class="bi bi-lightning-charge-fill me-1"></i> Express-Bearbeitung</span>
+          <span class="badge bg-success-subtle text-success fs-6 px-3 py-2 rounded-pill fw-bold"><i class="bi bi-shield-check me-1"></i> Rechtssicher nach GEG</span>
+          <span class="badge bg-success-subtle text-success fs-6 px-3 py-2 rounded-pill fw-bold"><i class="bi bi-cloud-arrow-up-fill me-1"></i> Digitaler Upload</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="section py-4">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="express-form-container">
+
+          <form id="expressForm" action="forms/expressausweis.php" method="POST" enctype="multipart/form-data">
+
+            <!-- 1. Objektdaten -->
+            <fieldset class="express-fieldset">
+              <legend><span class="step">1</span> Angaben zum Gebäude</legend>
+
+              <div class="row g-3 mt-1">
+                <div class="col-md-6">
+                  <label for="gebaeudetyp" class="form-label fw-semibold">Gebäudetyp <span class="req">*</span></label>
+                  <select id="gebaeudetyp" name="gebaeudetyp" class="form-select" required>
+                    <option value="">Bitte wählen</option>
+                    <option value="efh">Einfamilienhaus</option>
+                    <option value="zfh">Zweifamilienhaus</option>
+                    <option value="mfh">Mehrfamilienhaus</option>
+                    <option value="sonstiges">Sonstiges</option>
+                  </select>
+                  <details class="form-tip"><summary></summary><div class="form-example">Zweifamilienhaus = zwei separate Wohnungen in einem Gebäude. Ab drei oder mehr Wohnungen spricht man von einem Mehrfamilienhaus.</div></details>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="wohneinheiten" class="form-label fw-semibold">Anzahl Wohneinheiten <span class="req">*</span></label>
+                  <input type="number" id="wohneinheiten" name="wohneinheiten" class="form-control" min="1" placeholder="z. B. 1" required>
+                  <details class="form-tip"><summary></summary><div class="form-example">Eine Wohneinheit ist eine einzelne, abgeschlossene Wohnung mit eigenem Zugang.</div></details>
+                </div>
+
+                <div class="col-12">
+                  <label for="strasse" class="form-label fw-semibold">Straße & Hausnummer <span class="req">*</span></label>
+                  <input type="text" id="strasse" name="strasse" class="form-control" placeholder="Musterstraße 12" required>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="plz" class="form-label fw-semibold">PLZ <span class="req">*</span></label>
+                  <input type="text" id="plz" name="plz" class="form-control" pattern="[0-9]{4,5}" placeholder="28195" required>
+                </div>
+
+                <div class="col-md-8">
+                  <label for="ort" class="form-label fw-semibold">Ort <span class="req">*</span></label>
+                  <input type="text" id="ort" name="ort" class="form-control" placeholder="Bremen" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="baujahr" class="form-label fw-semibold">Baujahr Gebäude <span class="req">*</span></label>
+                  <input type="number" id="baujahr" name="baujahr" class="form-control" min="1800" max="2026" placeholder="z. B. 1985" required>
+                  <details class="form-tip"><summary></summary><div class="form-example">Steht im Grundbuchauszug, Kaufvertrag oder der Bauakte. Bei Unsicherheit reicht eine schlüssige Schätzung.</div></details>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="baujahr_heizung" class="form-label fw-semibold">Baujahr Heizungsanlage <span class="optional-tag">falls bekannt</span></label>
+                  <input type="number" id="baujahr_heizung" name="baujahr_heizung" class="form-control" min="1900" max="2026" placeholder="z. B. 2012">
+                  <details class="form-tip"><summary></summary><div class="form-example">Steht am Typenschild am Heizkessel oder im Schornsteinfegerbericht. Falls unbekannt, leer lassen.</div></details>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="wohnflaeche" class="form-label fw-semibold">Beheizte Wohn-/Nutzfläche gesamt (m²) <span class="req">*</span></label>
+                  <input type="number" id="wohnflaeche" name="wohnflaeche" class="form-control" min="1" placeholder="z. B. 140" required>
+                  <details class="form-tip"><summary></summary><div class="form-example">Fläche aller beheizten Räume laut Mietvertrag oder Bauplan. Unbeheizter Keller/Dachboden zählen nicht.</div></details>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="leerstand" class="form-label fw-semibold">Leerstand vorhanden?</label>
+                  <select id="leerstand" name="leerstand" class="form-select">
+                    <option value="nein">Nein</option>
+                    <option value="ja">Ja</option>
+                  </select>
+                  <details class="form-tip"><summary></summary><div class="form-example">Wählen Sie "Ja", falls eine Wohnung im Abrechnungszeitraum längere Zeit unbewohnt war.</div></details>
+                </div>
+
+                <div class="col-12">
+                  <label for="anlass" class="form-label fw-semibold">Anlass der Ausstellung <span class="req">*</span></label>
+                  <select id="anlass" name="anlass" class="form-select" required>
+                    <option value="">Bitte wählen</option>
+                    <option value="vermietung">Vermietung</option>
+                    <option value="verkauf">Verkauf</option>
+                    <option value="aushang">Aushang (öffentliches Gebäude)</option>
+                    <option value="modernisierung">Modernisierung</option>
+                    <option value="neuausstellung">Neuausstellung / Ablauf des alten Ausweises</option>
+                    <option value="sonstiges">Sonstiges</option>
+                  </select>
+                  <details class="form-tip"><summary></summary><div class="form-example">Beispiel: Neuvermietung ("Vermietung") oder Kauf/Verkauf ("Verkauf").</div></details>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- 2. Eignungsprüfung -->
+            <fieldset class="express-fieldset">
+              <legend><span class="step">2</span> Kurze Eignungsprüfung</legend>
+              <p class="form-hint">Ein Verbrauchsausweis ist gesetzlich zulässig, wenn mindestens eine der folgenden Bedingungen zutrifft.</p>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold d-block">Wurde das Gebäude nach 1977 gebaut oder entspricht es durch Modernisierung der Wärmeschutzverordnung 1977? <span class="req">*</span></label>
+                <details class="form-tip mb-2"><summary></summary><div class="form-example">Wählen Sie "Ja", wenn das Haus nach 1977 erbaut wurde <strong>oder</strong> nachträglich gedämmt wurde. Wenn Sie unsicher sind, wählen Sie "Weiß ich nicht".</div></details>
+                <div class="radio-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="wschv77" id="wschv_ja" value="ja" required>
+                    <label class="form-check-label" for="wschv_ja">Ja</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="wschv77" id="wschv_nein" value="nein" required>
+                    <label class="form-check-label" for="wschv_nein">Nein</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="wschv77" id="wschv_unsicher" value="unsicher" required>
+                    <label class="form-check-label" for="wschv_unsicher">Weiß ich nicht</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-2">
+                <label class="form-label fw-semibold d-block">Hat das Gebäude mindestens 5 Wohneinheiten? <span class="req">*</span></label>
+                <details class="form-tip mb-2"><summary></summary><div class="form-example">Anzahl aller Wohnungen im Gebäude. Ab 5 Einheiten ist der Verbrauchsausweis immer zulässig.</div></details>
+                <div class="radio-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="fuenf_we" id="fuenf_ja" value="ja" required>
+                    <label class="form-check-label" for="fuenf_ja">Ja</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="fuenf_we" id="fuenf_nein" value="nein" required>
+                    <label class="form-check-label" for="fuenf_nein">Nein</label>
+                  </div>
+                </div>
+              </div>
+
+              <div id="eignungWarnung" class="warning-box">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                Nach Ihren Angaben ist für dieses Gebäude gesetzlich vermutlich ein <strong>Bedarfsausweis</strong> vorgeschrieben. Sie können das Formular trotzdem absenden – wir prüfen es individuell für Sie.
+              </div>
+              <div id="eignungOk" class="ok-box">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                Ihr Gebäude erfüllt die Voraussetzungen für einen Verbrauchsausweis. Sie können mit dem Express-Verfahren fortfahren.
+              </div>
+            </fieldset>
+
+            <!-- 3. Energieträger -->
+            <fieldset class="express-fieldset">
+              <legend><span class="step">3</span> Heizung & Energieträger</legend>
+              <div class="row g-3 mt-1">
+                <div class="col-md-6">
+                  <label for="energietraeger" class="form-label fw-semibold">Hauptenergieträger <span class="req">*</span></label>
+                  <select id="energietraeger" name="energietraeger" class="form-select" required>
+                    <option value="">Bitte wählen</option>
+                    <option value="erdgas">Erdgas</option>
+                    <option value="heizoel">Heizöl</option>
+                    <option value="fernwaerme">Fernwärme</option>
+                    <option value="waermepumpe">Wärmepumpe (Strom)</option>
+                    <option value="pellets">Pellets / Biomasse</option>
+                    <option value="sonstiges">Sonstiges</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="warmwasser" class="form-label fw-semibold">Warmwasserbereitung <span class="req">*</span></label>
+                  <select id="warmwasser" name="warmwasser" class="form-select" required>
+                    <option value="">Bitte wählen</option>
+                    <option value="zentral">Zentral über Heizungsanlage</option>
+                    <option value="dezentral">Dezentral (z. B. Boiler, Durchlauferhitzer)</option>
+                  </select>
+                  <details class="form-tip"><summary></summary><div class="form-example">Zentral: Warmwasser kommt aus der zentralen Heizungsanlage. Dezentral: Eigene Boiler oder elektrische Durchlauferhitzer in den Wohnungen.</div></details>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- 4. Verbrauchsdaten Upload -->
+            <fieldset class="express-fieldset">
+              <legend><span class="step">4</span> Verbrauchsunterlagen hochladen</legend>
+              <p class="form-hint">Benötigt werden lückenlose Abrechnungen für 36 zusammenhängende Monate.</p>
+
+              <div class="upload-box">
+                <label class="title">Heizkosten-/Verbrauchsabrechnungen der letzten 3 Jahre <span class="req">*</span></label>
+                <div class="desc">PDF oder Fotos/Scans der Abrechnungen hochladen</div>
+                <div class="form-example mb-2">Die jährlichen Schreiben Ihres Energieversorgers oder der Hausverwaltung (Heizkostenabrechnung / Nebenkostenabrechnung).</div>
+                <input type="file" name="verbrauchsabrechnungen[]" class="form-control" accept="application/pdf,image/*" multiple required>
+              </div>
+
+              <div class="upload-box">
+                <label class="title">Nachweis Warmwasserverbrauch <span class="optional-tag">falls separat abgerechnet</span></label>
+                <div class="desc">Nur nötig, wenn Warmwasser nicht bereits in der Heizkostenabrechnung enthalten ist</div>
+                <input type="file" name="warmwasser_nachweis[]" class="form-control" accept="application/pdf,image/*" multiple>
+              </div>
+            </fieldset>
+
+            <!-- 5. Pflichtfotos -->
+            <fieldset class="express-fieldset">
+              <legend><span class="step">5</span> Pflichtfotos</legend>
+              <p class="form-hint">Gesetzlich vorgeschrieben zur Plausibilitätsprüfung der Angaben.</p>
+
+              <div class="upload-box">
+                <label class="title">Foto Gebäude-Außenansicht (Straßenansicht) <span class="req">*</span></label>
+                <input type="file" name="foto_aussenansicht[]" class="form-control" accept="image/*" multiple required>
+              </div>
+
+              <div class="upload-box">
+                <label class="title">Foto Heizungsanlage / Typenschild des Kessels <span class="req">*</span></label>
+                <div class="form-example mb-2">Schild am Kessel mit Modell/Hersteller und Leistungsdaten.</div>
+                <input type="file" name="foto_heizung[]" class="form-control" accept="image/*" multiple required>
+              </div>
+            </fieldset>
+
+            <!-- 6. Optionale Unterlagen -->
+            <fieldset class="express-fieldset">
+              <legend><span class="step">6</span> Weitere Unterlagen <span class="optional-tag">optional</span></legend>
+
+              <div class="upload-box">
+                <label class="title">Grundriss / Baupläne</label>
+                <input type="file" name="grundriss[]" class="form-control" accept="application/pdf,image/*" multiple>
+              </div>
+
+              <div class="upload-box">
+                <label class="title">Grundbuchauszug oder Kaufvertrag <span class="optional-tag">Nachweis Baujahr</span></label>
+                <input type="file" name="eigentumsnachweis[]" class="form-control" accept="application/pdf,image/*" multiple>
+              </div>
+            </fieldset>
+
+            <!-- 7. Auftraggeber -->
+            <fieldset class="express-fieldset">
+              <legend><span class="step">7</span> Ihre Kontaktdaten</legend>
+
+              <div class="row g-3 mt-1">
+                <div class="col-md-6">
+                  <label for="vorname" class="form-label fw-semibold">Vorname <span class="req">*</span></label>
+                  <input type="text" id="vorname" name="vorname" class="form-control" placeholder="Max" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="nachname" class="form-label fw-semibold">Nachname <span class="req">*</span></label>
+                  <input type="text" id="nachname" name="nachname" class="form-control" placeholder="Mustermann" required>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label fw-semibold d-block">Sind Sie Eigentümer der Immobilie? <span class="req">*</span></label>
+                  <div class="radio-group">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="eigentuemer" id="eig_ja" value="ja" required>
+                      <label class="form-check-label" for="eig_ja">Ja</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="eigentuemer" id="eig_nein" value="nein" required>
+                      <label class="form-check-label" for="eig_nein">Nein, ich beauftrage im Namen des Eigentümers (z. B. Hausverwaltung)</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email" class="form-label fw-semibold">E-Mail <span class="req">*</span></label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="max@beispiel.de" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="telefon" class="form-label fw-semibold">Telefon <span class="req">*</span></label>
+                  <input type="tel" id="telefon" name="telefon" class="form-control" placeholder="+49 162 1234567" required>
+                </div>
+
+                <div class="col-12">
+                  <label for="rechnungsadresse" class="form-label fw-semibold">Abweichende Rechnungsadresse <span class="optional-tag">falls nötig</span></label>
+                  <input type="text" id="rechnungsadresse" name="rechnungsadresse" class="form-control" placeholder="Straße, Hausnummer, PLZ, Ort">
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- 8. Rechtliches -->
+            <fieldset class="express-fieldset">
+              <legend><span class="step">8</span> Bestätigung & Absenden</legend>
+
+              <div class="form-check mb-3 mt-2">
+                <input class="form-check-input" type="checkbox" name="richtigkeit" id="richtigkeit" required>
+                <label class="form-check-label text-muted small" for="richtigkeit">
+                  Ich bestätige, dass die gemachten Angaben und hochgeladenen Unterlagen der Wahrheit entsprechen. Mir ist bekannt, dass der Aussteller sich auf meine Angaben verlässt. <span class="req">*</span>
+                </label>
+              </div>
+
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="datenschutz" id="datenschutz" required>
+                <label class="form-check-label text-muted small" for="datenschutz">
+                  Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung zur Ausweiserstellung zu. <span class="req">*</span>
+                </label>
+              </div>
+
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" name="kontakt_ok" id="kontakt_ok">
+                <label class="form-check-label text-muted small" for="kontakt_ok">
+                  Ich darf per E-Mail oder Telefon zu Rückfragen kontaktiert werden.
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-submit-express">
+                <i class="bi bi-send-fill me-2"></i> Express-Anfrage jetzt senden
+              </button>
+              <p class="text-center text-muted small mt-2 mb-0">Nach Absenden erhalten Sie eine Bestätigung per E-Mail.</p>
+            </fieldset>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center" aria-label="Startseite">
+            <img src="assets/img/logo.jpeg" alt="HK Energieberatung Logo" class="img-fluid">
+          </a>
+          <address class="footer-contact pt-3">
+            <p>
+              <a href="https://maps.app.goo.gl/38YXNdg3ipmPV2KX6" target="_blank" rel="noopener noreferrer">
+                Bürgermeister-Smith Straße<br>
+                28195 Bremen - Deutschland
+              </a>
+            </p>
+            <p>
+              <strong>Telefon:</strong> <a href="tel:+491626985115">+49 162 6985115</a>
+            </p>
+            <p>
+              <strong>E-Mail:</strong> <a href="mailto:info@hk-energieberatung.de">info@hk-energieberatung.de</a>
+            </p>
+          </address>
+        </div>
+
+        <nav class="col-lg-2 col-md-3 footer-links">
+          <h4>Nützliche Links</h4>
+          <ul class="list-unstyled">
+            <li><a href="index.html#hero">Startseite</a></li>
+            <li><a href="index.html#about">Über uns</a></li>
+            <li><a href="expressausweis.html">Expressausweis</a></li>
+            <li><a href="index.html#contact">Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <nav class="col-lg-3 col-md-3 footer-links">
+          <h4>Unsere Leistungen</h4>
+          <ul class="list-unstyled">
+            <li><a href="expressausweis.html">Express Verbrauchsausweis (48h)</a></li>
+            <li><a href="index.html#services">Hydraulischer Abgleich</a></li>
+            <li><a href="index.html#features">BAFA & KfW Förderungen</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">HK Energieberatung</strong> <span>Alle Rechte vorbehalten</span></p>
+      <span class="d-flex gap-2 justify-content-center">
+        <a href="impressum.html">Impressum</a> - <a href="datenschutz.html">Datenschutz</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    const wschv = document.getElementsByName('wschv77');
+    const fuenfWe = document.getElementsByName('fuenf_we');
+    const warnBox = document.getElementById('eignungWarnung');
+    const okBox = document.getElementById('eignungOk');
+
+    function checkEligibility(){
+      const wVal = [...wschv].find(r => r.checked)?.value;
+      const fVal = [...fuenfWe].find(r => r.checked)?.value;
+      if(!wVal || !fVal) return;
+
+      const eligible = (wVal === 'ja') || (fVal === 'ja');
+      warnBox.classList.toggle('show', !eligible);
+      okBox.classList.toggle('show', eligible);
+    }
+
+    wschv.forEach(r => r.addEventListener('change', checkEligibility));
+    fuenfWe.forEach(r => r.addEventListener('change', checkEligibility));
+
+    /* Drag & Drop Multi-File Upload Handler */
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.upload-box').forEach(box => {
+        const fileInput = box.querySelector('input[type="file"]');
+        if (!fileInput) return;
+
+        fileInput.style.display = 'none';
+
+        let dropzone = box.querySelector('.upload-dropzone');
+        if (!dropzone) {
+          dropzone = document.createElement('div');
+          dropzone.className = 'upload-dropzone';
+          dropzone.innerHTML = `
+            <i class="bi bi-cloud-arrow-up drop-icon"></i>
+            <div class="drop-text">Dateien hierher ziehen oder <strong>durchsuchen</strong></div>
+            <button type="button" class="btn-browse mt-1">Dateien auswählen</button>
+          `;
+          box.appendChild(dropzone);
+        }
+
+        let fileListContainer = box.querySelector('.file-preview-list');
+        if (!fileListContainer) {
+          fileListContainer = document.createElement('div');
+          fileListContainer.className = 'file-preview-list';
+          box.appendChild(fileListContainer);
+        }
+
+        let dt = new DataTransfer();
+
+        function updateInputFiles() {
+          fileInput.files = dt.files;
+          renderFileList();
+        }
+
+        function addFiles(files) {
+          const isMultiple = fileInput.hasAttribute('multiple');
+          if (!isMultiple && files.length > 0) {
+            dt = new DataTransfer();
+            dt.items.add(files[0]);
+          } else {
+            Array.from(files).forEach(file => {
+              dt.items.add(file);
+            });
+          }
+          updateInputFiles();
+        }
+
+        function removeFile(index) {
+          const newDt = new DataTransfer();
+          Array.from(dt.files).forEach((file, i) => {
+            if (i !== index) newDt.items.add(file);
+          });
+          dt = newDt;
+          updateInputFiles();
+        }
+
+        function renderFileList() {
+          fileListContainer.innerHTML = '';
+          if (dt.files.length === 0) return;
+
+          Array.from(dt.files).forEach((file, index) => {
+            const item = document.createElement('div');
+            item.className = 'file-preview-item';
+
+            const info = document.createElement('div');
+            info.className = 'file-info';
+
+            const isImage = file.type.startsWith('image/');
+            const isPdf = file.type === 'application/pdf';
+
+            if (isImage) {
+              const img = document.createElement('img');
+              img.className = 'file-thumbnail';
+              img.src = URL.createObjectURL(file);
+              info.appendChild(img);
+            } else {
+              const iconBadge = document.createElement('div');
+              iconBadge.className = 'file-icon-badge';
+              iconBadge.innerHTML = isPdf ? '<i class="bi bi-file-earmark-pdf-fill"></i>' : '<i class="bi bi-file-earmark-text-fill"></i>';
+              info.appendChild(iconBadge);
+            }
+
+            const details = document.createElement('div');
+            details.className = 'file-details';
+
+            const name = document.createElement('span');
+            name.className = 'file-name';
+            name.textContent = file.name;
+
+            const size = document.createElement('span');
+            size.className = 'file-size';
+            size.textContent = formatBytes(file.size);
+
+            details.appendChild(name);
+            details.appendChild(size);
+            info.appendChild(details);
+
+            const removeBtn = document.createElement('button');
+            removeBtn.type = 'button';
+            removeBtn.className = 'btn-file-remove';
+            removeBtn.title = 'Datei entfernen';
+            removeBtn.innerHTML = '<i class="bi bi-x-lg"></i>';
+            removeBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              removeFile(index);
+            });
+
+            item.appendChild(info);
+            item.appendChild(removeBtn);
+            fileListContainer.appendChild(item);
+          });
+        }
+
+        function formatBytes(bytes, decimals = 1) {
+          if (bytes === 0) return '0 Bytes';
+          const k = 1024;
+          const dm = decimals < 0 ? 0 : decimals;
+          const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+          const i = Math.floor(Math.log(bytes) / Math.log(k));
+          return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+        }
+
+        box.addEventListener('click', (e) => {
+          if (e.target.closest('.btn-file-remove')) return;
+          fileInput.click();
+        });
+
+        fileInput.addEventListener('change', () => {
+          if (fileInput.files.length > 0) {
+            addFiles(fileInput.files);
+          }
+        });
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+          box.addEventListener(eventName, (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            box.classList.add('dragover');
+          }, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+          box.addEventListener(eventName, (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            box.classList.remove('dragover');
+          }, false);
+        });
+
+        box.addEventListener('drop', (e) => {
+          const dtData = e.dataTransfer;
+          const files = dtData.files;
+          if (files.length > 0) {
+            addFiles(files);
+          }
+        }, false);
+
+      });
+    });
+  </script>
+
+  <!-- Scroll Top & WhatsApp Chat -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <a href="https://wa.me/491626985115" id="wp-chat" class="wp-chat" target="_blank" rel="noopener noreferrer">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+</body>
+</html>

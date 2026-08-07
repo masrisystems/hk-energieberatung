@@ -763,6 +763,85 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Expressausweis Section
+--------------------------------------------------------------*/
+.expressausweis-banner {
+  background: var(--background-color);
+  padding: 60px 0;
+}
+
+.expressausweis-card {
+  background: var(--surface-color);
+  border-radius: 20px;
+  padding: 40px 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
+}
+
+.expressausweis-card .banner-subtitle {
+  font-family: var(--heading-font);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--heading-color);
+  margin-bottom: 12px;
+}
+
+.expressausweis-card .banner-title {
+  font-family: var(--heading-font);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--accent-color);
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+
+.expressausweis-card .banner-note {
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+}
+
+.expressausweis-card .btn-express {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 12px 36px;
+  border-radius: 50px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+.expressausweis-card .btn-express:hover {
+  background-color: color-mix(in srgb, var(--accent-color), black 15%);
+  color: var(--contrast-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 50%);
+}
+
+.expressausweis-card .express-badge-img {
+  max-height: 220px;
+  width: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 991px) {
+  .expressausweis-card {
+    padding: 30px 25px;
+  }
+  .expressausweis-card .banner-subtitle {
+    font-size: 1.8rem;
+  }
+  .expressausweis-card .banner-title {
+    font-size: 1.8rem;
+  }
+  .expressausweis-card .express-badge-img {
+    max-height: 180px;
+  }
+}
+
+/*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
 .hero , .privacy-policy, .impressum{
@@ -1066,10 +1145,12 @@ section,
 }
 
 .about .profile .profile-image {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .about .profile .profile-name {
@@ -2470,17 +2551,164 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Starter Section Section
+# Drag & Drop Multi-File Uploader Component
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+.upload-box {
+  border: 2px dashed color-mix(in srgb, var(--accent-color), transparent 45%);
+  border-radius: 14px;
+  padding: 22px;
+  background: color-mix(in srgb, var(--accent-color), transparent 97%);
+  margin-bottom: 20px;
+  transition: all 0.25s ease-in-out;
+  position: relative;
+  cursor: pointer;
 }
 
+.upload-box.dragover {
+  border-color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  box-shadow: 0 0 15px color-mix(in srgb, var(--accent-color), transparent 60%);
+  transform: scale(1.01);
+}
 
+.upload-box label.title {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--heading-color);
+  margin-bottom: 4px;
+  display: block;
+}
 
-/*--------------------------------------------------------------
-# Datenschutz Section
---------------------------------------------------------------*/
-/* .datenschutz, .impressum {
-  padding-top: 160px;
-} */
+.upload-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 10px;
+  text-align: center;
+}
+
+.upload-dropzone i.drop-icon {
+  font-size: 2.2rem;
+  color: var(--accent-color);
+  margin-bottom: 6px;
+  transition: transform 0.2s ease;
+}
+
+.upload-box.dragover i.drop-icon {
+  transform: translateY(-4px) scale(1.1);
+}
+
+.upload-dropzone .drop-text {
+  font-size: 0.9rem;
+  color: var(--default-color);
+  margin-bottom: 8px;
+}
+
+.upload-dropzone .btn-browse {
+  background: var(--surface-color);
+  border: 1px solid var(--accent-color);
+  color: var(--heading-color);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 6px 20px;
+  border-radius: 50px;
+  transition: all 0.2s ease;
+}
+
+.upload-dropzone .btn-browse:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+/* File Preview List */
+.file-preview-list {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.file-preview-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
+  border-radius: 10px;
+  padding: 10px 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  animation: fileFadeIn 0.25s ease-in-out;
+}
+
+.file-preview-item .file-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.file-preview-item .file-thumbnail {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.file-preview-item .file-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.file-preview-item .file-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.file-preview-item .file-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-preview-item .file-size {
+  font-size: 0.75rem;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.file-preview-item .btn-file-remove {
+  background: transparent;
+  border: none;
+  color: #c65b4e;
+  font-size: 1.15rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.file-preview-item .btn-file-remove:hover {
+  background: #fdeeec;
+  color: #8a3a30;
+}
+
+@keyframes fileFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
