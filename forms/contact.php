@@ -1,9 +1,19 @@
 <?php
 /**
- * HK Energieberatung - Contact Form Backend Handler with SMTP & .env Support
+ * HK Energieberatung - Contact Form Backend Handler with SMTP, .env & CORS Support
  */
 ini_set('display_errors', 0);
 error_reporting(E_ALL);
+
+// === CORS HEADERS (Allows GitHub Pages static site to submit to Uberspace/external PHP backend) ===
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, X-Requested-With");
+
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
 
 // === 1. LOAD CONFIGURATION FROM .ENV ===
 function loadEnvFile($envPath) {
