@@ -64,9 +64,24 @@
   --contrast-color: #ffffff;
 }
 
-/* Smooth scroll */
-:root {
-  scroll-behavior: smooth;
+/* Smooth scroll with fixed header offset */
+html {
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 90px;
+}
+
+@media (max-width: 1199px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  :root,
+  * {
+    scroll-behavior: auto !important;
+  }
 }
 
 /*--------------------------------------------------------------

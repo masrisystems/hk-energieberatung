@@ -139,7 +139,7 @@ foreach ($fileCategories as $fieldName => $label) {
                 $ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
                 $allowed = ['pdf', 'jpg', 'jpeg', 'png', 'webp', 'heic', 'tif', 'tiff', 'zip'];
 
-                if (in_array($ext, $allowed) && $size <= 25 * 1024 * 1024) {
+                if (in_array($ext, $allowed) && $size <= 25 * 1024 * 1024 && ($totalSize + $size) <= $maxTotalSize) {
                     $totalSize += $size;
                     $content = file_get_contents($tmpName);
                     $attachments[] = [
@@ -246,7 +246,7 @@ function sendViaSmtpWithAttachments($config, $to, $subject, $bodyText, $replyToE
 
     $readResponse = function($expectedCode = null) use ($socket) {
         $response = '';
-        while ($line = fgets($socket, 515)) {
+        while (!feof($socket) && ($line = fgets($socket, 515)) !== false) {
             $response .= $line;
             if (isset($line[3]) && $line[3] === ' ') {
                 break;

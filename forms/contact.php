@@ -158,7 +158,7 @@ function sendViaSmtp($config, $to, $subject, $bodyText, $replyToEmail, $replyToN
 
     $readResponse = function($expectedCode = null) use ($socket) {
         $response = '';
-        while ($line = fgets($socket, 515)) {
+        while (!feof($socket) && ($line = fgets($socket, 515)) !== false) {
             $response .= $line;
             if (isset($line[3]) && $line[3] === ' ') {
                 break;

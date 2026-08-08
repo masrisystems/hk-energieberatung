@@ -173,6 +173,47 @@
   });
 
   /**
+   * Smooth scroll to target element with fixed header offset calculation
+   */
+  function smoothScrollTo(targetElement) {
+    if (!targetElement) return;
+    const header = document.querySelector('#header');
+    const headerOffset = header ? header.offsetHeight : 80;
+    const elementPosition = targetElement.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+
+  /**
+   * Intercept internal anchor links for buttery-smooth scrolling
+   */
+  document.addEventListener('click', function (e) {
+    const anchor = e.target.closest('a[href*="#"]');
+    if (!anchor) return;
+
+    const href = anchor.getAttribute('href');
+    if (!href || href === '#' || href === '#!') return;
+
+    // Check if the link points to an anchor on the current page
+    const url = new URL(anchor.href, window.location.href);
+    if (url.pathname === window.location.pathname && url.hash) {
+      const target = document.querySelector(url.hash);
+      if (target) {
+        e.preventDefault();
+        if (document.body.classList.contains('mobile-nav-active')) {
+          mobileNavToggle();
+        }
+        history.pushState(null, '', url.hash);
+        smoothScrollTo(target);
+      }
+    }
+  });
+
+  /**
    * Correct scrolling position upon page load for URLs containing hash links.
    */
   window.addEventListener('load', function () {
@@ -180,12 +221,8 @@
       const section = document.querySelector(window.location.hash);
       if (section) {
         setTimeout(() => {
-          let scrollMarginTop = getComputedStyle(section).scrollMarginTop || '0px';
-          window.scrollTo({
-            top: section.offsetTop - parseInt(scrollMarginTop),
-            behavior: 'smooth'
-          });
-        }, 100);
+          smoothScrollTo(section);
+        }, 120);
       }
     }
   });
