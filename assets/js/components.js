@@ -44,7 +44,13 @@
                   <li><a href="energieberatung-aurich.html" class="${isPage('energieberatung-aurich.html') ? 'active' : ''}">Standort Aurich</a></li>
                 </ul>
               </li>
-              <li><a href="${isPage('index.html') ? '#mediathek' : 'mediathek.html'}" class="${isPage('mediathek.html') ? 'active' : ''}">MEDIATHEK</a></li>
+              <li class="dropdown"><a href="#" class="${isPage('mediathek.html') || isPage('dokumente.html') || isPage('faq.html') ? 'active' : ''}"><span>INFOTHEK</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="mediathek.html" class="${isPage('mediathek.html') ? 'active' : ''}">Erklärvideos (Mediathek)</a></li>
+                  <li><a href="dokumente.html" class="${isPage('dokumente.html') ? 'active' : ''}">Formulare & Downloads</a></li>
+                  <li><a href="faq.html" class="${isPage('faq.html') ? 'active' : ''}">Häufige Fragen (FAQ)</a></li>
+                </ul>
+              </li>
               <li><a href="${isPage('index.html') ? '#contact' : 'index.html#contact'}">KONTAKT</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -149,6 +155,7 @@
                 <li><a href="energieberatung-bremen.html">Standort Bremen</a></li>
                 <li><a href="energieberatung-aurich.html">Standort Aurich</a></li>
                 <li><a href="mediathek.html">Mediathek</a></li>
+                <li><a href="dokumente.html">Dokumente & Downloads</a></li>
                 <li><a href="faq.html">Häufige Fragen (FAQ)</a></li>
                 <li><a href="index.html#contact">Kontakt</a></li>
               </ul>

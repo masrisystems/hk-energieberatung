@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Mediathek – Erklärvideos & Expertenwissen | HK Energieberatung</title>
-  <meta name="description" content="Erklärvideos und Hintergrundwissen rund um energetische Sanierung, iSFP, BAFA & KfW Förderungen. Lernen Sie verständlich und praxisnah mit der Mediathek von HK Energieberatung.">
+  <title>Dokumente & Downloads | HK Energieberatung</title>
+  <meta name="description" content="Formulare, Checklisten, Musterberichte und Infoblätter rund um Energieausweis, iSFP, BAFA & KfW Förderungen zum einfachen Download.">
 
   <!-- Favicons -->
   <link href="assets/img/logo.jpeg" rel="icon">
@@ -25,102 +25,85 @@
   <link href="assets/css/main.css" rel="stylesheet">
 
   <style>
-    .mediathek-hero {
+    .docs-hero {
       padding-top: 150px;
-      padding-bottom: 60px;
-      background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 95%) 50%, color-mix(in srgb, var(--accent-color), transparent 98%) 25%, transparent 50%);
+      padding-bottom: 50px;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 94%) 0%, transparent 60%);
     }
 
-    .video-card {
+    .doc-card {
       background: var(--surface-color);
       border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+      padding: 24px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
       transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
       height: 100%;
     }
 
-    .video-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    .doc-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.09);
+      border-color: var(--accent-color);
     }
 
-    .video-thumb {
-      position: relative;
-      background: var(--default-color);
-      aspect-ratio: 16/9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .video-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.85;
-      transition: all 0.3s ease;
-    }
-
-    .video-card:hover .video-thumb img {
-      transform: scale(1.05);
-      opacity: 0.75;
-    }
-
-    .play-icon-overlay {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      background: var(--accent-color);
-      color: var(--contrast-color);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-      transition: all 0.3s ease;
-    }
-
-    .video-card:hover .play-icon-overlay {
-      transform: scale(1.15);
-      background: color-mix(in srgb, var(--accent-color), black 15%);
-    }
-
-    .video-body {
-      padding: 20px 24px;
-    }
-
-    .video-tag {
-      font-size: 0.8rem;
-      font-weight: 700;
+    .doc-icon-wrapper {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: color-mix(in srgb, var(--accent-color), transparent 90%);
       color: var(--accent-color);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    .doc-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #e2e8f0;
+      color: #334155;
       display: inline-block;
     }
 
-    .video-title {
-      font-size: 1.2rem;
+    .doc-title {
+      font-size: 1.15rem;
       font-weight: 700;
       color: var(--heading-color);
       margin-bottom: 10px;
     }
 
-    .video-desc {
+    .doc-desc {
       font-size: 0.9rem;
-      color: color-mix(in srgb, var(--default-color), transparent 30%);
-      line-height: 1.6;
+      color: #64748b;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .doc-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 15px;
+    }
+
+    .doc-size {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      font-weight: 500;
     }
   </style>
 </head>
 
-<body class="index-page">
+<body class="dokumente-page">
 
-  <!-- Header Component -->
   <!-- START: HEADER_COMPONENT -->
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
@@ -149,8 +132,8 @@
         </li>
         <li class="dropdown"><a href="#" data-page="infothek" class="active"><span>INFOTHEK</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
-            <li><a href="mediathek.html" data-page="mediathek.html" class="active">Erklärvideos (Mediathek)</a></li>
-            <li><a href="dokumente.html" data-page="dokumente.html">Formulare & Downloads</a></li>
+            <li><a href="mediathek.html" data-page="mediathek.html">Erklärvideos (Mediathek)</a></li>
+            <li><a href="dokumente.html" data-page="dokumente.html" class="active">Formulare & Downloads</a></li>
             <li><a href="faq.html" data-page="faq.html">Häufige Fragen (FAQ)</a></li>
           </ul>
         </li>
@@ -168,72 +151,123 @@
 
   <main class="main">
 
-    <!-- Mediathek Hero -->
-    <section class="mediathek-hero text-center">
+    <!-- Hero Section -->
+    <section class="docs-hero text-center">
       <div class="container" data-aos="fade-up">
-        <span class="company-badge mb-3"><i class="bi bi-play-circle-fill me-2"></i> Erklärvideos & Wissen</span>
-        <h1 class="display-5 fw-bold mb-3" style="color: var(--heading-color);">Unsere Mediathek</h1>
-        <p class="lead mx-auto mb-4" style="max-width: 750px; color: color-mix(in srgb, var(--default-color), transparent 25%);">
-          Verständlich, praxisnah und auf den Punkt gebracht: Hier finden Sie Erklärvideos und Hintergrundwissen rund um Ihre energetische Sanierung und Förderchancen.
+        <span class="company-badge mb-3"><i class="bi bi-file-earmark-pdf-fill me-2"></i> Formulare & Unterlagen</span>
+        <h1 class="display-5 fw-bold mb-3" style="color: var(--heading-color);">Dokumente & Downloads</h1>
+        <p class="lead mx-auto mb-4" style="max-width: 720px; color: color-mix(in srgb, var(--default-color), transparent 25%);">
+          Hier finden Sie alle wichtigen Formulare, Checklisten und Vollmachten für Ihre Energieberatung, Ihren Sanierungsfahrplan (iSFP) und Förderanträge zum einfachen Download.
         </p>
-        <a href="index.html#contact" class="btn btn-hk btn-hk-lg">Kostenlose Erstberatung anfragen</a>
       </div>
     </section>
 
-    <!-- Video Grid -->
+    <!-- Documents Grid Section -->
     <section class="section light-background py-5">
       <div class="container" data-aos="fade-up">
+
         <div class="row g-4">
-          
+
+          <!-- Doc 1 -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="video-card">
-              <div class="video-thumb">
-                <img src="assets/img/isfp.jpg" alt="iSFP Video">
-                <div class="play-icon-overlay"><i class="bi bi-play-fill"></i></div>
+            <div class="doc-card">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="doc-icon-wrapper">
+                  <i class="bi bi-file-earmark-check-fill"></i>
+                </div>
+                <span class="doc-badge">PDF • Formular</span>
               </div>
-              <div class="video-body">
-                <span class="video-tag">Sanierungsfahrplan</span>
-                <h3 class="video-title">Was ist ein iSFP und wie sichere ich +5% Extraförderung?</h3>
-                <p class="video-desc">Erfahren Sie in diesem Video Schritt für Schritt, wie der individuelle Sanierungsfahrplan funktioniert und welche Boni Sie erhalten.</p>
+              <h3 class="doc-title">Checkliste Datenaufnahme (Verbrauchsausweis)</h3>
+              <p class="doc-desc">Übersicht aller benötigten Unterlagen & Heizkostenabrechnungen der letzten 3 Jahre für Ihren Express-Verbrauchsausweis.</p>
+              <div class="doc-footer">
+                <span class="doc-size"><i class="bi bi-paperclip me-1"></i> 240 KB</span>
+                <a href="#" class="btn btn-hk btn-hk-sm">Download <i class="bi bi-download ms-1"></i></a>
               </div>
             </div>
           </div>
 
+          <!-- Doc 2 -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="video-card">
-              <div class="video-thumb">
-                <img src="assets/img/bafa.jpg" alt="BAFA Förderung Video">
-                <div class="play-icon-overlay"><i class="bi bi-play-fill"></i></div>
+            <div class="doc-card">
+              <div class="doc-icon-wrapper">
+                <i class="bi bi-pen-fill"></i>
               </div>
-              <div class="video-body">
-                <span class="video-tag">BAFA & Einzelmaßnahmen</span>
-                <h3 class="video-title">BAFA Zuschuss für Dämmung & Fenster richtig beantragen</h3>
-                <p class="video-desc">Welche Voraussetzungen müssen erfüllt sein und wie unterstützen wir Sie von der Antragstellung bis zur Auszahlung?</p>
+              <h3 class="doc-title">Vollmacht zur Förderantragstellung (BAFA/KfW)</h3>
+              <p class="doc-desc">Einverständniserklärung für HK Energieberatung zur Vertretung bei Behörden & Förderinstituten.</p>
+              <div class="doc-footer">
+                <span class="doc-size"><i class="bi bi-paperclip me-1"></i> 180 KB</span>
+                <a href="#" class="btn btn-hk btn-hk-sm">Download <i class="bi bi-download ms-1"></i></a>
               </div>
             </div>
           </div>
 
+          <!-- Doc 3 -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="video-card">
-              <div class="video-thumb">
-                <img src="assets/img/kfw.jpg" alt="KfW Kredite Video">
-                <div class="play-icon-overlay"><i class="bi bi-play-fill"></i></div>
+            <div class="doc-card">
+              <div class="doc-icon-wrapper">
+                <i class="bi bi-file-earmark-pdf-fill"></i>
               </div>
-              <div class="video-body">
-                <span class="video-tag">KfW Kredite & Tilgungszuschuss</span>
-                <h3 class="video-title">Effizienzhaus-Stufen (EH 55, EH 70) erklärt</h3>
-                <p class="video-desc">Verstehen Sie die verschiedenen Effizienzhaus-Standardwerte und wie Sie hohe Tilgungszuschüsse der KfW optimal nutzen.</p>
+              <h3 class="doc-title">Musterbericht: Individueller Sanierungsfahrplan (iSFP)</h3>
+              <p class="doc-desc">Beispielhafter Aufbau und Darstellung eines iSFP inklusive Maßnahmenstufen & Extraförderung.</p>
+              <div class="doc-footer">
+                <span class="doc-size"><i class="bi bi-paperclip me-1"></i> 1.2 MB</span>
+                <a href="#" class="btn btn-hk btn-hk-sm">Download <i class="bi bi-download ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doc 4 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="doc-card">
+              <div class="doc-icon-wrapper">
+                <i class="bi bi-calculator-fill"></i>
+              </div>
+              <h3 class="doc-title">Hydraulischer Abgleich: Erfassungsbogen</h3>
+              <p class="doc-desc">Vorbereitungsbogen zur Aufnahme von Heizkörpergrößen, Ventilarten und Raumflächen für Verfahren A & B.</p>
+              <div class="doc-footer">
+                <span class="doc-size"><i class="bi bi-paperclip me-1"></i> 310 KB</span>
+                <a href="#" class="btn btn-hk btn-hk-sm">Download <i class="bi bi-download ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doc 5 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="doc-card">
+              <div class="doc-icon-wrapper">
+                <i class="bi bi-info-circle-fill"></i>
+              </div>
+              <h3 class="doc-title">BAFA Infoblatt: Einzelmaßnahmen Gebäudehülle</h3>
+              <p class="doc-desc">Offizielle Richtlinien, Förderquoten und technische Mindestanforderungen für Fenster, Türen & Dämmung.</p>
+              <div class="doc-footer">
+                <span class="doc-size"><i class="bi bi-paperclip me-1"></i> 550 KB</span>
+                <a href="#" class="btn btn-hk btn-hk-sm">Download <i class="bi bi-download ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doc 6 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="doc-card">
+              <div class="doc-icon-wrapper">
+                <i class="bi bi-bank2"></i>
+              </div>
+              <h3 class="doc-title">KfW 261 Förderübersicht & Kriterien</h3>
+              <p class="doc-desc">Zusammenfassung der Effizienzhaus-Stufen (EH 55, EH 70) und Tilgungszuschüsse für Ihr Sanierungsvorhaben.</p>
+              <div class="doc-footer">
+                <span class="doc-size"><i class="bi bi-paperclip me-1"></i> 420 KB</span>
+                <a href="#" class="btn btn-hk btn-hk-sm">Download <i class="bi bi-download ms-1"></i></a>
               </div>
             </div>
           </div>
 
         </div>
+
       </div>
     </section>
 
   </main>
 
-  <!-- Footer Component -->
   <!-- START: FOOTER_COMPONENT -->
 <footer id="footer" class="footer">
   <div class="container footer-top">
@@ -316,20 +350,19 @@
 
 <!-- END: FOOTER_COMPONENT -->
 
-  <!-- Scroll Top & WhatsApp Chat -->
+  <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
     <i class="bi bi-arrow-up-short"></i>
   </a>
 
-  <a href="https://wa.me/491626985115" id="wp-chat" class="wp-chat" target="_blank" rel="noopener noreferrer">
-    <i class="bi bi-whatsapp"></i>
-  </a>
-
+  <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
 
   <!-- Component Loader & Main JS -->
   <script src="assets/js/components.js"></script>
   <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>

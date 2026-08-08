@@ -17,6 +17,7 @@ const TARGET_FILES = [
   'energieberatung-aurich.html',
   'expressausweis.html',
   'mediathek.html',
+  'dokumente.html',
   'impressum.html',
   'datenschutz.html'
 ];
@@ -43,6 +44,7 @@ function customizeHeader(headerHtml, targetPage) {
     customized = customized.replace('data-page="about.html"', 'data-page="about.html" class="active"');
     customized = customized.replace('data-page="index.html#about"', 'data-page="index.html#about" class="active"');
   } else if (targetPage === 'faq.html') {
+    customized = customized.replace('data-page="infothek"', 'data-page="infothek" class="active"');
     customized = customized.replace('data-page="faq.html"', 'data-page="faq.html" class="active"');
   } else if (targetPage === 'energieberatung-bremen.html') {
     customized = customized.replace('data-page="standorte"', 'data-page="standorte" class="active"');
@@ -53,7 +55,11 @@ function customizeHeader(headerHtml, targetPage) {
   } else if (targetPage === 'expressausweis.html') {
     customized = customized.replace('data-page="expressausweis.html"', 'data-page="expressausweis.html" class="active"');
   } else if (targetPage === 'mediathek.html') {
+    customized = customized.replace('data-page="infothek"', 'data-page="infothek" class="active"');
     customized = customized.replace('data-page="mediathek.html"', 'data-page="mediathek.html" class="active"');
+  } else if (targetPage === 'dokumente.html') {
+    customized = customized.replace('data-page="infothek"', 'data-page="infothek" class="active"');
+    customized = customized.replace('data-page="dokumente.html"', 'data-page="dokumente.html" class="active"');
   }
 
   return customized;
