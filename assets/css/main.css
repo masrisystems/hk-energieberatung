@@ -2915,3 +2915,33 @@ section,
   margin: 0;
   background: var(--surface-color);
 }
+
+/* Mint Pill Button matching aboutus.jpeg design */
+.btn-mint-pill {
+  background-color: #ABD8C3 !important;
+  color: #2d465e !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem;
+  border-radius: 50px !important;
+  padding: 12px 32px !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+  display: inline-block;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(171, 216, 195, 0.4);
+}
+
+.btn-mint-pill:hover {
+  background-color: #97cdb5 !important;
+  color: #1a2f42 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(171, 216, 195, 0.6);
+}
+
+.about-subtitle-tag {
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
