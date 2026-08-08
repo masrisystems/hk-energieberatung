@@ -2917,7 +2917,9 @@ section,
 }
 
 /* Mint Pill Button matching aboutus.jpeg design */
-.btn-mint-pill {
+.btn-mint-pill,
+a.btn-mint-pill,
+button.btn-mint-pill {
   background-color: #ABD8C3 !important;
   color: #2d465e !important;
   font-weight: 700 !important;
@@ -2931,17 +2933,25 @@ section,
   box-shadow: 0 4px 15px rgba(171, 216, 195, 0.4);
 }
 
-.btn-mint-pill:hover {
+.btn-mint-pill:hover,
+.btn-mint-pill:focus,
+.btn-mint-pill:active,
+a.btn-mint-pill:hover,
+a.btn-mint-pill:focus,
+a.btn-mint-pill:active,
+button.btn-mint-pill:hover,
+button.btn-mint-pill:focus,
+button.btn-mint-pill:active {
   background-color: #97cdb5 !important;
-  color: #1a2f42 !important;
+  color: #142436 !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(171, 216, 195, 0.6);
 }
 
 .about-subtitle-tag {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  color: #559663 !important;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
   display: block;
   margin-bottom: 8px;
 }
