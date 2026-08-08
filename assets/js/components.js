@@ -172,87 +172,87 @@
               </ul>
             </nav>
 
-            <div class="col-lg-2 col-md-3 footer-contact-hours">
-              <h4>Erreichbarkeit</h4>
-              <ul class="list-unstyled">
-                <li><i class="bi bi-open me-1"></i> Montag - Samstag<br>9:00 Uhr bis 18:00 Uhr</li>
-                <li class="mt-2">
-                  <a href="https://wa.me/491626985115" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Chat">
-                    <i class="bi bi-whatsapp me-1"></i> WhatsApp-Chat
-                  </a>
-                </li>
-              </ul>
-              <div class="footer-certificate mt-3">
-                <img src="assets/img/zertifikat-eee.png" alt="Zertifizierter Energieeffizienz-Experte für Förderprogramme des Bundes (dena)" class="img-fluid footer-cert-img" loading="lazy">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container copyright text-center mt-4">
-          <p>© <span>Copyright</span> <strong class="px-1 sitename">HK Energieberatung</strong> <span>Alle Rechte vorbehalten</span></p>
-          <span class="d-flex gap-2 justify-content-center">
-            <a href="impressum.html">Impressum</a> - <a href="datenschutz.html">Datenschutz</a>
-          </span>
-          <div class="credits">
-            Made by <a href="https://masrisystems.com/" target="_blank" rel="noopener noreferrer" aria-label="Masri Systems Website">Masri Systems</a>
-          </div>
-        </div>
-      </footer>
-    `;
-  }
-
-  // 3. CONTACT SECTION COMPONENT
-  function renderContact() {
-    const el = document.getElementById("contact-component");
-    if (!el) return;
-
-    el.innerHTML = `
-      <section id="contact" class="contact section light-background">
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Kontakt</h2>
-          <p>Haben Sie Fragen oder möchten Sie mehr erfahren? Schreiben Sie uns – wir beraten Sie gerne unabhängig, persönlich und kompetent!</p>
-        </div>
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row g-4 g-lg-5">
-            <div class="col-lg-5">
-              <div class="info-box" data-aos="fade-up" data-aos-delay="200">
-                <h3>Kontaktdaten</h3>
-                <p>Im Folgenden finden Sie alle wichtigen Kontaktdaten: Unsere Adresse, Telefonnummer sowie unsere E-Mail-Adresse. Zögern Sie nicht, uns jederzeit zu kontaktieren – wir freuen uns auf Ihre Anfrage!</p>
-
-                <div class="info-item" data-aos="fade-up" data-aos-delay="300">
-                  <a href="https://maps.app.goo.gl/Pd6vkvJnU2HgLyDv5" target="_blank" rel="noopener noreferrer">
-                    <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
-                    <div class="content">
-                      <h4>Adresse</h4>
-                      Industriestraße 34
-                      <p>28199 Bremen – Deutschland</p>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="info-item" data-aos="fade-up" data-aos-delay="400">
-                  <a href="tel:+491626985115">
-                    <div class="icon-box"><i class="bi bi-telephone"></i></div>
-                    <div class="content">
-                      <h4>Kontakt</h4>
-                      +49 162 6985115
-                    </div>
-                  </a>
-                </div>
-
-                <div class="info-item" data-aos="fade-up" data-aos-delay="500">
-                  <a href="mailto:info@hk-energieberatung.de">
-                    <div class="icon-box"><i class="bi bi-envelope"></i></div>
-                    <div class="content">
-                      <h4>Email Adresse</h4>
-                      info@hk-energieberatung.de
-                    </div>
-                  </a>
+              <div class="col-lg-2 col-md-3 footer-contact-hours">
+                <h4>Erreichbarkeit</h4>
+                <ul class="list-unstyled">
+                  <li><i class="bi bi-clock me-1"></i> Montag - Samstag<br>9:00 Uhr bis 18:00 Uhr</li>
+                  <li class="mt-2">
+                    <a href="https://wa.me/491626985115" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp-Chat starten">
+                      <i class="bi bi-whatsapp me-1"></i> WhatsApp-Chat
+                    </a>
+                  </li>
+                </ul>
+                <div class="footer-certificate mt-3">
+                  <img src="assets/img/zertifikat-eee.png" alt="Zertifizierter Energieeffizienz-Experte für Förderprogramme des Bundes (dena)" class="img-fluid footer-cert-img" loading="lazy">
                 </div>
               </div>
             </div>
+          </div>
+
+          <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">HK Energieberatung</strong> <span>Alle Rechte vorbehalten</span></p>
+            <span class="d-flex gap-2 justify-content-center">
+              <a href="impressum.html">Impressum</a> - <a href="datenschutz.html">Datenschutz</a>
+            </span>
+            <div class="credits">
+              Made by <a href="https://masrisystems.com/" target="_blank" rel="noopener noreferrer" aria-label="Masri Systems Website">Masri Systems</a>
+            </div>
+          </div>
+        </footer>
+      `;
+    }
+
+    // 3. CONTACT SECTION COMPONENT
+    function renderContact() {
+      const el = document.getElementById("contact-component");
+      if (!el) return;
+
+      el.innerHTML = `
+        <section id="contact" class="contact section light-background">
+          <div class="container section-title" data-aos="fade-up">
+            <h2>Kontakt</h2>
+            <p>Haben Sie Fragen oder möchten Sie mehr erfahren? Schreiben Sie uns – wir beraten Sie gerne unabhängig, persönlich und kompetent!</p>
+          </div>
+
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row g-4 g-lg-5">
+              <div class="col-lg-5">
+                <div class="info-box" data-aos="fade-up" data-aos-delay="200">
+                  <h3>Kontaktdaten</h3>
+                  <p>Im Folgenden finden Sie alle wichtigen Kontaktdaten: Unsere Adresse, Telefonnummer sowie unsere E-Mail-Adresse. Zögern Sie nicht, uns jederzeit zu kontaktieren – wir freuen uns auf Ihre Anfrage!</p>
+
+                  <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+                    <a href="https://maps.app.goo.gl/Pd6vkvJnU2HgLyDv5" target="_blank" rel="noopener noreferrer" aria-label="Adresse auf Google Maps">
+                      <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
+                      <div class="content">
+                        <h4>Adresse</h4>
+                        Industriestraße 34
+                        <p>28199 Bremen – Deutschland</p>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="info-item" data-aos="fade-up" data-aos-delay="400">
+                    <a href="tel:+491626985115" aria-label="Rufen Sie uns an unter +49 162 6985115">
+                      <div class="icon-box"><i class="bi bi-telephone"></i></div>
+                      <div class="content">
+                        <h4>Kontakt</h4>
+                        +49 162 6985115
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="info-item" data-aos="fade-up" data-aos-delay="500">
+                    <a href="mailto:info@hk-energieberatung.de" aria-label="Schreiben Sie uns eine E-Mail an info@hk-energieberatung.de">
+                      <div class="icon-box"><i class="bi bi-envelope"></i></div>
+                      <div class="content">
+                        <h4>Email Adresse</h4>
+                        info@hk-energieberatung.de
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
 
             <div class="col-lg-7">
               <div class="contact-form" data-aos="fade-up" data-aos-delay="300">

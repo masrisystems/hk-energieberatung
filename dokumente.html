@@ -418,9 +418,9 @@
       <div class="col-lg-2 col-md-3 footer-contact-hours">
         <h4>Erreichbarkeit</h4>
         <ul class="list-unstyled">
-          <li><i class="bi bi-open me-1"></i> Montag - Samstag<br>9:00 Uhr bis 18:00 Uhr</li>
+          <li><i class="bi bi-clock me-1"></i> Montag - Samstag<br>9:00 Uhr bis 18:00 Uhr</li>
           <li class="mt-2">
-            <a href="https://wa.me/491626985115" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Chat">
+            <a href="https://wa.me/491626985115" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp-Chat starten">
               <i class="bi bi-whatsapp me-1"></i> WhatsApp-Chat
             </a>
           </li>
@@ -442,12 +442,18 @@
     </div>
   </div>
 </footer>
-
 <!-- END: FOOTER_COMPONENT -->
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
-    <i class="bi bi-arrow-up-short"></i>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Nach oben scrollen" title="Nach oben scrollen">
+    <i class="bi bi-arrow-up-short" aria-hidden="true"></i>
+    <span class="visually-hidden">Nach oben scrollen</span>
+  </a>
+
+  <!-- WhatsApp Floating Chat -->
+  <a href="https://wa.me/491626985115" id="wp-chat" class="wp-chat" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp-Chat starten" title="WhatsApp-Chat starten">
+    <i class="bi bi-whatsapp" aria-hidden="true"></i>
+    <span class="visually-hidden">WhatsApp-Chat starten</span>
   </a>
 
   <!-- Vendor JS Files -->
@@ -457,7 +463,5 @@
   <!-- Component Loader & Main JS -->
   <script src="assets/js/components.js"></script>
   <script src="assets/js/main.js"></script>
-
 </body>
-
 </html>
