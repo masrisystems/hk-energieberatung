@@ -38,9 +38,9 @@
                   <li><a href="${isPage('index.html') ? '#services' : 'index.html#services'}">KfW Kreditanträge</a></li>
                 </ul>
               </li>
-              <li class="dropdown"><a href="#" class="${isPage('energieberatung-aurich.html') ? 'active' : ''}"><span>STANDORTE</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li class="dropdown"><a href="#" class="${isPage('energieberatung-bremen.html') || isPage('energieberatung-aurich.html') ? 'active' : ''}"><span>STANDORTE</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="${isPage('index.html') ? '#contact' : 'index.html#contact'}">Standort Bremen</a></li>
+                  <li><a href="energieberatung-bremen.html" class="${isPage('energieberatung-bremen.html') ? 'active' : ''}">Standort Bremen</a></li>
                   <li><a href="energieberatung-aurich.html" class="${isPage('energieberatung-aurich.html') ? 'active' : ''}">Standort Aurich</a></li>
                 </ul>
               </li>
