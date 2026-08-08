@@ -381,6 +381,67 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
     });
   }
 
+  /**
+   * Universal AJAX Contact Form Handler
+   */
+  document.addEventListener('submit', function (e) {
+    const form = e.target.closest('#kontaktForm, .contact .contact-form form');
+    if (!form || form.id === 'expressForm') return;
+    e.preventDefault();
+
+    const loading = form.querySelector('.loading');
+    const errorMsg = form.querySelector('.error-message');
+    const sentMsg = form.querySelector('.sent-message');
+    const btn = form.querySelector('button[type="submit"]');
+
+    if (loading) loading.classList.add('d-block');
+    if (errorMsg) {
+      errorMsg.classList.remove('d-block');
+      errorMsg.innerHTML = '';
+    }
+    if (sentMsg) sentMsg.classList.remove('d-block');
+    if (btn) btn.disabled = true;
+
+    const action = form.getAttribute('action') || 'https://masri.uber.space/forms/contact.php';
+    const formData = new FormData(form);
+
+    fetch(action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+        'Accept': 'application/json, text/plain, */*'
+      }
+    })
+    .then(response => {
+      if (response.ok) return response.text();
+      throw new Error(`Serverfehler (${response.status}): Bitte überprüfen Sie Ihre Eingaben.`);
+    })
+    .then(data => {
+      if (loading) loading.classList.remove('d-block');
+      if (btn) btn.disabled = false;
+
+      if (data.trim() === 'OK' || data.includes('erfolgreich') || data.includes('success')) {
+        if (sentMsg) {
+          sentMsg.classList.add('d-block');
+          sentMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        form.reset();
+      } else {
+        throw new Error(data || 'Übertragung fehlgeschlagen.');
+      }
+    })
+    .catch(err => {
+      if (loading) loading.classList.remove('d-block');
+      if (btn) btn.disabled = false;
+      if (errorMsg) {
+        errorMsg.innerHTML = err.message || 'Beim Senden ist ein Fehler aufgetreten.';
+        errorMsg.classList.add('d-block');
+        errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  });
+
   window.initContactTemplates = initContactTemplates;
   window.addEventListener('load', initContactTemplates);
   document.addEventListener('DOMContentLoaded', initContactTemplates);

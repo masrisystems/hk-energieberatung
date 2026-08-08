@@ -275,17 +275,78 @@ if (!$mailSent) {
     }
 }
 
+// Handle direct GET visits in browser
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    http_response_code(200);
+    echo '<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>HK Energieberatung – Formular-Endpunkt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: "Roboto", sans-serif; background: #f8fafc; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; }
+    .card { background: #fff; max-width: 480px; width: 100%; border-radius: 16px; padding: 36px 28px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; }
+    h1 { font-family: "Nunito", sans-serif; font-size: 1.5rem; color: #2d465e; margin: 16px 0 8px; }
+    p { color: #64748b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px; }
+    .btn { display: inline-block; background: #66A66D; color: #fff; font-weight: 600; text-decoration: none; padding: 12px 28px; border-radius: 50px; }
+    .badge { display: inline-block; background: #e8f5e9; color: #2e7d32; font-size: 0.85rem; font-weight: 700; padding: 6px 14px; border-radius: 20px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">● Online & Betriebsbereit</div>
+    <h1>HK Energieberatung Form API</h1>
+    <p>Dieser Endpunkt verarbeitet Kontaktanfragen und Energieausweis-Formulare für <strong>hk-energieberatung.de</strong>.</p>
+    <a href="https://hk-energieberatung.de" class="btn">Zurück zur Website</a>
+  </div>
+</body>
+</html>';
+    exit;
+}
+
 // === 7. CLIENT RESPONSE ===
+$isAjax = (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') ||
+          (isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false);
+
 if ($mailSent) {
     http_response_code(200);
-    echo "OK";
+    if ($isAjax) {
+        echo "OK";
+    } else {
+        echo '<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Vielen Dank! – HK Energieberatung</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: "Roboto", sans-serif; background: #f8fafc; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; }
+    .card { background: #fff; max-width: 500px; width: 100%; border-radius: 16px; padding: 40px 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; }
+    .check { width: 64px; height: 64px; background: #e8f5e9; color: #2e7d32; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 16px; }
+    h1 { font-family: "Nunito", sans-serif; font-size: 1.5rem; color: #2d465e; margin-bottom: 8px; }
+    p { color: #64748b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px; }
+    .btn { display: inline-block; background: #66A66D; color: #fff; font-weight: 600; text-decoration: none; padding: 12px 30px; border-radius: 50px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="check">✓</div>
+    <h1>Vielen Dank für Ihre Nachricht!</h1>
+    <p>Ihre Anfrage wurde erfolgreich an unser Ingenieurbüro übermittelt. Wir werden uns schnellstmöglich bei Ihnen melden.</p>
+    <a href="https://hk-energieberatung.de/#contact" class="btn">Zurück zur Website</a>
+  </div>
+</body>
+</html>';
+    }
 } else {
     // If SMTP error was caught and password was provided, output the error for transparency
     if (!empty($errorMessage) && !empty($envConfig['MAIL_PASSWORD'])) {
         http_response_code(500);
         echo "Fehler beim E-Mail-Versand: " . htmlspecialchars($errorMessage);
     } else {
-        // In local environments or testing where mail server is not configured yet
         http_response_code(200);
         echo "OK";
     }
