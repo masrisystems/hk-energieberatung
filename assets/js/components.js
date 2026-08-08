@@ -286,7 +286,7 @@
                       <div class="loading">Loading</div>
                       <div class="error-message"></div>
                       <div class="sent-message">Ihre Nachricht wurde erfolgreich abgeschickt. Vielen Dank!</div>
-                      <button type="submit" class="btn">Senden</button>
+                      <button type="submit" class="btn btn-hk btn-hk-md">Senden</button>
                     </div>
                   </div>
                 </form>
