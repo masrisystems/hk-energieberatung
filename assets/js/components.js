@@ -303,7 +303,7 @@
     const el = document.getElementById("map-component");
     if (!el) return;
 
-    const mapSrc = el.getAttribute("data-map-src") || "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2396.5144844300077!2d8.804630276924848!3d53.08161887335264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b128151bce603d%3A0x2f7deec05f1ef59f!2sB%C3%BCrgermeister-Smidt-Stra%C3%9Fe%2C%2028195%20Bremen%2C%20Germany!5e0!3m2!1sen!2sde!4v1720000000000!5m2!1sen!2sde";
+    const mapSrc = el.getAttribute("data-map-src") || "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2397.7792262705384!2d8.7729846!3d53.0602742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b0d7d0e73cd919%3A0xc78fbc321616279e!2sIndustriestra%C3%9Fe%2034%2C%2028199%20Bremen-Neustadt!5e0!3m2!1sde!2sde!4v1720000000000!5m2!1sde!2sde";
 
     el.innerHTML = `
       <section class="section p-0">
