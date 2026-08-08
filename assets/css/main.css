@@ -923,18 +923,22 @@ section,
   }
 }
 
-.hero .company-badge {
+.company-badge {
   display: inline-flex;
   align-items: center;
-  padding: 0.5rem 1rem;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
+  padding: 0.55rem 1.25rem;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 88%);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
   border-radius: 50px;
   color: var(--accent-color);
-  font-weight: 500;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 90%);
 }
 
-.hero .company-badge i {
-  font-size: 1.25rem;
+.company-badge i {
+  font-size: 1.2rem;
+  color: var(--accent-color);
 }
 
 .hero .btn-primary {
