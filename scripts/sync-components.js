@@ -111,8 +111,22 @@ function syncComponents() {
       }
     }
 
-    fs.writeFileSync(filePath, content, 'utf8');
-    console.log(`  ✅ Synced: ${filename}`);
+    // Safe write with retry for Windows file lock resilience
+    let written = false;
+    for (let attempt = 0; attempt < 5; attempt++) {
+      try {
+        fs.writeFileSync(filePath, content, 'utf8');
+        written = true;
+        break;
+      } catch (err) {
+        if (attempt === 4) throw err;
+        const start = Date.now();
+        while (Date.now() - start < 100) {}
+      }
+    }
+    if (written) {
+      console.log(`  ✅ Synced: ${filename}`);
+    }
   });
 
   console.log('✨ All HTML components pre-rendered and synchronized successfully!');

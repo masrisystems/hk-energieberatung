@@ -2614,40 +2614,108 @@ section,
 .contact .contact-form .form-control,
 .contact .contact-form .form-select {
   padding: 0.875rem 1.25rem;
-  border-color: color-mix(in srgb, var(--default-color), transparent 90%);
-  border-radius: 0.5rem;
-  background-color: color-mix(in srgb, var(--surface-color) 90%, white 5%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-radius: 0.625rem;
+  background-color: #ffffff;
   color: var(--default-color);
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact .contact-form .form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath fill='%236b7684' d='M1 1l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.25rem center;
+  background-size: 12px 8px;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.contact .contact-form .form-select option {
+  color: var(--default-color);
+  background-color: #ffffff;
+  padding: 8px;
 }
 
 .contact .contact-form .form-control:focus,
 .contact .contact-form .form-select:focus {
-  box-shadow: none;
-  border-color: var(--accent-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 166, 109, 0.2);
+  border-color: #66A66D;
 }
 
 .contact .contact-form .form-control::placeholder,
 .contact .contact-form .form-select::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  color: color-mix(in srgb, var(--default-color), transparent 55%);
+}
+
+.contact .contact-form textarea.form-control {
+  min-height: 160px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.contact .contact-hint {
+  background: rgba(171, 216, 195, 0.18);
+  border-left: 3.5px solid #66A66D;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  color: #3e4d59;
+  line-height: 1.45;
+}
+
+.contact .form-check-input {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: #66A66D;
+  cursor: pointer;
+  border: 1.5px solid color-mix(in srgb, var(--default-color), transparent 75%);
+  border-radius: 0.25rem;
+}
+
+.contact .form-check-input:checked {
+  background-color: #66A66D;
+  border-color: #66A66D;
+}
+
+.contact .form-check-label {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  cursor: pointer;
 }
 
 .contact .contact-form .btn {
   background-color: var(--accent-color);
   color: var(--contrast-color);
-  padding: 1rem 2rem;
+  padding: 0.875rem 2.25rem;
   border-radius: 2rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: 0.3s;
+  font-weight: 700;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(171, 216, 195, 0.4);
 }
 
 .contact .contact-form .btn i {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
+  transition: transform 0.2s ease;
 }
 
 .contact .contact-form .btn:hover {
-  background-color: color-mix(in srgb, var(--accent-color), var(--contrast-color) 20%);
+  background-color: color-mix(in srgb, var(--accent-color), black 12%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(171, 216, 195, 0.6);
+}
+
+.contact .contact-form .btn:hover i {
+  transform: translateX(3px);
 }
 
 /*--------------------------------------------------------------
@@ -2953,9 +3021,10 @@ section,
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
-  display: block;
+  display: flex;
+  flex-direction: column;
   height: 100%;
 }
 
@@ -2966,15 +3035,17 @@ section,
 
 .location-dual-images {
   display: flex;
-  height: 220px;
+  height: 240px;
   gap: 4px;
   overflow: hidden;
+  background: #eef3f6;
 }
 
 .location-dual-images img {
   width: 50%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   transition: transform 0.4s ease;
 }
 
@@ -2990,6 +3061,91 @@ section,
   color: var(--heading-color);
   margin: 0;
   background: var(--surface-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Portrait Founders Card Styling */
+.founders-card {
+  background: var(--surface-color);
+  border-radius: 24px;
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.founders-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.founders-img-wrapper {
+  width: 100%;
+  max-width: 250px;
+  aspect-ratio: 3 / 4;
+  margin: 0 auto 22px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(45, 70, 94, 0.12);
+  background: #f4f7f9;
+  border: 3px solid #ffffff;
+}
+
+.founders-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.founders-card:hover img {
+  transform: scale(1.04);
+}
+
+.founders-card h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--heading-color);
+  margin-bottom: 6px;
+}
+
+.founders-card p {
+  font-size: 1rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Footer Certificate Badge */
+.footer-certificate {
+  margin-top: 16px;
+}
+
+.footer-cert-img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 6px 8px;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-cert-img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* Mint Pill Button matching aboutus.jpeg design */

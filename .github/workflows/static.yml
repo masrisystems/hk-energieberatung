@@ -1,28 +1,21 @@
-# Simple workflow for deploying static content to GitHub Pages
+# Deployment workflow for HK Energieberatung (GitHub Pages / Static Hosting)
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
@@ -31,13 +24,40 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Inject Mailer .env from GitHub Secrets
+        env:
+          MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+          MAIL_USERNAME: ${{ secrets.MAIL_USERNAME || 'hallo@masrisystems.com' }}
+          MAIL_HOST: ${{ secrets.MAIL_HOST || 'gienah.uberspace.de' }}
+          MAIL_PORT: ${{ secrets.MAIL_PORT || '465' }}
+          MAIL_ENCRYPTION: ${{ secrets.MAIL_ENCRYPTION || 'ssl' }}
+          MAIL_FROM_ADDRESS: ${{ secrets.MAIL_FROM_ADDRESS || 'hallo@masrisystems.com' }}
+          MAIL_FROM_NAME: ${{ secrets.MAIL_FROM_NAME || 'HK Energieberatung' }}
+          MAIL_TO_ADDRESS: ${{ secrets.MAIL_TO_ADDRESS || 'info@hk-energieberatung.de' }}
+        run: |
+          mkdir -p forms
+          cat <<EOF > forms/.env
+          MAIL_MAILER=smtp
+          MAIL_HOST=${MAIL_HOST}
+          MAIL_PORT=${MAIL_PORT}
+          MAIL_USERNAME=${MAIL_USERNAME}
+          MAIL_PASSWORD=${MAIL_PASSWORD}
+          MAIL_ENCRYPTION=${MAIL_ENCRYPTION}
+          MAIL_FROM_ADDRESS="${MAIL_FROM_ADDRESS}"
+          MAIL_FROM_NAME="${MAIL_FROM_NAME}"
+          MAIL_TO_ADDRESS="${MAIL_TO_ADDRESS}"
+          EOF
+          chmod 600 forms/.env || true
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
           path: '.'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

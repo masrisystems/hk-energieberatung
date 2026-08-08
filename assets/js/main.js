@@ -221,4 +221,131 @@
     });
   }
 
+  /**
+   * Contact Form Dynamic Templates & Intelligent Pre-fill
+   */
+  function initContactTemplates() {
+    const forms = document.querySelectorAll('.contact .contact-form form, #kontaktForm');
+    if (!forms.length) return;
+
+    const vorlagen = {
+      "Allgemeine Energieberatung":
+`{anrede},
+
+ich interessiere mich für eine allgemeine Energieberatung für mein Gebäude und würde gerne mehr über die Möglichkeiten einer Vor-Ort-Beratung erfahren.
+
+Bitte kontaktieren Sie mich für einen unverbindlichen Beratungstermin.
+
+Mit freundlichen Grüßen`,
+
+      "Energieausweis beantragen":
+`{anrede},
+
+für mein Gebäude benötige ich einen Energieausweis. Bitte teilen Sie mir mit, welche Unterlagen ich hierfür bereitstellen muss und mit welchen Kosten ich rechnen sollte.
+
+Mit freundlichen Grüßen`,
+
+      "Fördermittelberatung (KfW / BAFA)":
+`{anrede},
+
+ich plane energetische Sanierungsmaßnahmen an meiner Immobilie und möchte mich über staatliche Fördermittel (KfW / BAFA) informieren. Können Sie mich hierzu beraten und bei der Antragstellung unterstützen?
+
+Mit freundlichen Grüßen`,
+
+      "Heizungscheck / Heizungstausch":
+`{anrede},
+
+ich möchte meine Heizungsanlage überprüfen lassen bzw. plane einen Heizungstausch und wünsche mir dazu eine fachkundige Beratung zur optimalen Technologie und Förderung.
+
+Mit freundlichen Grüßen`,
+
+      "Wärmedämmung / Gebäudesanierung":
+`{anrede},
+
+ich interessiere mich für eine Beratung zum Thema Wärmedämmung und energetische Sanierung meines Gebäudes. Gerne würde ich die möglichen Maßnahmen und deren Wirtschaftlichkeit besprechen.
+
+Mit freundlichen Grüßen`,
+
+      "Sanierungsfahrplan":
+`{anrede},
+
+ich interessiere mich für einen individuellen Sanierungsfahrplan (iSFP) für mein Gebäude, um energetische Maßnahmen sinnvoll zu planen und maximale Fördermöglichkeiten (inkl. 5% iSFP-Bonus) zu nutzen.
+
+Mit freundlichen Grüßen`,
+
+      "Hydraulischer Abgleich":
+`{anrede},
+
+ich möchte mich zum hydraulischen Abgleich meiner Heizungsanlage beraten lassen und wüsste gerne, welche Schritte und Berechnungen dafür erforderlich sind.
+
+Mit freundlichen Grüßen`,
+
+      "Erstgespräch / Terminvereinbarung":
+`{anrede},
+
+ich hätte gerne ein unverbindliches Erstgespräch bzw. würde gerne einen Beratungstermin vereinbaren. Bitte teilen Sie mir mit, welche Termine zeitnah zur Verfügung stehen.
+
+Mit freundlichen Grüßen`,
+
+      "Sonstiges Anliegen":
+`{anrede},
+
+ich habe folgendes Anliegen im Bereich Energieberatung:
+
+`
+    };
+
+    forms.forEach(form => {
+      if (form.dataset.contactTemplateInit === "true") return;
+      form.dataset.contactTemplateInit = "true";
+
+      const anredeSelect = form.querySelector('select[name="anrede"], #anrede');
+      const betreffSelect = form.querySelector('select[name="subject"], select[name="betreff"], #betreff');
+      const nachrichtField = form.querySelector('textarea[name="message"], textarea[name="nachricht"], #nachricht');
+
+      if (!betreffSelect || !nachrichtField) return;
+
+      let userEdited = false;
+      let lastAutoText = "";
+
+      function anredeText() {
+        if (!anredeSelect) return "Sehr geehrte Damen und Herren";
+        const val = anredeSelect.value;
+        if (val === "Herr") return "Sehr geehrter Herr Khashab";
+        if (val === "Frau") return "Sehr geehrte Damen und Herren";
+        if (val === "Divers") return "Guten Tag";
+        return "Sehr geehrte Damen und Herren";
+      }
+
+      function updateNachricht() {
+        const key = betreffSelect.value;
+        if (!vorlagen[key]) return;
+        const text = vorlagen[key].replace("{anrede}", anredeText());
+        if (!userEdited || nachrichtField.value.trim() === "" || nachrichtField.value === lastAutoText) {
+          nachrichtField.value = text;
+          lastAutoText = text;
+          userEdited = false;
+        }
+      }
+
+      betreffSelect.addEventListener('change', () => {
+        updateNachricht();
+      });
+
+      if (anredeSelect) {
+        anredeSelect.addEventListener('change', () => {
+          updateNachricht();
+        });
+      }
+
+      nachrichtField.addEventListener('input', () => {
+        userEdited = nachrichtField.value !== lastAutoText;
+      });
+    });
+  }
+
+  window.initContactTemplates = initContactTemplates;
+  window.addEventListener('load', initContactTemplates);
+  document.addEventListener('DOMContentLoaded', initContactTemplates);
+
 })();
