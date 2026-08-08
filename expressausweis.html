@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Express-Verbrauchsausweis – Angaben & Unterlagen | HK Energieberatung</title>
-  <meta name="description" content="Füllen Sie das Formular aus und laden Sie Ihre Unterlagen hoch. Energieausweis innerhalb von 48 Stunden per E-Mail. HK Energieberatung.">
+  <meta name="description" content="Füllen Sie das Formular aus und laden Sie Ihre Unterlagen direkt hoch. Express-Energieausweis innerhalb von 48 Stunden per E-Mail. HK Energieberatung.">
 
   <!-- Favicons -->
   <link href="assets/img/logo.jpeg" rel="icon">
@@ -30,11 +30,6 @@
       padding-bottom: 50px;
       background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 95%) 50%, color-mix(in srgb, var(--accent-color), transparent 98%) 25%, transparent 50%);
     }
-
-    /* .express-form-container {
-      max-width: 920px;
-      margin: 0 auto;
-    } */
 
     .express-fieldset {
       border: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
@@ -116,34 +111,6 @@
 
     .form-tip[open] summary::before {
       content: "– Beispiel / Erklärung";
-    }
-
-    .upload-box {
-      border: 1.5px dashed var(--accent-color);
-      border-radius: 12px;
-      padding: 20px;
-      background: color-mix(in srgb, var(--accent-color), transparent 96%);
-      margin-bottom: 18px;
-      transition: all 0.3s ease;
-    }
-
-    .upload-box:hover {
-      background: color-mix(in srgb, var(--accent-color), transparent 92%);
-      border-color: color-mix(in srgb, var(--accent-color), black 15%);
-    }
-
-    .upload-box label.title {
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--heading-color);
-      margin-bottom: 4px;
-      display: block;
-    }
-
-    .upload-box .desc {
-      font-size: 0.825rem;
-      color: color-mix(in srgb, var(--default-color), transparent 35%);
-      margin-bottom: 10px;
     }
 
     .optional-tag {
@@ -300,7 +267,7 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="express-form-container">
 
-          <form id="expressForm" action="forms/expressausweis.php" method="POST" enctype="multipart/form-data">
+          <form id="expressForm" action="https://masri.uber.space/forms/expressausweis.php" method="POST" enctype="multipart/form-data">
 
             <!-- 1. Objektdaten -->
             <fieldset class="express-fieldset">
@@ -466,14 +433,15 @@
               <legend><span class="step">4</span> Verbrauchsunterlagen hochladen</legend>
               <p class="form-hint">Benötigt werden lückenlose Abrechnungen für 36 zusammenhängende Monate.</p>
 
-              <div class="upload-box">
+              <div class="upload-box required-upload" data-upload-name="verbrauchsabrechnungen">
                 <label class="title">Heizkosten-/Verbrauchsabrechnungen der letzten 3 Jahre <span class="req">*</span></label>
                 <div class="desc">PDF oder Fotos/Scans der Abrechnungen hochladen</div>
                 <div class="form-example mb-2">Die jährlichen Schreiben Ihres Energieversorgers oder der Hausverwaltung (Heizkostenabrechnung / Nebenkostenabrechnung).</div>
-                <input type="file" name="verbrauchsabrechnungen[]" class="form-control" accept="application/pdf,image/*" multiple required>
+                <input type="file" name="verbrauchsabrechnungen[]" class="form-control" accept="application/pdf,image/*" multiple>
+                <div class="upload-error-msg"><i class="bi bi-exclamation-triangle-fill me-1"></i> Bitte laden Sie die Abrechnungen der letzten 3 Jahre hoch.</div>
               </div>
 
-              <div class="upload-box">
+              <div class="upload-box" data-upload-name="warmwasser_nachweis">
                 <label class="title">Nachweis Warmwasserverbrauch <span class="optional-tag">falls separat abgerechnet</span></label>
                 <div class="desc">Nur nötig, wenn Warmwasser nicht bereits in der Heizkostenabrechnung enthalten ist</div>
                 <input type="file" name="warmwasser_nachweis[]" class="form-control" accept="application/pdf,image/*" multiple>
@@ -485,15 +453,17 @@
               <legend><span class="step">5</span> Pflichtfotos</legend>
               <p class="form-hint">Gesetzlich vorgeschrieben zur Plausibilitätsprüfung der Angaben.</p>
 
-              <div class="upload-box">
+              <div class="upload-box required-upload" data-upload-name="foto_aussenansicht">
                 <label class="title">Foto Gebäude-Außenansicht (Straßenansicht) <span class="req">*</span></label>
-                <input type="file" name="foto_aussenansicht[]" class="form-control" accept="image/*" multiple required>
+                <input type="file" name="foto_aussenansicht[]" class="form-control" accept="image/*" multiple>
+                <div class="upload-error-msg"><i class="bi bi-exclamation-triangle-fill me-1"></i> Bitte laden Sie mindestens ein Foto der Gebäude-Außenansicht hoch.</div>
               </div>
 
-              <div class="upload-box">
+              <div class="upload-box required-upload" data-upload-name="foto_heizung">
                 <label class="title">Foto Heizungsanlage / Typenschild des Kessels <span class="req">*</span></label>
                 <div class="form-example mb-2">Schild am Kessel mit Modell/Hersteller und Leistungsdaten.</div>
-                <input type="file" name="foto_heizung[]" class="form-control" accept="image/*" multiple required>
+                <input type="file" name="foto_heizung[]" class="form-control" accept="image/*" multiple>
+                <div class="upload-error-msg"><i class="bi bi-exclamation-triangle-fill me-1"></i> Bitte laden Sie ein Foto des Typenschilds bzw. der Heizungsanlage hoch.</div>
               </div>
             </fieldset>
 
@@ -501,12 +471,12 @@
             <fieldset class="express-fieldset">
               <legend><span class="step">6</span> Weitere Unterlagen <span class="optional-tag">optional</span></legend>
 
-              <div class="upload-box">
+              <div class="upload-box" data-upload-name="grundriss">
                 <label class="title">Grundriss / Baupläne</label>
                 <input type="file" name="grundriss[]" class="form-control" accept="application/pdf,image/*" multiple>
               </div>
 
-              <div class="upload-box">
+              <div class="upload-box" data-upload-name="eigentumsnachweis">
                 <label class="title">Grundbuchauszug oder Kaufvertrag <span class="optional-tag">Nachweis Baujahr</span></label>
                 <input type="file" name="eigentumsnachweis[]" class="form-control" accept="application/pdf,image/*" multiple>
               </div>
@@ -583,7 +553,13 @@
                 </label>
               </div>
 
-              <button type="submit" class="btn btn-hk btn-hk-lg btn-submit-express">
+              <div style="display:none;" aria-hidden="true">
+                <input type="text" name="website" autocomplete="off" tabindex="-1">
+              </div>
+
+              <div id="expressFormStatus" class="mb-3"></div>
+
+              <button type="submit" id="btnSubmitExpress" class="btn btn-hk btn-hk-lg btn-submit-express">
                 <i class="bi bi-send-fill me-2"></i> Express-Anfrage jetzt senden
               </button>
               <p class="text-center text-muted small mt-2 mb-0">Nach Absenden erhalten Sie eine Bestätigung per E-Mail.</p>
@@ -709,8 +685,12 @@
     wschv.forEach(r => r.addEventListener('change', checkEligibility));
     fuenfWe.forEach(r => r.addEventListener('change', checkEligibility));
 
-    /* Drag & Drop Multi-File Upload Handler */
+    /* Drag & Drop Multi-File Upload Handler with Validation & AJAX */
     document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('expressForm');
+      const formStatus = document.getElementById('expressFormStatus');
+      const btnSubmit = document.getElementById('btnSubmitExpress');
+
       document.querySelectorAll('.upload-box').forEach(box => {
         const fileInput = box.querySelector('input[type="file"]');
         if (!fileInput) return;
@@ -737,9 +717,13 @@
         }
 
         let dt = new DataTransfer();
+        box._dt = dt; // Expose on DOM element for validation
 
         function updateInputFiles() {
           fileInput.files = dt.files;
+          if (dt.files.length > 0) {
+            box.classList.remove('has-error');
+          }
           renderFileList();
         }
 
@@ -753,6 +737,7 @@
               dt.items.add(file);
             });
           }
+          box._dt = dt;
           updateInputFiles();
         }
 
@@ -762,6 +747,7 @@
             if (i !== index) newDt.items.add(file);
           });
           dt = newDt;
+          box._dt = dt;
           updateInputFiles();
         }
 
@@ -867,6 +853,113 @@
         }, false);
 
       });
+
+      // === FORM SUBMIT HANDLER WITH VALIDATION & AJAX ===
+      if (form) {
+        form.addEventListener('submit', async function (e) {
+          e.preventDefault();
+
+          formStatus.innerHTML = '';
+
+          // 1. Validate required upload boxes
+          let missingBoxes = [];
+          document.querySelectorAll('.upload-box.required-upload').forEach(box => {
+            const input = box.querySelector('input[type="file"]');
+            const filesCount = (box._dt && box._dt.files) ? box._dt.files.length : (input.files ? input.files.length : 0);
+            if (filesCount === 0) {
+              box.classList.add('has-error');
+              missingBoxes.push(box);
+            } else {
+              box.classList.remove('has-error');
+            }
+          });
+
+          if (missingBoxes.length > 0) {
+            formStatus.innerHTML = `
+              <div class="alert alert-danger d-flex align-items-center gap-2" role="alert">
+                <i class="bi bi-exclamation-triangle-fill fs-5 flex-shrink-0"></i>
+                <div>
+                  <strong>Pflichtdokumente fehlen:</strong> Bitte laden Sie in den rot markierten Feldern die erforderlichen Verbrauchsabrechnungen und Pflichtfotos hoch.
+                </div>
+              </div>
+            `;
+            missingBoxes[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+          }
+
+          // 2. Prepare FormData
+          const formData = new FormData(form);
+          const originalBtnHtml = btnSubmit.innerHTML;
+
+          btnSubmit.disabled = true;
+          btnSubmit.innerHTML = `
+            <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+            Unterlagen werden verschlüsselt übertragen (bitte warten)...
+          `;
+
+          try {
+            const actionUrl = form.getAttribute('action') || 'https://masri.uber.space/forms/expressausweis.php';
+            const response = await fetch(actionUrl, {
+              method: 'POST',
+              body: formData,
+              headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'Accept': 'application/json, text/plain, */*'
+              }
+            });
+
+            let responseText = await response.text();
+            let data = null;
+            try {
+              data = JSON.parse(responseText);
+            } catch (err) {
+              data = { success: response.ok && responseText.trim() === 'OK', message: responseText };
+            }
+
+            if (response.ok && (data.success || responseText.trim() === 'OK')) {
+              const strasse = form.querySelector('#strasse')?.value || '';
+              const plz = form.querySelector('#plz')?.value || '';
+              const ort = form.querySelector('#ort')?.value || '';
+              const email = form.querySelector('#email')?.value || '';
+              const vorname = form.querySelector('#vorname')?.value || '';
+              const nachname = form.querySelector('#nachname')?.value || '';
+
+              form.parentElement.innerHTML = `
+                <div class="express-success-card text-center p-5 rounded-4 bg-white shadow-lg border border-success" data-aos="fade-up">
+                  <div class="mb-3 text-success"><i class="bi bi-check-circle-fill" style="font-size: 3.8rem; color: #66A66D;"></i></div>
+                  <h2 class="fw-bold mb-2">Vielen Dank für Ihre Express-Anfrage!</h2>
+                  <p class="lead text-muted mb-4">Ihre Daten und Unterlagen wurden erfolgreich und verschlüsselt an unser Ingenieurbüro übermittelt.</p>
+                  
+                  <div class="p-4 bg-light rounded-3 text-start mb-4 max-w-lg mx-auto" style="font-size: 0.95rem; line-height: 1.6;">
+                    <div class="d-flex justify-content-between py-2 border-bottom"><span>Objektadresse:</span> <strong>${strasse}, ${plz} ${ort}</strong></div>
+                    <div class="d-flex justify-content-between py-2 border-bottom"><span>Auftraggeber:</span> <strong>${vorname} ${nachname}</strong></div>
+                    <div class="d-flex justify-content-between py-2 border-bottom"><span>Bearbeitungszeit:</span> <strong style="color: #66A66D;">Express (innerhalb von 48h)</strong></div>
+                    <div class="d-flex justify-content-between py-2"><span>Bestätigung an:</span> <strong>${email}</strong></div>
+                  </div>
+
+                  <p class="small text-muted mb-4">Wir prüfen Ihre Unterlagen umgehend auf Vollständigkeit und Plausibilität nach den Vorgaben des GEG. Sie erhalten in Kürze eine Bestätigung.</p>
+                  <a href="index.html" class="btn btn-hk btn-hk-md">Zurück zur Startseite</a>
+                </div>
+              `;
+              window.scrollTo({ top: document.querySelector('.express-hero').offsetTop, behavior: 'smooth' });
+            } else {
+              throw new Error(data && data.message ? data.message : responseText);
+            }
+          } catch (error) {
+            btnSubmit.disabled = false;
+            btnSubmit.innerHTML = originalBtnHtml;
+            formStatus.innerHTML = `
+              <div class="alert alert-danger d-flex align-items-center gap-2" role="alert">
+                <i class="bi bi-exclamation-triangle-fill fs-5 flex-shrink-0"></i>
+                <div>
+                  <strong>Übertragungsfehler:</strong> ${error.message || 'Beim Senden ist ein Fehler aufgetreten. Bitte prüfen Sie Ihre Verbindung.'}
+                </div>
+              </div>
+            `;
+            formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        });
+      }
     });
   </script>
 

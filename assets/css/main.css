@@ -2873,6 +2873,31 @@ section,
   transform: scale(1.01);
 }
 
+.upload-box.has-error {
+  border-color: #e63946 !important;
+  background: #fff8f8 !important;
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2) !important;
+  animation: uploadShake 0.3s ease-in-out;
+}
+
+.upload-box .upload-error-msg {
+  display: none;
+  color: #e63946;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.upload-box.has-error .upload-error-msg {
+  display: block;
+}
+
+@keyframes uploadShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
 .upload-box label.title {
   font-family: var(--heading-font);
   font-weight: 700;
