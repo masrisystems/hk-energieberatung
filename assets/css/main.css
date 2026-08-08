@@ -274,7 +274,6 @@ h6 {
     font-size: 15px;
     font-family: var(--nav-font);
     font-weight: 500;
-    background-color: var(--accent-color);
     letter-spacing: 0.3px;
     display: flex;
     align-items: center;

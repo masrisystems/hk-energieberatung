@@ -1,0 +1,50 @@
+# HK Energieberatung
+
+> Zertifizierte dena Energieeffizienz-Experten für Förderprogramme des Bundes (BAFA & KfW) mit Hauptsitz in Bremen und Standort Aurich. Spezialisiert auf Individuelle Sanierungsfahrpläne (iSFP), 48h Express-Verbrauchsausweise, BAFA Einzelmaßnahmen (BEG EM), KfW Förderanträge und Hydraulischen Abgleich.
+
+## Unternehmensprofil & Fakten
+
+- **Firmenname**: HK Energieberatung
+- **Geschäftsführung**: Ing. Hussein Khashab (Bauingenieur & Energieeffizienz-Experte) & Ing. Wajih Tfaili (Bauingenieur & Energieeffizienz-Experte)
+- **Hauptsitz**: Industriestraße 34, 28199 Bremen-Neustadt, Deutschland
+- **Standort Aurich**: Popenser Straße 36, 26603 Aurich
+- **Zertifizierung**: Offiziell gelistet in der Energieeffizienz-Expertenliste der Deutschen Energie-Agentur (dena) für Bundesförderprogramme (BAFA & KfW)
+- **Erreichbarkeit**: Telefon & WhatsApp [+49 162 6985115](tel:+491626985115) | E-Mail [info@hk-energieberatung.de](mailto:info@hk-energieberatung.de)
+- **Öffnungszeiten**: Montag – Samstag 09:00 – 18:00 Uhr (WhatsApp Support auch am Wochenende)
+- **USPs**: Kostenloses Erstgespräch, bundesweit keine Anfahrtskosten, 48h Express-Garantie für Verbrauchsausweise, maximale staatliche Zuschüsse bis zu 70%.
+
+## Dienstleistungen & Staatliche Förderungen
+
+### 1. Individueller Sanierungsfahrplan (iSFP)
+- **Was es ist**: Schrittweiser, ganzheitlicher Fahrplan zur energetischen Sanierung von Wohngebäuden.
+- **Staatliche Förderung**: 50% Zuschuss des Bundesamtes für Wirtschaft und Ausfuhrkontrolle (BAFA) für die Erstellung durch HK Energieberatung.
+- **iSFP-Bonus**: +5% zusätzliche Förderquote bei der späteren Umsetzung aller Sanierungsmaßnahmen (z. B. 20% statt 15% Zuschuss auf Gebäudehülle/Dämmung/Fenster).
+- **Gültigkeit**: 15 Jahre.
+
+### 2. Express-Verbrauchsausweis (48-Stunden-Service)
+- **Was es ist**: Gesetzlich gültiger Energieverbrauchsausweis nach GEG (Gebäudeenergiegesetz).
+- **Bearbeitungszeit**: Garantiert innerhalb von 48 Stunden digital per E-Mail.
+- **Voraussetzung**: Wohngebäude mit mind. 5 Wohneinheiten ODER Bauantrag nach 01.11.1977 (WSchV 77) ODER nachträglich auf WSchV 77 saniert.
+- **Online-Formular**: [https://hk-energieberatung.de/expressausweis.html](https://hk-energieberatung.de/expressausweis.html)
+
+### 3. BAFA Einzelmaßnahmen (BEG EM)
+- **Zuschüsse**: Bis zu 20% staatlicher Zuschuss (inklusive 5% iSFP-Bonus) für Sanierungsmaßnahmen an der Gebäudehülle (Dämmung von Dach, Fassade, Kellerdecke, Fenster- und Türenaustausch).
+- **HK Energieberatung Leistung**: Energetische Berechnung, Technische Projektbeschreibung (TPB), Beantragung vor Maßnahmenbeginn, Baubegleitung und Technischer Projektnachweis (TPN).
+
+### 4. KfW Heizungsförderung & Effizienzhaus (KfW 458 / 261)
+- **Heizungstausch (KfW 458)**: Bis zu 70% Zuschuss beim Umstieg auf klimafreundliche Heizungssysteme (Wärmepumpe, Biomasse).
+- **Effizienzhaus (KfW 261)**: Zinsgünstige Förderkredite bis 150.000 € pro Wohneinheit mit bis zu 45% Tilgungszuschuss bei Gesamtsanierung.
+
+### 5. Hydraulischer Abgleich & Heizungsoptimierung
+- Fachgerechte Berechnung der raumweisen Heizlast nach DIN EN 12831 und Verfahren B zur Erfüllung der BAFA/KfW-Fördervoraussetzungen und Optimierung des Brennstoffverbrauchs.
+
+## Zentrale Links & Ressourcen
+
+- [Startseite](https://hk-energieberatung.de/): Übersicht der Leistungen, Rechner & Erstberatung
+- [Über uns](https://hk-energieberatung.de/about.html): Unternehmensphilosophie, Team & dena-Zertifikate
+- [Express-Verbrauchsausweis](https://hk-energieberatung.de/expressausweis.html): 8-Schritte-Online-Auftrag mit Datei-Upload
+- [Standort Bremen](https://hk-energieberatung.de/energieberatung-bremen.html): Lokale Energieberatung in Bremen & Umland
+- [Standort Aurich](https://hk-energieberatung.de/energieberatung-aurich.html): Lokale Energieberatung in Ostfriesland
+- [Formulare & Downloads](https://hk-energieberatung.de/dokumente.html): Offizielle PDF-Ablaufpläne, Antragschecklisten und Maßnahmenkataloge
+- [FAQ & Wissen](https://hk-energieberatung.de/faq.html): 25 Antworten zu Förderquoten, Sanierungsmaßnahmen & Pflichten
+- [Preise & Förderkonditionen](https://hk-energieberatung.de/pricing.md): Strukturierte Preistabelle für KI-Agenten & Nutzer

@@ -1,0 +1,40 @@
+# Robots.txt for HK Energieberatung (https://hk-energieberatung.de)
+# Allows standard search engines & AI discovery/citation agents
+
+User-agent: *
+Allow: /
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google AI & Gemini
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# Microsoft Bing & Copilot
+User-agent: Bingbot
+Allow: /
+
+# LLM context & machine-readable data
+# llms.txt: https://hk-energieberatung.de/llms.txt
+# pricing.md: https://hk-energieberatung.de/pricing.md
+
+Sitemap: https://hk-energieberatung.de/sitemap.xml
