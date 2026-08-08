@@ -3147,12 +3147,20 @@ button.btn-mint-pill:active {
   width: 42px;
   height: 42px;
   border-radius: 10px;
-  background: color-mix(in srgb, var(--accent-color), white 40%);
+  background: var(--accent-color);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.25rem;
   flex-shrink: 0;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--accent-color), transparent 60%);
+}
+
+.faq-cat-icon i {
+  color: #ffffff !important;
+  line-height: 1;
+  display: inline-block;
 }
 
 .faq-cat-head h2 {
