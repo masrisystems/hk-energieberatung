@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Häufige Fragen (FAQ) – HK Energieberatung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Roboto:wght@400;500;700&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --background-color: #ffffff;
+    --default-color: #212529;
+    --heading-color: #2d465e;
+    --accent-color: #ABD8C3;
+    --accent-color-dark: #6fae91;
+    --secondary-color: #B98360;
+    --surface-color: #ffffff;
+    --light-background: #f3f9ff;
+    --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    --heading-font: "Nunito", sans-serif;
+    --nav-font: "Inter", sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    color: var(--default-color);
+    background-color: var(--light-background);
+    font-family: var(--default-font);
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4 {
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+    margin: 0;
+  }
+
+  .site-header {
+    background: var(--surface-color);
+    border-bottom: 1px solid #e6eef5;
+    padding: 22px 5%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .logo-badge {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--heading-font);
+    font-weight: 800;
+    color: var(--heading-color);
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .brand-name {
+    font-family: var(--nav-font);
+    font-weight: 600;
+    color: var(--heading-color);
+    font-size: 15px;
+    letter-spacing: 0.3px;
+  }
+
+  .brand-sub {
+    font-size: 12px;
+    color: #6b7c8c;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 56px 5% 40px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .hero .eyebrow {
+    display: inline-block;
+    background: color-mix(in srgb, var(--accent-color), white 40%);
+    color: var(--heading-color);
+    font-family: var(--nav-font);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 18px;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+  }
+
+  .hero p {
+    color: #4c5c6b;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px 5% 70px;
+  }
+
+  /* ---- Förderquoten Grafik ---- */
+  .chart-card {
+    background: var(--surface-color);
+    border-radius: 14px;
+    padding: 28px 30px;
+    margin: 10px 0 46px;
+    box-shadow: 0 6px 24px rgba(45,70,94,0.07);
+  }
+
+  .chart-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .chart-card .chart-sub {
+    font-size: 13px;
+    color: #6b7c8c;
+    margin-bottom: 22px;
+  }
+
+  .stat-highlight {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: color-mix(in srgb, var(--accent-color), white 55%);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 26px;
+  }
+
+  .stat-icon {
+    font-size: 30px;
+    flex-shrink: 0;
+  }
+
+  .stat-number {
+    font-family: var(--heading-font);
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: var(--heading-color);
+    line-height: 1.2;
+  }
+
+  .stat-text {
+    font-size: 13.5px;
+    color: #4c5c6b;
+    margin-top: 2px;
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .bar-label {
+    width: 150px;
+    font-family: var(--nav-font);
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--heading-color);
+    flex-shrink: 0;
+  }
+
+  .bar-track {
+    flex: 1;
+    background: #eef4f8;
+    border-radius: 8px;
+    height: 18px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--heading-color);
+  }
+
+  /* ---- Energieeffizienzklassen Grafik ---- */
+  .scale-card {
+    background: var(--surface-color);
+    border-radius: 14px;
+    padding: 28px 30px;
+    margin: 10px 0 46px;
+    box-shadow: 0 6px 24px rgba(45,70,94,0.07);
+  }
+
+  .scale-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
+  .scale-card .chart-sub { font-size: 13px; color: #6b7c8c; margin-bottom: 20px; }
+
+  .scale-bar { display: flex; border-radius: 8px; overflow: hidden; height: 40px; }
+  .scale-seg {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: var(--heading-font);
+    font-weight: 800;
+    font-size: 14px;
+  }
+
+  /* ---- Category headers ---- */
+  .category {
+    margin-bottom: 34px;
+  }
+
+  .category-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .category-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--accent-color), white 35%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    flex-shrink: 0;
+  }
+
+  .category-head h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  /* ---- FAQ accordion (styled like hk-energieberatung.de) ---- */
+  .faq-container .faq-item {
+    background-color: var(--surface-color);
+    position: relative;
+    padding: 20px 50px 20px 20px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(45,70,94,0.06);
+    overflow: hidden;
+  }
+
+  .faq-container .faq-item h3 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+    transition: 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: var(--default-font);
+    color: var(--default-color);
+  }
+
+  .faq-container .faq-item h3 .num {
+    color: var(--accent-color-dark);
+    padding-right: 8px;
+    font-weight: 800;
+    font-family: var(--heading-font);
+  }
+
+  .faq-container .faq-item h3:hover {
+    color: var(--accent-color-dark);
+  }
+
+  .faq-container .faq-item .faq-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: 0.3s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .faq-container .faq-item .faq-content .inner {
+    overflow: hidden;
+  }
+
+  .faq-container .faq-item .faq-content p {
+    margin: 0;
+    padding-top: 2px;
+    color: #4c5c6b;
+    font-size: 14.5px;
+  }
+
+  .faq-container .faq-item .faq-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 16px;
+    line-height: 1;
+    transition: 0.3s;
+    cursor: pointer;
+    color: var(--accent-color-dark);
+  }
+
+  .faq-container .faq-active h3 {
+    color: var(--accent-color-dark);
+  }
+
+  .faq-container .faq-active .faq-content {
+    grid-template-rows: 1fr;
+    visibility: visible;
+    opacity: 1;
+    padding-top: 10px;
+  }
+
+  .faq-container .faq-active .faq-toggle {
+    transform: rotate(90deg);
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 5% 50px;
+    font-size: 13px;
+    color: #8593a1;
+  }
+
+  footer a { color: var(--secondary-color); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo-badge">HK</div>
+  <div>
+    <div class="brand-name">HK ENERGIEBERATUNG</div>
+    <div class="brand-sub">Ihre Energieberater in Norddeutschland</div>
+  </div>
+</header>
+
+<div class="hero">
+  <span class="eyebrow">Häufige Fragen</span>
+  <h1>FAQ – Alles rund um Energieberatung &amp; Förderung</h1>
+  <p>25 Antworten auf die wichtigsten Fragen zu Energieausweis, Fördermitteln und energetischer Sanierung – klicken Sie eine Frage an, um die Antwort aufzuklappen.</p>
+</div>
+
+<div class="container">
+
+  <!-- Einsparpotenzial Grafik -->
+  <div class="chart-card">
+    <h3>Ihr Einsparpotenzial</h3>
+    <div class="chart-sub">Wie stark einzelne Maßnahmen die jährlichen Heizkosten senken können (Richtwerte für ein durchschnittliches Einfamilienhaus, Baujahr vor 1980)</div>
+
+    <div class="stat-highlight">
+      <div class="stat-icon">📉</div>
+      <div>
+        <div class="stat-number">bis zu 60&nbsp;%</div>
+        <div class="stat-text">weniger Heizkosten durch eine Komplettsanierung zum Effizienzhaus – oft mehrere Tausend Euro pro Jahr</div>
+      </div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">Fenstertausch</div>
+      <div class="bar-track"><div class="bar-fill" style="width:16%; background:#c7e6d8; color:var(--heading-color);">bis 10 %</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Hydraulischer Abgleich</div>
+      <div class="bar-track"><div class="bar-fill" style="width:24%; background:#c7e6d8; color:var(--heading-color);">bis 15 %</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Dach-/Deckendämmung</div>
+      <div class="bar-track"><div class="bar-fill" style="width:24%; background:#8fc9ae;">bis 15 %</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Fassadendämmung</div>
+      <div class="bar-track"><div class="bar-fill" style="width:32%; background:#8fc9ae;">bis 20 %</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Heizungstausch (Wärmepumpe)</div>
+      <div class="bar-track"><div class="bar-fill" style="width:47%; background:#6fae91;">bis 30 %</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Komplettsanierung (Effizienzhaus)</div>
+      <div class="bar-track"><div class="bar-fill" style="width:90%; background:var(--accent-color-dark); color:#fff;">bis 60 %</div></div>
+    </div>
+  </div>
+
+  <!-- Kategorie 1 -->
+  <div class="category" id="cat-allgemein">
+    <div class="category-head">
+      <div class="category-icon">💡</div>
+      <h2>Allgemeines zur Energieberatung</h2>
+    </div>
+    <div class="faq-container"></div>
+  </div>
+
+  <!-- Kategorie 2 -->
+  <div class="category" id="cat-ausweis">
+    <div class="category-head">
+      <div class="category-icon">📋</div>
+      <h2>Energieausweis</h2>
+    </div>
+
+    <!-- Energieeffizienzklassen Grafik -->
+    <div class="scale-card">
+      <h3>Energieeffizienzklassen auf einen Blick</h3>
+      <div class="chart-sub">So werden Gebäude im Energieausweis eingeordnet (A+ = sehr effizient, H = sehr hoher Verbrauch)</div>
+      <div class="scale-bar">
+        <div class="scale-seg" style="background:#1a9850;">A+</div>
+        <div class="scale-seg" style="background:#3aa956;">A</div>
+        <div class="scale-seg" style="background:#7dbb50;">B</div>
+        <div class="scale-seg" style="background:#c3d94e;">C</div>
+        <div class="scale-seg" style="background:#f6e93e; color:#5a4a00;">D</div>
+        <div class="scale-seg" style="background:#f9b234;">E</div>
+        <div class="scale-seg" style="background:#f2792a;">F</div>
+        <div class="scale-seg" style="background:#e6432b;">G</div>
+        <div class="scale-seg" style="background:#c1121f;">H</div>
+      </div>
+    </div>
+
+    <div class="faq-container"></div>
+  </div>
+
+  <!-- Kategorie 3 -->
+  <div class="category" id="cat-foerderung">
+    <div class="category-head">
+      <div class="category-icon">💰</div>
+      <h2>Fördermittel (iSFP, BAFA, KfW)</h2>
+    </div>
+    <div class="faq-container"></div>
+  </div>
+
+  <!-- Kategorie 4 -->
+  <div class="category" id="cat-technik">
+    <div class="category-head">
+      <div class="category-icon">🔧</div>
+      <h2>Sanierung &amp; Technik</h2>
+    </div>
+    <div class="faq-container"></div>
+  </div>
+
+  <!-- Kategorie 5 -->
+  <div class="category" id="cat-ablauf">
+    <div class="category-head">
+      <div class="category-icon">🤝</div>
+      <h2>Ablauf, Kosten &amp; Zusammenarbeit</h2>
+    </div>
+    <div class="faq-container"></div>
+  </div>
+
+</div>
+
+<footer>
+  © HK Energieberatung – Beispielhafte FAQ-Sammlung, unverbindlich und ohne Anspruch auf Vollständigkeit.
+</footer>
+
+<script>
+const data = {
+  "cat-allgemein": [
+    ["Was macht ein Energieberater eigentlich?", "Ein Energieberater analysiert den energetischen Zustand eines Gebäudes – von der Dämmung über die Heizung bis zu Fenstern und Lüftung – und zeigt auf, mit welchen Maßnahmen sich Energie, Kosten und CO₂ am wirksamsten einsparen lassen. Zusätzlich unterstützt er bei der Beantragung von Förderungen und begleitet die Umsetzung."],
+    ["Wann lohnt sich eine Energieberatung?", "Eine Energieberatung lohnt sich vor allem vor größeren Sanierungen, beim Hauskauf, bei steigenden Energiekosten oder wenn Fördermittel genutzt werden sollen. Auch bei älteren, ungedämmten Gebäuden hilft eine frühzeitige Beratung, unnötige Kosten und Fehlinvestitionen zu vermeiden."],
+    ["Ist eine Energieberatung gesetzlich vorgeschrieben?", "Eine allgemeine Energieberatung ist nicht verpflichtend. Für bestimmte Förderprogramme wie BAFA-Einzelmaßnahmen oder KfW-Kredite ist die Einbindung eines zertifizierten Energieeffizienz-Experten jedoch Voraussetzung, um die Zuschüsse zu erhalten."],
+    ["Was ist der Unterschied zwischen einem Energieberater und einem Handwerker?", "Ein Handwerker führt konkrete Bauleistungen aus, zum Beispiel den Einbau einer Heizung. Ein Energieberater ist unabhängig und produktneutral: Er plant die Gesamtstrategie, prüft Fördervoraussetzungen und stellt sicher, dass alle Maßnahmen technisch und wirtschaftlich sinnvoll zusammenpassen."],
+    ["Was ist der individuelle Sanierungsfahrplan (iSFP)?", "Der iSFP ist ein persönlicher Stufenplan für die energetische Modernisierung eines Wohngebäudes. Er zeigt in sinnvoller Reihenfolge, welche Maßnahmen – etwa Dämmung, Fenster oder Heizungstausch – am meisten bringen, und schätzt Kosten, Einsparungen sowie mögliche Förderungen ein."]
+  ],
+  "cat-ausweis": [
+    ["Was ist ein Energieausweis und wofür brauche ich ihn?", "Der Energieausweis macht den Energieverbrauch oder -bedarf eines Gebäudes transparent und ist gesetzlich vorgeschrieben bei Verkauf, Vermietung oder Neubau. Er gibt Käufern und Mietern eine Orientierung über die energetische Qualität der Immobilie."],
+    ["Was ist der Unterschied zwischen Verbrauchs- und Bedarfsausweis?", "Der Verbrauchsausweis basiert auf den tatsächlichen Verbrauchsdaten der letzten Jahre und ist meist günstiger. Der Bedarfsausweis berechnet den theoretischen Energiebedarf anhand von Bausubstanz und Technik und liefert dadurch eine genauere, verbrauchsunabhängige Einschätzung."],
+    ["Wie lange ist ein Energieausweis gültig?", "Ein Energieausweis ist ab Ausstellungsdatum zehn Jahre gültig. Nach umfassenden Sanierungsmaßnahmen oder nach Ablauf der Gültigkeit sollte ein neuer Ausweis erstellt werden."],
+    ["Was ist der Expressausweis (48h) und wann eignet er sich?", "Der Expressausweis ist ein besonders schnell ausgestellter Verbrauchsausweis, der innerhalb von 48 Stunden vorliegt. Er eignet sich, wenn kurzfristig ein gültiger Energieausweis für einen Verkauf oder eine Vermietung benötigt wird."],
+    ["Welche Energieeffizienzklassen gibt es und was bedeuten sie?", "Gebäude werden von A+ (sehr geringer Energiebedarf) bis H (sehr hoher Energiebedarf) eingestuft, ähnlich wie bei Haushaltsgeräten. Die Klasse gibt schnell Auskunft darüber, wie energieeffizient eine Immobilie im Vergleich ist – siehe Grafik oben."]
+  ],
+  "cat-foerderung": [
+    ["Welche Förderungen gibt es für energetische Sanierungen?", "Die wichtigsten Programme sind der iSFP-Zuschuss für die Beratung, BAFA-Zuschüsse für Einzelmaßnahmen wie Dämmung oder Heizung sowie KfW-Kredite mit Tilgungszuschuss für umfassende Sanierungen zum Effizienzhaus oder für Neubauten."],
+    ["Wie hoch ist die Förderung durch den iSFP?", "Für die Erstellung eines individuellen Sanierungsfahrplans gibt es einen Zuschuss von bis zu 50 % der Beratungskosten. Zusätzlich erhalten Sie bei Umsetzung von Maßnahmen aus dem iSFP häufig einen Förderbonus von 5 % extra."],
+    ["Was sind BAFA-Einzelmaßnahmen und wie hoch ist die Förderung?", "BAFA-Einzelmaßnahmen fördern gezielt einzelne Sanierungsschritte wie Dämmung, neue Fenster oder eine effiziente Heizungsanlage. Je nach Maßnahme sind Zuschüsse bis zu 20 % der förderfähigen Kosten möglich, mit iSFP-Bonus entsprechend mehr."],
+    ["Was bietet die KfW für Komplettsanierungen und Neubauten?", "Die KfW vergibt zinsgünstige Kredite mit Tilgungszuschüssen von bis zu 45 % für die umfassende Sanierung zum Effizienzhaus sowie für energieeffizientes Bauen. Damit lassen sich große Sanierungsvorhaben deutlich günstiger finanzieren."],
+    ["Was ist der iSFP-Bonus und wie funktioniert er?", "Wer Maßnahmen umsetzt, die zuvor im individuellen Sanierungsfahrplan festgelegt wurden, erhält bei vielen BAFA-Förderungen einen zusätzlichen Bonus von 5 %. Der iSFP zahlt sich damit doppelt aus – bei der Planung und bei der Umsetzung."],
+    ["Wer darf einen Förderantrag stellen und muss ich das selbst tun?", "Anträge können grundsätzlich von Eigentümer:innen, Verwaltungen oder beauftragten Fachplanern gestellt werden. In der Praxis übernehmen wir als Energieberatung die Antragstellung für Sie, damit Fristen, Formulare und Nachweise korrekt eingereicht werden."]
+  ],
+  "cat-technik": [
+    ["Was ist ein hydraulischer Abgleich und warum ist er wichtig?", "Beim hydraulischen Abgleich wird die Heizungsanlage so eingestellt, dass jeder Heizkörper genau die richtige Menge warmen Wassers erhält. Das verhindert zu heiße oder zu kalte Räume, senkt den Energieverbrauch und wird nach Verfahren A oder B durchgeführt."],
+    ["Was ist eine Heizlastberechnung?", "Die Heizlastberechnung ermittelt, wie viel Wärme ein Gebäude bei winterlichen Temperaturen benötigt. Sie berücksichtigt Gebäudegröße, Dämmstandard und Fensterflächen und ist Grundlage dafür, eine neue Heizung weder zu groß noch zu klein zu dimensionieren."],
+    ["Lohnt sich eine Wärmepumpe für mein Haus?", "Wärmepumpen arbeiten besonders effizient in gut gedämmten Gebäuden mit Flächenheizung, funktionieren aber je nach Voraussetzungen auch im Bestand mit Heizkörpern. Ob sich eine Wärmepumpe für Ihr Haus eignet, klären wir im Rahmen der Heizlastberechnung und Beratung."],
+    ["Welche Dämmmaßnahmen bringen die größte Einsparung?", "Meist bieten Dach und oberste Geschossdecke das beste Kosten-Nutzen-Verhältnis, gefolgt von der Fassadendämmung und dem Austausch alter Fenster. Welche Reihenfolge für Ihr Gebäude sinnvoll ist, zeigt der individuelle Sanierungsfahrplan."],
+    ["Was ist eine Baubegleitung und wann brauche ich sie?", "Bei der Baubegleitung prüft der Energieberater während der Bauphase vor Ort, ob die geplanten Maßnahmen fachgerecht und fördergerecht umgesetzt werden. Sie ist bei vielen KfW-Programmen verpflichtend und hilft, Ausführungsfehler frühzeitig zu erkennen."],
+    ["Was ist ein Blower-Door-Test?", "Der Blower-Door-Test misst die Luftdichtheit eines Gebäudes, indem mit einem Ventilator ein Unter- oder Überdruck erzeugt wird. So lassen sich undichte Stellen an Fenstern, Anschlüssen oder der Gebäudehülle aufspüren, die zu Energieverlust und Bauschäden führen können."]
+  ],
+  "cat-ablauf": [
+    ["Wie läuft eine Energieberatung bei HK Energieberatung ab?", "Zunächst vereinbaren wir ein kostenloses Erstgespräch, oft direkt bei Ihnen vor Ort. Anschließend analysieren wir Ihr Gebäude, erstellen eine Empfehlung inklusive Fördermöglichkeiten und begleiten Sie bei Antragstellung und Umsetzung der Maßnahmen."],
+    ["Was kostet eine Energieberatung und übernimmt die Förderung die Kosten?", "Die Kosten richten sich nach Umfang und Gebäudegröße und werden individuell und transparent kalkuliert. Ein großer Teil der Beratungskosten, etwa für den iSFP, wird durch staatliche Zuschüsse von bis zu 50 % übernommen."],
+    ["Wie lange dauert es, bis ich Ergebnisse oder Förderzusagen erhalte?", "Ein Erstgespräch und die grundlegende Einschätzung sind meist innerhalb weniger Tage möglich, ein Expressausweis sogar in 48 Stunden. Die Bearbeitungsdauer von Förderanträgen hängt von BAFA und KfW ab und liegt üblicherweise bei einigen Wochen."]
+  ]
+};
+
+let counter = 0;
+Object.entries(data).forEach(([catId, items]) => {
+  const container = document.querySelector(`#${catId} .faq-container`);
+  items.forEach(([q, a]) => {
+    counter++;
+    const item = document.createElement('div');
+    item.className = 'faq-item';
+    item.innerHTML = `
+      <h3><span class="num">${String(counter).padStart(2,'0')}</span> ${q}</h3>
+      <div class="faq-content"><div class="inner"><p>${a}</p></div></div>
+      <i class="faq-toggle">❯</i>
+    `;
+    item.querySelector('h3').addEventListener('click', () => toggle(item));
+    item.querySelector('.faq-toggle').addEventListener('click', () => toggle(item));
+    container.appendChild(item);
+  });
+});
+
+function toggle(item) {
+  item.classList.toggle('faq-active');
+}
+</script>
+
+</body>
+</html>
