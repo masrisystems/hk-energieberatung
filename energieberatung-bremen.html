@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Über Uns – Unser Team & Expertise | HK Energieberatung</title>
-  <meta name="description" content="Lernen Sie das Team hinter HK Energieberatung kennen: Bauingenieure und zertifizierte Energieberater für Bremen, Aurich und Ostfriesland.">
+  <title>Energieberatung Bremen – Zertifizierte Energieberater | HK Energieberatung</title>
+  <meta name="description" content="Ihre Experten für Energieberatung, iSFP Sanierungsfahrplan & Förderungen in Bremen und Umkreis. Kostenloses Erstgespräch vereinbaren!">
 
   <!-- Favicons -->
   <link href="assets/img/logo.jpeg" rel="icon">
@@ -25,102 +25,121 @@
   <link href="assets/css/main.css" rel="stylesheet">
 
   <style>
-    .page-title-banner {
-      padding-top: 140px;
-      padding-bottom: 20px;
-      background: var(--surface-color);
-      text-align: center;
+    .location-hero {
+      padding-top: 150px;
+      padding-bottom: 60px;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 95%) 50%, color-mix(in srgb, var(--accent-color), transparent 98%) 25%, transparent 50%);
     }
 
-    .page-title-banner h1 {
-      font-size: 2.75rem;
-      font-weight: 800;
-      color: var(--heading-color);
-      margin: 0;
+    .location-image-box {
+      position: relative;
+      border-radius: 20px;
+      overflow: visible;
     }
 
-    .founders-card {
-      background: var(--surface-color);
-      border-radius: 24px;
-      padding: 30px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      height: 100%;
-    }
-
-    .founders-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    }
-
-    .founders-card img {
+    .location-image-box .hero-bg-img {
       width: 100%;
-      height: 320px;
+      height: 360px;
       object-fit: cover;
-      border-radius: 18px;
-      margin-bottom: 20px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
     }
 
-    .founders-card h3 {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--heading-color);
-      margin-bottom: 6px;
-    }
-
-    .founders-card p {
-      font-size: 1.05rem;
-      color: var(--accent-color);
-      font-weight: 600;
-      margin: 0;
-    }
-
-    .expertise-list {
+    .location-feature-list {
       list-style: none;
       padding: 0;
-      margin: 24px 0;
+      margin: 20px 0 30px 0;
     }
 
-    .expertise-list li {
+    .location-feature-list li {
       display: flex;
-      gap: 16px;
-      margin-bottom: 24px;
       align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
     }
 
-    .expertise-list li i {
+    .location-feature-list li i {
       color: var(--accent-color);
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       flex-shrink: 0;
       margin-top: 2px;
     }
 
-    .expertise-list li h4 {
-      font-size: 1.1rem;
+    .location-feature-list li h4 {
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--heading-color);
-      margin: 0 0 6px 0;
+      margin: 0 0 2px 0;
     }
 
-    .expertise-list li p {
-      font-size: 0.95rem;
-      color: color-mix(in srgb, var(--default-color), transparent 25%);
+    .location-feature-list li p {
+      font-size: 0.9rem;
+      color: color-mix(in srgb, var(--default-color), transparent 30%);
       margin: 0;
-      line-height: 1.6;
     }
 
-    .banner-img-box {
-      border-radius: 24px;
+    /* Reference projects grid */
+    .project-card {
+      background: var(--surface-color);
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+      transition: all 0.3s ease;
+      height: 100%;
     }
 
-    .banner-img-box img {
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    }
+
+    .project-card .project-img {
       width: 100%;
-      height: 380px;
+      height: 220px;
       object-fit: cover;
+    }
+
+    .project-card .project-title {
+      padding: 20px 24px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* Location Switcher */
+    .location-switcher-card {
+      background: var(--surface-color);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1.5px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
+      text-decoration: none;
       display: block;
+    }
+
+    .location-switcher-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-color);
+      box-shadow: 0 15px 35px color-mix(in srgb, var(--accent-color), transparent 70%);
+    }
+
+    .location-switcher-card .card-thumb {
+      height: 180px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .location-switcher-card .card-name {
+      padding: 18px 20px;
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--heading-color);
+      margin: 0;
     }
   </style>
 </head>
@@ -138,7 +157,7 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="about.html" data-page="about.html" class="active">ÜBER UNS</a></li>
+        <li><a href="about.html" data-page="about.html">ÜBER UNS</a></li>
         <li class="dropdown"><a href="index.html#services" data-page="index.html#services"><span>LEISTUNGEN</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="expressausweis.html">Express Verbrauchsausweis (48h)</a></li>
@@ -148,7 +167,7 @@
             <li><a href="index.html#services">KfW Kreditanträge</a></li>
           </ul>
         </li>
-        <li class="dropdown"><a href="#" data-page="standorte"><span>STANDORTE</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+        <li class="dropdown"><a href="#" data-page="standorte" class="active"><span>STANDORTE</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="index.html#contact" data-page="index.html#contact">Standort Bremen</a></li>
             <li><a href="energieberatung-aurich.html" data-page="energieberatung-aurich.html">Standort Aurich</a></li>
@@ -169,116 +188,99 @@
 
   <main class="main">
 
-    <!-- Page Title Section -->
-    <section class="page-title-banner">
+    <!-- Location Hero Section -->
+    <section class="location-hero section">
       <div class="container" data-aos="fade-up">
-        <h1>Über Uns</h1>
-      </div>
-    </section>
-
-    <!-- Hero / Unser Team Section -->
-    <section id="team" class="section py-5">
-      <div class="container" data-aos="fade-up">
-        <div class="row align-items-center gy-5">
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-            <span class="about-subtitle-tag">Erfahren Sie mehr</span>
-            <h2 class="display-6 fw-bold mb-4" style="color: var(--heading-color);">Unser Team</h2>
-            <p class="lead text-muted mb-4" style="line-height: 1.7; font-size: 1.05rem;">
-              Hinter der HK Energieberatung stehen zwei Gründer, die jahrelange Erfahrung im Bauwesen mit fundierter akademischer Expertise vereinen. Als Bachelor of Engineering und Bachelor of Science im Bauingenieurwesen bringen wir das technische Fachwissen mit, um Gebäude nicht nur oberflächlich zu betrachten, sondern tief in die Bausubstanz einzutauchen. Nach unseren Stationen in der Baubranche haben wir uns zusammengeschlossen, um in Aurich und Bremen als starke Einheit aufzutreten. Unser Ziel: Eine ganzheitliche Begleitung in allen Belangen rund um die energetische Sanierung.
-            </p>
-            <p class="fw-semibold mb-4" style="color: var(--heading-color);">
-              Lernen Sie uns persönlich kennen und lassen Sie sich beraten:
-            </p>
-            <a href="#contact" class="btn btn-hk btn-hk-lg">Kostenloses Erstgespräch</a>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-            <div class="banner-img-box">
-              <img src="assets/img/about-banner.jpg" alt="HK Energieberatung Baustelle Banner" class="img-fluid">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Unsere Gründer Section -->
-    <section id="gruender" class="section light-background py-5">
-      <div class="container" data-aos="fade-up">
-        <div class="section-title text-center mb-5">
-          <h2 style="font-size: 2.2rem; font-weight: 800; color: var(--heading-color);">Unsere Gründer</h2>
-        </div>
-
-        <div class="row g-4 justify-content-center">
-          <div class="col-md-6 col-lg-5" data-aos="fade-up" data-aos-delay="100">
-            <div class="founders-card">
-              <img src="assets/img/Profilbild.png" alt="Ing. Hussein Kashab">
-              <h3>Ing. Hussein Kashab</h3>
-              <p>Bauingenieur und Energieberater</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-5" data-aos="fade-up" data-aos-delay="200">
-            <div class="founders-card">
-              <img src="assets/img/Profilbild 2.png" alt="Ing. Wajih Tfaili">
-              <h3>Ing. Wajih Tfaili</h3>
-              <p>Bauingenieur und Energieberater</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Was wir mitbringen Section -->
-    <section id="mitbringen" class="section py-5">
-      <div class="container" data-aos="fade-up">
-        <div class="row align-items-center gy-5">
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-            <h2 class="display-6 fw-bold mb-3" style="color: var(--heading-color);">Was wir mitbringen</h2>
-            <p class="text-muted mb-4">
-              Unsere Expertise steht auf einem starken Fundament. Bei uns trifft Erfahrung aus der Praxis auf spezialisiertes Fachwissen:
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-6" data-aos="fade-right">
+            <span class="company-badge mb-3"><i class="bi bi-geo-alt-fill me-2"></i> Unsere Standorte</span>
+            <h1 class="display-5 fw-bold mb-3" style="color: var(--heading-color);">Standort Bremen</h1>
+            <p class="lead" style="color: color-mix(in srgb, var(--default-color), transparent 20%);">
+              Als zertifizierte unabhängige Energieberater begleiten wir Sie in Bremen und der gesamten Metropolregion bei der energetischen Sanierung Ihres Gebäudes – persönlich, kompetent und förderfähig.
             </p>
 
-            <ul class="expertise-list">
+            <ul class="location-feature-list">
               <li>
                 <i class="bi bi-check-circle-fill"></i>
                 <div>
-                  <h4>Fundierte Bau-Expertise:</h4>
-                  <p>Ob als konstruktive Ingenieure oder im Baumanagement von großen Hochbaustellen – wir kennen den Bauprozess in- und auswendig. Diese Erfahrung bringen wir gezielt bei der Analyse von Ein- und Mehrfamilienhäusern ein.</p>
+                  <h4>Effizienzgewinn am Bau</h4>
+                  <p>Maßgeschneiderte Sanierungskonzepte für Wohngebäude und maximale Energieersparnis.</p>
                 </div>
               </li>
               <li>
                 <i class="bi bi-check-circle-fill"></i>
                 <div>
-                  <h4>Zertifizierte Spezialisierung:</h4>
-                  <p>Wir sind von der DENA zertifizierte Energieberater. Das bedeutet für Sie: Wir sind offiziell für die hocheffiziente energetische Sanierung qualifiziert und stets auf dem neuesten Stand der gesetzlichen Anforderungen und Förderrichtlinien.</p>
+                  <h4>Wohnfühlklima</h4>
+                  <p>Steigerung der Wohnqualität und nachhaltige Reduzierung Ihrer monatlichen Heizkosten.</p>
                 </div>
               </li>
               <li>
                 <i class="bi bi-check-circle-fill"></i>
                 <div>
-                  <h4>Modernste Analyse-Technik:</h4>
-                  <p>Für Ihre Beratung überlassen wir nichts dem Zufall. Wir arbeiten mit der Profi-Software EVREU, um eine vollständige und fachgerechte Analyse Ihres Gebäudes zu erstellen. So können wir Maßnahmen konzipieren, die perfekt auf Ihre Immobilie und Ihr Budget abgestimmt sind.</p>
+                  <h4>Immobilien-Struktur</h4>
+                  <p>Wertsteigerung Ihrer Immobilie und optimale Nutzung aller staatlichen BAFA & KfW Förderungen.</p>
                 </div>
               </li>
             </ul>
 
-            <div class="p-3 rounded-3 style-box" style="background: color-mix(in srgb, var(--accent-color), transparent 93%); border-left: 4px solid var(--accent-color);">
-              <p class="mb-0 text-dark font-italic">
-                <strong>Kurz gesagt:</strong> Wir kombinieren den geschulten Blick des Bauingenieurs mit der Präzision moderner Software, um das Maximum aus Ihrem Gebäude herauszuholen.
-              </p>
-            </div>
+            <a href="#contact" class="btn btn-hk btn-hk-lg">Kostenloses Erstgespräch</a>
           </div>
 
-          <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-delay="200">
-            <div class="banner-img-box">
-              <img src="assets/img/about-secondary.png" alt="HK Energieberatung Expertise" class="img-fluid">
+          <div class="col-lg-6 text-center" data-aos="fade-left">
+            <div class="location-image-box">
+              <img src="assets/bremen.jpeg" alt="Energieberatung Standort Bremen" class="img-fluid hero-bg-img">
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Reusable Contact Component Placeholder -->
+    <!-- Map Component -->
+    <div id="map-component" data-map-src="https://maps.google.com/maps?q=Triestrasse%2034%20Bremen&t=&z=14&ie=UTF8&iwloc=&output=embed"></div>
+
+    <!-- Referenzprojekte Section -->
+    <section class="section light-background py-5">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center mb-5">
+          <h2 style="font-family: var(--heading-font); color: var(--heading-color); font-weight: 800;">Unsere Referenzprojekte</h2>
+          <p class="fs-5 text-success fw-bold">In Bremen & Umkreis</p>
+        </div>
+
+        <div class="row g-4">
+          
+          <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-card">
+              <img src="assets/img/about-main.png" alt="Fassadensanierung Bremen Schwachhausen" class="project-img">
+              <h3 class="project-title">Fassadensanierung in Bremen-Schwachhausen</h3>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-card">
+              <img src="assets/img/hero.jpg" alt="Dachsanierung Bremer Viertel" class="project-img">
+              <h3 class="project-title">Dachsanierung & Dämmung im Bremer Viertel</h3>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-card">
+              <img src="assets/img/about-secondary.png" alt="Kernsanierung Findorff" class="project-img">
+              <h3 class="project-title">Kernsanierung in Findorff: Vom G zu A+ Haus</h3>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="project-card">
+              <img src="assets/img/clean-decoration-home-6412.jpg" alt="Fenstertausch Bremen Mitte" class="project-img">
+              <h3 class="project-title">Fenstertausch & Hydraulischer Abgleich in Bremen-Mitte</h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Reusable Contact Component -->
     <!-- START: CONTACT_COMPONENT -->
 <section id="contact" class="contact section light-background">
   <div class="container section-title" data-aos="fade-up">
@@ -374,15 +376,15 @@
 <!-- END: CONTACT_COMPONENT -->
 
     <!-- Unsere Standorte Section -->
-    <section id="standorte" class="section light-background py-5">
+    <section class="section light-background py-5">
       <div class="container" data-aos="fade-up">
         <div class="section-title text-center mb-5">
-          <h2 style="font-size: 2.2rem; font-weight: 800; color: var(--heading-color);">Unsere Standorte</h2>
+          <h2 style="font-family: var(--heading-font); color: var(--heading-color); font-weight: 800;">Unsere Standorte</h2>
         </div>
 
         <div class="row g-4 justify-content-center">
           <div class="col-md-6 col-lg-5" data-aos="fade-up" data-aos-delay="100">
-            <a href="#contact" class="location-dual-card">
+            <a href="energieberatung-bremen.html" class="location-dual-card">
               <div class="location-dual-images">
                 <img src="assets/img/bremen-stadtmusikanten.jpg" alt="Bremer Stadtmusikanten">
                 <img src="assets/img/bremen-marktplatz.jpg" alt="Bremen Marktplatz">
@@ -404,18 +406,9 @@
       </div>
     </section>
 
-    <!-- Map Component -->
-    <div id="map-component" data-map-src="https://maps.google.com/maps?q=B%C3%BCrgermeister-Smidt-Stra%C3%9Fe%2028195%20Bremen&t=&z=15&ie=UTF8&iwloc=&output=embed">
-      <section class="section p-0">
-        <div class="container-fluid p-0" data-aos="fade-up">
-          <iframe src="https://maps.google.com/maps?q=B%C3%BCrgermeister-Smidt-Stra%C3%9Fe%2028195%20Bremen&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </section>
-    </div>
-
   </main>
 
-  <!-- Footer Component Placeholder -->
+  <!-- Footer Component -->
   <!-- START: FOOTER_COMPONENT -->
 <footer id="footer" class="footer">
   <div class="container footer-top">
@@ -509,20 +502,20 @@
 
 <!-- END: FOOTER_COMPONENT -->
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Scroll Top & WhatsApp Chat -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
-  <!-- Vendor JS Files -->
+  <a href="https://wa.me/491626985115" id="wp-chat" class="wp-chat" target="_blank" rel="noopener noreferrer">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Main JS Files -->
+  <!-- Component Loader & Main JS -->
   <script src="assets/js/components.js"></script>
   <script src="assets/js/main.js"></script>
-
 </body>
-
 </html>

@@ -13,6 +13,7 @@ const TARGET_FILES = [
   'index.html',
   'about.html',
   'faq.html',
+  'energieberatung-bremen.html',
   'energieberatung-aurich.html',
   'expressausweis.html',
   'mediathek.html',
@@ -43,6 +44,9 @@ function customizeHeader(headerHtml, targetPage) {
     customized = customized.replace('data-page="index.html#about"', 'data-page="index.html#about" class="active"');
   } else if (targetPage === 'faq.html') {
     customized = customized.replace('data-page="faq.html"', 'data-page="faq.html" class="active"');
+  } else if (targetPage === 'energieberatung-bremen.html') {
+    customized = customized.replace('data-page="standorte"', 'data-page="standorte" class="active"');
+    customized = customized.replace('data-page="energieberatung-bremen.html"', 'data-page="energieberatung-bremen.html" class="active"');
   } else if (targetPage === 'energieberatung-aurich.html') {
     customized = customized.replace('data-page="standorte"', 'data-page="standorte" class="active"');
     customized = customized.replace('data-page="energieberatung-aurich.html"', 'data-page="energieberatung-aurich.html" class="active"');

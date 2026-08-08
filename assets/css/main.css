@@ -255,10 +255,11 @@ h6 {
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-color);
-    padding: 18px 15px;
-    font-size: 16px;
+    padding: 14px 12px;
+    font-size: 15px;
     font-family: var(--nav-font);
-    font-weight: 400;
+    font-weight: 500;
+    letter-spacing: 0.3px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1999,36 +2000,97 @@ section,
 # Services Section
 --------------------------------------------------------------*/
 .services .service-card {
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+
+  position: relative;
   height: 100%;
-  padding: 30px;
-  background: var(--surface-color);
-  border-radius: 10px;
-  transition: all 0.3s ease;
+  padding: 40px 35px;
+  background-image: 
+    radial-gradient(circle 14px at 14px 14px, var(--card-bg) 99%, transparent 100%),
+    radial-gradient(circle 14px at 14px 14px, var(--card-bg) 99%, transparent 100%),
+    radial-gradient(circle 14px at 14px 14px, var(--card-bg) 99%, transparent 100%),
+    radial-gradient(circle 14px at 14px 14px, var(--card-bg) 99%, transparent 100%),
+    linear-gradient(var(--card-bg), var(--card-bg));
+  background-position: 
+    top left,
+    bottom left,
+    top left,
+    top right,
+    center;
+  background-size: 
+    28px 28px,
+    28px 28px,
+    28px 28px,
+    28px 28px,
+    calc(100% - 28px) calc(100% - 28px);
+  background-repeat: 
+    repeat-x,
+    repeat-x,
+    repeat-y,
+    repeat-y,
+    no-repeat;
+  filter: drop-shadow(0 10px 20px var(--card-shadow));
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .services .service-card:hover {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  transform: translateY(-6px);
+  filter: drop-shadow(0 16px 30px var(--card-shadow));
 }
 
-.services .service-card:hover .icon {
-  background: var(--accent-color);
-  color: var(--contrast-color);
+.services .service-card.orange {
+  --card-bg: #fff3e2;
+  --card-shadow: rgba(237, 184, 110, 0.35);
 }
 
-.services .service-card:hover .read-more {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+.services .service-card.orange .icon {
+  background-color: #ffffff;
+  color: #edb86e;
+  box-shadow: 0 4px 12px rgba(237, 184, 110, 0.3);
+}
+
+.services .service-card.blue {
+  --card-bg: #deedfd;
+  --card-shadow: rgba(32, 165, 248, 0.35);
+}
+
+.services .service-card.blue .icon {
+  background-color: #ffffff;
+  color: #20a5f8;
+  box-shadow: 0 4px 12px rgba(32, 165, 248, 0.3);
+}
+
+.services .service-card.green {
+  --card-bg: #d5f1e4;
+  --card-shadow: rgba(72, 200, 138, 0.35);
+}
+
+.services .service-card.green .icon {
+  background-color: #ffffff;
+  color: #48c88a;
+  box-shadow: 0 4px 12px rgba(72, 200, 138, 0.3);
+}
+
+.services .service-card.red {
+  --card-bg: #fdeded;
+  --card-shadow: rgba(242, 132, 132, 0.35);
+}
+
+.services .service-card.red .icon {
+  background-color: #ffffff;
+  color: #f28484;
+  box-shadow: 0 4px 12px rgba(242, 132, 132, 0.3);
 }
 
 .services .service-card .icon {
-  width: 60px;
-  height: 60px;
-  margin-right: 30px;
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  width: 64px;
+  height: 64px;
+  margin-right: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  color: var(--accent-color);
+  border-radius: 50%;
   font-size: 28px;
   transition: all 0.3s ease;
   line-height: 1;
@@ -2038,31 +2100,41 @@ section,
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 15px;
+  color: #2d465e;
 }
 
 .services .service-card p {
-  margin-bottom: 25px;
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  margin-bottom: 0;
+  color: #444444;
   font-size: 15px;
   line-height: 1.6;
 }
 
-.services .service-card .read-more {
-  display: inline-flex;
+.services .service-card .icon {
+  width: 64px;
+  height: 64px;
+  margin-right: 24px;
+  display: flex;
   align-items: center;
-  gap: 8px;
-  color: var(--accent-color);
-  font-weight: 500;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 28px;
   transition: all 0.3s ease;
+  line-height: 1;
 }
 
-.services .service-card .read-more i {
-  font-size: 14px;
-  transition: transform 0.3s ease;
+.services .service-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #2d465e;
 }
 
-.services .service-card .read-more:hover i {
-  transform: translateX(5px);
+.services .service-card p {
+  margin-bottom: 0;
+  color: #444444;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 /*--------------------------------------------------------------
@@ -3088,4 +3160,98 @@ button.btn-mint-pill:active {
   font-weight: 800;
   color: var(--heading-color);
   margin: 0;
+}
+
+/*--------------------------------------------------------------
+# Unified Button Component System (.btn-hk)
+--------------------------------------------------------------*/
+.btn-hk,
+a.btn-hk,
+button.btn-hk,
+.btn-getstarted,
+.btn-express,
+.btn-mediathek,
+.btn-mint-pill,
+.btn-submit-express {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  font-family: var(--nav-font) !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem;
+  line-height: 1.2 !important;
+  padding: 12px 32px !important;
+  border-radius: 50px !important;
+  border: none !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  background-color: var(--accent-color) !important;
+  color: var(--contrast-color) !important;
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 60%) !important;
+  outline: none !important;
+}
+
+.btn-hk:hover,
+.btn-hk:focus,
+.btn-hk:active,
+a.btn-hk:hover,
+a.btn-hk:focus,
+a.btn-hk:active,
+button.btn-hk:hover,
+button.btn-hk:focus,
+button.btn-hk:active,
+.btn-getstarted:hover,
+.btn-express:hover,
+.btn-mediathek:hover,
+.btn-mint-pill:hover,
+.btn-submit-express:hover {
+  background-color: color-mix(in srgb, var(--accent-color), black 12%) !important;
+  color: color-mix(in srgb, var(--heading-color), black 20%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--accent-color), transparent 40%) !important;
+}
+
+/* Secondary / Outline Variant */
+.btn-hk-outline,
+a.btn-hk-outline,
+button.btn-hk-outline {
+  background-color: transparent !important;
+  color: var(--heading-color) !important;
+  border: 2px solid var(--accent-color) !important;
+  box-shadow: none !important;
+}
+
+.btn-hk-outline:hover,
+.btn-hk-outline:focus,
+.btn-hk-outline:active,
+a.btn-hk-outline:hover,
+a.btn-hk-outline:focus,
+a.btn-hk-outline:active,
+button.btn-hk-outline:hover,
+button.btn-hk-outline:focus,
+button.btn-hk-outline:active {
+  background-color: var(--accent-color) !important;
+  color: var(--heading-color) !important;
+  border-color: var(--accent-color) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--accent-color), transparent 60%) !important;
+}
+
+/* Size Variants */
+.btn-hk-sm,
+.header .btn-getstarted {
+  padding: 8px 20px !important;
+  font-size: 0.875rem !important;
+}
+
+.btn-hk-md {
+  padding: 12px 32px !important;
+  font-size: 0.95rem !important;
+}
+
+.btn-hk-lg {
+  padding: 15px 40px !important;
+  font-size: 1.05rem !important;
 }

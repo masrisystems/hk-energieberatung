@@ -28,23 +28,20 @@
 
           <nav id="navmenu" class="navmenu">
             <ul>
-              <li><a href="${isPage('index.html') ? '#hero' : 'index.html#hero'}" class="${isPage('index.html') ? 'active' : ''}">ENERGIEBERATUNG</a></li>
-              <li><a href="${isPage('index.html') ? '#about' : 'index.html#about'}">ÜBER UNS</a></li>
-              <li class="dropdown"><a href="#" class="${isPage('energieberatung-aurich.html') ? 'active' : ''}"><span>STANDORTE</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="index.html#contact">Standort Bremen</a></li>
-                  <li><a href="energieberatung-aurich.html" class="${isPage('energieberatung-aurich.html') ? 'active' : ''}">Standort Aurich</a></li>
-                </ul>
-              </li>
-              <li><a href="expressausweis.html" class="${isPage('expressausweis.html') ? 'active' : ''}">EXPRESSAUSWEIS (48H)</a></li>
-              <li><a href="${isPage('index.html') ? '#features' : 'index.html#features'}">FÖRDERUNGEN</a></li>
+              <li><a href="${isPage('about.html') ? 'about.html' : isPage('index.html') ? '#about' : 'index.html#about'}" class="${isPage('about.html') ? 'active' : ''}">ÜBER UNS</a></li>
               <li class="dropdown"><a href="${isPage('index.html') ? '#services' : 'index.html#services'}"><span>LEISTUNGEN</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="expressausweis.html">Express Verbrauchsausweis (48h)</a></li>
+                  <li><a href="expressausweis.html" class="${isPage('expressausweis.html') ? 'active' : ''}">Express Verbrauchsausweis (48h)</a></li>
                   <li><a href="${isPage('index.html') ? '#services' : 'index.html#services'}">Energieausweise</a></li>
+                  <li><a href="${isPage('index.html') ? '#features' : 'index.html#features'}">BAFA & KfW Förderungen</a></li>
                   <li><a href="${isPage('index.html') ? '#services' : 'index.html#services'}">Hydraulischer Abgleich</a></li>
-                  <li><a href="${isPage('index.html') ? '#services' : 'index.html#services'}">Einzelmaßnahmen (BAFA)</a></li>
                   <li><a href="${isPage('index.html') ? '#services' : 'index.html#services'}">KfW Kreditanträge</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#" class="${isPage('energieberatung-aurich.html') ? 'active' : ''}"><span>STANDORTE</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="${isPage('index.html') ? '#contact' : 'index.html#contact'}">Standort Bremen</a></li>
+                  <li><a href="energieberatung-aurich.html" class="${isPage('energieberatung-aurich.html') ? 'active' : ''}">Standort Aurich</a></li>
                 </ul>
               </li>
               <li><a href="${isPage('index.html') ? '#mediathek' : 'mediathek.html'}" class="${isPage('mediathek.html') ? 'active' : ''}">MEDIATHEK</a></li>
@@ -124,9 +121,9 @@
               </a>
               <address class="footer-contact pt-3">
                 <p>
-                  <a href="https://maps.app.goo.gl/38YXNdg3ipmPV2KX6" target="_blank" rel="noopener noreferrer" aria-label="Adresse auf Google Maps">
-                    Bürgermeister-Smith Straße<br>
-                    28195 Bremen - Deutschland
+                  <a href="https://maps.app.goo.gl/Pd6vkvJnU2HgLyDv5" target="_blank" rel="noopener noreferrer" aria-label="Adresse auf Google Maps">
+                    Triestraße 34<br>
+                    Bremen - Deutschland
                   </a>
                 </p>
                 <p>
@@ -225,12 +222,12 @@
                 <p>Im Folgenden finden Sie alle wichtigen Kontaktdaten: Unsere Adresse, Telefonnummer sowie unsere E-Mail-Adresse. Zögern Sie nicht, uns jederzeit zu kontaktieren - wir freuen uns auf Ihre Anfrage!</p>
 
                 <div class="info-item" data-aos="fade-up" data-aos-delay="300">
-                  <a href="https://maps.app.goo.gl/38YXNdg3ipmPV2KX6" target="_blank" rel="noopener noreferrer">
+                  <a href="https://maps.app.goo.gl/Pd6vkvJnU2HgLyDv5" target="_blank" rel="noopener noreferrer">
                     <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
                     <div class="content">
                       <h4>Adresse</h4>
-                      Bürgermeister-Smith Straße
-                      <p>28195 Bremen - Deutschland</p>
+                      Triestraße 34
+                      <p>Bremen - Deutschland</p>
                     </div>
                   </a>
                 </div>
