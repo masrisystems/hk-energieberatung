@@ -56,7 +56,7 @@
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
           </nav>
 
-          <a class="btn-getstarted" href="${isPage('index.html') ? '#contact' : 'index.html#contact'}">Jetzt Starten</a>
+          <a class="btn-getstarted" href="${isPage('index.html') ? '#contact' : 'index.html#contact'}">Jetzt kontaktieren</a>
         </div>
       </header>
     `;

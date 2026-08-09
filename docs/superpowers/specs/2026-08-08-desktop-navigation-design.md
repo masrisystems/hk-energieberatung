@@ -13,7 +13,7 @@ De-clutter and streamline the desktop navigation bar for HK Energieberatung to p
 - LEISTUNGEN ▾
 - MEDIATHEK
 - KONTAKT
-- Button: Jetzt Starten
+- Button: Jetzt kontaktieren
 
 Total: 8 top-level links + logo + CTA button.
 
@@ -31,7 +31,7 @@ Total: 8 top-level links + logo + CTA button.
   - Standort Aurich (`energieberatung-aurich.html`)
 - MEDIATHEK
 - KONTAKT
-- Button: Jetzt Starten
+- Button: Jetzt kontaktieren
 
 Total: 5 top-level links + logo + CTA button.
 

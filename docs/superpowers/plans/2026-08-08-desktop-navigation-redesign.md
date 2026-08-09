@@ -53,7 +53,7 @@ Update `components/header.html` to reflect the 5 top-level items structure:
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
 
-    <a class="btn-getstarted btn-hk btn-hk-sm" href="index.html#contact">Jetzt Starten</a>
+    <a class="btn-getstarted btn-hk btn-hk-sm" href="index.html#contact">Jetzt kontaktieren</a>
 
   </div>
 </header>
