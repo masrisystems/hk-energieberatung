@@ -94,6 +94,17 @@ if (preg_match("/[\r\n]/", $name) || preg_match("/[\r\n]/", $email)) {
     exit;
 }
 
+// === 3b. PREVENT DUPLICATE SUBMISSIONS (10-second lock) ===
+$subHash = md5($name . '|' . $email . '|' . $message);
+$lockFile = sys_get_temp_dir() . '/contact_lock_' . $subHash . '.txt';
+
+if (file_exists($lockFile) && (time() - filemtime($lockFile)) < 10) {
+    http_response_code(200);
+    echo "OK";
+    exit;
+}
+@file_put_contents($lockFile, (string)time());
+
 // === 4. COMPOSE EMAIL MESSAGE ===
 $anrede_str = (!empty($anrede) && $anrede !== 'keine Angabe') ? ($anrede . ' ') : '';
 $email_subject = "Kontaktanfrage: " . $subject . " - " . $anrede_str . $name;

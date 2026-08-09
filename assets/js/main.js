@@ -387,6 +387,12 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
   document.addEventListener('submit', function (e) {
     const form = e.target.closest('#kontaktForm, .contact .contact-form form');
     if (!form || form.id === 'expressForm') return;
+
+    if (form.checkValidity && !form.checkValidity()) {
+      e.preventDefault();
+      if (form.reportValidity) form.reportValidity();
+      return;
+    }
     e.preventDefault();
 
     const loading = form.querySelector('.loading');

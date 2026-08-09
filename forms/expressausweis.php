@@ -109,6 +109,15 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     sendResponse(false, "Bitte geben Sie eine gültige E-Mail-Adresse ein.", 400);
 }
 
+// === 4b. PREVENT DUPLICATE SUBMISSIONS (10-second lock) ===
+$subHash = md5($email . '|' . $strasse . '|' . $plz . '|' . $ort);
+$lockFile = sys_get_temp_dir() . '/express_lock_' . $subHash . '.txt';
+
+if (file_exists($lockFile) && (time() - filemtime($lockFile)) < 10) {
+    sendResponse(true, "Ihre Expressausweis-Anfrage wurde bereits erfolgreich empfangen.");
+}
+@file_put_contents($lockFile, (string)time());
+
 // === 5. PROCESS FILE UPLOADS & ATTACHMENTS ===
 $attachments = [];
 $totalSize = 0;
