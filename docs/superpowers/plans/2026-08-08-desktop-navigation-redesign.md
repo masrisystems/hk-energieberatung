@@ -151,7 +151,7 @@ git commit -m "refactor(nav): update static page header navbars to match streaml
 ### Task 3: Visual Verification & Project Logs Update
 
 **Files:**
-- Modify: `C:\Users\super\Desktop\obsidian\masrisystems-app\content\private\💼 Work\🏢 MasriGMBH\👥 Kunden\👤 Hussein Khashab\Kanban Hk Energieberatung.md`
+- Modify: `C:\Users\super\Desktop\obsidian\masrisystems-app\content\private\Work\MasriGMBH\Kunden\Hussein Khashab\Kanban Hk Energieberatung.md`
 
 - [ ] **Step 1: Test Navigation Responsiveness in Browser**
 

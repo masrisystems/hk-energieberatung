@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 
 <head>
@@ -52,16 +52,16 @@
   </script>
 
   <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -86,10 +86,49 @@
 
     .location-image-box .hero-bg-img {
       width: 100%;
-      height: 360px;
+      height: 380px;
       object-fit: cover;
       border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .location-image-box:hover .hero-bg-img {
+      transform: scale(1.01);
+    }
+
+    .location-image-box .town-sign-overlay {
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      width: 180px;
+      max-width: 40%;
+      border-radius: 18px;
+      border: 4px solid #ffffff;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
+      z-index: 3;
+      transition: all 0.3s ease;
+      object-fit: cover;
+      display: block;
+    }
+
+    .location-image-box:hover .town-sign-overlay {
+      transform: scale(1.06) rotate(-2deg);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    @media (max-width: 768px) {
+      .location-image-box .hero-bg-img {
+        height: 280px;
+      }
+      .location-image-box .town-sign-overlay {
+        top: -10px;
+        left: -10px;
+        width: 130px;
+        border-radius: 14px;
+        border: 3px solid #ffffff;
+      }
     }
 
     .location-feature-list {
@@ -210,7 +249,7 @@
             <li><a href="expressausweis.html">Express Verbrauchsausweis (48h)</a></li>
             <li><a href="index.html#services">Energieausweise</a></li>
             <li><a href="index.html#features">BAFA & KfW Förderungen</a></li>
-            <li><a href="index.html#services">Hydraulischer Abgleich</a></li>
+            <li><a href="index.html#services">Sanierungsfahrplan (iSFP)</a></li>
             <li><a href="index.html#services">KfW Kreditanträge</a></li>
           </ul>
         </li>
@@ -281,7 +320,8 @@
 
           <div class="col-lg-6 text-center" data-aos="fade-left">
             <div class="location-image-box">
-              <img src="assets/img/bremen-marktplatz.jpg" alt="Energieberatung Standort Bremen" class="img-fluid hero-bg-img">
+              <img src="assets/img/bremen-schild.jpeg" alt="Freie Hansestadt Bremen Ortsschild" class="town-sign-overlay">
+              <img src="assets/img/bremen-marktplatz.jpeg" alt="Energieberatung Standort Bremen" class="img-fluid hero-bg-img">
             </div>
           </div>
         </div>
@@ -349,7 +389,7 @@
           <p>Im Folgenden finden Sie alle wichtigen Kontaktdaten: Unsere Adresse, Telefonnummer sowie unsere E-Mail-Adresse. Zögern Sie nicht, uns jederzeit zu kontaktieren – wir freuen uns auf Ihre Anfrage!</p>
 
           <div class="info-item" data-aos="fade-up" data-aos-delay="300">
-            <a href="https://maps.app.goo.gl/Pd6vkvJnU2HgLyDv5" target="_blank" rel="noopener noreferrer">
+            <a href="https://maps.app.goo.gl/Pd6vkvJnU2HgLyDv5" target="_blank" rel="noopener noreferrer" aria-label="Adresse auf Google Maps">
               <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
               <div class="content">
                 <h4>Adresse</h4>
@@ -360,7 +400,7 @@
           </div>
 
           <div class="info-item" data-aos="fade-up" data-aos-delay="400">
-            <a href="tel:+491626985115">
+            <a href="tel:+491626985115" aria-label="Rufen Sie uns an unter +49 162 6985115">
               <div class="icon-box"><i class="bi bi-telephone"></i></div>
               <div class="content">
                 <h4>Kontakt</h4>
@@ -370,7 +410,7 @@
           </div>
 
           <div class="info-item" data-aos="fade-up" data-aos-delay="500">
-            <a href="mailto:info@hk-energieberatung.de">
+            <a href="mailto:info@hk-energieberatung.de" aria-label="Schreiben Sie uns eine E-Mail an info@hk-energieberatung.de">
               <div class="icon-box"><i class="bi bi-envelope"></i></div>
               <div class="content">
                 <h4>Email Adresse</h4>
@@ -471,7 +511,6 @@
   </div>
 </section>
 
-
     <!-- Unsere Standorte Section -->
     <section class="section light-background py-5">
       <div class="container" data-aos="fade-up">
@@ -484,7 +523,7 @@
             <a href="energieberatung-bremen.html" class="location-dual-card">
               <div class="location-dual-images">
                 <img src="assets/img/bremen-stadtmusikanten.jpg" alt="Bremer Stadtmusikanten">
-                <img src="assets/img/bremen-marktplatz.jpg" alt="Bremen Marktplatz">
+                <img src="assets/img/bremen-marktplatz.jpeg" alt="Bremen Marktplatz">
               </div>
               <h3 class="location-dual-title">Standort Bremen</h3>
             </a>
@@ -493,8 +532,8 @@
           <div class="col-md-6 col-lg-5" data-aos="fade-up" data-aos-delay="200">
             <a href="energieberatung-aurich.html" class="location-dual-card">
               <div class="location-dual-images">
-                <img src="assets/img/aurich-sign-board.jpg" alt="Aurich Ortsschild">
-                <img src="assets/img/aurich-center.jpg" alt="Aurich Fußgängerzone">
+                <img src="assets/img/aurich-center.jpg" alt="Aurich Ortsschild">
+                <img src="assets/img/aurich_map.jpeg" alt="Aurich Karte" style="mix-blend-mode: multiply;">
               </div>
               <h3 class="location-dual-title">Standort Aurich</h3>
             </a>
@@ -556,7 +595,7 @@
           <li><a href="expressausweis.html">Express Verbrauchsausweis (48h)</a></li>
           <li><a href="index.html#services">Energieausweise</a></li>
           <li><a href="index.html#features">BAFA & KfW Förderungen</a></li>
-          <li><a href="index.html#services">Hydraulischer Abgleich</a></li>
+          <li><a href="index.html#services">Sanierungsfahrplan (iSFP)</a></li>
           <li><a href="index.html#services">KfW Kreditanträge</a></li>
         </ul>
       </nav>
@@ -566,7 +605,7 @@
         <ul class="list-unstyled">
           <li><i class="bi bi-clock me-1"></i> Montag - Samstag<br>9:00 Uhr bis 18:00 Uhr</li>
           <li class="mt-2">
-            <a href="https://wa.me/491626985115" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Chat">
+            <a href="https://wa.me/491626985115" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp-Chat starten">
               <i class="bi bi-whatsapp me-1"></i> WhatsApp-Chat
             </a>
           </li>

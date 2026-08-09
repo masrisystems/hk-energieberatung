@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 
 <head>
@@ -8,11 +8,11 @@
   <meta name="description" content="Lernen Sie das Team hinter HK Energieberatung kennen: Bauingenieure und zertifizierte Energieberater für Bremen, Aurich und Ostfriesland.">
 
   <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -80,6 +80,10 @@
       border-radius: 24px;
       overflow: hidden;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      background: var(--surface-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .banner-img-box img {
@@ -87,6 +91,24 @@
       height: 380px;
       object-fit: cover;
       display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .banner-img-box:hover img {
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 991.98px) {
+      .banner-img-box {
+        border-radius: 18px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      .banner-img-box img {
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+      }
     }
   </style>
 
@@ -140,7 +162,7 @@
             <li><a href="expressausweis.html">Express Verbrauchsausweis (48h)</a></li>
             <li><a href="index.html#services">Energieausweise</a></li>
             <li><a href="index.html#features">BAFA & KfW Förderungen</a></li>
-            <li><a href="index.html#services">Hydraulischer Abgleich</a></li>
+            <li><a href="index.html#services">Sanierungsfahrplan (iSFP)</a></li>
             <li><a href="index.html#services">KfW Kreditanträge</a></li>
           </ul>
         </li>
@@ -300,7 +322,7 @@
           <p>Im Folgenden finden Sie alle wichtigen Kontaktdaten: Unsere Adresse, Telefonnummer sowie unsere E-Mail-Adresse. Zögern Sie nicht, uns jederzeit zu kontaktieren – wir freuen uns auf Ihre Anfrage!</p>
 
           <div class="info-item" data-aos="fade-up" data-aos-delay="300">
-            <a href="https://maps.app.goo.gl/Pd6vkvJnU2HgLyDv5" target="_blank" rel="noopener noreferrer">
+            <a href="https://maps.app.goo.gl/Pd6vkvJnU2HgLyDv5" target="_blank" rel="noopener noreferrer" aria-label="Adresse auf Google Maps">
               <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
               <div class="content">
                 <h4>Adresse</h4>
@@ -311,7 +333,7 @@
           </div>
 
           <div class="info-item" data-aos="fade-up" data-aos-delay="400">
-            <a href="tel:+491626985115">
+            <a href="tel:+491626985115" aria-label="Rufen Sie uns an unter +49 162 6985115">
               <div class="icon-box"><i class="bi bi-telephone"></i></div>
               <div class="content">
                 <h4>Kontakt</h4>
@@ -321,7 +343,7 @@
           </div>
 
           <div class="info-item" data-aos="fade-up" data-aos-delay="500">
-            <a href="mailto:info@hk-energieberatung.de">
+            <a href="mailto:info@hk-energieberatung.de" aria-label="Schreiben Sie uns eine E-Mail an info@hk-energieberatung.de">
               <div class="icon-box"><i class="bi bi-envelope"></i></div>
               <div class="content">
                 <h4>Email Adresse</h4>
@@ -375,7 +397,7 @@
                   <option value="Heizungscheck / Heizungstausch">Heizungscheck / Heizungstausch</option>
                   <option value="Wärmedämmung / Gebäudesanierung">Wärmedämmung / Gebäudesanierung</option>
                   <option value="Sanierungsfahrplan">Sanierungsfahrplan (iSFP)</option>
-                  <option value="Hydraulischer Abgleich">Hydraulischer Abgleich</option>
+
                   <option value="Erstgespräch / Terminvereinbarung">Erstgespräch / Terminvereinbarung</option>
                   <option value="Sonstiges Anliegen">Sonstiges Anliegen</option>
                 </select>
@@ -436,7 +458,7 @@
             <a href="energieberatung-bremen.html" class="location-dual-card">
               <div class="location-dual-images">
                 <img src="assets/img/bremen-stadtmusikanten.jpg" alt="Bremer Stadtmusikanten">
-                <img src="assets/img/bremen-marktplatz.jpg" alt="Bremen Marktplatz">
+                <img src="assets/img/bremen-marktplatz.jpeg" alt="Bremen Marktplatz">
               </div>
               <h3 class="location-dual-title">Standort Bremen</h3>
             </a>
@@ -446,7 +468,7 @@
             <a href="energieberatung-aurich.html" class="location-dual-card">
               <div class="location-dual-images">
                 <img src="assets/img/aurich-sign-board.jpg" alt="Aurich Ortsschild">
-                <img src="assets/img/aurich-center.jpg" alt="Aurich Fußgängerzone">
+                <img src="assets/img/aurich_map.jpeg" alt="Aurich Karte" style="mix-blend-mode: multiply;">
               </div>
               <h3 class="location-dual-title">Standort Aurich</h3>
             </a>
@@ -511,7 +533,7 @@
           <li><a href="expressausweis.html">Express Verbrauchsausweis (48h)</a></li>
           <li><a href="index.html#services">Energieausweise</a></li>
           <li><a href="index.html#features">BAFA & KfW Förderungen</a></li>
-          <li><a href="index.html#services">Hydraulischer Abgleich</a></li>
+          <li><a href="index.html#services">Sanierungsfahrplan (iSFP)</a></li>
           <li><a href="index.html#services">KfW Kreditanträge</a></li>
         </ul>
       </nav>
@@ -519,9 +541,9 @@
       <div class="col-lg-2 col-md-3 footer-contact-hours">
         <h4>Erreichbarkeit</h4>
         <ul class="list-unstyled">
-          <li><i class="bi bi-open me-1"></i> Montag - Samstag<br>9:00 Uhr bis 18:00 Uhr</li>
+          <li><i class="bi bi-clock me-1"></i> Montag - Samstag<br>9:00 Uhr bis 18:00 Uhr</li>
           <li class="mt-2">
-            <a href="https://wa.me/491626985115" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Chat">
+            <a href="https://wa.me/491626985115" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp-Chat starten">
               <i class="bi bi-whatsapp me-1"></i> WhatsApp-Chat
             </a>
           </li>

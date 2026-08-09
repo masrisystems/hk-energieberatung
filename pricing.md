@@ -25,7 +25,7 @@
 ## 2. Express-Verbrauchsausweis (48h digital)
 *Rechtssicherer Energieausweis nach GEG für Verkauf, Vermietung oder Modernisierung.*
 
-- **Preis**: Festpreis auf Anfrage / ab 79,00 € (inkl. 19% MwSt.)
+- **Preis**: Festpreis 80,00 € (inkl. 19% MwSt.)
 - **Lieferzeit**: Garantiert innerhalb von 48 Stunden per E-Mail
 - **Gültigkeit**: 10 Jahre bundesweit
 - **Inklusive**: GEG-Registriernummer des DIBt (Deutsches Institut für Bautechnik) & energetische Modernisierungsempfehlungen

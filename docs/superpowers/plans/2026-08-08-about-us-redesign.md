@@ -17,7 +17,7 @@
 - Rename: `assets/img/WhatsApp Image 2026-08-08 at 12.02.07 PM (1).jpeg` $\rightarrow$ `assets/img/aurich-sign-board.jpg`
 - Rename: `assets/img/WhatsApp Image 2026-08-08 at 12.02.07 PM (2).jpeg` $\rightarrow$ `assets/img/aurich-center.jpg`
 - Rename: `assets/img/WhatsApp Image 2026-08-08 at 12.02.07 PM (3).jpeg` $\rightarrow$ `assets/img/bremen-stadtmusikanten.jpg`
-- Rename: `assets/img/WhatsApp Image 2026-08-08 at 12.02.07 PM.jpeg` $\rightarrow$ `assets/img/bremen-marktplatz.jpg`
+- Rename: `assets/img/WhatsApp Image 2026-08-08 at 12.02.07 PM.jpeg` $\rightarrow$ `assets/img/bremen-marktplatz.jpeg`
 
 - [ ] **Step 1: Rename files in assets/img/**
 
@@ -26,13 +26,13 @@ Rename-Item -Path "assets\img\hkboardjpeg.jpeg" -NewName "about-banner.jpg"
 Rename-Item -Path "assets\img\WhatsApp Image 2026-08-08 at 12.02.07 PM (1).jpeg" -NewName "aurich-sign-board.jpg"
 Rename-Item -Path "assets\img\WhatsApp Image 2026-08-08 at 12.02.07 PM (2).jpeg" -NewName "aurich-center.jpg"
 Rename-Item -Path "assets\img\WhatsApp Image 2026-08-08 at 12.02.07 PM (3).jpeg" -NewName "bremen-stadtmusikanten.jpg"
-Rename-Item -Path "assets\img\WhatsApp Image 2026-08-08 at 12.02.07 PM.jpeg" -NewName "bremen-marktplatz.jpg"
+Rename-Item -Path "assets\img\WhatsApp Image 2026-08-08 at 12.02.07 PM.jpeg" -NewName "bremen-marktplatz.jpeg"
 ```
 
 - [ ] **Step 2: Verify all 5 renamed files exist**
 
 ```powershell
-Test-Path "assets\img\about-banner.jpg", "assets\img\aurich-sign-board.jpg", "assets\img\aurich-center.jpg", "assets\img\bremen-stadtmusikanten.jpg", "assets\img\bremen-marktplatz.jpg"
+Test-Path "assets\img\about-banner.jpg", "assets\img\aurich-sign-board.jpg", "assets\img\aurich-center.jpg", "assets\img\bremen-stadtmusikanten.jpg", "assets\img\bremen-marktplatz.jpeg"
 ```
 
 - [ ] **Step 3: Commit image asset renaming**
@@ -152,7 +152,7 @@ Create `about.html` containing HTML head, pre-rendered Header placeholder, "Übe
 
 - [ ] **Step 3: Verify structure of `about.html`**
 
-Ensure all sections, data-aos attributes, image paths (`assets/img/about-banner.jpg`, `assets/img/Profilbild.png`, `assets/img/Profilbild 2.png`, `assets/img/about-secondary.png`, `assets/img/bremen-stadtmusikanten.jpg`, `assets/img/bremen-marktplatz.jpg`, `assets/img/aurich-sign-board.jpg`, `assets/img/aurich-center.jpg`) are correct.
+Ensure all sections, data-aos attributes, image paths (`assets/img/about-banner.jpg`, `assets/img/Profilbild.png`, `assets/img/Profilbild 2.png`, `assets/img/about-secondary.png`, `assets/img/bremen-stadtmusikanten.jpg`, `assets/img/bremen-marktplatz.jpeg`, `assets/img/aurich-sign-board.jpg`, `assets/img/aurich-center.jpg`) are correct.
 
 - [ ] **Step 4: Commit `about.html` creation and CSS updates**
 

@@ -3181,22 +3181,10 @@ section,
 }
 
 .footer-cert-img {
-  max-width: 150px;
+  max-width: 220px;
   height: auto;
-  border-radius: 10px;
-  background: #ffffff;
-  padding: 6px 8px;
   display: block;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.footer-cert-img:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
-
 /* Mint Pill Button matching aboutus.jpeg design */
 .btn-mint-pill,
 a.btn-mint-pill,
@@ -3291,44 +3279,53 @@ button.btn-mint-pill:active {
 }
 
 .faq-bar-row {
+  margin-bottom: 18px;
+}
+
+.faq-bar-row:last-child {
+  margin-bottom: 0;
+}
+
+.faq-bar-info {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 14px;
+  margin-bottom: 6px;
+  gap: 12px;
 }
 
 .faq-bar-label {
-  width: 170px;
   font-family: var(--nav-font);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--heading-color);
-  flex-shrink: 0;
+}
+
+.faq-bar-value {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #2d465e;
+  white-space: nowrap;
 }
 
 .faq-bar-track {
-  flex: 1;
-  background: color-mix(in srgb, var(--default-color), transparent 93%);
-  border-radius: 8px;
-  height: 22px;
+  width: 100%;
+  background: color-mix(in srgb, var(--default-color), transparent 92%);
+  border-radius: 10px;
+  height: 14px;
   overflow: hidden;
 }
 
 .faq-bar-fill {
   height: 100%;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 10px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--heading-color);
+  border-radius: 10px;
+  transition: width 0.6s ease;
 }
 
 .faq-scale-bar {
   display: flex;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
   height: 42px;
 }
@@ -3342,6 +3339,34 @@ button.btn-mint-pill:active {
   font-family: var(--heading-font);
   font-weight: 800;
   font-size: 0.9rem;
+}
+
+@media (max-width: 576px) {
+  .faq-chart-card,
+  .faq-scale-card {
+    padding: 20px 18px;
+  }
+
+  .faq-bar-label {
+    font-size: 0.88rem;
+  }
+
+  .faq-bar-value {
+    font-size: 0.88rem;
+  }
+
+  .faq-bar-track {
+    height: 12px;
+  }
+
+  .faq-scale-bar {
+    height: 34px;
+    border-radius: 6px;
+  }
+
+  .faq-scale-seg {
+    font-size: 0.72rem;
+  }
 }
 
 .faq-cat-head {

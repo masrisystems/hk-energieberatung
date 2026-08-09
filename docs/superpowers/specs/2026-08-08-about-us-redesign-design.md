@@ -8,7 +8,7 @@ Implement the new "Über uns" (About Us) page (`about.html`) based on the `about
 - `assets/img/WhatsApp Image 2026-08-08 at 12.02.07 PM (1).jpeg` $\rightarrow$ `assets/img/aurich-sign-board.jpg`
 - `assets/img/WhatsApp Image 2026-08-08 at 12.02.07 PM (2).jpeg` $\rightarrow$ `assets/img/aurich-center.jpg`
 - `assets/img/WhatsApp Image 2026-08-08 at 12.02.07 PM (3).jpeg` $\rightarrow$ `assets/img/bremen-stadtmusikanten.jpg`
-- `assets/img/WhatsApp Image 2026-08-08 at 12.02.07 PM.jpeg` $\rightarrow$ `assets/img/bremen-marktplatz.jpg`
+- `assets/img/WhatsApp Image 2026-08-08 at 12.02.07 PM.jpeg` $\rightarrow$ `assets/img/bremen-marktplatz.jpeg`
 
 ## Page Architecture & Layout (`about.html`)
 1. **Header Component**: Synchronized using `components/header.html` with "ÜBER UNS" active.
@@ -34,7 +34,7 @@ Implement the new "Über uns" (About Us) page (`about.html`) based on the `about
 7. **Standorte Section ("Unsere Standorte")**:
    - Title: "Unsere Standorte".
    - 2 side-by-side location cards:
-     - **Standort Bremen**: Dual image layout (`bremen-stadtmusikanten.jpg` + `bremen-marktplatz.jpg`).
+     - **Standort Bremen**: Dual image layout (`bremen-stadtmusikanten.jpg` + `bremen-marktplatz.jpeg`).
      - **Standort Aurich**: Dual image layout (`aurich-sign-board.jpg` + `aurich-center.jpg`).
 8. **Map Component**: Embedded Google Map for Bremen office location.
 9. **Footer Component**: Pre-rendered from `components/footer.html`.
