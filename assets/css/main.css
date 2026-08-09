@@ -3282,10 +3282,6 @@ button.btn-mint-pill:active {
   margin-bottom: 18px;
 }
 
-.faq-bar-row:last-child {
-  margin-bottom: 0;
-}
-
 .faq-bar-info {
   display: flex;
   justify-content: space-between;
@@ -3321,6 +3317,40 @@ button.btn-mint-pill:active {
   height: 100%;
   border-radius: 10px;
   transition: width 0.6s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  font-family: var(--heading-font);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #1e3b2e;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .faq-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .faq-bar-info {
+    flex: 0 0 240px;
+    margin-bottom: 0;
+    display: block;
+  }
+
+  .faq-bar-track {
+    flex: 1;
+    height: 24px;
+    border-radius: 8px;
+  }
+
+  .faq-bar-fill {
+    border-radius: 8px;
+  }
 }
 
 .faq-scale-bar {
