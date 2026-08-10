@@ -1,14 +1,20 @@
 <!doctype html>
 <html lang="de">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HFHTNY6EL5"></script>
+    <!-- Google tag (gtag.js) – Consent Mode v2 -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'wait_for_update': 500
+      });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HFHTNY6EL5"></script>
+    <script>
       gtag('js', new Date());
-
-      gtag('config', 'G-HFHTNY6EL5');
+      gtag('config', 'G-HFHTNY6EL5', { 'anonymize_ip': true });
     </script>
 
     <meta charset="utf-8" />
@@ -49,7 +55,8 @@
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
     <link href="assets/css/main.css" rel="stylesheet" />
-  </head>
+      <link rel="stylesheet" href="/assets/css/cookie-consent.css" />
+</head>
 
   <body class="privacy-policy-page">
     <!-- Header Component -->
@@ -457,6 +464,93 @@
           </div>
         </div>
       </section>
+
+      <!-- Google Analytics & Cookies Section -->
+      <section id="cookie-datenschutz" class="privacy-policy section light-background">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Cookies &amp; Google Analytics</h2>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+
+              <h3>Verwendung von Cookies</h3>
+              <p>
+                Unsere Website verwendet Cookies. Cookies sind kleine Textdateien, die von Ihrem Browser auf Ihrem Endgerät gespeichert werden.
+                Wir setzen Cookies nur nach Ihrer ausdrücklichen Einwilligung ein, soweit diese nach
+                § 25 TTDSG (Telekommunikation-Telemedien-Datenschutzgesetz) erforderlich ist.
+              </p>
+              <p>
+                Sie können Ihre Einwilligung jederzeit über den Link
+                <a href="#" onclick="HKCookies.showSettings(); return false;">Cookie-Einstellungen</a>
+                am Ende jeder Seite widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten
+                Datenverarbeitung bleibt davon unberührt.
+              </p>
+
+              <h3>Google Analytics 4 (GA4)</h3>
+              <p>
+                Diese Website nutzt Google Analytics 4, einen Webanalysedienst der Google Ireland Limited,
+                Gordon House, Barrow Street, Dublin 4, Irland (im Folgenden „Google").
+              </p>
+              <p>
+                <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).
+                Google Analytics wird ausschließlich nach Ihrer ausdrücklichen Einwilligung aktiviert.
+              </p>
+              <p>
+                <strong>Zweck:</strong> Analyse des Nutzerverhaltens, Optimierung unserer Website und
+                unserer Leistungen. Google Analytics erstellt pseudonyme Nutzungsprofile und verwendet
+                dazu Cookies.
+              </p>
+              <p>
+                <strong>Erhobene Daten:</strong> IP-Adresse (anonymisiert durch IP-Anonymisierung),
+                Seitenaufrufe, Verweildauer, verwendetes Gerät / Browser, Herkunftsland (keine Stadtebene),
+                Referrer-URL.
+              </p>
+              <p>
+                <strong>IP-Anonymisierung:</strong> Wir verwenden Google Analytics mit aktivierter
+                IP-Anonymisierung (<code>anonymize_ip: true</code>). Ihre IP-Adresse wird vor der
+                Speicherung gekürzt.
+              </p>
+              <p>
+                <strong>Speicherdauer:</strong> Nutzerdaten werden in Google Analytics nach 14 Monaten
+                automatisch gelöscht. Cookiedaten werden entsprechend der Einwilligungsdauer gespeichert.
+              </p>
+              <p>
+                <strong>Datenübermittlung in Drittländer:</strong> Google kann die erhobenen Daten in
+                die USA oder andere Drittländer übertragen. Google LLC ist nach dem EU–US Data Privacy
+                Framework (DPF) zertifiziert. Weitere Informationen entnehmen Sie der
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+                  Google-Datenschutzerklärung
+                </a>.
+              </p>
+
+              <h3>Widerruf der Einwilligung / Opt-Out</h3>
+              <p>
+                Sie können Ihre Einwilligung jederzeit widerrufen, ohne dass die Rechtmäßigkeit der
+                aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitung berührt wird.
+              </p>
+              <p>
+                <a
+                  href="#"
+                  onclick="HKCookies.revokeConsent(); return false;"
+                  class="btn btn-outline-secondary btn-sm"
+                  style="border-radius: 8px; padding: 0.5rem 1.2rem;"
+                >
+                  Google Analytics deaktivieren
+                </a>
+              </p>
+              <p>
+                Alternativ können Sie das
+                <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank" rel="noopener noreferrer">
+                  Google Analytics Opt-Out Browser-Plugin
+                </a>
+                installieren.
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer Component -->
@@ -586,9 +680,10 @@
           <strong class="px-1 sitename">HK Energieberatung</strong>
           <span>Alle Rechte vorbehalten</span>
         </p>
-        <span class="d-flex gap-2 justify-content-center">
+        <span class="d-flex gap-2 justify-content-center flex-wrap">
           <a href="impressum.html">Impressum</a> -
-          <a href="datenschutz.html">Datenschutz</a>
+          <a href="datenschutz.html">Datenschutz</a> -
+          <a href="#" onclick="HKCookies.showSettings(); return false;" aria-label="Cookie-Einstellungen aendern">Cookie-Einstellungen</a>
         </span>
         <div class="credits">
           Made by
@@ -640,5 +735,10 @@
     <!-- Component Loader & Main JS -->
     <script src="assets/js/components.js"></script>
     <script src="assets/js/main.js"></script>
+  
+    <!-- Cookie Consent Script -->
+    <script src="/assets/js/cookie-consent.js"></script>
   </body>
 </html>
+
+

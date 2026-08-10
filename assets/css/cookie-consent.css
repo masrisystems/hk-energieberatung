@@ -1,0 +1,177 @@
+﻿/**
+ * HK Energieberatung - Cookie Consent Banner
+ * DSGVO-konform | Sticky Bottom | Brand Colors
+ */
+
+/* ─── Banner Container ─────────────────────────────────────────────────── */
+#hk-cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  padding: 0 1rem 1rem;
+  pointer-events: none;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+}
+
+#hk-cookie-banner.hk-cookie-visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#hk-cookie-banner.hk-cookie-hiding {
+  transform: translateY(110%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ─── Inner Card ──────────────────────────────────────────────────────── */
+.hk-cookie-inner {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.08),
+    0 20px 40px -8px rgba(45, 70, 94, 0.18),
+    0 0 0 1px rgba(171, 216, 195, 0.25);
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ─── Cookie Icon ─────────────────────────────────────────────────────── */
+.hk-cookie-icon {
+  flex-shrink: 0;
+  color: #ABD8C3;
+  display: flex;
+  align-items: center;
+}
+
+/* ─── Text Block ─────────────────────────────────────────────────────── */
+.hk-cookie-text {
+  flex: 1;
+  min-width: 200px;
+}
+
+.hk-cookie-title {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #2d465e;
+  margin: 0 0 0.25rem 0;
+  line-height: 1.3;
+}
+
+.hk-cookie-desc {
+  font-family: "Roboto", system-ui, sans-serif;
+  font-size: 0.82rem;
+  color: #555e67;
+  margin: 0;
+  line-height: 1.55;
+}
+
+.hk-cookie-link {
+  color: #66A66D;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.hk-cookie-link:hover {
+  color: #2d465e;
+}
+
+/* ─── Action Buttons ─────────────────────────────────────────────────── */
+.hk-cookie-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.hk-cookie-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.25rem;
+  border-radius: 8px;
+  font-family: "Roboto", system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s, box-shadow 0.15s;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.hk-cookie-btn:focus-visible {
+  outline: 2px solid #ABD8C3;
+  outline-offset: 3px;
+}
+
+/* Accept – filled brand green */
+.hk-cookie-btn-accept {
+  background: #ABD8C3;
+  border-color: #ABD8C3;
+  color: #1a3d2e;
+}
+
+.hk-cookie-btn-accept:hover {
+  background: #8ec9ae;
+  border-color: #8ec9ae;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(171, 216, 195, 0.45);
+}
+
+.hk-cookie-btn-accept:active {
+  transform: translateY(0);
+}
+
+/* Deny – outlined, neutral */
+.hk-cookie-btn-deny {
+  background: transparent;
+  border-color: #ced4da;
+  color: #555e67;
+}
+
+.hk-cookie-btn-deny:hover {
+  background: #f8f9fa;
+  border-color: #adb5bd;
+  color: #2d465e;
+  transform: translateY(-1px);
+}
+
+.hk-cookie-btn-deny:active {
+  transform: translateY(0);
+}
+
+/* ─── Mobile ─────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .hk-cookie-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1rem 1.1rem;
+  }
+
+  .hk-cookie-icon {
+    display: none;
+  }
+
+  .hk-cookie-actions {
+    width: 100%;
+  }
+
+  .hk-cookie-btn {
+    flex: 1;
+    text-align: center;
+  }
+}

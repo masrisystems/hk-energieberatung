@@ -1,16 +1,22 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HFHTNY6EL5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-HFHTNY6EL5');
-  </script>
+  <!-- Google tag (gtag.js) – Consent Mode v2 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'wait_for_update': 500
+      });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HFHTNY6EL5"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-HFHTNY6EL5', { 'anonymize_ip': true });
+    </script>
 
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -238,6 +244,7 @@
       margin: 0;
     }
   </style>
+    <link rel="stylesheet" href="/assets/css/cookie-consent.css" />
 </head>
 
 <body class="index-page">
@@ -727,9 +734,10 @@
           <strong class="px-1 sitename">HK Energieberatung</strong>
           <span>Alle Rechte vorbehalten</span>
         </p>
-        <span class="d-flex gap-2 justify-content-center">
+        <span class="d-flex gap-2 justify-content-center flex-wrap">
           <a href="impressum.html">Impressum</a> -
-          <a href="datenschutz.html">Datenschutz</a>
+          <a href="datenschutz.html">Datenschutz</a> -
+          <a href="#" onclick="HKCookies.showSettings(); return false;" aria-label="Cookie-Einstellungen aendern">Cookie-Einstellungen</a>
         </span>
         <div class="credits">
           Made by
@@ -764,5 +772,10 @@
   <!-- Component Loader & Main JS -->
   <script src="assets/js/components.js"></script>
   <script src="assets/js/main.js"></script>
-</body>
+
+    <!-- Cookie Consent Script -->
+    <script src="/assets/js/cookie-consent.js"></script>
+  </body>
 </html>
+
+

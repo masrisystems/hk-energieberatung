@@ -1,15 +1,21 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HFHTNY6EL5"></script>
+    <!-- Google tag (gtag.js) – Consent Mode v2 -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'wait_for_update': 500
+      });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HFHTNY6EL5"></script>
+    <script>
       gtag('js', new Date());
-
-      gtag('config', 'G-HFHTNY6EL5');
+      gtag('config', 'G-HFHTNY6EL5', { 'anonymize_ip': true });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +26,7 @@
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/cookie-consent.css" />
 </head>
 
 <body>
@@ -562,6 +569,9 @@
 
     Die Daten aus dem Bewerber-Pool werden spätestens zwei Jahre nach Erteilung der Einwilligung unwiderruflich
     gelöscht.
-</body>
+
+    <!-- Cookie Consent Script -->
+    <script src="/assets/js/cookie-consent.js"></script>
+  </body>
 
 </html>
