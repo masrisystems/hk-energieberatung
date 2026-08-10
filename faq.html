@@ -218,46 +218,92 @@
   <!-- Header Component -->
   <!-- START: HEADER_COMPONENT -->
 <header id="header" class="header d-flex align-items-center fixed-top">
-  <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <div
+        class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
+          <img
+            src="assets/img/logo.jpeg"
+            alt="HK Energieberatung Logo"
+            class="img-fluid"
+          />
+        </a>
 
-    <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-      <img src="assets/img/logo.jpeg" alt="HK Energieberatung Logo" class="img-fluid">
-    </a>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="about.html" data-page="about.html">ÜBER UNS</a></li>
-        <li class="dropdown"><a href="index.html#services" data-page="index.html#services"><span>LEISTUNGEN</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+        <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="expressausweis.html">Express Verbrauchsausweis (48h)</a></li>
-            <li><a href="index.html#services">Energieausweise</a></li>
-            <li><a href="index.html#features">BAFA & KfW Förderungen</a></li>
-            <li><a href="index.html#services">Sanierungsfahrplan (iSFP)</a></li>
-            <li><a href="index.html#services">KfW Kreditanträge</a></li>
+            <li><a href="about.html" data-page="about.html">ÜBER UNS</a></li>
+            <li class="dropdown">
+              <a href="/#services" data-page="/#services"
+                ><span>LEISTUNGEN</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i
+              ></a>
+              <ul>
+                <li>
+                  <a href="expressausweis.html"
+                    >Express Verbrauchsausweis (48h)</a
+                  >
+                </li>
+                <li><a href="/#services">Energieausweise</a></li>
+                <li><a href="/#features">BAFA & KfW Förderungen</a></li>
+                <li><a href="/#services">Sanierungsfahrplan (iSFP)</a></li>
+                <li><a href="/#services">KfW Kreditanträge</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" data-page="standorte"
+                ><span>STANDORTE</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i
+              ></a>
+              <ul>
+                <li>
+                  <a
+                    href="energieberatung-bremen.html"
+                    data-page="energieberatung-bremen.html"
+                    >Standort Bremen</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="energieberatung-aurich.html"
+                    data-page="energieberatung-aurich.html"
+                    >Standort Aurich</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" data-page="infothek" class="active"
+                ><span>INFOTHEK</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i
+              ></a>
+              <ul>
+                <li>
+                  <a href="mediathek.html" data-page="mediathek.html"
+                    >Erklärvideos (Mediathek)</a
+                  >
+                </li>
+                <li>
+                  <a href="dokumente.html" data-page="dokumente.html"
+                    >Formulare & Downloads</a
+                  >
+                </li>
+                <li>
+                  <a href="faq.html" data-page="faq.html" class="active"
+                    >Häufige Fragen (FAQ)</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="/#contact" data-page="/#contact">KONTAKT</a></li>
           </ul>
-        </li>
-        <li class="dropdown"><a href="#" data-page="standorte"><span>STANDORTE</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="energieberatung-bremen.html" data-page="energieberatung-bremen.html">Standort Bremen</a></li>
-            <li><a href="energieberatung-aurich.html" data-page="energieberatung-aurich.html">Standort Aurich</a></li>
-          </ul>
-        </li>
-        <li class="dropdown"><a href="#" data-page="infothek" class="active"><span>INFOTHEK</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="mediathek.html" data-page="mediathek.html">Erklärvideos (Mediathek)</a></li>
-            <li><a href="dokumente.html" data-page="dokumente.html">Formulare & Downloads</a></li>
-            <li><a href="faq.html" data-page="faq.html" class="active">Häufige Fragen (FAQ)</a></li>
-          </ul>
-        </li>
-        <li><a href="index.html#contact" data-page="index.html#contact">KONTAKT</a></li>
-      </ul>
-      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-    </nav>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
 
-    <a class="btn-getstarted btn-hk btn-hk-sm" href="index.html#contact">Jetzt kontaktieren</a>
-
-  </div>
-</header>
+        <a class="btn-getstarted btn-hk btn-hk-sm" href="/#contact"
+          >Jetzt kontaktieren</a
+        >
+      </div>
+    </header>
 
 <!-- END: HEADER_COMPONENT -->
 
@@ -577,140 +623,281 @@
     <!-- Reusable Contact Component Placeholder -->
     <!-- START: CONTACT_COMPONENT -->
 <section id="contact" class="contact section light-background">
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Kontakt</h2>
-    <p>Haben Sie Fragen oder möchten Sie mehr erfahren? Schreiben Sie uns – wir beraten Sie gerne unabhängig, persönlich und kompetent!</p>
-  </div>
-
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row g-4 g-lg-5">
-      <div class="col-lg-5">
-        <div class="info-box" data-aos="fade-up" data-aos-delay="200">
-          <h3>Kontaktdaten</h3>
-          <p>Im Folgenden finden Sie alle wichtigen Kontaktdaten: Unsere Adresse, Telefonnummer sowie unsere E-Mail-Adresse. Zögern Sie nicht, uns jederzeit zu kontaktieren – wir freuen uns auf Ihre Anfrage!</p>
-
-          <div class="info-item" data-aos="fade-up" data-aos-delay="300">
-            <a href="https://maps.app.goo.gl/Pd6vkvJnU2HgLyDv5" target="_blank" rel="noopener noreferrer" aria-label="Adresse auf Google Maps">
-              <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
-              <div class="content">
-                <h4>Adresse</h4>
-                Industriestraße 34
-                <p>28199 Bremen – Deutschland</p>
-              </div>
-            </a>
-          </div>
-
-          <div class="info-item" data-aos="fade-up" data-aos-delay="400">
-            <a href="tel:+491626985115" aria-label="Rufen Sie uns an unter +49 162 6985115">
-              <div class="icon-box"><i class="bi bi-telephone"></i></div>
-              <div class="content">
-                <h4>Kontakt</h4>
-                +49 162 6985115
-              </div>
-            </a>
-          </div>
-
-          <div class="info-item" data-aos="fade-up" data-aos-delay="500">
-            <a href="mailto:info@hk-energieberatung.de" aria-label="Schreiben Sie uns eine E-Mail an info@hk-energieberatung.de">
-              <div class="icon-box"><i class="bi bi-envelope"></i></div>
-              <div class="content">
-                <h4>Email Adresse</h4>
-                info@hk-energieberatung.de
-              </div>
-            </a>
-          </div>
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Kontakt</h2>
+          <p>
+            Haben Sie Fragen oder möchten Sie mehr erfahren? Schreiben Sie uns –
+            wir beraten Sie gerne unabhängig, persönlich und kompetent!
+          </p>
         </div>
-      </div>
 
-      <div class="col-lg-7">
-        <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
-          <h3>Schicken Sie uns <span class="accent-text" style="color: #66A66D;">Ihr Anliegen!</span></h3>
-          <p class="mb-4">Bitte geben Sie hier Ihre Kontaktdaten ein. Bei Auswahl eines Betreffs wird Ihre Nachricht passend vorausgefüllt:</p>
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row g-4 g-lg-5">
+            <div class="col-lg-5">
+              <div class="info-box" data-aos="fade-up" data-aos-delay="200">
+                <h3>Kontaktdaten</h3>
+                <p>
+                  Im Folgenden finden Sie alle wichtigen Kontaktdaten: Unsere
+                  Adresse, Telefonnummer sowie unsere E-Mail-Adresse. Zögern Sie
+                  nicht, uns jederzeit zu kontaktieren – wir freuen uns auf Ihre
+                  Anfrage!
+                </p>
 
-          <form action="https://masri.uber.space/forms/contact.php" method="post" class="php-email-form" id="kontaktForm" data-aos="fade-up" data-aos-delay="200">
-            <div class="row gy-3">
-              <div class="col-md-6">
-                <label for="anrede" class="form-label visually-hidden">Anrede</label>
-                <select id="anrede" name="anrede" class="form-select form-control" required>
-                  <option value="" disabled selected hidden>Anrede auswählen *</option>
-                  <option value="Herr">Herr</option>
-                  <option value="Frau">Frau</option>
-                  <option value="Divers">Divers</option>
-                  <option value="keine Angabe">Keine Angabe</option>
-                </select>
-              </div>
-
-              <div class="col-md-6">
-                <label for="name" class="form-label visually-hidden">Ihr Name</label>
-                <input type="text" id="name" name="name" class="form-control" placeholder="Ihr vollständiger Name *" required>
-              </div>
-
-              <div class="col-md-6">
-                <label for="email" class="form-label visually-hidden">Ihre E-Mail</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="Ihre E-Mail-Adresse *" required>
-              </div>
-
-              <div class="col-md-6">
-                <label for="telefon" class="form-label visually-hidden">Telefon (optional)</label>
-                <input type="tel" id="telefon" name="telefon" class="form-control" placeholder="Telefonnummer (optional)">
-              </div>
-
-              <div class="col-12">
-                <label for="betreff" class="form-label visually-hidden">Betreff</label>
-                <select id="betreff" name="subject" class="form-select form-control" required>
-                  <option value="" disabled selected hidden>Betreff / Anliegen auswählen *</option>
-                  <option value="Allgemeine Energieberatung">Allgemeine Energieberatung</option>
-                  <option value="Energieausweis beantragen">Energieausweis beantragen</option>
-                  <option value="Fördermittelberatung (KfW / BAFA)">Fördermittelberatung (KfW / BAFA)</option>
-                  <option value="Heizungscheck / Heizungstausch">Heizungscheck / Heizungstausch</option>
-                  <option value="Wärmedämmung / Gebäudesanierung">Wärmedämmung / Gebäudesanierung</option>
-                  <option value="Sanierungsfahrplan">Sanierungsfahrplan (iSFP)</option>
-
-                  <option value="Erstgespräch / Terminvereinbarung">Erstgespräch / Terminvereinbarung</option>
-                  <option value="Sonstiges Anliegen">Sonstiges Anliegen</option>
-                </select>
-              </div>
-
-              <div class="col-12">
-                <div class="contact-hint p-2 px-3 rounded-2" style="background: rgba(171, 216, 195, 0.15); border-left: 3px solid #66A66D; font-size: 0.85rem; color: #4a5568;">
-                  <i class="bi bi-info-circle me-1" style="color: #66A66D;"></i>
-                  Die Nachricht unten wird passend zum Betreff vorausgefüllt – Sie können sie danach frei anpassen.
+                <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+                  <a
+                    href="https://maps.app.goo.gl/Pd6vkvJnU2HgLyDv5"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Adresse auf Google Maps"
+                  >
+                    <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
+                    <div class="content">
+                      <h4>Adresse</h4>
+                      Industriestraße 34
+                      <p>28199 Bremen – Deutschland</p>
+                    </div>
+                  </a>
                 </div>
-              </div>
 
-              <div class="col-12">
-                <label for="nachricht" class="form-label visually-hidden">Ihre Nachricht</label>
-                <textarea id="nachricht" name="message" class="form-control" rows="6" placeholder="Ihre Nachricht an uns..." required></textarea>
-              </div>
-
-              <div style="display:none;" aria-hidden="true">
-                <input type="text" name="website" autocomplete="off" tabindex="-1">
-              </div>
-
-              <div class="col-12">
-                <div class="form-check d-flex align-items-start gap-2">
-                  <input class="form-check-input mt-1" type="checkbox" id="privacy" name="privacy" required>
-                  <label class="form-check-label small text-muted" for="privacy">
-                    Ich akzeptiere die <a href="datenschutz.html" target="_blank" rel="noopener" class="text-decoration-underline" style="color: #2d465e;">Datenschutzerklärung</a>.<span class="text-danger">*</span>
-                  </label>
+                <div class="info-item" data-aos="fade-up" data-aos-delay="400">
+                  <a
+                    href="tel:+491626985115"
+                    aria-label="Rufen Sie uns an unter +49 162 6985115"
+                  >
+                    <div class="icon-box"><i class="bi bi-telephone"></i></div>
+                    <div class="content">
+                      <h4>Kontakt</h4>
+                      +49 162 6985115
+                    </div>
+                  </a>
                 </div>
-              </div>
 
-              <div class="col-12 text-center pt-2">
-                <div class="loading">Wird gesendet...</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Ihre Nachricht wurde erfolgreich übermittelt. Wir melden uns schnellstmöglich bei Ihnen!</div>
-                <button type="submit" class="btn btn-hk btn-hk-md">
-                  <span>Nachricht absenden</span> <i class="bi bi-send ms-2"></i>
-                </button>
+                <div class="info-item" data-aos="fade-up" data-aos-delay="500">
+                  <a
+                    href="mailto:info@hk-energieberatung.de"
+                    aria-label="Schreiben Sie uns eine E-Mail an info@hk-energieberatung.de"
+                  >
+                    <div class="icon-box"><i class="bi bi-envelope"></i></div>
+                    <div class="content">
+                      <h4>Email Adresse</h4>
+                      info@hk-energieberatung.de
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
-          </form>
+
+            <div class="col-lg-7">
+              <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
+                <h3>
+                  Schicken Sie uns
+                  <span class="accent-text" style="color: #66a66d"
+                    >Ihr Anliegen!</span
+                  >
+                </h3>
+                <p class="mb-4">
+                  Bitte geben Sie hier Ihre Kontaktdaten ein. Bei Auswahl eines
+                  Betreffs wird Ihre Nachricht passend vorausgefüllt:
+                </p>
+
+                <form
+                  action="https://masri.uber.space/forms/contact.php"
+                  method="post"
+                  class="php-email-form"
+                  id="kontaktForm"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <div class="row gy-3">
+                    <div class="col-md-6">
+                      <label for="anrede" class="form-label visually-hidden"
+                        >Anrede</label
+                      >
+                      <select
+                        id="anrede"
+                        name="anrede"
+                        class="form-select form-control"
+                        required
+                      >
+                        <option value="" disabled selected hidden>
+                          Anrede auswählen *
+                        </option>
+                        <option value="Herr">Herr</option>
+                        <option value="Frau">Frau</option>
+                        <option value="Divers">Divers</option>
+                        <option value="keine Angabe">Keine Angabe</option>
+                      </select>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="name" class="form-label visually-hidden"
+                        >Ihr Name</label
+                      >
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        class="form-control"
+                        placeholder="Ihr vollständiger Name *"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="email" class="form-label visually-hidden"
+                        >Ihre E-Mail</label
+                      >
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="form-control"
+                        placeholder="Ihre E-Mail-Adresse *"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="telefon" class="form-label visually-hidden"
+                        >Telefon (optional)</label
+                      >
+                      <input
+                        type="tel"
+                        id="telefon"
+                        name="telefon"
+                        class="form-control"
+                        placeholder="Telefonnummer (optional)"
+                      />
+                    </div>
+
+                    <div class="col-12">
+                      <label for="betreff" class="form-label visually-hidden"
+                        >Betreff</label
+                      >
+                      <select
+                        id="betreff"
+                        name="subject"
+                        class="form-select form-control"
+                        required
+                      >
+                        <option value="" disabled selected hidden>
+                          Betreff / Anliegen auswählen *
+                        </option>
+                        <option value="Allgemeine Energieberatung">
+                          Allgemeine Energieberatung
+                        </option>
+                        <option value="Energieausweis beantragen">
+                          Energieausweis beantragen
+                        </option>
+                        <option value="Fördermittelberatung (KfW / BAFA)">
+                          Fördermittelberatung (KfW / BAFA)
+                        </option>
+                        <option value="Heizungscheck / Heizungstausch">
+                          Heizungscheck / Heizungstausch
+                        </option>
+                        <option value="Wärmedämmung / Gebäudesanierung">
+                          Wärmedämmung / Gebäudesanierung
+                        </option>
+                        <option value="Sanierungsfahrplan">
+                          Sanierungsfahrplan (iSFP)
+                        </option>
+
+                        <option value="Erstgespräch / Terminvereinbarung">
+                          Erstgespräch / Terminvereinbarung
+                        </option>
+                        <option value="Sonstiges Anliegen">
+                          Sonstiges Anliegen
+                        </option>
+                      </select>
+                    </div>
+
+                    <div class="col-12">
+                      <div
+                        class="contact-hint p-2 px-3 rounded-2"
+                        style="
+                          background: rgba(171, 216, 195, 0.15);
+                          border-left: 3px solid #66a66d;
+                          font-size: 0.85rem;
+                          color: #4a5568;
+                        "
+                      >
+                        <i
+                          class="bi bi-info-circle me-1"
+                          style="color: #66a66d"
+                        ></i>
+                        Die Nachricht unten wird passend zum Betreff
+                        vorausgefüllt – Sie können sie danach frei anpassen.
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="nachricht" class="form-label visually-hidden"
+                        >Ihre Nachricht</label
+                      >
+                      <textarea
+                        id="nachricht"
+                        name="message"
+                        class="form-control"
+                        rows="6"
+                        placeholder="Ihre Nachricht an uns..."
+                        required
+                      ></textarea>
+                    </div>
+
+                    <div style="display: none" aria-hidden="true">
+                      <input
+                        type="text"
+                        name="website"
+                        autocomplete="off"
+                        tabindex="-1"
+                      />
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-check d-flex align-items-start gap-2">
+                        <input
+                          class="form-check-input mt-1"
+                          type="checkbox"
+                          id="privacy"
+                          name="privacy"
+                          required
+                        />
+                        <label
+                          class="form-check-label small text-muted"
+                          for="privacy"
+                        >
+                          Ich akzeptiere die
+                          <a
+                            href="datenschutz.html"
+                            target="_blank"
+                            rel="noopener"
+                            class="text-decoration-underline"
+                            style="color: #2d465e"
+                            >Datenschutzerklärung</a
+                          >.<span class="text-danger">*</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 text-center pt-2">
+                      <div class="loading">Wird gesendet...</div>
+                      <div class="error-message"></div>
+                      <div class="sent-message">
+                        Ihre Nachricht wurde erfolgreich übermittelt. Wir melden
+                        uns schnellstmöglich bei Ihnen!
+                      </div>
+                      <button type="submit" class="btn btn-hk btn-hk-md">
+                        <span>Nachricht absenden</span>
+                        <i class="bi bi-send ms-2"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
 <!-- END: CONTACT_COMPONENT -->
 
