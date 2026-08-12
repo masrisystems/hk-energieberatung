@@ -452,4 +452,35 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
   window.addEventListener('load', initContactTemplates);
   document.addEventListener('DOMContentLoaded', initContactTemplates);
 
+  // Exit Intent Popup
+  document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('exit-popup');
+    const closeBtn = document.getElementById('close-exit-popup');
+    if (!popup) return;
+
+    if (localStorage.getItem('hk_exit_intent_shown')) return;
+
+    const onMouseLeave = function(e) {
+      if (e.clientY < 10) {
+        popup.classList.add('show');
+        localStorage.setItem('hk_exit_intent_shown', 'true');
+        document.removeEventListener('mouseleave', onMouseLeave);
+      }
+    };
+
+    document.addEventListener('mouseleave', onMouseLeave);
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        popup.classList.remove('show');
+      });
+    }
+
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.classList.remove('show');
+      }
+    });
+  });
+
 })();

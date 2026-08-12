@@ -333,8 +333,11 @@
                       <div class="error-message"></div>
                       <div class="sent-message">Ihre Nachricht wurde erfolgreich übermittelt. Wir melden uns schnellstmöglich bei Ihnen!</div>
                       <button type="submit" class="btn btn-hk btn-hk-md">
-                        <span>Nachricht absenden</span> <i class="bi bi-send ms-2"></i>
+                        <span>Kostenloses Erstgespräch anfragen →</span>
                       </button>
+                      <div class="mt-3 text-center" style="font-size: 0.85rem; color: #4a5568;">
+                        🔒 100% kostenfrei & unverbindlich &bull; Rückmeldung garantiert innerhalb von 24 Stunden &bull; Keine Weitergabe von Daten
+                      </div>
                     </div>
                   </div>
                 </form>
@@ -378,5 +381,56 @@
   } else {
     initAllComponents();
   }
+
+  /**
+   * HK Energieberatung - Mini Förderrechner Widget
+   */
+  function renderFundingCalculator(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    container.innerHTML = `
+      <div class="calculator-card p-4 rounded-4 shadow-sm border" style="background: var(--surface-color);">
+        <h3 class="mb-3 text-center">Fördermittel-Schnellrechner</h3>
+        <div class="mb-3">
+          <label class="form-label fw-bold">Geplante Investition (€):</label>
+          <input type="range" class="form-range" id="calc-invest" min="5000" max="60000" step="5000" value="30000">
+          <div class="d-flex justify-content-between text-muted"><span id="invest-val">30.000 €</span><span>60.000 €</span></div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-bold">Maßnahme:</label>
+          <select class="form-select" id="calc-type">
+            <option value="70">Heizungstausch (bis zu 70% KfW)</option>
+            <option value="20">Dämmung / Fenster mit iSFP (20% BAFA)</option>
+            <option value="15">Dämmung / Fenster ohne iSFP (15% BAFA)</option>
+          </select>
+        </div>
+        <div class="result-box p-3 rounded-3 text-center my-3" style="background: #ABD8C3; color: #2d465e;">
+          <p class="mb-1">Geschätzte staatliche Förderung:</p>
+          <h2 class="fw-bold mb-0" id="calc-result">21.000 €</h2>
+        </div>
+        <a href="#contact" class="btn btn-hk btn-hk-lg w-100">Kostenlose Fördermittel-Prüfung anfragen</a>
+      </div>
+    `;
+
+    const slider = document.getElementById('calc-invest');
+    const select = document.getElementById('calc-type');
+    const resultDisplay = document.getElementById('calc-result');
+    const investDisplay = document.getElementById('invest-val');
+
+    function update() {
+      const invest = parseFloat(slider.value);
+      const rate = parseFloat(select.value);
+      const grant = Math.round(invest * (rate / 100));
+      investDisplay.textContent = invest.toLocaleString('de-DE') + ' €';
+      resultDisplay.textContent = grant.toLocaleString('de-DE') + ' €';
+    }
+
+    slider.addEventListener('input', update);
+    select.addEventListener('change', update);
+    update();
+  }
+
+  window.renderFundingCalculator = renderFundingCalculator;
 
 })();
