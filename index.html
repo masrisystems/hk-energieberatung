@@ -1,31 +1,35 @@
 <!doctype html>
 <html lang="de">
   <head>
-    <!-- Google tag (gtag.js) – Consent Mode v2 -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("consent", "default", {
-        analytics_storage: "denied",
-        ad_storage: "denied",
-        wait_for_update: 500,
-      });
-    </script>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-972344910"
-    ></script>
-    <script>
-      gtag("js", new Date());
-      gtag("config", "AW-972344910", { anonymize_ip: true });
-    </script>
+        <!-- A/B Testing Traffic Split & Analytics Tagging (Loaded first so variant is assigned before page_view fires) -->
+  <script src="assets/js/ab-test.js"></script>
 
-    <!-- A/B Testing Traffic Split & Analytics Tagging -->
-    <script src="assets/js/ab-test.js"></script>
+  <!-- Google tag (gtag.js) – Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("consent", "default", {
+      analytics_storage: "denied",
+      ad_storage: "denied",
+      wait_for_update: 500,
+    });
+  </script>
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=AW-972344910"
+  ></script>
+  <script>
+    gtag("js", new Date());
+    gtag("config", "AW-972344910", {
+      anonymize_ip: true,
+      variant: window.HK_AB_VARIANT || "v2",
+      landing_variant: window.HK_AB_VARIANT || "v2"
+    });
+  </script>
 
-    <meta charset="utf-8" />
+  <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>HK Energieberatung | Zertifizierte Energieberater</title>
     <meta
@@ -282,6 +286,49 @@
                   "@type": "Answer",
                   "text": "BAFA-Einzelmaßnahmen (BEG EM) umfassen Sanierungsschritte an der Gebäudehülle wie Dämmung von Dach, Außenwand oder Kellerdecke sowie Fenstertausch. Sie werden mit 15 % bezuschusst, in Kombination mit einem vorliegenden iSFP mit 20 % (max. 60.000 € förderfähige Kosten pro Wohneinheit/Jahr)."
                 }
+              }
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://hk-energieberatung.de/#site-navigation",
+            "name": "Hauptnavigation",
+            "itemListElement": [
+              {
+                "@type": "SiteNavigationElement",
+                "position": 1,
+                "name": "Über uns",
+                "url": "https://hk-energieberatung.de/about.html"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 2,
+                "name": "Standort Bremen",
+                "url": "https://hk-energieberatung.de/energieberatung-bremen.html"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 3,
+                "name": "Standort Aurich",
+                "url": "https://hk-energieberatung.de/energieberatung-aurich.html"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 4,
+                "name": "Express-Verbrauchsausweis (48h)",
+                "url": "https://hk-energieberatung.de/expressausweis.html"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 5,
+                "name": "Häufige Fragen (FAQ)",
+                "url": "https://hk-energieberatung.de/faq.html"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 6,
+                "name": "Formulare & Downloads",
+                "url": "https://hk-energieberatung.de/dokumente.html"
               }
             ]
           }

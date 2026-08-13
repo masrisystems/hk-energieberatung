@@ -73,6 +73,18 @@
   var activeVariant = initVariant();
   window.HK_AB_VARIANT = activeVariant;
 
+  // Initialize dataLayer and push global GA4 parameter binding immediately
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+
+  // Set global 'variant' event parameter so all events (page_view, custom events) pass it
+  gtag('set', {
+    'variant': activeVariant,
+    'landing_variant': activeVariant
+  });
+
   // Perform client-side route split on home page
   var pathname = window.location.pathname.toLowerCase();
   var isIndexRoot = pathname === '/' || pathname.endsWith('/index.html') || pathname.endsWith('/hk%20energieberatung/') || pathname.endsWith('/hk%20energieberatung');
@@ -92,21 +104,24 @@
 
   // Push GA4 / Google Tag Impression & Tagging
   function sendAnalyticsImpression() {
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      window.dataLayer.push(arguments);
-    }
+    // Re-assert set parameter prior to event dispatch
+    gtag('set', {
+      'variant': activeVariant,
+      'landing_variant': activeVariant
+    });
 
     gtag('event', 'ab_test_impression', {
-      experiment_name: 'landing_v1_vs_v2',
-      variant: activeVariant,
-      page_title: document.title,
-      page_path: window.location.pathname
+      'experiment_name': 'landing_v1_vs_v2',
+      'variant': activeVariant,
+      'landing_variant': activeVariant,
+      'page_title': document.title,
+      'page_path': window.location.pathname
     });
 
     // Set custom user property in GA4
     gtag('set', 'user_properties', {
-      ab_landing_variant: activeVariant
+      'ab_landing_variant': activeVariant,
+      'variant': activeVariant
     });
 
     console.log('[HK A/B Test] Assigned Variant:', activeVariant);

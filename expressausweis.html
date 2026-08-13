@@ -1,28 +1,35 @@
 <!doctype html>
 <html lang="de">
   <head>
-    <!-- Google tag (gtag.js) – Consent Mode v2 -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("consent", "default", {
-        analytics_storage: "denied",
-        ad_storage: "denied",
-        wait_for_update: 500,
-      });
-    </script>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-972344910"
-    ></script>
-    <script>
-      gtag("js", new Date());
-      gtag("config", "AW-972344910", { anonymize_ip: true });
-    </script>
+        <!-- A/B Testing Traffic Split & Analytics Tagging (Loaded first so variant is assigned before page_view fires) -->
+  <script src="assets/js/ab-test.js"></script>
 
-    <meta charset="utf-8" />
+  <!-- Google tag (gtag.js) – Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("consent", "default", {
+      analytics_storage: "denied",
+      ad_storage: "denied",
+      wait_for_update: 500,
+    });
+  </script>
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=AW-972344910"
+  ></script>
+  <script>
+    gtag("js", new Date());
+    gtag("config", "AW-972344910", {
+      anonymize_ip: true,
+      variant: window.HK_AB_VARIANT || "v2",
+      landing_variant: window.HK_AB_VARIANT || "v2"
+    });
+  </script>
+
+  <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>
       Express-Verbrauchsausweis (48h) – Online beantragen | HK Energieberatung
