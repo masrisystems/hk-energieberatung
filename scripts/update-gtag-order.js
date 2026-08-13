@@ -5,6 +5,7 @@ const rootDir = path.resolve(__dirname, '..');
 
 const filesToUpdate = [
   'index.html',
+  'index-v1.html',
   'about.html',
   'energieberatung-bremen.html',
   'energieberatung-aurich.html',
