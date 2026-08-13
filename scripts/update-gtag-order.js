@@ -43,7 +43,11 @@ const newGtagHeaderBlock = `  <!-- A/B Testing Traffic Split & Analytics Tagging
     gtag("config", "AW-972344910", {
       anonymize_ip: true,
       variant: window.HK_AB_VARIANT || "v2",
-      landing_variant: window.HK_AB_VARIANT || "v2"
+      landing_variant: window.HK_AB_VARIANT || "v2",
+      user_properties: {
+        ab_landing_variant: window.HK_AB_VARIANT || "v2",
+        variant: window.HK_AB_VARIANT || "v2"
+      }
     });
   </script>`;
 

@@ -79,10 +79,19 @@
     window.dataLayer.push(arguments);
   }
 
-  // Set global 'variant' event parameter so all events (page_view, custom events) pass it
+  // Set global 'variant' event parameter and user_properties so all events pass it
   gtag('set', {
     'variant': activeVariant,
-    'landing_variant': activeVariant
+    'landing_variant': activeVariant,
+    'user_properties': {
+      'ab_landing_variant': activeVariant,
+      'variant': activeVariant
+    }
+  });
+
+  gtag('set', 'user_properties', {
+    'ab_landing_variant': activeVariant,
+    'variant': activeVariant
   });
 
   // Perform client-side route split on home page

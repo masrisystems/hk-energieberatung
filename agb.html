@@ -1,7 +1,7 @@
 ﻿<!doctype html>
 <html lang="de">
   <head>
-          <!-- A/B Testing Traffic Split & Analytics Tagging (Loaded first so variant is assigned before page_view fires) -->
+            <!-- A/B Testing Traffic Split & Analytics Tagging (Loaded first so variant is assigned before page_view fires) -->
   <script src="assets/js/ab-test.js"></script>
 
   <!-- Google tag (gtag.js) – Consent Mode v2 -->
@@ -25,7 +25,11 @@
     gtag("config", "AW-972344910", {
       anonymize_ip: true,
       variant: window.HK_AB_VARIANT || "v2",
-      landing_variant: window.HK_AB_VARIANT || "v2"
+      landing_variant: window.HK_AB_VARIANT || "v2",
+      user_properties: {
+        ab_landing_variant: window.HK_AB_VARIANT || "v2",
+        variant: window.HK_AB_VARIANT || "v2"
+      }
     });
   </script>
 
