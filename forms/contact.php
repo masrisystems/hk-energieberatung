@@ -66,6 +66,25 @@ if (!empty($honeypot)) {
     exit;
 }
 
+// Detect Lead Magnet / Quick Download requests
+$isLeadMagnet = (
+    strpos($subject, 'Lead-Magnet') !== false ||
+    strpos($subject, 'Download') !== false ||
+    (!empty($email) && empty($name) && empty($message))
+);
+
+if ($isLeadMagnet) {
+    if (empty($name)) {
+        $name = 'Interessent (Lead-Magnet)';
+    }
+    if (empty($message)) {
+        $message = 'Lead-Magnet Download-Anforderung für: ' . $subject;
+    }
+    if (empty($privacy)) {
+        $privacy = 'Akzeptiert (Lead-Magnet Opt-in)';
+    }
+}
+
 // Check mandatory fields
 if (empty($name) || empty($email) || empty($message)) {
     http_response_code(400);
@@ -326,11 +345,15 @@ if ($mailSent) {
     if ($isAjax) {
         echo "OK";
     } else {
+        $msgTitle = $isLeadMagnet ? "Vielen Dank!" : "Vielen Dank für Ihre Nachricht!";
+        $msgDesc  = $isLeadMagnet 
+            ? "Ihre E-Mail-Adresse wurde erfolgreich erfasst. Wir übermitteln Ihnen die angeforderten Unterlagen in Kürze per E-Mail." 
+            : "Ihre Anfrage wurde erfolgreich an unser Ingenieurbüro übermittelt. Wir werden uns schnellstmöglich bei Ihnen melden.";
         echo '<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <title>Vielen Dank! – HK Energieberatung</title>
+  <title>' . htmlspecialchars($msgTitle) . ' – HK Energieberatung</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <style>
@@ -345,9 +368,9 @@ if ($mailSent) {
 <body>
   <div class="card">
     <div class="check">✓</div>
-    <h1>Vielen Dank für Ihre Nachricht!</h1>
-    <p>Ihre Anfrage wurde erfolgreich an unser Ingenieurbüro übermittelt. Wir werden uns schnellstmöglich bei Ihnen melden.</p>
-    <a href="https://hk-energieberatung.de/#contact" class="btn">Zurück zur Website</a>
+    <h1>' . htmlspecialchars($msgTitle) . '</h1>
+    <p>' . htmlspecialchars($msgDesc) . '</p>
+    <a href="https://hk-energieberatung.de" class="btn">Zurück zur Website</a>
   </div>
 </body>
 </html>';

@@ -1,190 +1,211 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-
-<head>
-  <!-- Google tag (gtag.js) – Consent Mode v2 -->
+  <head>
+    <!-- Google tag (gtag.js) – Consent Mode v2 -->
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('consent', 'default', {
-        'analytics_storage': 'denied',
-        'ad_storage': 'denied',
-        'wait_for_update': 500
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        wait_for_update: 500,
       });
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-972344910"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-972344910"
+    ></script>
     <script>
-      gtag('js', new Date());
-      gtag('config', 'AW-972344910', { 'anonymize_ip': true });
+      gtag("js", new Date());
+      gtag("config", "AW-972344910", { anonymize_ip: true });
     </script>
 
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Dokumente & Downloads | HK Energieberatung</title>
-  <meta name="description" content="Formulare, Checklisten, Musterberichte und Infoblätter rund um Energieausweis, iSFP, BAFA & KfW Förderungen zum einfachen Download.">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Dokumente & Downloads | HK Energieberatung</title>
+    <meta
+      name="description"
+      content="Formulare, Checklisten, Musterberichte und Infoblätter rund um Energieausweis, iSFP, BAFA & KfW Förderungen zum einfachen Download."
+    />
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
 
-  <style>
-    .docs-hero {
-      padding-top: 150px;
-      padding-bottom: 50px;
-      background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 94%) 0%, transparent 60%);
-    }
+    <style>
+      .docs-hero {
+        padding-top: 150px;
+        padding-bottom: 50px;
+        background: linear-gradient(
+          135deg,
+          color-mix(in srgb, var(--accent-color), transparent 94%) 0%,
+          transparent 60%
+        );
+      }
 
-    .doc-card {
-      background: var(--surface-color);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
+      .doc-card {
+        background: var(--surface-color);
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+        border: 1px solid
+          color-mix(in srgb, var(--accent-color), transparent 85%);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
 
-    .doc-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.09);
-      border-color: var(--accent-color);
-    }
+      .doc-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
+        border-color: var(--accent-color);
+      }
 
-    .doc-icon-wrapper {
-      width: 56px;
-      height: 56px;
-      border-radius: 12px;
-      background: color-mix(in srgb, var(--accent-color), transparent 90%);
-      color: var(--accent-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      margin-bottom: 20px;
-    }
+      .doc-icon-wrapper {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        background: color-mix(in srgb, var(--accent-color), transparent 90%);
+        color: var(--accent-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+      }
 
-    .doc-badge {
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 20px;
-      background: color-mix(in srgb, var(--accent-color), transparent 88%);
-      color: var(--accent-color);
-      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
-      display: inline-block;
-    }
+      .doc-badge {
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 20px;
+        background: color-mix(in srgb, var(--accent-color), transparent 88%);
+        color: var(--accent-color);
+        border: 1px solid
+          color-mix(in srgb, var(--accent-color), transparent 75%);
+        display: inline-block;
+      }
 
-    .doc-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--heading-color);
-      margin-bottom: 10px;
-    }
+      .doc-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--heading-color);
+        margin-bottom: 10px;
+      }
 
-    .doc-desc {
-      font-size: 0.9rem;
-      color: #64748b;
-      margin-bottom: 20px;
-      flex-grow: 1;
-    }
+      .doc-desc {
+        font-size: 0.9rem;
+        color: #64748b;
+        margin-bottom: 20px;
+        flex-grow: 1;
+      }
 
-    .doc-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid #f1f5f9;
-      padding-top: 15px;
-    }
+      .doc-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid #f1f5f9;
+        padding-top: 15px;
+      }
 
-    .doc-size {
-      font-size: 0.8rem;
-      color: #94a3b8;
-      font-weight: 500;
-    }
-  </style>
+      .doc-size {
+        font-size: 0.8rem;
+        color: #94a3b8;
+        font-weight: 500;
+      }
+    </style>
 
-  <!-- Schema.org CollectionPage JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Formulare & Downloads — HK Energieberatung",
-    "url": "https://hk-energieberatung.de/dokumente.html",
-    "description": "Offizielle Checklisten, Infoblätter und Ablaufpläne für iSFP, BAFA Einzelmaßnahmen und KfW Förderungen als PDF zum Download.",
-    "mainEntity": {
-      "@type": "ItemList",
-      "itemListElement": [
-        {
-          "@type": "DigitalDocument",
-          "position": 1,
-          "name": "iSFP Ablaufplan & Schritte",
-          "encodingFormat": "application/pdf"
-        },
-        {
-          "@type": "DigitalDocument",
-          "position": 2,
-          "name": "Energieausweis Erstellung Guide",
-          "encodingFormat": "application/pdf"
-        },
-        {
-          "@type": "DigitalDocument",
-          "position": 3,
-          "name": "KfW 458 Heizungsförderung Merkblatt",
-          "encodingFormat": "application/pdf"
-        },
-        {
-          "@type": "DigitalDocument",
-          "position": 4,
-          "name": "Checkliste Förderunterlagen",
-          "encodingFormat": "application/pdf"
-        },
-        {
-          "@type": "DigitalDocument",
-          "position": 5,
-          "name": "BAFA BEG EM Infoblatt",
-          "encodingFormat": "application/pdf"
-        },
-        {
-          "@type": "DigitalDocument",
-          "position": 6,
-          "name": "BEG EM Maßnahmenkatalog",
-          "encodingFormat": "application/pdf"
-        },
-        {
-          "@type": "DigitalDocument",
-          "position": 7,
-          "name": "Fördermittel Gesamtübersicht",
-          "encodingFormat": "application/pdf"
+    <!-- Schema.org CollectionPage JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Formulare & Downloads — HK Energieberatung",
+        "url": "https://hk-energieberatung.de/dokumente.html",
+        "description": "Offizielle Checklisten, Infoblätter und Ablaufpläne für iSFP, BAFA Einzelmaßnahmen und KfW Förderungen als PDF zum Download.",
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "DigitalDocument",
+              "position": 1,
+              "name": "iSFP Ablaufplan & Schritte",
+              "encodingFormat": "application/pdf"
+            },
+            {
+              "@type": "DigitalDocument",
+              "position": 2,
+              "name": "Energieausweis Erstellung Guide",
+              "encodingFormat": "application/pdf"
+            },
+            {
+              "@type": "DigitalDocument",
+              "position": 3,
+              "name": "KfW 458 Heizungsförderung Merkblatt",
+              "encodingFormat": "application/pdf"
+            },
+            {
+              "@type": "DigitalDocument",
+              "position": 4,
+              "name": "Checkliste Förderunterlagen",
+              "encodingFormat": "application/pdf"
+            },
+            {
+              "@type": "DigitalDocument",
+              "position": 5,
+              "name": "BAFA BEG EM Infoblatt",
+              "encodingFormat": "application/pdf"
+            },
+            {
+              "@type": "DigitalDocument",
+              "position": 6,
+              "name": "BEG EM Maßnahmenkatalog",
+              "encodingFormat": "application/pdf"
+            },
+            {
+              "@type": "DigitalDocument",
+              "position": 7,
+              "name": "Fördermittel Gesamtübersicht",
+              "encodingFormat": "application/pdf"
+            }
+          ]
         }
-      ]
-    }
-  }
-  </script>
+      }
+    </script>
     <link rel="stylesheet" href="/assets/css/cookie-consent.css" />
-</head>
+  </head>
 
-<body class="dokumente-page">
-
-  <!-- START: HEADER_COMPONENT -->
-<header id="header" class="header d-flex align-items-center fixed-top">
+  <body class="dokumente-page">
+    <!-- START: HEADER_COMPONENT -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
       <div
         class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
       >
@@ -250,7 +271,10 @@
                   >
                 </li>
                 <li>
-                  <a href="dokumente.html" data-page="dokumente.html" class="active"
+                  <a
+                    href="dokumente.html"
+                    data-page="dokumente.html"
+                    class="active"
                     >Formulare & Downloads</a
                   >
                 </li>
@@ -272,249 +296,450 @@
       </div>
     </header>
 
-<!-- END: HEADER_COMPONENT -->
+    <!-- END: HEADER_COMPONENT -->
 
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section class="docs-hero text-center">
-      <div class="container" data-aos="fade-up">
-        <span class="company-badge mb-3"><i class="bi bi-file-earmark-pdf-fill me-2"></i> Formulare & Unterlagen</span>
-        <h1 class="display-5 fw-bold mb-3" style="color: var(--heading-color);">Dokumente & Downloads</h1>
-        <p class="lead mx-auto mb-4" style="max-width: 720px; color: color-mix(in srgb, var(--default-color), transparent 25%);">
-          Hier finden Sie alle wichtigen Formulare, Checklisten und Vollmachten für Ihre Energieberatung, Ihren Sanierungsfahrplan (iSFP) und Förderanträge zum einfachen Download.
-        </p>
-      </div>
-    </section>
-
-    <!-- Documents Grid Section -->
-    <section class="section light-background py-5">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row g-4">
-
-          <!-- Doc 1 -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="doc-card">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div class="doc-icon-wrapper">
-                  <i class="bi bi-signpost-2-fill"></i>
-                </div>
-                <span class="doc-badge">PDF • Ablaufplan</span>
-              </div>
-              <h3 class="doc-title">Ablaufplan: iSFP Sanierungsfahrplan</h3>
-              <p class="doc-desc">Schritt-für-Schritt-Ablauf von der Datenaufnahme bis zum iSFP inklusive 5% Fahrplan-Bonus für Ihre Sanierung.</p>
-              <div class="doc-footer">
-                <span class="doc-size"><i class="bi bi-paperclip me-1"></i> 39 KB</span>
-                <a href="assets/dokumente/Ablaufplan%20f%C3%BCr%20die%20Erstellung%20eines%20individuellen%20Sanierungsfahrplans.pdf" download class="btn btn-hk btn-hk-sm">Download <i class="bi bi-download ms-1"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Doc 2 -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="doc-card">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div class="doc-icon-wrapper">
-                  <i class="bi bi-file-earmark-check-fill"></i>
-                </div>
-                <span class="doc-badge">PDF • Ablaufplan</span>
-              </div>
-              <h3 class="doc-title">Ablaufplan: Energieausweis Erstellung</h3>
-              <p class="doc-desc">Vom Datenerfassungsbogen bis zum rechtssicheren Bedarfsausweis oder Verbrauchsausweis nach Gebäudeenergiegesetz.</p>
-              <div class="doc-footer">
-                <span class="doc-size"><i class="bi bi-paperclip me-1"></i> 33 KB</span>
-                <a href="assets/dokumente/Ablaufplan%20zur%20Erstellung%20des%20Energieausweises.pdf" download class="btn btn-hk btn-hk-sm">Download <i class="bi bi-download ms-1"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Doc 3 -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="doc-card">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div class="doc-icon-wrapper">
-                  <i class="bi bi-thermometer-sun"></i>
-                </div>
-                <span class="doc-badge">PDF • Ablaufplan</span>
-              </div>
-              <h3 class="doc-title">Ablaufplan: KfW 458 Förderung Wärmepumpe</h3>
-              <p class="doc-desc">Schrittweise Anleitung für den erfolgreichen Heizungstausch mit bis zu 70% staatlichem KfW-Förderzuschuss.</p>
-              <div class="doc-footer">
-                <span class="doc-size"><i class="bi bi-paperclip me-1"></i> 48 KB</span>
-                <a href="assets/dokumente/Ablaufplan%20f%C3%BCr%20die%20F%C3%B6rderung%20einer%20W%C3%A4rmepumpe%20(KfW%20458).pdf" download class="btn btn-hk btn-hk-sm">Download <i class="bi bi-download ms-1"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Doc 4 -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="doc-card">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div class="doc-icon-wrapper">
-                  <i class="bi bi-clipboard-check-fill"></i>
-                </div>
-                <span class="doc-badge">PDF • Checkliste</span>
-              </div>
-              <h3 class="doc-title">Checkliste KfW 458: Wärmepumpen-Förderung</h3>
-              <p class="doc-desc">Vollständige Unterlagenliste inklusive Lieferungsvertrag und Nachweisen für Ihren zügigen Förderantrag.</p>
-              <div class="doc-footer">
-                <span class="doc-size"><i class="bi bi-paperclip me-1"></i> 32 KB</span>
-                <a href="assets/dokumente/Wichtige%20Unterlagen%20f%C3%BCr%20die%20F%C3%B6rderung%20einer%20W%C3%A4rmepumpe%20(KfW%20458).pdf" download class="btn btn-hk btn-hk-sm">Download <i class="bi bi-download ms-1"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Doc 5 -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
-            <div class="doc-card">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div class="doc-icon-wrapper">
-                  <i class="bi bi-info-circle-fill"></i>
-                </div>
-                <span class="doc-badge">PDF • Infoblatt</span>
-              </div>
-              <h3 class="doc-title">Infoblatt: BAFA Förderung BEG EM</h3>
-              <p class="doc-desc">Offizielle Richtlinien und Zuschüsse für Sanierungsmaßnahmen an der Gebäudehülle, Fenstern und Türen.</p>
-              <div class="doc-footer">
-                <span class="doc-size"><i class="bi bi-paperclip me-1"></i> 40 KB</span>
-                <a href="assets/dokumente/BAFA-Bundesf%C3%B6rderung%20f%C3%BCr%20effiziente%20Geb%C3%A4ude%20%C2%B7%20Einzelma%C3%9Fnahmen%20(BEG%20EM).pdf" download class="btn btn-hk btn-hk-sm">Download <i class="bi bi-download ms-1"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Doc 6 -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
-            <div class="doc-card">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div class="doc-icon-wrapper">
-                  <i class="bi bi-list-check"></i>
-                </div>
-                <span class="doc-badge">PDF • Katalog</span>
-              </div>
-              <h3 class="doc-title">Katalog: BEG EM Maßnahmenkatalog</h3>
-              <p class="doc-desc">Übersicht aller förderfähigen Sanierungsmaßnahmen für Heizungsoptimierung, Lüftung und Anlagentechnik.</p>
-              <div class="doc-footer">
-                <span class="doc-size"><i class="bi bi-paperclip me-1"></i> 40 KB</span>
-                <a href="assets/dokumente/BAFA-Bundesf%C3%B6rderung%20-%20Einzelma%C3%9Fnahmen%20(BEG%20EM)%20-%20Ma%C3%9Fnahmenkatalog.pdf" download class="btn btn-hk btn-hk-sm">Download <i class="bi bi-download ms-1"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Doc 7 -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="700">
-            <div class="doc-card">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div class="doc-icon-wrapper">
-                  <i class="bi bi-bank2"></i>
-                </div>
-                <span class="doc-badge">PDF • Übersicht</span>
-              </div>
-              <h3 class="doc-title">Fördermittel Übersicht: BAFA & KfW</h3>
-              <p class="doc-desc">Kompakter Vergleich aller aktuellen Förderprogramme, Kredite und Zuschüsse für energieeffiziente Gebäude.</p>
-              <div class="doc-footer">
-                <span class="doc-size"><i class="bi bi-paperclip me-1"></i> 38 KB</span>
-                <a href="assets/dokumente/%C3%9Cbersicht%20F%C3%B6rdermittel.pdf" download class="btn btn-hk btn-hk-sm">Download <i class="bi bi-download ms-1"></i></a>
-              </div>
-            </div>
-          </div>
-
+    <main class="main">
+      <!-- Hero Section -->
+      <section class="docs-hero text-center">
+        <div class="container" data-aos="fade-up">
+          <span class="company-badge mb-3"
+            ><i class="bi bi-file-earmark-pdf-fill me-2"></i> Formulare &
+            Unterlagen</span
+          >
+          <h1
+            class="display-5 fw-bold mb-3"
+            style="color: var(--heading-color)"
+          >
+            Dokumente & Downloads
+          </h1>
+          <p
+            class="lead mx-auto mb-4"
+            style="
+              max-width: 720px;
+              color: color-mix(in srgb, var(--default-color), transparent 25%);
+            "
+          >
+            Hier finden Sie alle wichtigen Formulare, Checklisten und
+            Vollmachten für Ihre Energieberatung, Ihren Sanierungsfahrplan
+            (iSFP) und Förderanträge zum einfachen Download.
+          </p>
         </div>
+      </section>
 
-      </div>
-    </section>
+      <!-- Documents Grid Section -->
+      <section class="section light-background py-5">
+        <div class="container" data-aos="fade-up">
+          <div class="row g-4">
+            <!-- Doc 1 -->
+            <div
+              class="col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="doc-card">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-3"
+                >
+                  <div class="doc-icon-wrapper">
+                    <i class="bi bi-signpost-2-fill"></i>
+                  </div>
+                  <span class="doc-badge">PDF • Ablaufplan</span>
+                </div>
+                <h3 class="doc-title">Ablaufplan: iSFP Sanierungsfahrplan</h3>
+                <p class="doc-desc">
+                  Schritt-für-Schritt-Ablauf von der Datenaufnahme bis zum iSFP
+                  inklusive 5% Fahrplan-Bonus für Ihre Sanierung.
+                </p>
+                <div class="doc-footer">
+                  <span class="doc-size"
+                    ><i class="bi bi-paperclip me-1"></i> 39 KB</span
+                  >
+                  <a
+                    href="assets/dokumente/Ablaufplan%20f%C3%BCr%20die%20Erstellung%20eines%20individuellen%20Sanierungsfahrplans.pdf"
+                    download
+                    class="btn btn-hk btn-hk-sm"
+                    >Download <i class="bi bi-download ms-1"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
 
-    <!-- Lead Magnet Section -->
-    <section class="lead-magnet-section section light-background">
-      <div class="container" data-aos="fade-up">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-            <h2 class="mb-4">Exklusive Experten-Downloads</h2>
-            <p class="mb-5">Sichern Sie sich unsere beliebtesten Ratgeber kostenfrei. Wir senden Ihnen den Download-Link direkt per E-Mail zu.</p>
+            <!-- Doc 2 -->
+            <div
+              class="col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="doc-card">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-3"
+                >
+                  <div class="doc-icon-wrapper">
+                    <i class="bi bi-file-earmark-check-fill"></i>
+                  </div>
+                  <span class="doc-badge">PDF • Ablaufplan</span>
+                </div>
+                <h3 class="doc-title">Ablaufplan: Energieausweis Erstellung</h3>
+                <p class="doc-desc">
+                  Vom Datenerfassungsbogen bis zum rechtssicheren Bedarfsausweis
+                  oder Verbrauchsausweis nach Gebäudeenergiegesetz.
+                </p>
+                <div class="doc-footer">
+                  <span class="doc-size"
+                    ><i class="bi bi-paperclip me-1"></i> 33 KB</span
+                  >
+                  <a
+                    href="assets/dokumente/Ablaufplan%20zur%20Erstellung%20des%20Energieausweises.pdf"
+                    download
+                    class="btn btn-hk btn-hk-sm"
+                    >Download <i class="bi bi-download ms-1"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Doc 3 -->
+            <div
+              class="col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="doc-card">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-3"
+                >
+                  <div class="doc-icon-wrapper">
+                    <i class="bi bi-thermometer-sun"></i>
+                  </div>
+                  <span class="doc-badge">PDF • Ablaufplan</span>
+                </div>
+                <h3 class="doc-title">
+                  Ablaufplan: KfW 458 Förderung Wärmepumpe
+                </h3>
+                <p class="doc-desc">
+                  Schrittweise Anleitung für den erfolgreichen Heizungstausch
+                  mit bis zu 70% staatlichem KfW-Förderzuschuss.
+                </p>
+                <div class="doc-footer">
+                  <span class="doc-size"
+                    ><i class="bi bi-paperclip me-1"></i> 48 KB</span
+                  >
+                  <a
+                    href="assets/dokumente/Ablaufplan%20f%C3%BCr%20die%20F%C3%B6rderung%20einer%20W%C3%A4rmepumpe%20(KfW%20458).pdf"
+                    download
+                    class="btn btn-hk btn-hk-sm"
+                    >Download <i class="bi bi-download ms-1"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Doc 4 -->
+            <div
+              class="col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="doc-card">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-3"
+                >
+                  <div class="doc-icon-wrapper">
+                    <i class="bi bi-clipboard-check-fill"></i>
+                  </div>
+                  <span class="doc-badge">PDF • Checkliste</span>
+                </div>
+                <h3 class="doc-title">
+                  Checkliste KfW 458: Wärmepumpen-Förderung
+                </h3>
+                <p class="doc-desc">
+                  Vollständige Unterlagenliste inklusive Lieferungsvertrag und
+                  Nachweisen für Ihren zügigen Förderantrag.
+                </p>
+                <div class="doc-footer">
+                  <span class="doc-size"
+                    ><i class="bi bi-paperclip me-1"></i> 32 KB</span
+                  >
+                  <a
+                    href="assets/dokumente/Wichtige%20Unterlagen%20f%C3%BCr%20die%20F%C3%B6rderung%20einer%20W%C3%A4rmepumpe%20(KfW%20458).pdf"
+                    download
+                    class="btn btn-hk btn-hk-sm"
+                    >Download <i class="bi bi-download ms-1"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Doc 5 -->
+            <div
+              class="col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <div class="doc-card">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-3"
+                >
+                  <div class="doc-icon-wrapper">
+                    <i class="bi bi-info-circle-fill"></i>
+                  </div>
+                  <span class="doc-badge">PDF • Infoblatt</span>
+                </div>
+                <h3 class="doc-title">Infoblatt: BAFA Förderung BEG EM</h3>
+                <p class="doc-desc">
+                  Offizielle Richtlinien und Zuschüsse für Sanierungsmaßnahmen
+                  an der Gebäudehülle, Fenstern und Türen.
+                </p>
+                <div class="doc-footer">
+                  <span class="doc-size"
+                    ><i class="bi bi-paperclip me-1"></i> 40 KB</span
+                  >
+                  <a
+                    href="assets/dokumente/BAFA-Bundesf%C3%B6rderung%20f%C3%BCr%20effiziente%20Geb%C3%A4ude%20%C2%B7%20Einzelma%C3%9Fnahmen%20(BEG%20EM).pdf"
+                    download
+                    class="btn btn-hk btn-hk-sm"
+                    >Download <i class="bi bi-download ms-1"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Doc 6 -->
+            <div
+              class="col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <div class="doc-card">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-3"
+                >
+                  <div class="doc-icon-wrapper">
+                    <i class="bi bi-list-check"></i>
+                  </div>
+                  <span class="doc-badge">PDF • Katalog</span>
+                </div>
+                <h3 class="doc-title">Katalog: BEG EM Maßnahmenkatalog</h3>
+                <p class="doc-desc">
+                  Übersicht aller förderfähigen Sanierungsmaßnahmen für
+                  Heizungsoptimierung, Lüftung und Anlagentechnik.
+                </p>
+                <div class="doc-footer">
+                  <span class="doc-size"
+                    ><i class="bi bi-paperclip me-1"></i> 40 KB</span
+                  >
+                  <a
+                    href="assets/dokumente/BAFA-Bundesf%C3%B6rderung%20-%20Einzelma%C3%9Fnahmen%20(BEG%20EM)%20-%20Ma%C3%9Fnahmenkatalog.pdf"
+                    download
+                    class="btn btn-hk btn-hk-sm"
+                    >Download <i class="bi bi-download ms-1"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Doc 7 -->
+            <div
+              class="col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="700"
+            >
+              <div class="doc-card">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-3"
+                >
+                  <div class="doc-icon-wrapper">
+                    <i class="bi bi-bank2"></i>
+                  </div>
+                  <span class="doc-badge">PDF • Übersicht</span>
+                </div>
+                <h3 class="doc-title">Fördermittel Übersicht: BAFA & KfW</h3>
+                <p class="doc-desc">
+                  Kompakter Vergleich aller aktuellen Förderprogramme, Kredite
+                  und Zuschüsse für energieeffiziente Gebäude.
+                </p>
+                <div class="doc-footer">
+                  <span class="doc-size"
+                    ><i class="bi bi-paperclip me-1"></i> 38 KB</span
+                  >
+                  <a
+                    href="assets/dokumente/%C3%9Cbersicht%20F%C3%B6rdermittel.pdf"
+                    download
+                    class="btn btn-hk btn-hk-sm"
+                    >Download <i class="bi bi-download ms-1"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="row g-4 justify-content-center">
-          <!-- Lead Magnet 1 -->
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm p-4 text-center">
-              <i class="bi bi-journal-text fs-1 text-accent mb-3" style="color: var(--accent-color);"></i>
-              <h4 class="h5 mb-3">Der Sanierungs- & Förderkompass 2026</h4>
-              <p class="text-muted small mb-4">Ihr 15-Jahre Masterplan für maximale Förderung und minimale Heizkosten.</p>
-              <form action="https://masri.uber.space/forms/contact.php" method="post" class="php-email-form text-start mt-auto">
-                <input type="hidden" name="subject" value="Lead-Magnet: Förderkompass 2026">
-                <div class="mb-3">
-                  <label for="email-kompass" class="form-label visually-hidden">Ihre E-Mail</label>
-                  <input
-                    type="email"
-                    id="email-kompass"
-                    name="email"
-                    class="form-control"
-                    placeholder="Ihre E-Mail-Adresse *"
-                    required
-                  />
-                </div>
-                <button type="submit" class="btn btn-hk btn-hk-md w-100">Kostenlos herunterladen <i class="bi bi-download ms-2"></i></button>
-                <div class="mt-2 text-center" style="font-size: 0.75rem; color: #6c757d;">Wir hassen Spam genauso wie Sie. Abmeldung jederzeit möglich.</div>
-              </form>
+      <!-- Lead Magnet Section -->
+      <section class="lead-magnet-section section light-background">
+        <div class="container" data-aos="fade-up">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+              <h2 class="mb-4">Exklusive Experten-Downloads</h2>
+              <p class="mb-5">
+                Sichern Sie sich unsere beliebtesten Ratgeber kostenfrei. Wir
+                senden Ihnen den Download-Link direkt per E-Mail zu.
+              </p>
             </div>
           </div>
-          <!-- Lead Magnet 2 -->
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm p-4 text-center">
-              <i class="bi bi-house-gear fs-1 text-accent mb-3" style="color: var(--accent-color);"></i>
-              <h4 class="h5 mb-3">GEG-Entscheider</h4>
-              <p class="text-muted small mb-4">Verbrauchs- oder Bedarfsausweis? Finden Sie in 3 Minuten heraus, was Sie wirklich brauchen.</p>
-              <form action="https://masri.uber.space/forms/contact.php" method="post" class="php-email-form text-start mt-auto">
-                <input type="hidden" name="subject" value="Lead-Magnet: GEG-Entscheider">
-                <div class="mb-3">
-                  <label for="email-geg-doc" class="form-label visually-hidden">Ihre E-Mail</label>
+
+          <div class="row g-4 justify-content-center">
+            <!-- Lead Magnet 1 -->
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                <i
+                  class="bi bi-journal-text fs-1 text-accent mb-3"
+                  style="color: var(--accent-color)"
+                ></i>
+                <h4 class="h5 mb-3">Der Sanierungs- & Förderkompass 2026</h4>
+                <p class="text-muted small mb-4">
+                  Ihr 15-Jahre Masterplan für maximale Förderung und minimale
+                  Heizkosten.
+                </p>
+                <form
+                  action="https://masri.uber.space/forms/contact.php"
+                  method="post"
+                  class="php-email-form text-start mt-auto"
+                >
                   <input
-                    type="email"
-                    id="email-geg-doc"
-                    name="email"
-                    class="form-control"
-                    placeholder="Ihre E-Mail-Adresse *"
-                    required
+                    type="hidden"
+                    name="subject"
+                    value="Lead-Magnet: Förderkompass 2026"
                   />
-                </div>
-                <button type="submit" class="btn btn-hk btn-hk-md w-100">Kostenlos herunterladen <i class="bi bi-download ms-2"></i></button>
-                <div class="mt-2 text-center" style="font-size: 0.75rem; color: #6c757d;">Wir hassen Spam genauso wie Sie. Abmeldung jederzeit möglich.</div>
-              </form>
+                  <div class="mb-3">
+                    <label
+                      for="email-kompass"
+                      class="form-label visually-hidden"
+                      >Ihre E-Mail</label
+                    >
+                    <input
+                      type="email"
+                      id="email-kompass"
+                      name="email"
+                      class="form-control"
+                      placeholder="Ihre E-Mail-Adresse *"
+                      required
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-hk btn-hk-md w-100">
+                    Kostenlos herunterladen <i class="bi bi-download ms-2"></i>
+                  </button>
+                  <div class="loading">Sende Anfrage...</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">
+                    Vielen Dank! Wir haben Ihre E-Mail erhalten und senden Ihnen den Förderkompass 2026 in Kürze zu.
+                  </div>
+                </form>
+              </div>
             </div>
-          </div>
-          <!-- Lead Magnet 3 -->
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm p-4 text-center">
-              <i class="bi bi-list-check fs-1 text-accent mb-3" style="color: var(--accent-color);"></i>
-              <h4 class="h5 mb-3">Vorbereitungs-Checkliste</h4>
-              <p class="text-muted small mb-4">So bereiten Sie sich perfekt auf die energetische Erstberatung vor. Vermeiden Sie typische Fehler.</p>
-              <form action="https://masri.uber.space/forms/contact.php" method="post" class="php-email-form text-start mt-auto">
-                <input type="hidden" name="subject" value="Lead-Magnet: Vorbereitungs-Checkliste">
-                <div class="mb-3">
-                  <label for="email-checkliste" class="form-label visually-hidden">Ihre E-Mail</label>
+            <!-- Lead Magnet 2 -->
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                <i
+                  class="bi bi-house-gear fs-1 text-accent mb-3"
+                  style="color: var(--accent-color)"
+                ></i>
+                <h4 class="h5 mb-3">GEG-Entscheider</h4>
+                <p class="text-muted small mb-4">
+                  Verbrauchs- oder Bedarfsausweis? Finden Sie in 3 Minuten
+                  heraus, was Sie wirklich brauchen.
+                </p>
+                <form
+                  action="https://masri.uber.space/forms/contact.php"
+                  method="post"
+                  class="php-email-form text-start mt-auto"
+                >
                   <input
-                    type="email"
-                    id="email-checkliste"
-                    name="email"
-                    class="form-control"
-                    placeholder="Ihre E-Mail-Adresse *"
-                    required
+                    type="hidden"
+                    name="subject"
+                    value="Lead-Magnet: GEG-Entscheider"
                   />
-                </div>
-                <button type="submit" class="btn btn-hk btn-hk-md w-100">Kostenlos herunterladen <i class="bi bi-download ms-2"></i></button>
-                <div class="mt-2 text-center" style="font-size: 0.75rem; color: #6c757d;">Wir hassen Spam genauso wie Sie. Abmeldung jederzeit möglich.</div>
-              </form>
+                  <div class="mb-3">
+                    <label
+                      for="email-geg-doc"
+                      class="form-label visually-hidden"
+                      >Ihre E-Mail</label
+                    >
+                    <input
+                      type="email"
+                      id="email-geg-doc"
+                      name="email"
+                      class="form-control"
+                      placeholder="Ihre E-Mail-Adresse *"
+                      required
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-hk btn-hk-md w-100">
+                    Kostenlos herunterladen <i class="bi bi-download ms-2"></i>
+                  </button>
+                  <div class="loading">Sende Anfrage...</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">
+                    Vielen Dank! Wir haben Ihre E-Mail erhalten und senden Ihnen den GEG-Entscheider in Kürze zu.
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- Lead Magnet 3 -->
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                <i
+                  class="bi bi-list-check fs-1 text-accent mb-3"
+                  style="color: var(--accent-color)"
+                ></i>
+                <h4 class="h5 mb-3">Vorbereitungs-Checkliste</h4>
+                <p class="text-muted small mb-4">
+                  So bereiten Sie sich perfekt auf die energetische Erstberatung
+                  vor. Vermeiden Sie typische Fehler.
+                </p>
+                <form
+                  action="https://masri.uber.space/forms/contact.php"
+                  method="post"
+                  class="php-email-form text-start mt-auto"
+                >
+                  <input
+                    type="hidden"
+                    name="subject"
+                    value="Lead-Magnet: Vorbereitungs-Checkliste"
+                  />
+                  <div class="mb-3">
+                    <label
+                      for="email-checkliste"
+                      class="form-label visually-hidden"
+                      >Ihre E-Mail</label
+                    >
+                    <input
+                      type="email"
+                      id="email-checkliste"
+                      name="email"
+                      class="form-control"
+                      placeholder="Ihre E-Mail-Adresse *"
+                      required
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-hk btn-hk-md w-100">
+                    Kostenlos herunterladen <i class="bi bi-download ms-2"></i>
+                  </button>
+                  <div class="loading">Sende Anfrage...</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">
+                    Vielen Dank! Wir haben Ihre E-Mail erhalten und senden Ihnen die Vorbereitungs-Checkliste in Kürze zu.
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-  </main>
-
-  <!-- START: FOOTER_COMPONENT -->
-<footer id="footer" class="footer">
+    <!-- START: FOOTER_COMPONENT -->
+    <footer id="footer" class="footer">
       <div class="container footer-top">
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6 footer-about">
@@ -642,7 +867,15 @@
         <span class="d-flex gap-2 justify-content-center flex-wrap">
           <a href="impressum.html">Impressum</a> -
           <a href="datenschutz.html">Datenschutz</a> -
-          <a href="#" onclick="HKCookies.showSettings(); return false;" aria-label="Cookie-Einstellungen aendern">Cookie-Einstellungen</a>
+          <a
+            href="#"
+            onclick="
+              HKCookies.showSettings();
+              return false;
+            "
+            aria-label="Cookie-Einstellungen aendern"
+            >Cookie-Einstellungen</a
+          >
         </span>
         <div class="credits">
           Made by
@@ -657,31 +890,43 @@
       </div>
     </footer>
 
-<!-- END: FOOTER_COMPONENT -->
+    <!-- END: FOOTER_COMPONENT -->
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Nach oben scrollen" title="Nach oben scrollen">
-    <i class="bi bi-arrow-up-short" aria-hidden="true"></i>
-    <span class="visually-hidden">Nach oben scrollen</span>
-  </a>
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      aria-label="Nach oben scrollen"
+      title="Nach oben scrollen"
+    >
+      <i class="bi bi-arrow-up-short" aria-hidden="true"></i>
+      <span class="visually-hidden">Nach oben scrollen</span>
+    </a>
 
-  <!-- WhatsApp Floating Chat -->
-  <a href="https://wa.me/491626985115" id="wp-chat" class="wp-chat" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp-Chat starten" title="WhatsApp-Chat starten">
-    <i class="bi bi-whatsapp" aria-hidden="true"></i>
-    <span class="visually-hidden">WhatsApp-Chat starten</span>
-  </a>
+    <!-- WhatsApp Floating Chat -->
+    <a
+      href="https://wa.me/491626985115"
+      id="wp-chat"
+      class="wp-chat"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="WhatsApp-Chat starten"
+      title="WhatsApp-Chat starten"
+    >
+      <i class="bi bi-whatsapp" aria-hidden="true"></i>
+      <span class="visually-hidden">WhatsApp-Chat starten</span>
+    </a>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
 
-  <!-- Component Loader & Main JS -->
-  <script src="assets/js/components.js"></script>
-  <script src="assets/js/main.js"></script>
+    <!-- Component Loader & Main JS -->
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/main.js"></script>
 
     <!-- Cookie Consent Script -->
     <script src="/assets/js/cookie-consent.js"></script>
   </body>
 </html>
-
-

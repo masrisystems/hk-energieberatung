@@ -385,7 +385,7 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
    * Universal AJAX Contact Form Handler
    */
   document.addEventListener('submit', function (e) {
-    const form = e.target.closest('#kontaktForm, .contact .contact-form form');
+    const form = e.target.closest('#kontaktForm, .php-email-form, .contact .contact-form form');
     if (!form || form.id === 'expressForm') return;
 
     if (form.checkValidity && !form.checkValidity()) {
