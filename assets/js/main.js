@@ -411,6 +411,10 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
     const action = form.getAttribute('action') || 'https://masri.uber.space/forms/contact.php';
     const formData = new FormData(form);
 
+    if (window.HK_AB_VARIANT) {
+      formData.append('ab_variant', window.HK_AB_VARIANT);
+    }
+
     fetch(action, {
       method: 'POST',
       body: formData,
@@ -428,6 +432,13 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
       if (btn) btn.disabled = false;
 
       if (data.trim() === 'OK' || data.includes('erfolgreich') || data.includes('success')) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', {
+            'event_category': 'Form Submission',
+            'event_label': form.getAttribute('id') || 'contact_form',
+            'variant': window.HK_AB_VARIANT || 'unknown'
+          });
+        }
         if (sentMsg) {
           sentMsg.classList.add('d-block');
           sentMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
