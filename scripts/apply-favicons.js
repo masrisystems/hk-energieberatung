@@ -20,9 +20,10 @@ const filesToUpdate = [
 ];
 
 const newFaviconMarkup = `  <!-- Favicons -->
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />`;
 
@@ -58,22 +59,32 @@ for (const filename of filesToUpdate) {
   }
 }
 
-// Copy downloaded favicons to assets/img for backwards compatibility
+// Copy downloaded/generated favicons between root and assets/img for full compatibility
 const imgDir = path.join(rootDir, 'assets', 'img');
-const downloadedFiles = [
-  'favicon.svg',
-  'favicon-96x96.png',
+const allFaviconFiles = [
   'favicon.ico',
+  'favicon.png',
+  'favicon.svg',
+  'favicon-16x16.png',
+  'favicon-32x32.png',
+  'favicon-48x48.png',
+  'favicon-96x96.png',
+  'favicon-192x192.png',
+  'favicon-512x512.png',
   'apple-touch-icon.png',
   'web-app-manifest-192x192.png',
   'web-app-manifest-512x512.png'
 ];
 
-for (const f of downloadedFiles) {
-  const src = path.join(rootDir, f);
-  const dest = path.join(imgDir, f);
-  if (fs.existsSync(src)) {
-    fs.copyFileSync(src, dest);
+for (const f of allFaviconFiles) {
+  const rootFile = path.join(rootDir, f);
+  const imgFile = path.join(imgDir, f);
+  if (fs.existsSync(imgFile) && !fs.existsSync(rootFile)) {
+    fs.copyFileSync(imgFile, rootFile);
+    console.log(`Copied ${f} to root directory`);
+  } else if (fs.existsSync(rootFile) && !fs.existsSync(imgFile)) {
+    fs.copyFileSync(rootFile, imgFile);
+    console.log(`Copied ${f} to assets/img directory`);
   }
 }
 
