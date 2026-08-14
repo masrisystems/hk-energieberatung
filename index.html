@@ -1,39 +1,39 @@
 <!doctype html>
 <html lang="de">
   <head>
-            <!-- A/B Testing Traffic Split & Analytics Tagging (Loaded first so variant is assigned before page_view fires) -->
-  <script src="assets/js/ab-test.js"></script>
+    <!-- A/B Testing Traffic Split & Analytics Tagging (Loaded first so variant is assigned before page_view fires) -->
+    <script src="assets/js/ab-test.js"></script>
 
-  <!-- Google tag (gtag.js) – Consent Mode v2 -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("consent", "default", {
-      analytics_storage: "denied",
-      ad_storage: "denied",
-      wait_for_update: 500,
-    });
-  </script>
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=AW-972344910"
-  ></script>
-  <script>
-    gtag("js", new Date());
-    gtag("config", "AW-972344910", {
-      anonymize_ip: true,
-      variant: window.HK_AB_VARIANT || "v2",
-      landing_variant: window.HK_AB_VARIANT || "v2",
-      user_properties: {
-        ab_landing_variant: window.HK_AB_VARIANT || "v2",
-        variant: window.HK_AB_VARIANT || "v2"
+    <!-- Google tag (gtag.js) – Consent Mode v2 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
-    });
-  </script>
+      gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        wait_for_update: 500,
+      });
+    </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-972344910"
+    ></script>
+    <script>
+      gtag("js", new Date());
+      gtag("config", "AW-972344910", {
+        anonymize_ip: true,
+        variant: window.HK_AB_VARIANT || "v2",
+        landing_variant: window.HK_AB_VARIANT || "v2",
+        user_properties: {
+          ab_landing_variant: window.HK_AB_VARIANT || "v2",
+          variant: window.HK_AB_VARIANT || "v2",
+        },
+      });
+    </script>
 
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>HK Energieberatung | Zertifizierte Energieberater</title>
     <meta
@@ -79,13 +79,13 @@
       content="https://hk-energieberatung.de/assets/img/logo.jpeg"
     />
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
@@ -469,17 +469,28 @@
 
                 <div class="hero-buttons mt-4 d-flex flex-wrap gap-3">
                   <a href="#contact" class="btn btn-hk btn-hk-lg"
-                    >Kostenloses Erstgespräch vereinbaren</a
+                    >Kostenloses Erstgespräch</a
                   >
+                  <a
+                    href="forderrechner.html"
+                    class="btn btn-hk btn-hk-lg"
+                    style="
+                      background: rgba(171, 216, 195, 0.25);
+                      color: var(--heading-color);
+                      border: 2px solid var(--accent-color);
+                    "
+                    ><i class="bi bi-calculator me-1"></i> Fördermittel-Rechner (BEG 2026)
+                    <i class="bi bi-arrow-right ms-1"></i
+                  ></a>
                   <a
                     href="expressausweis.html"
                     class="btn btn-hk btn-hk-lg"
                     style="
-                      border: 2px solid var(--accent-color);
-                      color: var(--accent-color);
+                      border: 2px solid #cbd5e1;
+                      color: var(--heading-color);
                       background: transparent;
                     "
-                    >Expressausweis in 48h beantragen
+                    >Expressausweis (48h)
                     <i class="bi bi-arrow-right ms-1"></i
                   ></a>
                 </div>
@@ -746,6 +757,43 @@
         </div>
       </section>
       <!-- /Expressausweis Section -->
+
+      <!-- Förderrechner Banner Section -->
+      <section id="foerderrechner-banner" class="expressausweis-banner section" style="padding-top: 0;">
+        <div class="container" data-aos="fade-up">
+          <div class="expressausweis-card" style="background: linear-gradient(135deg, #ffffff 0%, #f4faf7 100%); border: 2px solid var(--accent-color); box-shadow: 0 10px 30px rgba(45, 70, 94, 0.08);">
+            <div class="row align-items-center justify-content-between gy-4">
+              <div class="col-lg-7">
+                <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill" style="background: rgba(171, 216, 195, 0.3); color: #1e3d30; font-weight: 700; font-size: 0.85rem;">
+                  <i class="bi bi-calculator-fill"></i> Kostenloser Online-Förderrechner
+                </div>
+                <h2 class="banner-title" style="color: var(--heading-color); font-weight: 800; font-size: 2rem; margin-bottom: 15px;">
+                  Wie viel Förderung steht Ihnen zu? Jetzt live berechnen!
+                </h2>
+                <p class="banner-note mb-4" style="color: var(--default-color); font-size: 1.05rem; line-height: 1.6;">
+                  Berechnen Sie mit unserem neuen Fördermittel- & Einsparrechner Ihre maximalen staatlichen Zuschüsse für Wärmepumpen (bis zu 70%), Dämmung, Fenster (bis zu 20%) und den <strong>+5% iSFP-Bonus</strong> nach den aktuellen BEG-Richtlinien 2026.
+                </p>
+                <div class="d-flex flex-wrap gap-3 align-items-center">
+                  <a href="forderrechner.html" class="btn btn-hk btn-hk-lg">
+                    <i class="bi bi-calculator me-2"></i>Jetzt Förderung berechnen <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
+                  <span class="text-muted small"><i class="bi bi-check-circle-fill text-success me-1"></i>100% kostenlos & unverbindlich</span>
+                </div>
+              </div>
+              <div class="col-lg-4 text-center">
+                <div class="p-4 rounded-4" style="background: #ffffff; border: 2px solid rgba(171, 216, 195, 0.5); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);">
+                  <div style="font-size: 2.75rem; font-weight: 900; color: #1e3d30; line-height: 1.1;">Bis zu 70%</div>
+                  <div style="font-weight: 700; color: var(--heading-color); margin-top: 6px;">KfW 458 Heizungsförderung</div>
+                  <hr style="margin: 14px 0; opacity: 0.15;">
+                  <div style="font-size: 1.75rem; font-weight: 800; color: #2d465e;">+ 20%</div>
+                  <div style="font-size: 0.9rem; color: #6c757d; font-weight: 500;">BAFA Gebäudehülle & iSFP-Bonus</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Förderrechner Banner Section -->
 
       <!-- Features Section -->
       <section id="features" class="features section">
@@ -1188,6 +1236,28 @@
                     Effizienzhaus Stufe (z. B. EH 70 oder EH 55) zu erreichen
                     und die Tilgungszuschüsse der KfW zu nutzen.
                   </p>
+                </div>
+              </div>
+            </div>
+            <!-- End Service Card -->
+
+            <div class="col-lg-12" data-aos="fade-up" data-aos-delay="500">
+              <div class="service-card d-flex align-items-center justify-content-between flex-wrap gap-3" style="border-left: 4px solid var(--accent-color); background: #ffffff;">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="icon flex-shrink-0" style="background: rgba(171, 216, 195, 0.25); color: #1e3d30; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.75rem;">
+                    <i class="bi bi-calculator"></i>
+                  </div>
+                  <div>
+                    <h3 class="mb-1" style="font-size: 1.25rem;">Interaktiver Fördermittel-Rechner (BEG 2026)</h3>
+                    <p class="mb-0 text-muted">
+                      Kalkulieren Sie Ihre individuellen Zuschüsse für Heizungstausch, Dämmung & iSFP in Echtzeit.
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <a href="forderrechner.html" class="btn btn-hk btn-hk-md">
+                    Jetzt Förderung berechnen <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
                 </div>
               </div>
             </div>
@@ -1896,7 +1966,8 @@
               <div class="loading">Sende Anfrage...</div>
               <div class="error-message"></div>
               <div class="sent-message">
-                Vielen Dank! Wir haben Ihre E-Mail erhalten und senden Ihnen den Förderkompass 2026 in Kürze zu.
+                Vielen Dank! Wir haben Ihre E-Mail erhalten und senden Ihnen den
+                Förderkompass 2026 in Kürze zu.
               </div>
             </form>
           </div>

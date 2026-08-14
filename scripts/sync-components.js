@@ -11,6 +11,7 @@ const COMPONENTS_DIR = path.join(ROOT_DIR, 'components');
 
 const TARGET_FILES = [
   'index.html',
+  'index-v1.html',
   'about.html',
   'faq.html',
   'energieberatung-bremen.html',
@@ -39,7 +40,7 @@ function customizeHeader(headerHtml, targetPage) {
   // Clear existing active classes
   customized = customized.replace(/\sclass="active"/g, '');
 
-  if (targetPage === 'index.html') {
+  if (targetPage === 'index.html' || targetPage === 'index-v1.html') {
     customized = customized.replace('data-page="index.html#hero"', 'data-page="index.html#hero" class="active"');
   } else if (targetPage === 'about.html') {
     customized = customized.replace('data-page="about.html"', 'data-page="about.html" class="active"');
