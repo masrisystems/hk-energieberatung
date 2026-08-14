@@ -32,9 +32,10 @@
               <li class="dropdown"><a href="${isPage('index.html') ? '#services' : 'index.html#services'}"><span>LEISTUNGEN</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="expressausweis.html" class="${isPage('expressausweis.html') ? 'active' : ''}">Express Verbrauchsausweis (48h)</a></li>
+                  <li><a href="forderrechner.html" class="${isPage('forderrechner.html') ? 'active' : ''}">Fördermittel-Rechner (BEG 2026)</a></li>
                   <li><a href="${isPage('index.html') ? '#services' : 'index.html#services'}">Energieausweise</a></li>
                   <li><a href="${isPage('index.html') ? '#features' : 'index.html#features'}">BAFA & KfW Förderungen</a></li>
-                  <li><a href="${isPage('index.html') ? '#services' : 'index.html#services'}">Hydraulischer Abgleich</a></li>
+                  <li><a href="${isPage('index.html') ? '#services' : 'index.html#services'}">Sanierungsfahrplan (iSFP)</a></li>
                   <li><a href="${isPage('index.html') ? '#services' : 'index.html#services'}">KfW Kreditanträge</a></li>
                 </ul>
               </li>
@@ -44,8 +45,9 @@
                   <li><a href="energieberatung-aurich.html" class="${isPage('energieberatung-aurich.html') ? 'active' : ''}">Standort Aurich</a></li>
                 </ul>
               </li>
-              <li class="dropdown"><a href="#" class="${isPage('mediathek.html') || isPage('dokumente.html') || isPage('faq.html') ? 'active' : ''}"><span>INFOTHEK</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li class="dropdown"><a href="#" class="${isPage('forderrechner.html') || isPage('mediathek.html') || isPage('dokumente.html') || isPage('faq.html') ? 'active' : ''}"><span>INFOTHEK</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
+                  <li><a href="forderrechner.html" class="${isPage('forderrechner.html') ? 'active' : ''}">Fördermittel-Rechner</a></li>
                   <li><a href="mediathek.html" class="${isPage('mediathek.html') ? 'active' : ''}">Erklärvideos (Mediathek)</a></li>
                   <li><a href="dokumente.html" class="${isPage('dokumente.html') ? 'active' : ''}">Formulare & Downloads</a></li>
                   <li><a href="faq.html" class="${isPage('faq.html') ? 'active' : ''}">Häufige Fragen (FAQ)</a></li>
@@ -154,6 +156,7 @@
                 <li><a href="about.html">Über uns</a></li>
                 <li><a href="energieberatung-bremen.html">Standort Bremen</a></li>
                 <li><a href="energieberatung-aurich.html">Standort Aurich</a></li>
+                <li><a href="forderrechner.html">Fördermittel-Rechner</a></li>
                 <li><a href="mediathek.html">Mediathek</a></li>
                 <li><a href="dokumente.html">Dokumente & Downloads</a></li>
                 <li><a href="faq.html">Häufige Fragen (FAQ)</a></li>
@@ -165,9 +168,10 @@
               <h4>Unsere Dienstleistungen</h4>
               <ul class="list-unstyled">
                 <li><a href="expressausweis.html">Express Verbrauchsausweis (48h)</a></li>
+                <li><a href="forderrechner.html">Fördermittel-Rechner (BEG 2026)</a></li>
                 <li><a href="index.html#services">Energieausweise</a></li>
                 <li><a href="index.html#features">BAFA & KfW Förderungen</a></li>
-                <li><a href="index.html#services">Hydraulischer Abgleich</a></li>
+                <li><a href="index.html#services">Sanierungsfahrplan (iSFP)</a></li>
                 <li><a href="index.html#services">KfW Kreditanträge</a></li>
               </ul>
             </nav>
