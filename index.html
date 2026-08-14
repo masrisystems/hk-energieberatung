@@ -344,7 +344,7 @@
 
   <body class="index-page">
     <!-- START: HEADER_COMPONENT -->
-    <header id="header" class="header d-flex align-items-center fixed-top">
+<header id="header" class="header d-flex align-items-center fixed-top">
       <div
         class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
       >
@@ -370,11 +370,7 @@
                     >Express Verbrauchsausweis (48h)</a
                   >
                 </li>
-                <li>
-                  <a href="forderrechner.html" data-page="forderrechner.html"
-                    >Fördermittel-Rechner (BEG 2026)</a
-                  >
-                </li>
+                <li><a href="forderrechner.html" data-page="forderrechner.html">Fördermittel-Rechner (BEG 2026)</a></li>
                 <li><a href="/#services">Energieausweise</a></li>
                 <li><a href="/#features">BAFA & KfW Förderungen</a></li>
                 <li><a href="/#services">Sanierungsfahrplan (iSFP)</a></li>
@@ -442,7 +438,7 @@
       </div>
     </header>
 
-    <!-- END: HEADER_COMPONENT -->
+<!-- END: HEADER_COMPONENT -->
 
     <main class="main">
       <!-- Hero Section -->
@@ -1558,7 +1554,7 @@
 
       <!-- Contact Component -->
       <!-- START: CONTACT_COMPONENT -->
-      <section id="contact" class="contact section light-background">
+<section id="contact" class="contact section light-background">
         <div class="container section-title" data-aos="fade-up">
           <h2>Kontakt</h2>
           <p>
@@ -1825,13 +1821,8 @@
                       <button type="submit" class="btn btn-hk btn-hk-md">
                         <span>Kostenloses Erstgespräch anfragen →</span>
                       </button>
-                      <div
-                        class="mt-3 text-center"
-                        style="font-size: 0.85rem; color: #4a5568"
-                      >
-                        🔒 100% kostenfrei & unverbindlich &bull; Rückmeldung
-                        garantiert innerhalb von 24 Stunden &bull; Keine
-                        Weitergabe von Daten
+                      <div class="mt-3 text-center" style="font-size: 0.85rem; color: #4a5568;">
+                        🔒 100% kostenfrei & unverbindlich &bull; Rückmeldung garantiert innerhalb von 24 Stunden &bull; Keine Weitergabe von Daten
                       </div>
                     </div>
                   </div>
@@ -1842,11 +1833,11 @@
         </div>
       </section>
 
-      <!-- END: CONTACT_COMPONENT -->
+<!-- END: CONTACT_COMPONENT -->
     </main>
 
     <!-- START: FOOTER_COMPONENT -->
-    <footer id="footer" class="footer">
+<footer id="footer" class="footer">
       <div class="container footer-top">
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6 footer-about">
@@ -1929,9 +1920,7 @@
                   >Express Verbrauchsausweis (48h)</a
                 >
               </li>
-              <li>
-                <a href="forderrechner.html">Fördermittel-Rechner (BEG 2026)</a>
-              </li>
+              <li><a href="forderrechner.html">Fördermittel-Rechner (BEG 2026)</a></li>
               <li><a href="/#services">Energieausweise</a></li>
               <li><a href="/#features">BAFA & KfW Förderungen</a></li>
               <li><a href="/#services">Sanierungsfahrplan (iSFP)</a></li>
@@ -1978,15 +1967,7 @@
         <span class="d-flex gap-2 justify-content-center flex-wrap">
           <a href="impressum.html">Impressum</a> -
           <a href="datenschutz.html">Datenschutz</a> -
-          <a
-            href="#"
-            onclick="
-              HKCookies.showSettings();
-              return false;
-            "
-            aria-label="Cookie-Einstellungen ändern"
-            >Cookie-Einstellungen</a
-          >
+          <a href="#" onclick="HKCookies.showSettings(); return false;" aria-label="Cookie-Einstellungen ändern">Cookie-Einstellungen</a>
         </span>
         <div class="credits">
           Made by
@@ -1997,11 +1978,26 @@
             aria-label="Masri Systems Website"
             >Masri Systems</a
           >
-        </div>
-      </div>
     </footer>
 
-    <!-- END: FOOTER_COMPONENT -->
+    <!-- Universal HK Minimalist Toast Notification Container -->
+    <div class="toast-container position-fixed top-0 end-0 p-3 hk-toast-container" aria-live="polite" aria-atomic="true">
+      <div id="hkToast" class="toast hk-toast fade" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="hk-toast-body d-flex align-items-center">
+          <div class="hk-toast-icon flex-shrink-0 me-3">
+            <i id="hkToastIcon" class="bi bi-check-circle-fill"></i>
+          </div>
+          <div class="hk-toast-content flex-grow-1 me-2">
+            <div id="hkToastTitle" class="hk-toast-title">Erfolgreich gesendet</div>
+            <p id="hkToastMessage" class="hk-toast-message"></p>
+          </div>
+          <button type="button" class="btn-close hk-toast-close flex-shrink-0" data-bs-dismiss="toast" aria-label="Schließen"></button>
+        </div>
+        <div class="hk-toast-progress"></div>
+      </div>
+    </div>
+
+<!-- END: FOOTER_COMPONENT -->
 
     <!-- Scroll Top -->
     <a

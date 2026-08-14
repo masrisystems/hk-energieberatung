@@ -382,6 +382,56 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
   }
 
   /**
+   * Universal Minimalist HK Toast Notification System
+   */
+  const HKToast = {
+    show: function (options) {
+      options = options || {};
+      const toastEl = document.getElementById('hkToast');
+      if (!toastEl) return;
+
+      const titleEl = document.getElementById('hkToastTitle');
+      const msgEl = document.getElementById('hkToastMessage');
+      const iconEl = document.getElementById('hkToastIcon');
+      const progressEl = toastEl.querySelector('.hk-toast-progress');
+
+      const type = options.type || 'success';
+      const title = options.title || (type === 'success' ? 'Erfolgreich gesendet' : type === 'error' ? 'Fehler beim Senden' : 'Hinweis');
+      const message = options.message || '';
+      const duration = options.duration || 4500;
+
+      if (titleEl) titleEl.textContent = title;
+      if (msgEl) msgEl.textContent = message;
+
+      toastEl.classList.remove('hk-toast-success', 'hk-toast-error', 'hk-toast-info');
+      toastEl.classList.add('hk-toast-' + type);
+
+      if (iconEl) {
+        iconEl.className = 'bi';
+        if (type === 'success') {
+          iconEl.classList.add('bi-check-circle-fill');
+        } else if (type === 'error') {
+          iconEl.classList.add('bi-exclamation-octagon-fill');
+        } else {
+          iconEl.classList.add('bi-info-circle-fill');
+        }
+      }
+
+      if (progressEl) {
+        progressEl.classList.remove('hk-toast-progress-active');
+        void progressEl.offsetWidth; // Force CSS reflow
+        progressEl.classList.add('hk-toast-progress-active');
+      }
+
+      if (typeof bootstrap !== 'undefined' && bootstrap.Toast) {
+        const toastInstance = bootstrap.Toast.getOrCreateInstance(toastEl, { delay: duration });
+        toastInstance.show();
+      }
+    }
+  };
+  window.HKToast = HKToast;
+
+  /**
    * Universal AJAX Contact Form Handler
    */
   document.addEventListener('submit', function (e) {
@@ -439,11 +489,28 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
             'variant': window.HK_AB_VARIANT || 'unknown'
           });
         }
-        if (sentMsg) {
-          sentMsg.classList.add('d-block');
-          sentMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        let successMessage = 'Vielen Dank! Ihre Anfrage wurde erfolgreich übermittelt.';
+        if (sentMsg && sentMsg.textContent.trim()) {
+          successMessage = sentMsg.textContent.trim();
         }
+
+        HKToast.show({
+          type: 'success',
+          title: 'Erfolgreich übermittelt',
+          message: successMessage,
+          duration: 5000
+        });
+
         form.reset();
+
+        // If form is inside exit popup, close popup after short delay
+        const exitPopup = form.closest('#exit-popup');
+        if (exitPopup) {
+          setTimeout(() => {
+            exitPopup.classList.remove('show');
+          }, 1200);
+        }
       } else {
         throw new Error(data || 'Übertragung fehlgeschlagen.');
       }
@@ -451,11 +518,14 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
     .catch(err => {
       if (loading) loading.classList.remove('d-block');
       if (btn) btn.disabled = false;
-      if (errorMsg) {
-        errorMsg.innerHTML = err.message || 'Beim Senden ist ein Fehler aufgetreten.';
-        errorMsg.classList.add('d-block');
-        errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
+      const errorText = err.message || 'Beim Senden ist ein Fehler aufgetreten.';
+      
+      HKToast.show({
+        type: 'error',
+        title: 'Fehler beim Senden',
+        message: errorText,
+        duration: 5000
+      });
     });
   });
 

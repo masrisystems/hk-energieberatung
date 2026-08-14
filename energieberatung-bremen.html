@@ -776,9 +776,24 @@
             aria-label="Masri Systems Website"
             >Masri Systems</a
           >
-        </div>
-      </div>
     </footer>
+
+    <!-- Universal HK Minimalist Toast Notification Container -->
+    <div class="toast-container position-fixed top-0 end-0 p-3 hk-toast-container" aria-live="polite" aria-atomic="true">
+      <div id="hkToast" class="toast hk-toast fade" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="hk-toast-body d-flex align-items-center">
+          <div class="hk-toast-icon flex-shrink-0 me-3">
+            <i id="hkToastIcon" class="bi bi-check-circle-fill"></i>
+          </div>
+          <div class="hk-toast-content flex-grow-1 me-2">
+            <div id="hkToastTitle" class="hk-toast-title">Erfolgreich gesendet</div>
+            <p id="hkToastMessage" class="hk-toast-message"></p>
+          </div>
+          <button type="button" class="btn-close hk-toast-close flex-shrink-0" data-bs-dismiss="toast" aria-label="Schließen"></button>
+        </div>
+        <div class="hk-toast-progress"></div>
+      </div>
+    </div>
 
 <!-- END: FOOTER_COMPONENT -->
 
