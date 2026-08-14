@@ -3693,3 +3693,255 @@ button.btn-hk-outline:active {
     max-width: 100%;
   }
 }
+
+/*--------------------------------------------------------------
+# Utility & Semantic Classes (Zero Inline CSS Architecture)
+--------------------------------------------------------------*/
+.text-accent-green {
+  color: #66a66d !important;
+}
+
+.text-accent-darkgreen {
+  color: #2b7a5a !important;
+}
+
+.text-accent-brand {
+  color: var(--accent-color) !important;
+}
+
+.text-heading {
+  color: var(--heading-color) !important;
+}
+
+.form-privacy-hint {
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+.contact-hint {
+  background: rgba(171, 216, 195, 0.15);
+  border-left: 3px solid #66a66d;
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+.hero-sublink {
+  color: var(--heading-color) !important;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.hero-sublink:hover {
+  color: var(--nav-hover-color, #B98360) !important;
+  transform: translateX(2px);
+}
+
+.hero-sublink-icon {
+  color: #2b7a5a !important;
+}
+
+.foerderrechner-banner-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f4faf7 100%);
+  border: 2px solid var(--accent-color);
+  box-shadow: 0 10px 30px rgba(45, 70, 94, 0.08);
+}
+
+.foerderrechner-pill {
+  background: rgba(171, 216, 195, 0.3);
+  color: #1e3d30;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.foerderrechner-heading {
+  color: var(--heading-color);
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.foerderrechner-desc {
+  color: var(--default-color);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.foerderrechner-stat-card {
+  background: #ffffff;
+  border: 2px solid rgba(171, 216, 195, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.foerderrechner-stat-num {
+  font-size: 2.75rem;
+  font-weight: 900;
+  color: #1e3d30;
+  line-height: 1.1;
+}
+
+.foerderrechner-stat-title {
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-top: 6px;
+}
+
+.foerderrechner-stat-divider {
+  margin: 14px 0;
+  opacity: 0.15;
+}
+
+.foerderrechner-stat-subnum {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #2d465e;
+}
+
+.foerderrechner-stat-subtitle {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.service-card-calculator {
+  border-left: 4px solid var(--accent-color);
+  background: #ffffff;
+}
+
+.service-card-calc-icon {
+  background: rgba(171, 216, 195, 0.25);
+  color: #1e3d30;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+}
+
+.service-calc-title {
+  font-size: 1.25rem;
+}
+
+.lead-max-w {
+  max-width: 750px;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+}
+
+.price-highlight {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.express-success-icon {
+  font-size: 3.8rem;
+  color: #66a66d;
+}
+
+.express-summary-box {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.express-summary-badge {
+  color: #66a66d;
+  font-weight: 700;
+}
+
+.doc-card-icon {
+  color: var(--accent-color);
+}
+
+.faq-cat-title {
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.opacity-90 {
+  opacity: 0.9 !important;
+}
+
+.fs-card-title {
+  font-size: 1.25rem !important;
+}
+
+.lead-text-lg {
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+}
+
+.lead-text-muted {
+  color: color-mix(in srgb, var(--default-color), transparent 20%) !important;
+}
+
+.section-title-xl {
+  font-size: 2.2rem !important;
+  font-weight: 800 !important;
+  color: var(--heading-color) !important;
+  font-family: var(--heading-font) !important;
+}
+
+.founder-quote-box {
+  background: color-mix(in srgb, var(--accent-color), transparent 93%);
+  border-left: 4px solid var(--accent-color);
+}
+
+.map-blend-multiply {
+  mix-blend-mode: multiply !important;
+}
+
+.cert-img-badge {
+  max-height: 140px;
+  width: auto;
+}
+
+.lead-form-max-w {
+  max-width: 500px;
+}
+
+.container-faq-max {
+  max-width: 960px;
+}
+
+.text-faq-val {
+  color: #4a8b6f !important;
+}
+
+.text-rechner-green {
+  color: #245840 !important;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.sv-bar-init {
+  height: 10% !important;
+}
+
+.bar-track-sm {
+  height: 10px !important;
+}
+
+/* FAQ Einsparungsbalken */
+.faq-bar-fill.faq-bar-17 { width: 17% !important; background: #c7e6d8 !important; }
+.faq-bar-fill.faq-bar-25 { width: 25% !important; background: #c7e6d8 !important; }
+.faq-bar-fill.faq-bar-25-alt { width: 25% !important; background: #8fc9ae !important; }
+.faq-bar-fill.faq-bar-33 { width: 33% !important; background: #8fc9ae !important; }
+.faq-bar-fill.faq-bar-50 { width: 50% !important; background: #6fae91 !important; }
+.faq-bar-fill.faq-bar-100 { width: 100% !important; background: #4a8b6f !important; color: #ffffff !important; }
+
+/* FAQ Energieausweis Skala A+ bis H */
+.faq-scale-seg.scale-ap { background: #1a9850 !important; }
+.faq-scale-seg.scale-a  { background: #3aa956 !important; }
+.faq-scale-seg.scale-b  { background: #7dbb50 !important; }
+.faq-scale-seg.scale-c  { background: #c3d94e !important; }
+.faq-scale-seg.scale-d  { background: #f6e93e !important; color: #5a4a00 !important; }
+.faq-scale-seg.scale-e  { background: #f9b234 !important; }
+.faq-scale-seg.scale-f  { background: #f2792a !important; }
+.faq-scale-seg.scale-g  { background: #e6432b !important; }
+.faq-scale-seg.scale-h  { background: #c1121f !important; }

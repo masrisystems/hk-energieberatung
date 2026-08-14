@@ -989,7 +989,7 @@
                 <div class="bar-wrap">
                   <div class="bar-title d-flex justify-content-between">
                     <span>Förderung vs. Eigenanteil</span>
-                    <span id="bar-total-label" class="fw-bold" style="color: #245840;">0 %</span>
+                    <span id="bar-total-label" class="fw-bold text-rechner-green">0 %</span>
                   </div>
                   <div class="bar-track">
                     <div class="bar-fill" id="bar-total"></div>
@@ -1016,7 +1016,7 @@
                 <div id="measure-results">
                   <div class="empty-hint">Noch keine Maßnahme ausgewählt.</div>
                 </div>
-                <div id="em-note" class="reform-note-box" style="display: none;"></div>
+                <div id="em-note" class="reform-note-box" class="d-none"></div>
               </div>
 
               <!-- Heating Savings Card -->
@@ -1030,12 +1030,12 @@
                 <div class="savings-visual">
                   <div class="sv-col">
                     <div class="sv-val" id="sv-before-val">0 €</div>
-                    <div class="sv-bar before" id="sv-before" style="height:10%"></div>
+                    <div class="sv-bar before sv-bar-init" id="sv-before"></div>
                     <div class="sv-lbl">Vorher / Jahr</div>
                   </div>
                   <div class="sv-col">
                     <div class="sv-val" id="sv-after-val">0 €</div>
-                    <div class="sv-bar after" id="sv-after" style="height:10%"></div>
+                    <div class="sv-bar after sv-bar-init" id="sv-after"></div>
                     <div class="sv-lbl">Nachher / Jahr</div>
                   </div>
                 </div>
@@ -1043,7 +1043,7 @@
                 <div class="bar-wrap">
                   <div class="bar-title d-flex justify-content-between">
                     <span>Ersparnis pro Jahr</span>
-                    <span id="save-pct-label" class="fw-bold" style="color: #245840;">0 %</span>
+                    <span id="save-pct-label" class="fw-bold text-rechner-green">0 %</span>
                   </div>
                   <div class="bar-track">
                     <div class="bar-fill" id="save-bar"></div>
@@ -1142,7 +1142,7 @@
               <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
                 <h3>
                   Schicken Sie uns
-                  <span class="accent-text" style="color: #66a66d"
+                  <span class="accent-text text-accent-green"
                     >Ihr Anliegen!</span
                   >
                 </h3>
@@ -1263,19 +1263,8 @@
                     </div>
 
                     <div class="col-12">
-                      <div
-                        class="contact-hint p-2 px-3 rounded-2"
-                        style="
-                          background: rgba(171, 216, 195, 0.15);
-                          border-left: 3px solid #66a66d;
-                          font-size: 0.85rem;
-                          color: #4a5568;
-                        "
-                      >
-                        <i
-                          class="bi bi-info-circle me-1"
-                          style="color: #66a66d"
-                        ></i>
+                      <div class="contact-hint p-2 px-3 rounded-2">
+                        <i class="bi bi-info-circle me-1 text-accent-green"></i>
                         Die Nachricht unten wird passend zum Betreff
                         vorausgefüllt – Sie können sie danach frei anpassen.
                       </div>
@@ -1295,7 +1284,7 @@
                       ></textarea>
                     </div>
 
-                    <div style="display: none" aria-hidden="true">
+                    <div class="d-none" aria-hidden="true">
                       <input
                         type="text"
                         name="website"
@@ -1322,8 +1311,7 @@
                             href="datenschutz.html"
                             target="_blank"
                             rel="noopener"
-                            class="text-decoration-underline"
-                            style="color: #2d465e"
+                            class="text-decoration-underline text-heading"
                             >Datenschutzerklärung</a
                           >.<span class="text-danger">*</span>
                         </label>
@@ -1340,7 +1328,7 @@
                       <button type="submit" class="btn btn-hk btn-hk-md">
                         <span>Kostenloses Erstgespräch anfragen →</span>
                       </button>
-                      <div class="mt-3 text-center" style="font-size: 0.85rem; color: #4a5568;">
+                      <div class="mt-3 text-center form-privacy-hint">
                         🔒 100% kostenfrei & unverbindlich &bull; Rückmeldung garantiert innerhalb von 24 Stunden &bull; Keine Weitergabe von Daten
                       </div>
                     </div>
@@ -1757,7 +1745,7 @@
             ${ cat.type === 'heizung' ? `
             <div class="calc-checkbox-row">
               <input type="checkbox" data-alt="${s.id}" id="alt-${s.id}">
-              <label for="alt-${s.id}" style="cursor:pointer; margin-bottom:0;">
+              <label for="alt-${s.id}" class="cursor-pointer mb-0">
                 Ersetzt eine mind. 20 Jahre alte Gasheizung oder funktionstüchtige Öl-, Kohle- bzw. Nachtspeicherheizung (<b>Klimageschwindigkeitsbonus +16%</b>, nur Selbstnutzer).
               </label>
             </div>` : '' }
@@ -1920,7 +1908,8 @@
       const eigenanteil = totalInvest - totalFoerderung;
       const effSatz = totalInvest > 0 ? (totalFoerderung / totalInvest * 100) : 0;
 
-      $('measure-results').innerHTML = count ? results.map(m => `
+      const mrContainer = $('measure-results');
+      mrContainer.innerHTML = count ? results.map(m => `
         <div class="measure-result-item">
           <div class="mr-head">
             <span>${m.icon} ${m.name}</span>
@@ -1929,11 +1918,15 @@
           <div class="mr-sub">
             Förderfähig: ${fmtEUR(m.foerderfaehig)} von ${fmtEUR(m.invest)} · Zuschuss: <b>${fmtEUR(m.zuschuss)}</b>
           </div>
-          <div class="bar-track" style="height: 10px;">
-            <div class="bar-fill" style="width: ${Math.min(m.satz, 100)}%;"></div>
+          <div class="bar-track bar-track-sm">
+            <div class="bar-fill" data-pct="${Math.min(m.satz, 100)}"></div>
           </div>
         </div>
       `).join('') : '<div class="empty-hint">Wählen Sie links Ihre gewünschten Maßnahmen aus.</div>';
+
+      mrContainer.querySelectorAll('.bar-fill').forEach(el => {
+        el.style.width = el.getAttribute('data-pct') + '%';
+      });
 
       $('sum-foerderung').innerHTML = fmtEUR(totalFoerderung) + '<small> Zuschuss (geschätzt)</small>';
       $('kpi-invest').textContent = fmtEUR(totalInvest);
