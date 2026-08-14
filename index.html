@@ -245,7 +245,7 @@
             "provider": {
               "@id": "https://hk-energieberatung.de/#organization"
             },
-            "description": "Begleitung bei KfW 458 Heizungstausch mit bis zu 70% Zuschuss sowie KfW 261 Sanierung zum Effizienzhaus mit bis zu 45% Tilgungszuschuss."
+            "description": "Begleitung bei KfW 458 Heizungstausch mit bis zu 80% Zuschuss sowie KfW 261 Sanierung zum Effizienzhaus mit bis zu 45% Tilgungszuschuss."
           },
           {
             "@type": "FAQPage",
@@ -344,7 +344,7 @@
 
   <body class="index-page">
     <!-- START: HEADER_COMPONENT -->
-<header id="header" class="header d-flex align-items-center fixed-top">
+    <header id="header" class="header d-flex align-items-center fixed-top">
       <div
         class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
       >
@@ -370,7 +370,11 @@
                     >Express Verbrauchsausweis (48h)</a
                   >
                 </li>
-                <li><a href="forderrechner.html" data-page="forderrechner.html">Fördermittel-Rechner (BEG 2026)</a></li>
+                <li>
+                  <a href="forderrechner.html" data-page="forderrechner.html"
+                    >Fördermittel-Rechner (BEG 2026)</a
+                  >
+                </li>
                 <li><a href="/#services">Energieausweise</a></li>
                 <li><a href="/#features">BAFA & KfW Förderungen</a></li>
                 <li><a href="/#services">Sanierungsfahrplan (iSFP)</a></li>
@@ -438,7 +442,7 @@
       </div>
     </header>
 
-<!-- END: HEADER_COMPONENT -->
+    <!-- END: HEADER_COMPONENT -->
 
     <main class="main">
       <!-- Hero Section -->
@@ -467,25 +471,35 @@
                   Zuschussauszahlung.
                 </p>
 
-                <div class="hero-buttons mt-4 d-flex flex-wrap align-items-center gap-3">
+                <div
+                  class="hero-buttons mt-4 d-flex flex-wrap align-items-center gap-3"
+                >
                   <a href="#contact" class="btn btn-hk btn-hk-lg"
                     >Kostenloses Erstgespräch vereinbaren</a
                   >
                 </div>
-                <div class="hero-links mt-3 d-flex flex-wrap gap-4 align-items-center">
+                <div
+                  class="hero-links mt-3 d-flex flex-wrap gap-4 align-items-center"
+                >
                   <a
                     href="forderrechner.html"
                     class="d-inline-flex align-items-center text-decoration-none fw-bold"
-                    style="color: var(--heading-color); font-size: 0.95rem;"
+                    style="color: var(--heading-color); font-size: 0.95rem"
                   >
-                    <i class="bi bi-calculator me-2" style="color: #2b7a5a;"></i>Förderrechner (BEG 2026) <i class="bi bi-arrow-right ms-1"></i>
+                    <i class="bi bi-calculator me-2" style="color: #2b7a5a"></i
+                    >Förderrechner (BEG 2026)
+                    <i class="bi bi-arrow-right ms-1"></i>
                   </a>
                   <a
                     href="expressausweis.html"
                     class="d-inline-flex align-items-center text-decoration-none fw-bold"
-                    style="color: var(--heading-color); font-size: 0.95rem;"
+                    style="color: var(--heading-color); font-size: 0.95rem"
                   >
-                    <i class="bi bi-file-earmark-check me-2" style="color: #2b7a5a;"></i>Expressausweis (48h) <i class="bi bi-arrow-right ms-1"></i>
+                    <i
+                      class="bi bi-file-earmark-check me-2"
+                      style="color: #2b7a5a"
+                    ></i
+                    >Expressausweis (48h) <i class="bi bi-arrow-right ms-1"></i>
                   </a>
                 </div>
               </div>
@@ -753,34 +767,109 @@
       <!-- /Expressausweis Section -->
 
       <!-- Förderrechner Banner Section -->
-      <section id="foerderrechner-banner" class="expressausweis-banner section" style="padding-top: 0;">
+      <section
+        id="foerderrechner-banner"
+        class="expressausweis-banner section"
+        style="padding-top: 0"
+      >
         <div class="container" data-aos="fade-up">
-          <div class="expressausweis-card" style="background: linear-gradient(135deg, #ffffff 0%, #f4faf7 100%); border: 2px solid var(--accent-color); box-shadow: 0 10px 30px rgba(45, 70, 94, 0.08);">
+          <div
+            class="expressausweis-card"
+            style="
+              background: linear-gradient(135deg, #ffffff 0%, #f4faf7 100%);
+              border: 2px solid var(--accent-color);
+              box-shadow: 0 10px 30px rgba(45, 70, 94, 0.08);
+            "
+          >
             <div class="row align-items-center justify-content-between gy-4">
               <div class="col-lg-7">
-                <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill" style="background: rgba(171, 216, 195, 0.3); color: #1e3d30; font-weight: 700; font-size: 0.85rem;">
-                  <i class="bi bi-calculator-fill"></i> Kostenloser Online-Förderrechner
+                <div
+                  class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill"
+                  style="
+                    background: rgba(171, 216, 195, 0.3);
+                    color: #1e3d30;
+                    font-weight: 700;
+                    font-size: 0.85rem;
+                  "
+                >
+                  <i class="bi bi-calculator-fill"></i> Kostenloser
+                  Online-Förderrechner
                 </div>
-                <h2 class="banner-title" style="color: var(--heading-color); font-weight: 800; font-size: 2rem; margin-bottom: 15px;">
+                <h2
+                  class="banner-title"
+                  style="
+                    color: var(--heading-color);
+                    font-weight: 800;
+                    font-size: 2rem;
+                    margin-bottom: 15px;
+                  "
+                >
                   Wie viel Förderung steht Ihnen zu? Jetzt live berechnen!
                 </h2>
-                <p class="banner-note mb-4" style="color: var(--default-color); font-size: 1.05rem; line-height: 1.6;">
-                  Berechnen Sie mit unserem neuen Fördermittel- & Einsparrechner Ihre maximalen staatlichen Zuschüsse für Wärmepumpen (bis zu 70%), Dämmung, Fenster (bis zu 20%) und den <strong>+5% iSFP-Bonus</strong> nach den aktuellen BEG-Richtlinien 2026.
+                <p
+                  class="banner-note mb-4"
+                  style="
+                    color: var(--default-color);
+                    font-size: 1.05rem;
+                    line-height: 1.6;
+                  "
+                >
+                  Berechnen Sie mit unserem neuen Fördermittel- & Einsparrechner
+                  Ihre maximalen staatlichen Zuschüsse für Wärmepumpen (bis zu
+                  80%), Dämmung, Fenster (bis zu 20%) und den
+                  <strong>+5% iSFP-Bonus</strong> nach den aktuellen
+                  BEG-Richtlinien 2026.
                 </p>
                 <div class="d-flex flex-wrap gap-3 align-items-center">
                   <a href="forderrechner.html" class="btn btn-hk btn-hk-lg">
-                    <i class="bi bi-calculator me-2"></i>Jetzt Förderung berechnen <i class="bi bi-arrow-right ms-1"></i>
+                    <i class="bi bi-calculator me-2"></i>Jetzt Förderung
+                    berechnen <i class="bi bi-arrow-right ms-1"></i>
                   </a>
-                  <span class="text-muted small"><i class="bi bi-check-circle-fill text-success me-1"></i>100% kostenlos & unverbindlich</span>
+                  <span class="text-muted small"
+                    ><i class="bi bi-check-circle-fill text-success me-1"></i
+                    >100% kostenlos & unverbindlich</span
+                  >
                 </div>
               </div>
               <div class="col-lg-4 text-center">
-                <div class="p-4 rounded-4" style="background: #ffffff; border: 2px solid rgba(171, 216, 195, 0.5); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);">
-                  <div style="font-size: 2.75rem; font-weight: 900; color: #1e3d30; line-height: 1.1;">Bis zu 70%</div>
-                  <div style="font-weight: 700; color: var(--heading-color); margin-top: 6px;">KfW 458 Heizungsförderung</div>
-                  <hr style="margin: 14px 0; opacity: 0.15;">
-                  <div style="font-size: 1.75rem; font-weight: 800; color: #2d465e;">+ 20%</div>
-                  <div style="font-size: 0.9rem; color: #6c757d; font-weight: 500;">BAFA Gebäudehülle & iSFP-Bonus</div>
+                <div
+                  class="p-4 rounded-4"
+                  style="
+                    background: #ffffff;
+                    border: 2px solid rgba(171, 216, 195, 0.5);
+                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+                  "
+                >
+                  <div
+                    style="
+                      font-size: 2.75rem;
+                      font-weight: 900;
+                      color: #1e3d30;
+                      line-height: 1.1;
+                    "
+                  >
+                    Bis zu 80%
+                  </div>
+                  <div
+                    style="
+                      font-weight: 700;
+                      color: var(--heading-color);
+                      margin-top: 6px;
+                    "
+                  >
+                    KfW 458 Heizungsförderung
+                  </div>
+                  <hr style="margin: 14px 0; opacity: 0.15" />
+                  <div
+                    style="font-size: 1.75rem; font-weight: 800; color: #2d465e"
+                  >
+                    + 20%
+                  </div>
+                  <div
+                    style="font-size: 0.9rem; color: #6c757d; font-weight: 500"
+                  >
+                    BAFA Gebäudehülle & iSFP-Bonus
+                  </div>
                 </div>
               </div>
             </div>
@@ -1236,21 +1325,44 @@
             <!-- End Service Card -->
 
             <div class="col-lg-12" data-aos="fade-up" data-aos-delay="500">
-              <div class="service-card d-flex align-items-center justify-content-between flex-wrap gap-3" style="border-left: 4px solid var(--accent-color); background: #ffffff;">
+              <div
+                class="service-card d-flex align-items-center justify-content-between flex-wrap gap-3"
+                style="
+                  border-left: 4px solid var(--accent-color);
+                  background: #ffffff;
+                "
+              >
                 <div class="d-flex align-items-center gap-3">
-                  <div class="icon flex-shrink-0" style="background: rgba(171, 216, 195, 0.25); color: #1e3d30; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.75rem;">
+                  <div
+                    class="icon flex-shrink-0"
+                    style="
+                      background: rgba(171, 216, 195, 0.25);
+                      color: #1e3d30;
+                      width: 60px;
+                      height: 60px;
+                      border-radius: 12px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: 1.75rem;
+                    "
+                  >
                     <i class="bi bi-calculator"></i>
                   </div>
                   <div>
-                    <h3 class="mb-1" style="font-size: 1.25rem;">Interaktiver Fördermittel-Rechner (BEG 2026)</h3>
+                    <h3 class="mb-1" style="font-size: 1.25rem">
+                      Interaktiver Fördermittel-Rechner (BEG 2026)
+                    </h3>
                     <p class="mb-0 text-muted">
-                      Kalkulieren Sie Ihre individuellen Zuschüsse für Heizungstausch, Dämmung & iSFP in Echtzeit.
+                      Kalkulieren Sie Ihre individuellen Zuschüsse für
+                      Heizungstausch, Dämmung & iSFP in Echtzeit.
                     </p>
                   </div>
                 </div>
                 <div>
                   <a href="forderrechner.html" class="btn btn-hk btn-hk-md">
-                    Jetzt Förderung berechnen <i class="bi bi-arrow-right ms-1"></i>
+                    Jetzt Förderung berechnen
+                    <i class="bi bi-arrow-right ms-1"></i>
                   </a>
                 </div>
               </div>
@@ -1446,7 +1558,7 @@
 
       <!-- Contact Component -->
       <!-- START: CONTACT_COMPONENT -->
-<section id="contact" class="contact section light-background">
+      <section id="contact" class="contact section light-background">
         <div class="container section-title" data-aos="fade-up">
           <h2>Kontakt</h2>
           <p>
@@ -1713,8 +1825,13 @@
                       <button type="submit" class="btn btn-hk btn-hk-md">
                         <span>Kostenloses Erstgespräch anfragen →</span>
                       </button>
-                      <div class="mt-3 text-center" style="font-size: 0.85rem; color: #4a5568;">
-                        🔒 100% kostenfrei & unverbindlich &bull; Rückmeldung garantiert innerhalb von 24 Stunden &bull; Keine Weitergabe von Daten
+                      <div
+                        class="mt-3 text-center"
+                        style="font-size: 0.85rem; color: #4a5568"
+                      >
+                        🔒 100% kostenfrei & unverbindlich &bull; Rückmeldung
+                        garantiert innerhalb von 24 Stunden &bull; Keine
+                        Weitergabe von Daten
                       </div>
                     </div>
                   </div>
@@ -1725,11 +1842,11 @@
         </div>
       </section>
 
-<!-- END: CONTACT_COMPONENT -->
+      <!-- END: CONTACT_COMPONENT -->
     </main>
 
     <!-- START: FOOTER_COMPONENT -->
-<footer id="footer" class="footer">
+    <footer id="footer" class="footer">
       <div class="container footer-top">
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6 footer-about">
@@ -1812,7 +1929,9 @@
                   >Express Verbrauchsausweis (48h)</a
                 >
               </li>
-              <li><a href="forderrechner.html">Fördermittel-Rechner (BEG 2026)</a></li>
+              <li>
+                <a href="forderrechner.html">Fördermittel-Rechner (BEG 2026)</a>
+              </li>
               <li><a href="/#services">Energieausweise</a></li>
               <li><a href="/#features">BAFA & KfW Förderungen</a></li>
               <li><a href="/#services">Sanierungsfahrplan (iSFP)</a></li>
@@ -1859,7 +1978,15 @@
         <span class="d-flex gap-2 justify-content-center flex-wrap">
           <a href="impressum.html">Impressum</a> -
           <a href="datenschutz.html">Datenschutz</a> -
-          <a href="#" onclick="HKCookies.showSettings(); return false;" aria-label="Cookie-Einstellungen ändern">Cookie-Einstellungen</a>
+          <a
+            href="#"
+            onclick="
+              HKCookies.showSettings();
+              return false;
+            "
+            aria-label="Cookie-Einstellungen ändern"
+            >Cookie-Einstellungen</a
+          >
         </span>
         <div class="credits">
           Made by
@@ -1874,7 +2001,7 @@
       </div>
     </footer>
 
-<!-- END: FOOTER_COMPONENT -->
+    <!-- END: FOOTER_COMPONENT -->
 
     <!-- Scroll Top -->
     <a
