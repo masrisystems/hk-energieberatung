@@ -126,9 +126,19 @@ if (file_exists($lockFile) && (time() - filemtime($lockFile)) < 10) {
 
 // === 4. COMPOSE EMAIL MESSAGE ===
 $anrede_str = (!empty($anrede) && $anrede !== 'keine Angabe') ? ($anrede . ' ') : '';
-$email_subject = "Kontaktanfrage: " . $subject . " - " . $anrede_str . $name;
 
-$email_body = "Neue Kontaktanfrage über die Website (hk-energieberatung.de):\n\n";
+if ($isLeadMagnet) {
+    $cleanTopic = str_replace(['Lead-Magnet: ', 'Download: '], '', $subject);
+    $email_subject = "📥 [Lead-Magnet: " . $cleanTopic . "] " . $email;
+} else {
+    $telStr = !empty($telefon) ? " (Tel: " . $telefon . ")" : "";
+    $email_subject = "📩 [Anfrage: " . $subject . "] " . $anrede_str . $name . $telStr;
+}
+
+// Preheader summary (shows directly on the outside preview snippet in Gmail/Outlook/Apple Mail)
+$email_body = "Thema: " . $subject . " | Absender: " . $anrede_str . $name . " <" . $email . ">" . (!empty($telefon) ? " | Tel: " . $telefon : "") . "\n\n";
+$email_body .= "========================================================\n";
+$email_body .= "NEUE KONTAKTANFRAGE ÜBER DIE WEBSITE (hk-energieberatung.de)\n";
 $email_body .= "========================================================\n";
 if (!empty($anrede) && $anrede !== 'keine Angabe') {
     $email_body .= "Anrede:        " . $anrede . "\n";

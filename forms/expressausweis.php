@@ -165,9 +165,12 @@ foreach ($fileCategories as $fieldName => $label) {
 }
 
 // === 6. BUILD EMAIL TEXT ===
-$email_subject = "⚡ EXPRESS-ANTRAG (48h): " . $strasse . ", " . $plz . " " . $ort . " - " . $vorname . " " . $nachname;
+$email_subject = "⚡ [Expressausweis 48h] " . $vorname . " " . $nachname . " – " . $strasse . ", " . $plz . " " . $ort;
 
-$email_body = "NEUE EXPRESS-VERBRAUCHSAUSWEIS-ANFRAGE (48-STUNDEN-SERVICE)\n";
+// Preheader summary (shows directly on the outside preview snippet in Gmail/Outlook/Apple Mail)
+$email_body = "Expressausweis (48h) Auftrag: " . $vorname . " " . $nachname . " | " . $strasse . ", " . $plz . " " . $ort . " | " . $wohnflaeche . " m² (" . $gebaeudetyp . ")\n\n";
+$email_body .= "======================================================================\n";
+$email_body .= "NEUE EXPRESS-VERBRAUCHSAUSWEIS-ANFRAGE (48-STUNDEN-SERVICE)\n";
 $email_body .= "======================================================================\n\n";
 
 $email_body .= "1. ANGABEN ZUM GEBÄUDE:\n";
