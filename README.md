@@ -45,4 +45,4 @@ This project was built with the following technologies:
 * [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.2-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 
-It is based on the **iLanding Template** by [BootstrapMade](https://bootstrapmade.com/i-landing-bootstrap-landing-page-template/).
+
