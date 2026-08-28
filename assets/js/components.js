@@ -147,6 +147,9 @@
                 <a href="https://www.instagram.com/hk_energieberatung/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                 <a href="https://www.linkedin.com/company/hk-energieberatung/about/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
               </div>
+              <div class="mt-3">
+                <div google-add-preferred-source-btn data-theme="dark"></div>
+              </div>
             </div>
 
             <nav class="col-lg-3 col-md-3 footer-links">
