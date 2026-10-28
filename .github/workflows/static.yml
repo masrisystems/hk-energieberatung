@@ -25,31 +25,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Inject Mailer .env from GitHub Secrets
-        env:
-          MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
-          MAIL_USERNAME: ${{ secrets.MAIL_USERNAME || 'hallo@masrisystems.com' }}
-          MAIL_HOST: ${{ secrets.MAIL_HOST || 'gienah.uberspace.de' }}
-          MAIL_PORT: ${{ secrets.MAIL_PORT || '465' }}
-          MAIL_ENCRYPTION: ${{ secrets.MAIL_ENCRYPTION || 'ssl' }}
-          MAIL_FROM_ADDRESS: ${{ secrets.MAIL_FROM_ADDRESS || 'hallo@masrisystems.com' }}
-          MAIL_FROM_NAME: ${{ secrets.MAIL_FROM_NAME || 'HK Energieberatung' }}
-          MAIL_TO_ADDRESS: ${{ secrets.MAIL_TO_ADDRESS || 'info@hk-energieberatung.de' }}
-        run: |
-          mkdir -p forms
-          cat <<EOF > forms/.env
-          MAIL_MAILER=smtp
-          MAIL_HOST=${MAIL_HOST}
-          MAIL_PORT=${MAIL_PORT}
-          MAIL_USERNAME=${MAIL_USERNAME}
-          MAIL_PASSWORD=${MAIL_PASSWORD}
-          MAIL_ENCRYPTION=${MAIL_ENCRYPTION}
-          MAIL_FROM_ADDRESS="${MAIL_FROM_ADDRESS}"
-          MAIL_FROM_NAME="${MAIL_FROM_NAME}"
-          MAIL_TO_ADDRESS="${MAIL_TO_ADDRESS}"
-          EOF
-          chmod 600 forms/.env || true
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
