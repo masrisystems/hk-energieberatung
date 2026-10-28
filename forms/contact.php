@@ -45,9 +45,11 @@ function loadEnvFile($envPath)
     return $config;
 }
 
-$envConfig = loadEnvFile(__DIR__.'/.env');
+// Production: secrets live outside the web root (Uberspace: /var/www/virtual/<user>/hk-energieberatung.env)
+$envConfig = loadEnvFile(dirname(__DIR__, 2).'/hk-energieberatung.env');
 if (empty($envConfig)) {
-    $envConfig = loadEnvFile(dirname(__DIR__).'/.env');
+    // Local development fallback
+    $envConfig = loadEnvFile(__DIR__.'/.env');
 }
 
 // === 2. GET FORM DATA ===

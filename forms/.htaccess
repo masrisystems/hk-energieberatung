@@ -1,0 +1,4 @@
+# Never serve dotfiles (.env, .htaccess, ...) from this directory
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
