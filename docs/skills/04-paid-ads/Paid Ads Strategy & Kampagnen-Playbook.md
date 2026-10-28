@@ -30,7 +30,7 @@ Dieses Playbook definiert die vollständige Paid-Media-Strategie für **HK Energ
   - Target CPL (Cost-per-Lead): **35 € – 65 €**
   - Break-Even CPL: **$\le 150 €$**
 * **Low-Ticket 48h Express-Verbrauchsausweis:**
-  - Kundenwert: **79 €** (Brutto)
+  - Kundenwert: **80 €** (Brutto)
   - Target CPA (Kaufabschluss): **15 € – 25 €**
   - Break-Even CPA: **$\le 45 €$**
 
@@ -55,7 +55,7 @@ Dieses Playbook definiert die vollständige Paid-Media-Strategie für **HK Energ
 
 ### 📂 Kampagne 1: `GOOG_Search_iSFP-Sanierung_Bremen-Nord`
 * **Ziel:** High-Intent Eigentümer mit konkretem Sanierungs-, Dämmungs- oder Heizungstausch-Bedarf.
-* **Geotargeting:** Bremen + 50 km Umkreis (inkl. Delmenhorst, Oldenburg, Achim, Osterholz-Scharmbeck, Aurich).
+* **Geotargeting:** Bremen + 50 km Umkreis (inkl. Delmenhorst, Oldenburg, Achim, Osterholz-Scharmbeck). Aurich/Ostfriesland liegt außerhalb dieses Radius (ca. 120 km) und wird über eine eigene Standort-Kampagne bzw. einen zusätzlichen Standort (Aurich + 30 km) ausgespielt.
 * **Bidding:** Anfangs *Klicks maximieren (mit CPC-Limit 2,50 €)*, ab 30 Leads Wechsel auf *Ziel-CPA (45,00 €)*.
 * **Landingpage:** `https://hk-energieberatung.de/#contact` oder `https://hk-energieberatung.de/energieberatung-bremen.html`
 
@@ -122,7 +122,7 @@ verbraucherzentrale, forum, studium, karriere, stellenangebote
 #### 📝 Responsive Search Ad (RSA 2):
 * **Headlines:**
   1. `Expressausweis in 48h online`
-  2. `Energieausweis ab 79 €`
+  2. `Energieausweis ab 80 €`
   3. `100% Rechtssicher nach GEG`
   4. `Offiziell DIBt-Registriert`
   5. `Verbrauchsausweis in 48 Std.`
@@ -130,7 +130,7 @@ verbraucherzentrale, forum, studium, karriere, stellenangebote
   7. `Jetzt online ausfüllen`
 * **Descriptions:**
   1. `Rechtssicherer Energieausweis nach GEG. Garantiert innerhalb von 48 Stunden per E-Mail.`
-  2. `Für Verkauf & Vermietung. Offiziell beim DIBt registriert. Jetzt ab 79 € online bestellen!`
+  2. `Für Verkauf & Vermietung. Offiziell beim DIBt registriert. Jetzt ab 80 € online bestellen!`
 
 ---
 
@@ -168,7 +168,7 @@ META_CBO_Prospecting_iSFP_Bremen-Nord
   > 
   > 👉 Klicken Sie unten und sichern Sie sich Ihr kostenloses Erstgespräch in Bremen & Norddeutschland.
 * **Headline:** `Bis zu 70% Sanierungsförderung sichern`
-* **CTA-Button:** `Kostenloses Erstgespräch anfragen` (Link zu `index.html#contact`)
+* **CTA-Button:** `Kostenloses Erstgespräch anfragen` (Link zu `/#contact`)
 
 ---
 
@@ -202,12 +202,12 @@ Website-Besucher, die nicht beim ersten Klick konvertieren, durchlaufen ein simu
 [ 1. Einwand-Ad ]   [ 2. Proof-Carousel ]           [ 3. Alternativ-Offer ] [ 4. Checklisten-Ad ]
 "Brauche ich        3 Vorher-Nachher Sanierungs-    "Nur schneller          Kostenlose Sanierungs-
 wirklich einen      projekte aus Bremen mit         Ausweis nötig? 48h      Checkliste als PDF-
-Energieberater?"    genauer Fördersumme             Express ab 79 €"        Download
+Energieberater?"    genauer Fördersumme             Express ab 80 €"        Download
 ```
 
 1. **Objection-Handling Ad:** Beantwortet den Einwand *„Ist das nicht zu bürokratisch?“* (Fokus: Wir übernehmen 100% der Antragsstellung).
 2. **Proof Carousel:** 3 reale Beispielrechnungen mit genauen Euro-Beträgen (z. B. *„Familie M. spart 62% Heizkosten & erhielt 28.400 € Zuschuss“*).
-3. **Alternative Offer:** Wer keinen iSFP braucht, sieht die Direkt-Anzeige für den **Expressausweis (48h ab 79 €)**.
+3. **Alternative Offer:** Wer keinen iSFP braucht, sieht die Direkt-Anzeige für den **Expressausweis (48h ab 80 €)**.
 4. **Value-First Lead-Magnet:** Kostenloser Download des *„Förderleitfadens 2026 für Eigentümer“* auf `dokumente.html`.
 
 ---
@@ -245,7 +245,7 @@ Meta:   https://hk-energieberatung.de/?utm_source=meta&utm_medium=cbo&utm_campai
 2. **Gebote & Budget:** Tagesbudget **`25,00 €`** → Gebotsstrategie: **Klicks maximieren** (mit CPC-Limit **`2,50 €`**).
 3. **Netzwerke & Standorte:**
    - Suchnetzwerk aktivieren; **Displaynetzwerk DEAKTIVIEREN** (fokussiert reine High-Intent-Sucher).
-   - Standorte: **Bremen + 50 km Umkreis** (Bremen, Delmenhorst, Oldenburg, Achim, Osterholz-Scharmbeck, Aurich).
+   - Standorte: **Bremen + 50 km Umkreis** (Bremen, Delmenhorst, Oldenburg, Achim, Osterholz-Scharmbeck); Aurich ggf. als separater Standort (Aurich + 30 km).
    - Sprache: **Deutsch**.
 4. **Anzeigengruppe & Keywords:** Name: `iSFP & Energieberater Bremen` mit Phrase/Exact-Keywords laut Kapitel 2.
 5. **RSA 1 erstellen:** 15 Headlines (Pos. 1 `Energieberater Bremen & Nord` angepinnt) + 4 Descriptions laut Kapitel 2.

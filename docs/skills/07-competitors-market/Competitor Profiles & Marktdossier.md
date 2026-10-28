@@ -113,7 +113,7 @@ Dieses Marktdossier liefert strukturierte **Wettbewerber-Profile** der wichtigst
   - **Kein Anschluss-Service:** Wenn der Ausweis schlecht ausfällt (z. B. Klasse G/H), lassen diese Portale den Eigentümer komplett allein.
 
 #### 💡 HK-Differenzierungshebel:
-> *„HK Expressausweis (48h ab 79 €) mit echter Bauingenieur-Plausibilitätsprüfung und nahtlosem Upgrade-Pfad zu staatlich geförderter Sanierungsberatung.“*
+> *„HK Expressausweis (48h ab 80 €) mit echter Bauingenieur-Plausibilitätsprüfung und nahtlosem Upgrade-Pfad zu staatlich geförderter Sanierungsberatung.“*
 
 ---
 
@@ -166,7 +166,7 @@ Dieses Marktdossier liefert strukturierte **Wettbewerber-Profile** der wichtigst
 1. **Den „Plattform-Frust“ abfangen:** Google Search & Meta Ads gezielt auf Eigentümer ausrichten, die persönliche Ingenieur-Betreuung vor Ort suchen (*„Kein Callcenter – Ihre Bauingenieure in Bremen“*).
 2. **Den „Interessenkonflikt-Wedge“ nutzen:** Bauherren aufklären, warum Handwerker-Angebote immer durch einen unabhängigen dena-Energieberater geprüft werden müssen.
 3. **Speed-Vorteil ausspielen:** Mit Terminen innerhalb von 2–5 Werktagen alle lokalen Berater überholen, die 8–10 Wochen Vorlaufzeit haben.
-4. **Expressausweis als Entry-Point (Lead-Flywheel):** Den 79 € Ausweis als günstigen Akquisitionskanal nutzen, um Eigentümer im Nachgang für 650 € – 3.500 € Sanierungsfahrpläne zu gewinnen.
+4. **Expressausweis als Entry-Point (Lead-Flywheel):** Den 80 € Ausweis als günstigen Akquisitionskanal nutzen, um Eigentümer im Nachgang für 650 € – 3.500 € Sanierungsfahrpläne zu gewinnen.
 
 ---
 

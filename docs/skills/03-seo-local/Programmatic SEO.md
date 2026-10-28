@@ -1,8 +1,8 @@
 # 📍 Programmatic SEO Blueprint: Location Playbook
 
 ### Standort-Seiten im Fokus:
-- [`energieberatung-bremen.html`](file:///c:/Users/super/Desktop/Hk%20Energieberatung/energieberatung-bremen.html) (Hub: Bremen & Metropolregion Nordwest)
-- [`energieberatung-aurich.html`](file:///c:/Users/super/Desktop/Hk%20Energieberatung/energieberatung-aurich.html) (Hub: Aurich & Ostfriesland)
+- [`energieberatung-bremen.html`](../../../energieberatung-bremen.html) (Hub: Bremen & Metropolregion Nordwest)
+- [`energieberatung-aurich.html`](../../../energieberatung-aurich.html) (Hub: Aurich & Ostfriesland)
 
 ---
 
@@ -44,7 +44,7 @@ Google straft Programmatic-SEO-Seiten ab, wenn lediglich Städtenamen in identis
 
 ### Spezifische Differenzierungsmerkmale:
 
-#### 🏛️ Standort Bremen ([`energieberatung-bremen.html`](file:///c:/Users/super/Desktop/Hk%20Energieberatung/energieberatung-bremen.html)):
+#### 🏛️ Standort Bremen ([`energieberatung-bremen.html`](../../../energieberatung-bremen.html)):
 - **Fokus-Bautyp**: Klassische Bremer Häuser, Jugendstil-Altbauten & Mehrfamilienhäuser in Schwachhausen, Findorff, Viertel, Neustadt.
 - **Typische Maßnahmen**: Innendämmung unter Denkmalschutzauflagen, Dachbodendämmung, Kellerdeckendämmung, hydraulischer Abgleich in Etagenheizungen.
 - **Lokale Referenzprojekte**:
@@ -54,7 +54,7 @@ Google straft Programmatic-SEO-Seiten ab, wenn lediglich Städtenamen in identis
   - `Fenstertausch & Hydraulischer Abgleich in Bremen-Mitte`
 - **Schema.org**: `LocalBusiness` mit Hauptsitz-Adresse `Industriestraße 34, 28199 Bremen`.
 
-#### 🏡 Standort Aurich & Ostfriesland ([`energieberatung-aurich.html`](file:///c:/Users/super/Desktop/Hk%20Energieberatung/energieberatung-aurich.html)):
+#### 🏡 Standort Aurich & Ostfriesland ([`energieberatung-aurich.html`](../../../energieberatung-aurich.html)):
 - **Fokus-Bautyp**: Freistehende Ein- und Zweifamilienhäuser, Gulfhöfe, zweischaliges Klinkermauerwerk (Fassadenluftschicht).
 - **Typische Maßnahmen**: Einblasdämmung (Kerndämmung der Hohlschicht), Wärmepumpen-Auslegung bei hoher Windlast, Dachdämmung gegen Küstenwinde.
 - **Lokale Referenzprojekte**:
@@ -73,7 +73,7 @@ Google straft Programmatic-SEO-Seiten ab, wenn lediglich Städtenamen in identis
 2. **Cross-Linking (Standort-Switcher)**:
    - Am Ende jeder Standortseite befindet sich der visuelle Standort-Switcher, der Nutzer und Suchmaschinen-Crawler nahtlos zwischen Bremen und Aurich navigiert.
 3. **Spoke-to-Action Links**:
-   - Direkte Verlinkungen zum [48h Expressausweis](file:///c:/Users/super/Desktop/Hk%20Energieberatung/expressausweis.html), zum [Dokumente & Formulare Hub](file:///c:/Users/super/Desktop/Hk%20Energieberatung/dokumente.html) und den [25 FAQs](file:///c:/Users/super/Desktop/Hk%20Energieberatung/faq.html).
+   - Direkte Verlinkungen zum [48h Expressausweis](../../../expressausweis.html), zum [Dokumente & Formulare Hub](../../../dokumente.html) und den [25 FAQs](../../../faq.html).
 
 ---
 

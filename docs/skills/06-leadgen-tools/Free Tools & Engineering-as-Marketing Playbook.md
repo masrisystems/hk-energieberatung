@@ -159,7 +159,7 @@ $$\text{Prozentuale Gesamtersparnis} = \left(1 - \prod_{i \in \text{aktiv}} (1 -
   1. *Frage 1:* Wie viele Wohneinheiten hat das Gebäude? ($\ge 5\text{ WE} \to$ **Verbrauchsausweis zulässig** ✅).
   2. *Frage 2:* Wann wurde der Bauantrag gestellt? (Nach 01.11.1977 $\to$ **Verbrauchsausweis zulässig** ✅).
   3. *Frage 3:* Wurde bei Baujahr vor 1977 die Wärmeschutzverordnung 1977 nachträglich erfüllt? (Ja $\to$ **Verbrauchsausweis zulässig** ✅).
-* **Sofort-Aktion:** Grüner Erfolgs-Badge + Direkt-CTA zur Online-Bestellung des Expressausweises in 48h für 79 €.
+* **Sofort-Aktion:** Grüner Erfolgs-Badge + Direkt-CTA zur Online-Bestellung des Expressausweises in 48h für 80 €.
 
 ---
 

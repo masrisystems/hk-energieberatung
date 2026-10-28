@@ -31,7 +31,7 @@ Dieses Dokument definiert alle automatisierten E-Mail-Funnels und Transaktions-S
  [ Flow 1: Inbound Lead Nurture ]   [ Flow 2: Expressausweis 48h ]    [ Flow 3: Download-Center Nurture ]
  • Trigger: Kontaktformular         • Trigger: Ausweis-Bestellung     • Trigger: Checklisten-Download
  • Ziel: Fester Vor-Ort-Termin      • Ziel: PDF-Lieferung & Up-Sell   • Ziel: Lead zum iSFP konvertieren
- • Dauer: 4 E-Mails über 7 Tage     • Dauer: 3 E-Mails über 8 Tage    • Dauer: 3 E-Mails über 10 Tage
+ • Dauer: 4 E-Mails über 7 Tage     • Dauer: 3 E-Mails über 8 Tage    • Dauer: 3 E-Mails über 8 Tage
 ```
 
 ---
@@ -96,10 +96,12 @@ Dieses Dokument definiert alle automatisierten E-Mail-Funnels und Transaktions-S
 
 ### 📩 E-Mail 3: Praxisbeispiel & Vertrauensbeweis
 * **Versand:** Tag 4
-* **Betreff:** `Praxisbeispiel: 65% Heizkosten gespart & 28.000 € Förderung erhalten`
+* **Betreff:** `Praxisbeispiel: Über 60% Heizkosten gespart & 28.400 € Förderung erhalten`
 * **Vorschautext:** `Ein kurzer Einblick in ein typisches Sanierungsprojekt aus unserer Region.`
 
 > Hallo Herr/Frau {{nachname}},
+> 
+> *(Hinweis: Das Beispiel ist ein Platzhalter. Vor Versand durch ein reales, vom Kunden freigegebenes Projekt ersetzen oder als „Beispielrechnung“ kennzeichnen.)*
 > 
 > Sanierungen wirken auf den ersten Blick oft unübersichtlich und teuer. Deshalb möchten wir Ihnen ein reales Beispiel einer Familie aus dem Bremer Umland zeigen:
 > 
@@ -277,6 +279,22 @@ Dieses Dokument definiert alle automatisierten E-Mail-Funnels und Transaktions-S
 > 
 > Beste Grüße  
 > **Wajih Tfaili**
+
+---
+
+### 📩 E-Mail 3: Einladung zum Vor-Ort-Erstgespräch
+* **Versand:** Tag 8 nach Download
+* **Betreff:** `Sollen wir Ihr Haus gemeinsam anschauen?`
+* **Vorschautext:** `Kostenloses Erstgespräch, Anfahrt inklusive – ganz unverbindlich.`
+
+> Hallo {{vorname}},
+> 
+> haben Sie die Checkliste schon durchgesehen? Wenn Sie möchten, schauen wir uns Ihr Gebäude in einem kostenlosen Erstgespräch gemeinsam an – die Anfahrt ist bundesweit inklusive.
+> 
+> 👉 **[Kostenloses Erstgespräch anfragen](https://hk-energieberatung.de/#contact)**
+> 
+> Beste Grüße  
+> **Hussein Khashab**
 
 ---
 

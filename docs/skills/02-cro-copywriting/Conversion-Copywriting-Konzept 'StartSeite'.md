@@ -1,6 +1,6 @@
 # ✍️ Conversion-Copywriting-Konzept für `Startseite`
 
-Hier ist das optimierte Text- und Conversion-Konzept für die Startseite ([`index.html`](file:///c:/Users/super/Desktop/Hk%20Energieberatung/index.html)), basierend auf der **Voice-of-Customer-Psychologie**, den aktuellen GEG-Vorgaben und den maximalen BAFA-/KfW-Förderquoten:
+Hier ist das optimierte Text- und Conversion-Konzept für die Startseite ([`index.html`](../../../index.html)), basierend auf der **Voice-of-Customer-Psychologie**, den aktuellen GEG-Vorgaben und den maximalen BAFA-/KfW-Förderquoten:
 
 ---
 

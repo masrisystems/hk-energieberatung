@@ -46,7 +46,7 @@ Dieses Dokument liefert eine fundierte **Wettbewerbsanalyse**, objektive **Vergl
 | **Wartezeit auf Termin** | **2 bis 5 Werktage** | 2 bis 4 Wochen | **3 bis 6 Monate** | 4 bis 8 Wochen |
 | **Erstellung iSFP (50% Zuschuss)** | **Ja (inkl. +5% Bonus-Garantie)** | Ja (oft Aufpreis für Nachbetreuung) | ❌ **Nein (nur Kurz-Check)** | Selten (fehlt oft dena-Akkreditierung) |
 | **Antragsabwicklung (BAFA/KfW)** | **Vollständig schlüsselfertig** | Digitales Self-Service-Portal | ❌ **Keine Antragsstellung** | Meist nicht möglich (nur Fachunternehmererklärung) |
-| **Expressausweis (48h)** | **Ja (ab 79 €, 100% GEG-Rechtssicher)** | Selten / Teuer | ❌ Nein | Nein (meist 2-3 Wochen) |
+| **Expressausweis (48h)** | **Ja (ab 80 €, 100% GEG-Rechtssicher)** | Selten / Teuer | ❌ Nein | Nein (meist 2-3 Wochen) |
 | **Erreichbarkeit** | **WhatsApp, Telefon & E-Mail (Mo–Sa)** | Callcenter-Warteschleife | Feste Sprechzeiten | Schwer erreichbar (auf Baustellen) |
 
 ---

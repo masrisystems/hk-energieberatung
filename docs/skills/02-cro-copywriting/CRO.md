@@ -1,6 +1,8 @@
 
 # 📈 Conversion Rate Optimization (CRO) Audit: `index.html`
 
+> **Stand:** Audit vom 08.08.2026. Mehrere Empfehlungen (Hero-H1 mit Förderzahl, Dual-CTA, Formular-Button und Trust-Zeile) sind inzwischen in `index.html` bzw. `components/contact.html` umgesetzt. Die „Aktueller Zustand“-Angaben unten beschreiben den Stand vor der Umsetzung.
+
 Ziel der Startseite ist die Generierung von qualifizierten Sanierungs-Leads (Einfamilien-/Mehrfamilienhausbesitzer) und direkten Expressausweis-Bestellungen.
 
 ---
@@ -56,7 +58,7 @@ Ziel der Startseite ist die Generierung von qualifizierten Sanierungs-Leads (Ein
 - <h1 class="mb-4">Ihre Energieberater in Norddeutschland</h1>
 - <h2 class="mb-2 text-base">Jetzt Energie sparen & <br><span class="accent-text">Förderung sichern!</span></h2>
 
-+ <div class="company-badge mb-4"><i class="bi bi-patch-check-fill me-2" style="color: #66A66D;"></i> Zertifizierte dena Energieeffizienz-Experten</div>
++ <div class="company-badge mb-4"><i class="bi bi-patch-check-fill me-2" ></i> Zertifizierte dena Energieeffizienz-Experten</div>
 + <h1 class="mb-3" style="font-size: 2.5rem; font-weight: 800; line-height: 1.2;">Bis zu 70% staatliche Förderung sichern & Heizkosten dauerhaft senken</h1>
 + <p class="lead mb-4 text-muted" style="font-size: 1.1rem;">Unabhängige Energieberatung & Sanierungsfahrpläne (iSFP) durch Bauingenieure in Bremen & Norddeutschland. 50% BAFA-Zuschuss auf Ihr Gutachten.</p>
 
@@ -80,4 +82,4 @@ Ziel der Startseite ist die Generierung von qualifizierten Sanierungs-Leads (Ein
 ---
 
 ### 🛠️ Nächster Schritt:
-Möchtest du, dass wir diese **CRO-Optimierungen (Hero-Text, Dual CTA, Trust-Signale und Formular-Reassurance)** direkt in [`index.html`](file:///c:/Users/super/Desktop/Hk%20Energieberatung/index.html) einarbeiten?
+Möchtest du, dass wir diese **CRO-Optimierungen (Hero-Text, Dual CTA, Trust-Signale und Formular-Reassurance)** direkt in [`index.html`](../../../index.html) einarbeiten?

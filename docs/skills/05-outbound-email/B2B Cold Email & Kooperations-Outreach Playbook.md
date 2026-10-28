@@ -13,7 +13,6 @@ tags:
   - lead-generation
   - kooperationspartner
 ---
-****
 # ✉️ HK Energieberatung – B2B Cold Email & Outbound Playbook
 
 Dieses Playbook enthält praxiserprobte, zielgruppenspezifische **B2B Cold-Outreach-Sequenzen** für **HK Energieberatung**. Die E-Mails sind nach modernen B2B-Grundsätzen verfasst: **kein Marketing-Sprech, extrem kurze Absätze, Nutzenfokus aus Sicht des Empfängers und reibungsarme CTAs (Interest-based asks)**.
@@ -46,7 +45,7 @@ Dieses Playbook enthält praxiserprobte, zielgruppenspezifische **B2B Cold-Outre
 > 
 > wenn Sie neue Objekte in Bremen zur Vermarktung hereinbekommen, ist die Beschaffung des rechtssicheren Energieausweises meist der bürokratischste Bremsklotz für Notartermine und Inserate.
 > 
-> Wir haben für Makler in der Region einen Express-Service eingerichtet: rechtssichere GEG-Verbrauchsausweise innerhalb von **garantiert 48 Stunden digital geliefert (ab 79 €)**.
+> Wir haben für Makler in der Region einen Express-Service eingerichtet: rechtssichere GEG-Verbrauchsausweise innerhalb von **garantiert 48 Stunden digital geliefert (ab 80 €)**.
 > 
 > Zudem prüfen wir bei Sanierungsobjekten direkt die BAFA-Fördermöglichkeiten für Ihre Käufer (+5% Extra-Bonus via iSFP), was Kaufentscheidungen spürbar beschleunigt.
 > 
@@ -168,7 +167,7 @@ Dieses Playbook enthält praxiserprobte, zielgruppenspezifische **B2B Cold-Outre
 ---
 
 ## 🏢 Sequenz 3: Private Mehrfamilienhausbesitzer & WEG-Verwalter
-* **Fokus:** iSFP mit 850 € staatlichem Zuschuss, CO2-Kostenreduktion & Heizungsmodernisierung.
+* **Fokus:** iSFP mit bis zu 1.300 € staatlichem Zuschuss, CO2-Kostenreduktion & Heizungsmodernisierung.
 
 ### 📧 E-Mail 1 (Tag 1: Wirtschaftlichkeit & Pflichten)
 **Betreff:** `heizkosten & sanierungsfahrplan für ihr mehrfamilienhaus`
@@ -178,7 +177,7 @@ Dieses Playbook enthält praxiserprobte, zielgruppenspezifische **B2B Cold-Outre
 > durch die Aufteilung der CO2-Abgabe zwischen Vermieter und Mieter sowie das neue Gebäudeenergiegesetz stehen viele Immobilieneigentümer vor kostspieligen Sanierungsentscheidungen.
 > 
 > Mit einem **individuellen Sanierungsfahrplan (iSFP)** erhalten Sie als Eigentümer einen klaren Stufenplan für Ihr Gebäude:
-> - **50% BAFA-Zuschuss** auf die Beratungskosten (bis zu 850 € Erstattung für Mehrfamilienhäuser).
+> - **50% BAFA-Zuschuss** auf die Beratungskosten (bis zu 1.300 € Erstattung für Mehrfamilienhäuser ab 3 WE, bis zu 850 € bei Ein-/Zweifamilienhäusern).
 > - **+5% zusätzlicher Förderbonus** auf alle zukünftigen Sanierungsmaßnahmen (Dach, Fenster, Fassade).
 > - Keine Pflicht zur sofortigen Umsetzung – Sie entscheiden flexibel über das Tempo.
 > 
@@ -200,7 +199,7 @@ Dieses Playbook enthält praxiserprobte, zielgruppenspezifische **B2B Cold-Outre
    - Dienstag bis Donnerstag zwischen 08:30 Uhr und 10:30 Uhr erzielen die höchsten Öffnungs- und Antwortraten.
 3. **Rechtlicher Rahmen (B2B in Deutschland):**
    - Immer vollständige Signatur (Name, Firmenanschrift, Telefonnummer, Website, Berufsbezeichnung).
-   - Relevanzbezug (mutmaßliches geschäftliches Interesse bei themenverwandten Gewerbetreibenden).
+   - **Achtung § 7 UWG:** Auch im B2B-Bereich ist Werbung per E-Mail nur mit vorheriger (mutmaßlicher) Einwilligung zulässig; die „mutmaßliche Einwilligung“ wird von Gerichten eng ausgelegt. Unaufgeforderte Kaltakquise per E-Mail birgt Abmahnrisiko. Empfehlung: Erstkontakt per Telefon/Brief/LinkedIn oder Double-Opt-in einholen und die Sequenzen nur an Kontakte mit Einwilligung senden; rechtliche Prüfung vor Start.
    - Opt-out-Möglichkeit respektieren (*„Falls keine weiteren E-Mails gewünscht sind, genügt eine kurze Nachricht“*).
 
 ---

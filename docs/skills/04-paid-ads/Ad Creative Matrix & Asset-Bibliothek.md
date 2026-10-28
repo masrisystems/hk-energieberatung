@@ -29,31 +29,31 @@ Alle Texte wurden vorab strikt gegen die Google Ads Zeichenlimits geprüft (Head
 
 ### 📂 RSA-Batch 1: Sanierungsfahrplan (iSFP) & BAFA/KfW-Förderung
 * **Final URL:** `https://hk-energieberatung.de/#contact`
-* **Display Path 1:** `Energieberatung` (16 Chars -> `Energieberater` 15 Chars)
+* **Display Path 1:** `Energieberatung` (15 Chars)
 * **Display Path 2:** `Bremen` (6 Chars)
 
 #### 🏷️ 15 Headlines (max. 30 Zeichen):
-1. `Energieberater Bremen & Nord` *(27 Zeichen)*
-2. `Bis zu 70% Förderung sichern` *(29 Zeichen)*
+1. `Energieberater Bremen & Nord` *(28 Zeichen)*
+2. `Bis zu 70% Förderung sichern` *(28 Zeichen)*
 3. `50% BAFA-Zuschuss für iSFP` *(26 Zeichen)*
-4. `Zertifizierte dena-Experten` *(26 Zeichen)*
-5. `Bauingenieure vor Ort` *(20 Zeichen)*
-6. `Kostenloses Erstgespräch` *(23 Zeichen)*
-7. `Sanierungsfahrplan (iSFP)` *(24 Zeichen)*
-8. `+5% Extra-Förderung iSFP` *(23 Zeichen)*
-9. `KfW & BAFA Komplettservice` *(25 Zeichen)*
+4. `Zertifizierte dena-Experten` *(27 Zeichen)*
+5. `Bauingenieure vor Ort` *(21 Zeichen)*
+6. `Kostenloses Erstgespräch` *(24 Zeichen)*
+7. `Sanierungsfahrplan (iSFP)` *(25 Zeichen)*
+8. `+5% Extra-Förderung iSFP` *(24 Zeichen)*
+9. `KfW & BAFA Komplettservice` *(26 Zeichen)*
 10. `Anfahrt in Bremen inklusive` *(27 Zeichen)*
-11. `Heizung & Dämmung fördern` *(24 Zeichen)*
-12. `Schneller Termin vor Ort` *(23 Zeichen)*
-13. `HK Energieberatung` *(17 Zeichen)*
-14. `Maximale Zuschüsse 2026` *(22 Zeichen)*
-15. `Jetzt Förderung anfragen` *(23 Zeichen)*
+11. `Heizung & Dämmung fördern` *(25 Zeichen)*
+12. `Schneller Termin vor Ort` *(24 Zeichen)*
+13. `HK Energieberatung` *(18 Zeichen)*
+14. `Maximale Zuschüsse 2026` *(23 Zeichen)*
+15. `Jetzt Förderung anfragen` *(24 Zeichen)*
 
 #### 📄 4 Descriptions (max. 90 Zeichen):
-1. `Zertifizierte Energieeffizienz-Experten der dena. Wir sichern Ihre BAFA & KfW Förderungen.` *(89 Zeichen)*
-2. `50% Zuschuss für Ihren Sanierungsfahrplan (iSFP) + 5% Extra-Bonus auf alle Sanierungen.` *(86 Zeichen)*
+1. `Zertifizierte Energieeffizienz-Experten der dena. Wir sichern Ihre BAFA & KfW Förderungen.` *(90 Zeichen)*
+2. `50% Zuschuss für Ihren Sanierungsfahrplan (iSFP) + 5% Extra-Bonus auf alle Sanierungen.` *(87 Zeichen)*
 3. `Bauingenieure für Bremen & Norddeutschland. Kostenloses Erstgespräch vor Ort anfragen!` *(86 Zeichen)*
-4. `Komplette Antragsabwicklung für Dämmung, Fenster & Heizungstausch. Jetzt Förderung prüfen.` *(89 Zeichen)*
+4. `Komplette Antragsabwicklung für Dämmung, Fenster & Heizungstausch. Jetzt Förderung prüfen.` *(90 Zeichen)*
 
 ---
 
@@ -64,25 +64,25 @@ Alle Texte wurden vorab strikt gegen die Google Ads Zeichenlimits geprüft (Head
 
 #### 🏷️ 15 Headlines (max. 30 Zeichen):
 1. `Expressausweis in 48h online` *(28 Zeichen)*
-2. `Energieausweis ab 79 €` *(21 Zeichen)*
-3. `100% Rechtssicher nach GEG` *(25 Zeichen)*
+2. `Energieausweis ab 80 €` *(22 Zeichen)*
+3. `100% Rechtssicher nach GEG` *(26 Zeichen)*
 4. `Offiziell DIBt-Registriert` *(26 Zeichen)*
 5. `Verbrauchsausweis in 48 Std.` *(28 Zeichen)*
-6. `Ohne Vor-Ort-Besichtigung` *(24 Zeichen)*
+6. `Ohne Vor-Ort-Besichtigung` *(25 Zeichen)*
 7. `Gültig für 10 Jahre` *(19 Zeichen)*
 8. `Garantiert in 48 Stunden` *(24 Zeichen)*
 9. `Für Verkauf & Vermietung` *(24 Zeichen)*
-10. `Schnell & unkompliziert` *(22 Zeichen)*
+10. `Schnell & unkompliziert` *(23 Zeichen)*
 11. `Digital per Mail geliefert` *(26 Zeichen)*
-12. `Energiepass online bestellen` *(27 Zeichen)*
+12. `Energiepass online bestellen` *(28 Zeichen)*
 13. `Bauingenieur-Geprüft` *(20 Zeichen)*
-14. `HK Energieausweis Express` *(24 Zeichen)*
-15. `Jetzt online ausfüllen` *(21 Zeichen)*
+14. `HK Energieausweis Express` *(25 Zeichen)*
+15. `Jetzt online ausfüllen` *(22 Zeichen)*
 
 #### 📄 4 Descriptions (max. 90 Zeichen):
 1. `Rechtssicherer Energieausweis nach GEG. Garantiert innerhalb von 48 Stunden per E-Mail.` *(87 Zeichen)*
-2. `Für Verkauf & Vermietung. Offiziell beim DIBt registriert. Jetzt ab 79 € online bestellen!` *(90 Zeichen)*
-3. `In 8 Schritten online ausfüllen. Wir prüfen Ihre Heizkostenabrechnungen und erstellen den Pass.` *(96 Zeichen -> gekürzt:)*  
+2. `Für Verkauf & Vermietung. Offiziell beim DIBt registriert. Jetzt ab 80 € online bestellen!` *(90 Zeichen)*
+3. `In 8 Schritten online ausfüllen. Wir prüfen Ihre Heizkostenabrechnungen und erstellen den Pass.` *(95 Zeichen, zu lang – gekürzt:)*  
    `In 8 Schritten online bestellen. Wir prüfen Ihre Daten und erstellen den offiziellen Pass.` *(90 Zeichen)*
 4. `Express-Verbrauchsausweis mit 48h-Garantie. Direkt von zertifizierten Energieberatern.` *(86 Zeichen)*
 
@@ -192,12 +192,12 @@ Bei HK Energieberatung erhalten Sie Ihren rechtssicheren Verbrauchsausweis nach 
 ⚡ 100% digital – ohne zeitraubenden Besichtigungstermin
 ⚡ Offiziell beim Deutschen Institut für Bautechnik (DIBt) registriert
 ⚡ Gültig für 10 Jahre in ganz Deutschland
-⚡ Festpreis ab 79 € inkl. MwSt.
+⚡ Festpreis ab 80 € inkl. MwSt.
 
 In nur 8 Schritten online ausfüllen und in 48 Stunden in Ihrem Postfach haben.
 ```
 
-* **Headline:** `Expressausweis in 48h – ab 79 €`
+* **Headline:** `Expressausweis in 48h – ab 80 €`
 * **Description:** `Rechtssicher nach GEG | DIBt registriert`
 * **CTA:** `Jetzt online bestellen` (Link zu `expressausweis.html`)
 
@@ -209,7 +209,7 @@ In nur 8 Schritten online ausfüllen und in 48 Stunden in Ihrem Postfach haben.
 | :--- | :--- | :--- | :--- | :--- |
 | **Stat Callout Card** | `50% Zuschuss` | *„Staat übernimmt die Hälfte Ihres Sanierungsfahrplans“* | `#ABD8C3` Salbeigrün | `assets/img/isfp.jpg` mit Text-Box |
 | **Trust Card** | dena-Siegel & Portraits | *„Bauingenieure & zertifizierte Experten vor Ort“* | `#2d465e` Schieferblau | `assets/img/profilbild-hussein.png` & `profilbild-wajih.png` |
-| **48h Speed Badge** | `assets/img/48h.png` | *„Rechtssicherer Energieausweis ab 79 € in 48h“* | `#e67e22` Orange / Accent | `assets/img/48h.png` + Dokument-Mockup |
+| **48h Speed Badge** | `assets/img/48h.png` | *„Rechtssicherer Energieausweis ab 80 € in 48h“* | `#e67e22` Orange / Accent | `assets/img/48h.png` + Dokument-Mockup |
 | **Before/After Card** | Energielabel F $\to$ B | *„Von 3.400 € Heizkosten auf 1.200 € senken“* | `#27ae60` Grün | Energieeffizienz-Skala Vergleich |
 
 ---

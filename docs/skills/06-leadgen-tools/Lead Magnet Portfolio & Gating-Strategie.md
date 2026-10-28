@@ -4,7 +4,7 @@ client: Hussein Khashab & Wajih Tfaili
 company: HK Energieberatung
 location: Bremen, Norddeutschland
 last_updated: 2026-08-08
-status: Active
+status: Konzept (live: nur Förderkompass-Formular auf `dokumente.html`)
 tags:
   - client/hussein-khashab
   - project/hk-energieberatung
