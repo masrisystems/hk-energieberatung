@@ -1,7 +1,7 @@
 # update-favicons.ps1
 # Updates favicon tags in all HTML files across the project
 
-$baseDir = "c:\Users\super\Desktop\Hk Energieberatung"
+$baseDir = "$env:PROJECTS\Hk Energieberatung"
 
 # The HTML files to update
 $htmlFiles = Get-ChildItem -Path $baseDir -Filter "*.html" -Recurse | Where-Object { $_.Name -ne "old.html" }

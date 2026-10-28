@@ -11,22 +11,24 @@ Streamline and balance the site footer structure for HK Energieberatung to remov
 - Phone: `+49 162 6985115`
 - E-Mail: `info@hk-energieberatung.de`
 - Social Links: Instagram & LinkedIn
+- Google "Preferred Source" button (dark theme)
 
 ### Column 2: Navigation & Menü (`col-lg-3 col-md-3`)
-- Startseite (`index.html#hero`)
+- Startseite (`/#hero`)
 - Über uns (`about.html`)
 - Standort Bremen (`energieberatung-bremen.html`)
 - Standort Aurich (`energieberatung-aurich.html`)
 - Mediathek (`mediathek.html`)
+- Dokumente & Downloads (`dokumente.html`)
 - Häufige Fragen (FAQ) (`faq.html`)
-- Kontakt (`index.html#contact`)
+- Kontakt (`/#contact`)
 
 ### Column 3: Unsere Leistungen (`col-lg-3 col-md-3`)
 - Express Verbrauchsausweis (48h) (`expressausweis.html`)
-- Energieausweise (`index.html#services`)
-- BAFA & KfW Förderungen (`index.html#features`)
-- Hydraulischer Abgleich (`index.html#services`)
-- KfW Kreditanträge (`index.html#services`)
+- Fördermittel-Rechner (BEG 2026) (`forderrechner.html`)
+- Energieausweise (`/#services`)
+- BAFA & KfW Förderungen (`/#features`)
+- KfW Kreditanträge (`/#services`)
 
 ### Column 4: Erreichbarkeit & Direktkontakt (`col-lg-2 col-md-3`)
 - Öffnungszeiten: Montag - Samstag (9:00 Uhr bis 18:00 Uhr)
@@ -35,7 +37,8 @@ Streamline and balance the site footer structure for HK Energieberatung to remov
 ### Copyright & Legal Bar
 - Copyright statement
 - Impressum & Datenschutz links
-- Designer & Developer Credits (BootstrapMade & Masri Systems)
+- Cookie-Einstellungen link
+- Developer credit (Masri Systems)
 
 ## Affected Files
 - `components/footer.html`

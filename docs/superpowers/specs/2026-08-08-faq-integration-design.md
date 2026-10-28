@@ -1,7 +1,7 @@
 # Design Spec: FAQ Section & Dedicated FAQ Hub (`faq.html`)
 
 ## Goal
-Implement the 25 comprehensive FAQs from `assets/FAQ-EN~1.HTM.html` into `index.html#faq` and create a dedicated `faq.html` page, complete with category groupings, interactive graphics (Einsparpotenzial bar chart & Energieeffizienzklassen A+-H scale), Bootstrap icons, and pre-rendered header/footer/contact/map components matching `assets/css/main.css`.
+Implement the 25 comprehensive FAQs from the original FAQ source file (since removed from `assets/`) into `index.html#faq` and create a dedicated `faq.html` page, complete with category groupings, interactive graphics (Einsparpotenzial bar chart & Energieeffizienzklassen A+-H scale), Bootstrap icons, and pre-rendered header/footer/contact/map components matching `assets/css/main.css`.
 
 ## Architecture & Structural Breakdown
 

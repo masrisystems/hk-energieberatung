@@ -28,7 +28,7 @@ Shared UI (`components/header.html`, `components/footer.html`, `components/conta
 
 ### Pages and structure
 
-- Top-level `*.html` files are the site's pages (`index.html`, `about.html`, `faq.html`, `energieberatung-bremen.html`, `energieberatung-aurich.html`, `expressausweis.html`, `mediathek.html`, `dokumente.html`, `impressum.html`, `datenschutz.html`, `data-protection.html`, `agb.html`, `service-details.html`, `starter-page.html`).
+- Top-level `*.html` files are the site's pages (`index.html`, `about.html`, `faq.html`, `energieberatung-bremen.html`, `energieberatung-aurich.html`, `expressausweis.html`, `forderrechner.html`, `mediathek.html`, `dokumente.html`, `impressum.html`, `datenschutz.html`, `agb.html`; `index-v1.html` is the A/B-test variant of the homepage).
 - `assets/css/main.css`, `assets/js/main.js` — main site styles/behavior (template-provided, Bootstrap-based).
 - `assets/vendor/` — third-party libraries (Bootstrap, etc.).
 - `assets/dokumente/` — downloadable documents surfaced via the INFOTHEK/dokumente hub.

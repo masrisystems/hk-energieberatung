@@ -23,7 +23,7 @@ Implement the new "Über uns" (About Us) page (`about.html`) based on the `about
    - Light blue surface container (`color-mix` / light-background).
    - Title: "Unsere Gründer".
    - 2 Founder cards:
-     - Ing. Hussein Kashab (Bauingenieur und Energieberater).
+     - Ing. Hussein Khashab (Bauingenieur und Energieberater).
      - Ing. Wajih Tfaili (Bauingenieur und Energieberater).
 5. **Qualifications & Expertise Section ("Was wir mitbringen")**:
    - Title: "Was wir mitbringen".

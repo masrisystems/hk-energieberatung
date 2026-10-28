@@ -1,6 +1,6 @@
 Add-Type -AssemblyName System.Drawing
 
-$srcPath = "c:\Users\super\Desktop\Hk Energieberatung\assets\img\logo.jpeg"
+$srcPath = "$env:PROJECTS\Hk Energieberatung\assets\img\logo.jpeg"
 $src = [System.Drawing.Bitmap]::FromFile($srcPath)
 
 function GenerateIcon([int]$targetSize, [string]$outPath, [double]$fillPercent = 0.82) {
@@ -36,8 +36,8 @@ function GenerateIcon([int]$targetSize, [string]$outPath, [double]$fillPercent =
     Write-Output "Generated: $outPath ($targetSize x $targetSize)"
 }
 
-$imgDir = "c:\Users\super\Desktop\Hk Energieberatung\assets\img"
-$rootDir = "c:\Users\super\Desktop\Hk Energieberatung"
+$imgDir = "$env:PROJECTS\Hk Energieberatung\assets\img"
+$rootDir = "$env:PROJECTS\Hk Energieberatung"
 
 # Generate various sizes
 GenerateIcon 16 "$imgDir\favicon-16x16.png" 0.88
