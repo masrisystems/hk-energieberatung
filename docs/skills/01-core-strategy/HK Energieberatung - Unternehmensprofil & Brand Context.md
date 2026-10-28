@@ -102,7 +102,7 @@ Dieses Dokument enthält alle Unternehmens- und Markeninformationen, Dienstleist
 
 - **Startseite & Über uns:** `index.html`, `about.html` (Vollständige Über uns Seite mit Gründer-Profilen Ing. Hussein Khashab & Ing. Wajih Tfaili, Baustellen-Banner, Expertise-Punkten und Standorte-Karten)
 - **FAQ Hub (25 Fragen & Grafiken):** `faq.html` (Kategorisierte FAQ-Sammlung mit interaktivem Einsparpotenzial-Diagramm & Energieeffizienzklassen-Skala)
-- **Standort Bremen:** `energieberatung-bremen.html` (Dedicated Bremen landing page featuring `assets/bremen.jpeg` hero visual, Bremen Google Maps embed, and localized reference projects)
+- **Standort Bremen:** `energieberatung-bremen.html` (Dedicated Bremen landing page featuring `assets/img/bremen-marktplatz.jpeg` hero visual, Bremen Google Maps embed, and localized reference projects)
 - **Standort Aurich:** `energieberatung-aurich.html`
 - **Expressausweis:** `expressausweis.html`
 - **Fördermittel- & Einsparrechner:** `forderrechner.html` (Interaktive BEG-Förderrechner Web-App Stand 08/2026 für Heizungstausch, Gebäudehülle, Fenster, Anlagentechnik & Heizkostenvergleich)
