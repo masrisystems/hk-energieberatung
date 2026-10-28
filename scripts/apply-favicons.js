@@ -14,7 +14,6 @@ const filesToUpdate = [
   'dokumente.html',
   'impressum.html',
   'datenschutz.html',
-  'data-protection.html',
   'agb.html',
   'old.html'
 ];

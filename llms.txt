@@ -43,6 +43,7 @@
 - [Startseite](https://hk-energieberatung.de/): Übersicht der Leistungen, Rechner & Erstberatung
 - [Über uns](https://hk-energieberatung.de/about.html): Unternehmensphilosophie, Team & dena-Zertifikate
 - [Express-Verbrauchsausweis](https://hk-energieberatung.de/expressausweis.html): 8-Schritte-Online-Auftrag mit Datei-Upload
+- [Fördermittel- & Einsparrechner](https://hk-energieberatung.de/forderrechner.html): Interaktiver BAFA/KfW-Förderrechner nach BEG-Stand 2026 (Heizungstausch, Gebäudehülle, Fenster)
 - [Standort Bremen](https://hk-energieberatung.de/energieberatung-bremen.html): Lokale Energieberatung in Bremen & Umland
 - [Standort Aurich](https://hk-energieberatung.de/energieberatung-aurich.html): Lokale Energieberatung in Ostfriesland
 - [Formulare & Downloads](https://hk-energieberatung.de/dokumente.html): Offizielle PDF-Ablaufpläne, Antragschecklisten und Maßnahmenkataloge
