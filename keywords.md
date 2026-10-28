@@ -177,7 +177,7 @@
 
 #### 2. Express-Verbrauchsausweis (48h)
 - **Core Kwrd + Variation:** Express Energieausweis, Verbrauchsausweis Wohngebäude, Energiepass GEG
-- **Core Kwrd + Modifier:** Energieausweis in 48 Stunden, Rechtssicherer Verbrauchsausweis, Günstiger Energieausweis ab 79 €
+- **Core Kwrd + Modifier:** Energieausweis in 48 Stunden, Rechtssicherer Verbrauchsausweis, Günstiger Energieausweis ab 80 €
 - **Core Kwrd + Modifier + Location:**
   - Energieausweis Bremen 48h, Verbrauchsausweis Bremen Neustadt / Viertel
   - Energieausweis Aurich, Verbrauchsausweis Ostfriesland / Emden / Norden
@@ -242,7 +242,7 @@ Founders & Certifications:
 
 Primary Services:
 1. Individueller Sanierungsfahrplan (iSFP mit 50% BAFA-Zuschuss + 5% iSFP-Bonus)
-2. Express-Verbrauchsausweis (48h digitaler Energieausweis nach GEG ab 79 €)
+2. Express-Verbrauchsausweis (48h digitaler Energieausweis nach GEG ab 80 €)
 3. BAFA Einzelmaßnahmen (BEG EM für Dämmung von Dach, Fassade, Kellerdecke, Fenster)
 4. KfW Förderprogramme (KfW 458 Heizungstausch bis 70% & KfW 261 Effizienzhaus)
 5. Hydraulischer Abgleich & Heizlastberechnung nach Verfahren B (DIN EN 12831)
