@@ -121,6 +121,8 @@ $$\text{ICE-Score} = \frac{\text{Impact} + \text{Confidence} + \text{Ease}}{3}$$
 
 ### Event-Definitionen für Google Analytics 4 (GA4) & Tag Manager:
 
+> **Implementierungsstand:** Aktuell sind nur `ab_test_impression` (`assets/js/ab-test.js`, Experiment `landing_v1_vs_v2`) und `generate_lead` (`assets/js/main.js`, Formular-Absendung) live. Die unten gezeigten Events `experiment_impression`, `hero_cta_primary_click`, `express_cta_click` und `lead_form_submitted` sind **geplantes Soll-Tracking** und noch nicht implementiert.
+
 ```javascript
 // 1. Event beim Laden der Test-Variante
 gtag('event', 'experiment_impression', {

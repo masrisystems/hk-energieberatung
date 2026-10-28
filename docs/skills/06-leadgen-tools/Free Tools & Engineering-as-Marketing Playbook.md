@@ -46,7 +46,7 @@ Durch interaktive Rechner (insbesondere die produktionsreife Web-App `forderrech
 * **Dateipfad:** `c:\Users\super\Desktop\Hk Energieberatung\forderrechner.html`
 * **Live-URL:** `https://hk-energieberatung.de/forderrechner.html`
 * **SEO-Ziel-Keywords:** `bafa förderrechner 2026`, `kfw 458 zuschuss rechner`, `sanierungsförderung berechnen bremen`, `heizungstausch förderung rechner`, `isfp bonus berechnen`
-* **Technologie-Stack:** 100% Vanilla JavaScript (Zero Dependencies), Responsive CSS3 Grid & Flexbox, Google Fonts *League Spartan*, Dynamic Shimmer Progress Bars, Interactive KPI Engine.
+* **Technologie-Stack:** 100% Vanilla JavaScript (Zero Dependencies), Responsive CSS3 Grid & Flexbox, Google Fonts *Nunito / Roboto / Inter* (Site-Design-System), Dynamic Shimmer Progress Bars, Interactive KPI Engine.
 * **Gating-Modell:** **Partially Gated** (Echtzeit-Berechnung & Live-Visualisierung 100% frei; ausführlicher PDF-Förderbericht & Terminbuchung zur Fördermittelbeantragung als Lead-Schranke).
 
 ```
