@@ -11,6 +11,7 @@ const filesToUpdate = [
   'energieberatung-aurich.html',
   'expressausweis.html',
   'faq.html',
+  'forderrechner.html',
   'mediathek.html',
   'dokumente.html',
   'impressum.html',
@@ -27,9 +28,19 @@ const newGtagHeaderBlock = `  <!-- A/B Testing Traffic Split & Analytics Tagging
     function gtag() {
       dataLayer.push(arguments);
     }
+    // Check if user already consented in a previous session
+    var storedConsent = null;
+    try {
+      storedConsent = localStorage.getItem("hk_cookie_consent");
+    } catch (e) {}
+
+    var consentState = storedConsent === "granted" ? "granted" : "denied";
+
     gtag("consent", "default", {
-      analytics_storage: "denied",
-      ad_storage: "denied",
+      analytics_storage: consentState,
+      ad_storage: consentState,
+      ad_user_data: consentState,
+      ad_personalization: consentState,
       wait_for_update: 500,
     });
   </script>
@@ -62,17 +73,27 @@ for (const filename of filesToUpdate) {
   let content = fs.readFileSync(filePath, 'utf8');
   let original = content;
 
+  const headIdx = content.indexOf('<head');
+  if (headIdx === -1) continue;
+  const headCloseIdx = content.indexOf('>', headIdx);
+
   // Find start position of Google Tag or AB Test block in <head>
-  let startIdx = content.indexOf('<!-- A/B Testing Traffic Split');
-  if (startIdx === -1) {
-    startIdx = content.indexOf('<!-- Google tag (gtag.js)');
+  let tagStartIdx = -1;
+  const abIdx = content.indexOf('<!-- A/B Testing Traffic Split', headCloseIdx);
+  const gtagIdx = content.indexOf('<!-- Google tag (gtag.js)', headCloseIdx);
+
+  if (abIdx !== -1 && gtagIdx !== -1) {
+    tagStartIdx = Math.min(abIdx, gtagIdx);
+  } else if (abIdx !== -1) {
+    tagStartIdx = abIdx;
+  } else if (gtagIdx !== -1) {
+    tagStartIdx = gtagIdx;
   }
 
-  if (startIdx !== -1) {
-    // Find the start of <meta charset or <meta name="viewport" after startIdx
-    const metaIdx = content.indexOf('<meta', startIdx);
-    if (metaIdx !== -1) {
-      content = content.substring(0, startIdx) + newGtagHeaderBlock + '\n\n  ' + content.substring(metaIdx);
+  if (tagStartIdx !== -1) {
+    const metaIdx = content.indexOf('<meta', headCloseIdx);
+    if (metaIdx !== -1 && metaIdx > tagStartIdx) {
+      content = content.substring(0, tagStartIdx) + newGtagHeaderBlock.trimStart() + '\n\n  ' + content.substring(metaIdx);
     }
   }
 

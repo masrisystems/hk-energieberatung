@@ -11,9 +11,19 @@
     function gtag() {
       dataLayer.push(arguments);
     }
+    // Check if user already consented in a previous session
+    var storedConsent = null;
+    try {
+      storedConsent = localStorage.getItem("hk_cookie_consent");
+    } catch (e) {}
+
+    var consentState = storedConsent === "granted" ? "granted" : "denied";
+
     gtag("consent", "default", {
-      analytics_storage: "denied",
-      ad_storage: "denied",
+      analytics_storage: consentState,
+      ad_storage: consentState,
+      ad_user_data: consentState,
+      ad_personalization: consentState,
       wait_for_update: 500,
     });
   </script>

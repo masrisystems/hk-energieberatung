@@ -15,7 +15,9 @@
     if (typeof gtag === 'function') {
       gtag('consent', 'update', {
         analytics_storage: 'granted',
-        ad_storage: 'denied'
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted'
       });
     }
     localStorage.setItem(CONSENT_KEY, 'granted');
@@ -25,7 +27,9 @@
     if (typeof gtag === 'function') {
       gtag('consent', 'update', {
         analytics_storage: 'denied',
-        ad_storage: 'denied'
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
       });
     }
     localStorage.setItem(CONSENT_KEY, 'denied');
@@ -51,10 +55,10 @@
       '    </svg>' +
       '  </div>' +
       '  <div class="hk-cookie-text">' +
-      '    <p class="hk-cookie-title">Wir verwenden Cookies</p>' +
+      '    <p class="hk-cookie-title">Wir verwenden Cookies &amp; Analysedienste</p>' +
       '    <p class="hk-cookie-desc">' +
-      '      Diese Website verwendet Google Analytics, um die Nutzung zu analysieren und unsere Services zu verbessern.' +
-      '      Die Daten werden anonymisiert erhoben. Weitere Informationen finden Sie in unserer' +
+      '      Diese Website verwendet Cookies und Analysetools (Google Tag), um die Nutzung zu analysieren, unsere Services zu verbessern und Werbema&szlig;nahmen zielgerichtet zu messen.' +
+      '      Weitere Informationen finden Sie in unserer' +
       '      <a href="/datenschutz.html" class="hk-cookie-link">Datenschutzerkl&auml;rung</a>.' +
       '    </p>' +
       '  </div>' +

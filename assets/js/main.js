@@ -431,6 +431,69 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
   };
   window.HKToast = HKToast;
 
+  // =========================================================================
+  // Google Ads & Analytics Conversion Tracking Helper
+  // =========================================================================
+  window.HK_CONVERSIONS = window.HK_CONVERSIONS || {
+    google_ads_id: 'AW-972344910',
+    lead_send_to: '',       // Optional: 'AW-972344910/<LABEL>'
+    phone_send_to: '',      // Optional: 'AW-972344910/<LABEL>'
+    whatsapp_send_to: ''    // Optional: 'AW-972344910/<LABEL>'
+  };
+
+  function sendConversion(eventName, params, sendToKey) {
+    if (typeof gtag !== 'function') return;
+
+    const sendTo = (window.HK_CONVERSIONS && window.HK_CONVERSIONS[sendToKey]) || null;
+    const payload = Object.assign({
+      'event_category': 'Leads',
+      'variant': window.HK_AB_VARIANT || 'default'
+    }, params);
+
+    if (sendTo) {
+      payload.send_to = sendTo;
+    }
+
+    gtag('event', eventName, payload);
+
+    // If an explicit conversion label send_to is provided, also fire explicit conversion event
+    if (sendTo) {
+      gtag('event', 'conversion', {
+        'send_to': sendTo,
+        'value': params.value || 1.0,
+        'currency': params.currency || 'EUR'
+      });
+    }
+  }
+
+  // Track phone clicks (tel: links) and WhatsApp clicks globally
+  document.addEventListener('click', function (e) {
+    // 1. Phone clicks
+    const telLink = e.target.closest('a[href^="tel:"]');
+    if (telLink) {
+      const rawTel = telLink.getAttribute('href') || '';
+      const cleanTel = rawTel.replace(/^tel:/i, '').trim();
+      sendConversion('contact_phone_click', {
+        'event_category': 'Contact Phone',
+        'event_label': cleanTel || '+49 162 6985115',
+        'value': 1.0,
+        'currency': 'EUR'
+      }, 'phone_send_to');
+      return;
+    }
+
+    // 2. WhatsApp clicks
+    const waLink = e.target.closest('a[href*="wa.me"], a[href*="whatsapp.com"], .wp-chat');
+    if (waLink) {
+      sendConversion('contact_whatsapp_click', {
+        'event_category': 'Contact WhatsApp',
+        'event_label': 'WhatsApp Chat',
+        'value': 1.0,
+        'currency': 'EUR'
+      }, 'whatsapp_send_to');
+    }
+  });
+
   /**
    * Universal AJAX Contact Form Handler
    */
@@ -481,14 +544,15 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
       if (loading) loading.classList.remove('d-block');
       if (btn) btn.disabled = false;
 
-      if (data.trim() === 'OK' || data.includes('erfolgreich') || data.includes('success')) {
-        if (typeof gtag === 'function') {
-          gtag('event', 'generate_lead', {
-            'event_category': 'Form Submission',
-            'event_label': form.getAttribute('id') || 'contact_form',
-            'variant': window.HK_AB_VARIANT || 'unknown'
-          });
-        }
+      const trimmed = (data || '').trim();
+      if (trimmed === 'OK' || trimmed.toLowerCase().includes('erfolgreich') || trimmed.toLowerCase().includes('success') || trimmed.includes('"status":"ok"')) {
+        const formIdentifier = form.getAttribute('id') || form.querySelector('input[name="subject"]')?.value || 'contact_form';
+        sendConversion('generate_lead', {
+          'event_category': 'Form Submission',
+          'event_label': formIdentifier,
+          'value': 1.0,
+          'currency': 'EUR'
+        }, 'lead_send_to');
         
         let successMessage = 'Vielen Dank! Ihre Anfrage wurde erfolgreich übermittelt.';
         if (sentMsg && sentMsg.textContent.trim()) {
