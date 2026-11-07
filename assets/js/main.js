@@ -435,10 +435,10 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
   // Google Ads & Analytics Conversion Tracking Helper
   // =========================================================================
   window.HK_CONVERSIONS = window.HK_CONVERSIONS || {
-    google_ads_id: 'AW-972344910',
-    lead_send_to: '',       // Optional: 'AW-972344910/<LABEL>'
-    phone_send_to: '',      // Optional: 'AW-972344910/<LABEL>'
-    whatsapp_send_to: ''    // Optional: 'AW-972344910/<LABEL>'
+    google_ads_id: 'AW-18393566004',
+    lead_send_to: 'AW-18393566004/yF1dCJDu7bMdELSW3sJE',
+    phone_send_to: 'AW-18393566004/jgbnCLfN97MdELSW3sJE',
+    whatsapp_send_to: 'AW-18393566004/4ygYCLrN97MdELSW3sJE'
   };
 
   function sendConversion(eventName, params, sendToKey) {

@@ -50,8 +50,8 @@ const newGtagHeaderBlock = `  <!-- A/B Testing Traffic Split & Analytics Tagging
   ></script>
   <script>
     gtag("js", new Date());
+    gtag("config", "AW-18393566004");
     gtag("config", "AW-972344910", {
-      anonymize_ip: true,
       variant: window.HK_AB_VARIANT || "v2",
       landing_variant: window.HK_AB_VARIANT || "v2",
       user_properties: {
