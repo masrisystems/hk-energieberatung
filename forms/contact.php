@@ -394,12 +394,12 @@ if ($mailSent) {
 </html>';
     }
 } else {
-    // If SMTP error was caught and password was provided, output the error for transparency
-    if (! empty($errorMessage) && ! empty($envConfig['MAIL_PASSWORD'])) {
-        http_response_code(500);
-        echo 'Fehler beim E-Mail-Versand: '.htmlspecialchars($errorMessage);
-    } else {
-        http_response_code(200);
-        echo 'OK';
+    // Never report success for an undelivered enquiry: the visitor must know, and no conversion may fire.
+    // Release the duplicate lock so an immediate retry is actually sent instead of answered with OK.
+    @unlink($lockFile);
+    if (! empty($errorMessage)) {
+        error_log('contact.php mail failure: '.$errorMessage);
     }
+    http_response_code(500);
+    echo 'Ihre Nachricht konnte leider nicht gesendet werden. Bitte rufen Sie uns an: +49 162 6985115';
 }

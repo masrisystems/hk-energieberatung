@@ -438,7 +438,8 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
     google_ads_id: 'AW-18393566004',
     lead_send_to: 'AW-18393566004/yF1dCJDu7bMdELSW3sJE',
     phone_send_to: 'AW-18393566004/jgbnCLfN97MdELSW3sJE',
-    whatsapp_send_to: 'AW-18393566004/4ygYCLrN97MdELSW3sJE'
+    whatsapp_send_to: 'AW-18393566004/4ygYCLrN97MdELSW3sJE',
+    download_send_to: ''    // Optional: secondary action 'AW-18393566004/<LABEL>'
   };
 
   function sendConversion(eventName, params, sendToKey) {
@@ -533,23 +534,29 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
         'Accept': 'application/json, text/plain, */*'
       }
     })
-    .then(response => {
-      if (response.ok) return response.text();
-      throw new Error(`Serverfehler (${response.status}): Bitte überprüfen Sie Ihre Eingaben.`);
-    })
+    .then(response => response.text().then(text => {
+      if (response.ok) return text;
+      const serverMessage = text.trim();
+      throw new Error(serverMessage && !serverMessage.startsWith('<')
+        ? serverMessage
+        : `Serverfehler (${response.status}): Bitte versuchen Sie es erneut.`);
+    }))
     .then(data => {
       if (loading) loading.classList.remove('d-block');
       if (btn) btn.disabled = false;
 
       const trimmed = (data || '').trim();
       if (trimmed === 'OK' || trimmed.toLowerCase().includes('erfolgreich') || trimmed.toLowerCase().includes('success') || trimmed.includes('"status":"ok"')) {
-        const formIdentifier = form.getAttribute('id') || form.querySelector('input[name="subject"]')?.value || 'contact_form';
-        sendConversion('generate_lead', {
+        const hiddenSubject = form.querySelector('input[name="subject"]')?.value || '';
+        const formIdentifier = form.getAttribute('id') || hiddenSubject || 'contact_form';
+        // Document requests are not enquiries: keep them out of the Formular-Anfrage conversion
+        const isDownload = /Lead-Magnet|Download/.test(hiddenSubject);
+        sendConversion(isDownload ? 'download_request' : 'generate_lead', {
           'event_category': 'Form Submission',
           'event_label': formIdentifier,
           'value': 1.0,
           'currency': 'EUR'
-        }, 'lead_send_to');
+        }, isDownload ? 'download_send_to' : 'lead_send_to');
         
         let successMessage = 'Vielen Dank! Ihre Anfrage wurde erfolgreich übermittelt.';
         if (sentMsg && sentMsg.textContent.trim()) {
