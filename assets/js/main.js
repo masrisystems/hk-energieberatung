@@ -465,6 +465,7 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
       });
     }
   }
+  window.HKTrackConversion = sendConversion;
 
   // Track phone clicks (tel: links) and WhatsApp clicks globally
   document.addEventListener('click', function (e) {

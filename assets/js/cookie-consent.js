@@ -1,4 +1,4 @@
-﻿/**
+/**
  * HK Energieberatung - Cookie Consent Manager
  * DSGVO (GDPR) + TTDSG konform
  * GA4 Consent Mode v2

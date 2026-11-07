@@ -1726,6 +1726,23 @@
                 response.ok &&
                 (data.success || responseText.trim() === "OK")
               ) {
+                // Track successful Express-Ausweis conversion event
+                if (typeof window.HKTrackConversion === "function") {
+                  window.HKTrackConversion("generate_lead", {
+                    event_category: "Expressausweis Order",
+                    event_label: "express_ausweis_form",
+                    value: 80.0,
+                    currency: "EUR"
+                  }, "lead_send_to");
+                } else if (typeof gtag === "function") {
+                  gtag("event", "generate_lead", {
+                    event_category: "Expressausweis Order",
+                    event_label: "express_ausweis_form",
+                    value: 80.0,
+                    currency: "EUR"
+                  });
+                }
+
                 const strasse = form.querySelector("#strasse")?.value || "";
                 const plz = form.querySelector("#plz")?.value || "";
                 const ort = form.querySelector("#ort")?.value || "";
