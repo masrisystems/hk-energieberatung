@@ -4,6 +4,13 @@ kanban-plugin: board
 
 ---
 
+> [!IMPORTANT]
+> **Board Migration Notice**: This local Markdown file is an archive. The active board has been migrated to the authoritative Obsidian Base:
+> `$env:PROJECTS\obsidian\masrisystems-app\content\private\Work\MasriSystems\Clients\Hussein Khashab\Kanban Hk Energieberatung.base`
+> Tasks are tracked via Echo tickets in:
+> `$env:PROJECTS\obsidian\masrisystems-app\content\private\Work\MasriSystems\Clients\Hussein Khashab\tickets/`
+
+
 ## Todo
 
 
