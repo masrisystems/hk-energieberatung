@@ -450,10 +450,6 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
       'variant': window.HK_AB_VARIANT || 'default'
     }, params);
 
-    if (sendTo) {
-      payload.send_to = sendTo;
-    }
-
     gtag('event', eventName, payload);
 
     // If an explicit conversion label send_to is provided, also fire explicit conversion event
