@@ -1,0 +1,7 @@
+interface:
+  display_name: "Shared Agent Config Sync"
+  short_description: "Synchronize skills and rules across AI agents"
+  default_prompt: "Use $agent-config-sync to preview and synchronize my shared agent configuration."
+
+policy:
+  allow_implicit_invocation: true
