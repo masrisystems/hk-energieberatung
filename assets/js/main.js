@@ -439,6 +439,7 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
     lead_send_to: 'AW-18393566004/yF1dCJDu7bMdELSW3sJE',
     phone_send_to: 'AW-18393566004/jgbnCLfN97MdELSW3sJE',
     whatsapp_send_to: 'AW-18393566004/4ygYCLrN97MdELSW3sJE',
+    express_send_to: 'AW-18393566004/G-jvCJyoibQdELSW3sJE',
     download_send_to: ''    // Optional: secondary action 'AW-18393566004/<LABEL>'
   };
 
