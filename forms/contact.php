@@ -16,41 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
-// === 1. LOAD CONFIGURATION FROM .ENV ===
-function loadEnvFile($envPath)
-{
-    if (! file_exists($envPath)) {
-        return [];
-    }
-    $lines = file($envPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    $config = [];
-    foreach ($lines as $line) {
-        $line = trim($line);
-        if ($line === '' || strpos($line, '#') === 0) {
-            continue;
-        }
-        $parts = explode('=', $line, 2);
-        if (count($parts) === 2) {
-            $key = trim($parts[0]);
-            $val = trim($parts[1]);
-            // Strip matching surrounding quotes
-            if ((substr($val, 0, 1) === '"' && substr($val, -1) === '"') ||
-                (substr($val, 0, 1) === "'" && substr($val, -1) === "'")) {
-                $val = substr($val, 1, -1);
-            }
-            $config[$key] = $val;
-        }
-    }
-
-    return $config;
-}
-
-// Production: secrets live outside the web root (Uberspace: /var/www/virtual/<user>/hk-energieberatung.env)
-$envConfig = loadEnvFile(dirname(__DIR__, 2).'/hk-energieberatung.env');
-if (empty($envConfig)) {
-    // Local development fallback
-    $envConfig = loadEnvFile(__DIR__.'/.env');
-}
+// === 1. LOAD CONFIGURATION + SHARED STORAGE/MAIL HELPERS ===
+require __DIR__.'/lib/mailer.php';
+$envConfig = hk_load_env();
 
 // === 2. GET FORM DATA ===
 $name = trim($_POST['name'] ?? '');
@@ -140,188 +108,47 @@ if ($isLeadMagnet) {
     $email_subject = '📩 [Anfrage: '.$subject.'] '.$anrede_str.$name.$telStr;
 }
 
-// Preheader summary (shows directly on the outside preview snippet in Gmail/Outlook/Apple Mail)
-$email_body = 'Thema: '.$subject.' | Absender: '.$anrede_str.$name.' <'.$email.'>'.(! empty($telefon) ? ' | Tel: '.$telefon : '')."\n\n";
-$email_body .= "========================================================\n";
-$email_body .= "NEUE KONTAKTANFRAGE ÜBER DIE WEBSITE (hk-energieberatung.de)\n";
-$email_body .= "========================================================\n";
-if (! empty($anrede) && $anrede !== 'keine Angabe') {
-    $email_body .= 'Anrede:        '.$anrede."\n";
-}
-$email_body .= 'Name:          '.$name."\n";
-$email_body .= 'E-Mail:        '.$email."\n";
-if (! empty($telefon)) {
-    $email_body .= 'Telefon:       '.$telefon."\n";
-}
-$email_body .= 'Thema/Betreff: '.$subject."\n";
-$email_body .= 'Datum/Uhrzeit: '.date('d.m.Y H:i:s')." Uhr\n";
-$email_body .= "Datenschutz:   Akzeptiert (Ja)\n";
-$email_body .= "========================================================\n\n";
-$email_body .= "Nachricht:\n\n".$message."\n\n";
-$email_body .= "========================================================\n";
+// === 5. SAVE THE SUBMISSION FIRST, THEN NOTIFY BY EMAIL ===
+$storedDir = hk_store_submission($envConfig, $isLeadMagnet ? 'download' : 'kontakt', [
+    'anrede' => $anrede,
+    'name' => $name,
+    'email' => $email,
+    'telefon' => $telefon,
+    'subject' => $subject,
+    'message' => $message,
+    'ab_variant' => trim($_POST['ab_variant'] ?? ''),
+]);
 
-// Target recipient address
 $recipient = $envConfig['MAIL_TO_ADDRESS'] ?? 'info@hk-energieberatung.de';
 
-// === 5. NATIVE SMTP CLIENT FUNCTION ===
-function sendViaSmtp($config, $to, $subject, $bodyText, $replyToEmail, $replyToName)
-{
-    $host = $config['MAIL_HOST'] ?? '';
-    $port = (int) ($config['MAIL_PORT'] ?? 465);
-    $username = $config['MAIL_USERNAME'] ?? '';
-    $password = $config['MAIL_PASSWORD'] ?? '';
-    $encryption = strtolower($config['MAIL_ENCRYPTION'] ?? 'ssl');
-    $fromAddress = $config['MAIL_FROM_ADDRESS'] ?? $username;
-    $fromName = $config['MAIL_FROM_NAME'] ?? 'HK Energieberatung';
+$mail = [
+    'kind' => $isLeadMagnet ? 'Download-Anfrage' : 'Kontaktanfrage',
+    'preheader' => 'Thema: '.$subject.' | '.$anrede_str.$name.' <'.$email.'>'.(! empty($telefon) ? ' | Tel: '.$telefon : ''),
+    'title' => $isLeadMagnet ? $email : $anrede_str.$name,
+    'subtitle' => $subject,
+    'email' => $email,
+    'phone' => $telefon,
+    'reply_subject' => $isLeadMagnet ? 'Ihre Unterlagen von HK Energieberatung' : 'Ihre Anfrage: '.$subject,
+    'message' => $isLeadMagnet ? '' : $message,
+    'sections' => [
+        ['Kontaktdaten', [
+            ['Anrede', $anrede_str !== '' ? $anrede : ''],
+            ['Name', $name],
+            ['E-Mail', $email],
+            ['Telefon', $telefon],
+            ['Thema', $subject],
+            ['Datenschutz', 'Zugestimmt'],
+        ]],
+    ],
+    'reference' => $storedDir ? basename($storedDir) : '',
+];
 
-    // Replace variable placeholders
-    $fromName = str_replace(['${APP_NAME}', '$APP_NAME'], 'HK Energieberatung', $fromName);
-
-    if (empty($host) || empty($username)) {
-        throw new Exception('SMTP-Konfiguration unvollständig.');
-    }
-
-    $timeout = 15;
-    $socketHost = $host;
-    if ($encryption === 'ssl' || $port === 465) {
-        $socketHost = 'ssl://'.$host;
-    }
-
-    $context = stream_context_create([
-        'ssl' => [
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-            'allow_self_signed' => true,
-        ],
-    ]);
-
-    $socket = @stream_socket_client($socketHost.':'.$port, $errno, $errstr, $timeout, STREAM_CLIENT_CONNECT, $context);
-    if (! $socket) {
-        throw new Exception("Verbindung zum Mailserver fehlgeschlagen: $errstr ($errno)");
-    }
-
-    stream_set_timeout($socket, $timeout);
-
-    $readResponse = function ($expectedCode = null) use ($socket) {
-        $response = '';
-        while (! feof($socket) && ($line = fgets($socket, 515)) !== false) {
-            $response .= $line;
-            if (isset($line[3]) && $line[3] === ' ') {
-                break;
-            }
-        }
-        if ($expectedCode !== null) {
-            $code = (int) substr($response, 0, 3);
-            if ($code !== $expectedCode) {
-                throw new Exception("SMTP-Fehler ($code): ".trim($response));
-            }
-        }
-
-        return $response;
-    };
-
-    $sendCommand = function ($cmd, $expectedCode = null) use ($socket, $readResponse) {
-        fwrite($socket, $cmd."\r\n");
-
-        return $readResponse($expectedCode);
-    };
-
-    // 1. Initial Greeting (220)
-    $readResponse(220);
-
-    // 2. EHLO
-    $clientDomain = ! empty($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : 'localhost';
-    try {
-        $sendCommand('EHLO '.$clientDomain, 250);
-    } catch (Exception $e) {
-        $sendCommand('HELO '.$clientDomain, 250);
-    }
-
-    // 3. STARTTLS for port 587 or tls mode
-    if (($encryption === 'tls' || $port === 587) && strpos($socketHost, 'ssl://') !== 0) {
-        $sendCommand('STARTTLS', 220);
-        $cryptoMethod = STREAM_CRYPTO_METHOD_TLS_CLIENT;
-        if (defined('STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT')) {
-            $cryptoMethod |= STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT;
-        }
-        if (defined('STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT')) {
-            $cryptoMethod |= STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT;
-        }
-        if (! stream_socket_enable_crypto($socket, true, $cryptoMethod)) {
-            throw new Exception('TLS-Verschlüsselung mit dem Mailserver konnte nicht aufgebaut werden.');
-        }
-        $sendCommand('EHLO '.$clientDomain, 250);
-    }
-
-    // 4. AUTH LOGIN
-    if (! empty($username) && ! empty($password)) {
-        $sendCommand('AUTH LOGIN', 334);
-        $sendCommand(base64_encode($username), 334);
-        $sendCommand(base64_encode($password), 235);
-    }
-
-    // 5. MAIL FROM
-    $sendCommand('MAIL FROM:<'.$fromAddress.'>', 250);
-
-    // 6. RCPT TO
-    $sendCommand('RCPT TO:<'.$to.'>', 250);
-
-    // 7. DATA
-    $sendCommand('DATA', 354);
-
-    // Build MIME / UTF-8 Headers
-    $encodedSubject = '=?UTF-8?B?'.base64_encode($subject).'?=';
-    $encodedFromName = '=?UTF-8?B?'.base64_encode($fromName).'?=';
-    $encodedReplyName = '=?UTF-8?B?'.base64_encode($replyToName).'?=';
-
-    $headers = [];
-    $headers[] = 'Date: '.date('r');
-    $headers[] = 'To: <'.$to.'>';
-    $headers[] = 'From: '.$encodedFromName.' <'.$fromAddress.'>';
-    $headers[] = 'Reply-To: '.$encodedReplyName.' <'.$replyToEmail.'>';
-    $headers[] = 'Subject: '.$encodedSubject;
-    $headers[] = 'Message-ID: <'.md5(uniqid((string) microtime(), true)).'@'.$host.'>';
-    $headers[] = 'X-Mailer: HK-Energieberatung-Mailer/1.0';
-    $headers[] = 'MIME-Version: 1.0';
-    $headers[] = 'Content-Type: text/plain; charset=UTF-8';
-    $headers[] = 'Content-Transfer-Encoding: 8bit';
-
-    $data = implode("\r\n", $headers)."\r\n\r\n".$bodyText."\r\n.";
-    $sendCommand($data, 250);
-
-    // 8. QUIT
-    $sendCommand('QUIT', 221);
-    fclose($socket);
-
-    return true;
-}
-
-// === 6. EXECUTE EMAIL DISPATCH ===
-$mailSent = false;
-$errorMessage = '';
-
-// Try SMTP if host is specified
-if (! empty($envConfig['MAIL_HOST'])) {
-    try {
-        $mailSent = sendViaSmtp($envConfig, $recipient, $email_subject, $email_body, $email, $name);
-    } catch (Exception $e) {
-        $errorMessage = $e->getMessage();
-        $mailSent = false;
-    }
-}
-
-// Fallback to PHP mail() if SMTP is not configured or while password is not yet set
-if (! $mailSent) {
-    $fromHeader = ! empty($envConfig['MAIL_FROM_ADDRESS']) ? $envConfig['MAIL_FROM_ADDRESS'] : $email;
-    $headers = 'From: '.$fromHeader."\r\n";
-    $headers .= 'Reply-To: '.$email."\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-    $headers .= 'X-Mailer: PHP/'.phpversion();
-
-    if (@mail($recipient, $email_subject, $email_body, $headers)) {
-        $mailSent = true;
-    }
-}
+$result = hk_deliver($envConfig, $recipient, $email_subject, hk_render_email_text($mail), hk_render_email_html($mail), $email, $name);
+hk_mark_submission($storedDir, $result);
+$mailSent = $result['sent'];
+$errorMessage = $result['error'];
+// A saved submission is a captured lead even when the notification mail failed
+$captured = $mailSent || $storedDir !== null;
 
 // Handle direct GET visits in browser
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -358,7 +185,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 $isAjax = (! empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') ||
           (isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false);
 
-if ($mailSent) {
+if ($captured) {
     http_response_code(200);
     if ($isAjax) {
         echo 'OK';

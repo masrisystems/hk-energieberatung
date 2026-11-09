@@ -1729,6 +1729,7 @@
                 // Track successful Express-Ausweis conversion event
                 if (typeof window.HKTrackConversion === "function") {
                   window.HKTrackConversion("generate_lead", {
+                    test_submission: window.HKIsTestSubmission(form),
                     event_category: "Expressausweis Order",
                     event_label: "express_ausweis_form",
                     value: 80.0,

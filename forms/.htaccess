@@ -1,4 +1,4 @@
-# Never serve dotfiles (.env, .htaccess, ...) from this directory
-<FilesMatch "^\.">
+# Never serve dotfiles (.env, .htaccess, ...) or config/backup/data files from this directory
+<FilesMatch "(^\.|\.(env|bak|json|log|ini|sql)$|\.bak-)">
     Require all denied
 </FilesMatch>

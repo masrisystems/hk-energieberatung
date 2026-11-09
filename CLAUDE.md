@@ -33,6 +33,7 @@ Shared UI (`components/header.html`, `components/footer.html`, `components/conta
 - `assets/vendor/` — third-party libraries (Bootstrap, etc.).
 - `assets/dokumente/` — downloadable documents surfaced via the INFOTHEK/dokumente hub.
 - `forms/contact.php` — server-side contact form handler (PHP mail, honeypot spam trap, required-field and email validation). Requires a PHP-capable host; not used by the static GitHub Pages deploy itself.
+- `forms/contact.php` and `forms/expressausweis.php` run on Uberspace (`masri@gienah.uberspace.de:/var/www/virtual/masri/html/forms/`, deployed by scp, including `forms/lib/`) and share `forms/lib/mailer.php`. Mail settings live in `/var/www/virtual/masri/hk-energieberatung.env`, outside the web root (never inside `html/`). The sender must be an address Uberspace may send for (`hallo@masrisystems.com`); sending as `@hk-energieberatung.de` through Uberspace is rejected by Zoho. Every submission is saved to `/var/www/virtual/masri/hk-submissions/` before mailing.
 
 ### Deployment
 

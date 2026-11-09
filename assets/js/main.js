@@ -443,8 +443,37 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
     download_send_to: ''    // Optional: secondary action 'AW-18393566004/<LABEL>'
   };
 
+  /**
+   * Internal test mode: tests must never be counted as Google Ads conversions.
+   * Open any page once with ?hk_test=1 to switch this browser into test mode (?hk_test=0 switches it off).
+   * Independently, a form submitted with the word TEST (capitals) in a name field never counts.
+   */
+  const HK_TEST_KEY = 'hk_test_mode';
+  try {
+    const testParam = new URLSearchParams(window.location.search).get('hk_test');
+    if (testParam === '1') localStorage.setItem(HK_TEST_KEY, '1');
+    if (testParam === '0') localStorage.removeItem(HK_TEST_KEY);
+  } catch (err) { /* storage blocked: test mode unavailable */ }
+
+  function isTestMode() {
+    try { return localStorage.getItem(HK_TEST_KEY) === '1'; } catch (err) { return false; }
+  }
+
+  window.HKIsTestSubmission = function (form) {
+    if (isTestMode()) return true;
+    if (!form) return false;
+    const names = ['name', 'vorname', 'nachname']
+      .map(field => form.querySelector(`[name="${field}"]`)?.value || '')
+      .join(' ');
+    return /\bTEST\b/.test(names);
+  };
+
   function sendConversion(eventName, params, sendToKey) {
     if (typeof gtag !== 'function') return;
+    if (isTestMode() || (params && params.test_submission)) {
+      console.info('[HK test mode] conversion not sent:', eventName);
+      return;
+    }
 
     const sendTo = (window.HK_CONVERSIONS && window.HK_CONVERSIONS[sendToKey]) || null;
     const payload = Object.assign({
@@ -553,6 +582,7 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
         // Document requests are not enquiries: keep them out of the Formular-Anfrage conversion
         const isDownload = /Lead-Magnet|Download/.test(hiddenSubject);
         sendConversion(isDownload ? 'download_request' : 'generate_lead', {
+          'test_submission': window.HKIsTestSubmission(form),
           'event_category': 'Form Submission',
           'event_label': formIdentifier,
           'value': 1.0,
