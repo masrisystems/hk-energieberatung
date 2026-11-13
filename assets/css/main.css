@@ -4007,6 +4007,16 @@ button.btn-hk-outline:active {
     padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 0px));
     background: var(--surface-color, #ffffff);
     box-shadow: 0 -4px 18px rgba(45, 70, 94, 0.14);
+    /* Hidden while the hero is on screen; slides in once it has scrolled away */
+    transform: translateY(110%);
+    visibility: hidden;
+    transition: transform 0.3s ease, visibility 0s linear 0.3s;
+  }
+
+  .hk-contact-bar.is-visible {
+    transform: translateY(0);
+    visibility: visible;
+    transition: transform 0.3s ease, visibility 0s;
   }
 
   .hk-contact-bar a {
@@ -4039,11 +4049,11 @@ button.btn-hk-outline:active {
   }
 
   /* The bar already carries WhatsApp */
-  body.has-contact-bar .wp-chat {
+  body.contact-bar-visible .wp-chat {
     display: none;
   }
 
-  body.has-contact-bar .scroll-top.active {
+  body.contact-bar-visible .scroll-top.active {
     bottom: calc(74px + env(safe-area-inset-bottom, 0px));
   }
 }

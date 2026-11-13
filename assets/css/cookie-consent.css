@@ -180,8 +180,8 @@
     padding: 0 0.5rem 0.5rem;
   }
 
-  body.has-contact-bar #hk-cookie-banner {
-    bottom: calc(62px + env(safe-area-inset-bottom, 0px));
+  body.contact-bar-visible #hk-cookie-banner.hk-cookie-visible:not(.hk-cookie-hiding) {
+    transform: translateY(calc(-62px - env(safe-area-inset-bottom, 0px)));
   }
 
   .hk-cookie-inner {

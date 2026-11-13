@@ -551,6 +551,21 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
       '<a href="' + formTarget + '" class="hk-contact-bar-primary"><i class="bi bi-envelope-fill" aria-hidden="true"></i>Anfrage</a>';
     document.body.appendChild(bar);
     document.body.classList.add('has-contact-bar');
+
+    // Show the bar only after the hero or page banner has scrolled out of view; pages without one show it at once
+    const show = function (on) {
+      bar.classList.toggle('is-visible', on);
+      document.body.classList.toggle('contact-bar-visible', on);
+    };
+    const hero = document.querySelector('section[class*="hero"], .page-title-banner');
+    if (!hero || !('IntersectionObserver' in window)) {
+      show(true);
+    } else {
+      new IntersectionObserver(function (entries) {
+        const e = entries[0];
+        show(!e.isIntersecting && e.boundingClientRect.top < 0);
+      }).observe(hero);
+    }
   })();
 
   /**
