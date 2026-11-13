@@ -26,10 +26,18 @@
       wait_for_update: 500,
     });
   </script>
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=AW-972344910"
-  ></script>
+  <script>
+    // The Google tag is requested only after explicit consent: no request reaches Google before that
+    window.HKLoadGoogleTag = function () {
+      if (window.HKGoogleTagLoaded) return;
+      window.HKGoogleTagLoaded = true;
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=AW-972344910";
+      document.head.appendChild(s);
+    };
+    if (consentState === "granted") window.HKLoadGoogleTag();
+  </script>
   <script>
     gtag("js", new Date());
     gtag("config", "AW-18393566004");

@@ -21,9 +21,26 @@
       });
     }
     localStorage.setItem(CONSENT_KEY, 'granted');
+    // The Google tag is only requested from here on (see the loader in each page's <head>)
+    if (typeof window.HKLoadGoogleTag === 'function') window.HKLoadGoogleTag();
+  }
+
+  // Remove Google's first-party cookies once consent is withdrawn
+  function clearGoogleCookies() {
+    document.cookie.split(';').forEach(function (pair) {
+      var name = pair.split('=')[0].trim();
+      if (!/^(_ga|_gcl|_gid|_gat)/.test(name)) return;
+      // _ga_<ID> names the GA4 stream: switch it off so nothing is sent while the page reloads
+      if (/^_ga_/.test(name)) window['ga-disable-G-' + name.slice(4)] = true;
+      var host = location.hostname.replace(/^www\./, '');
+      ['', '; domain=' + host, '; domain=.' + host].forEach(function (domain) {
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + domain;
+      });
+    });
   }
 
   function denyConsent() {
+    if (window.HKGoogleTagLoaded) clearGoogleCookies();
     if (typeof gtag === 'function') {
       gtag('consent', 'update', {
         analytics_storage: 'denied',
@@ -33,6 +50,11 @@
       });
     }
     localStorage.setItem(CONSENT_KEY, 'denied');
+    // Consent withdrawn while the tag is already running: drop its cookies and reload without it
+    if (window.HKGoogleTagLoaded) {
+      clearGoogleCookies();
+      window.location.reload();
+    }
   }
 
   // --- Banner DOM ----------------------------------------------------------
