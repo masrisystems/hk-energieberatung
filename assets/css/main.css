@@ -4252,3 +4252,8 @@ button.btn-hk-outline:active {
 .reviews .review-card .review-stars {
   margin-bottom: 8px;
 }
+
+.reviews .reviews-count {
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--default-color), transparent 35%);
+}
