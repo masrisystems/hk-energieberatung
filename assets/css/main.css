@@ -4223,3 +4223,32 @@ button.btn-hk-outline:active {
     scroll-snap-align: center;
   }
 }
+
+.reviews .reviews-title h2 {
+  margin: 0 0 6px;
+}
+
+.reviews .reviews-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-family: var(--nav-font);
+  color: var(--heading-color);
+}
+
+.reviews .reviews-rating strong {
+  font-size: 1.1rem;
+}
+
+.reviews .review-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: #fbbc04; /* Google's star yellow */
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.reviews .review-card .review-stars {
+  margin-bottom: 8px;
+}
