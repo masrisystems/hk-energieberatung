@@ -72,8 +72,8 @@
                   >
                 </h3>
                 <p class="mb-4">
-                  Bitte geben Sie hier Ihre Kontaktdaten ein. Bei Auswahl eines
-                  Betreffs wird Ihre Nachricht passend vorausgefüllt:
+                  Zwei Angaben genügen. Wir melden uns innerhalb von 24 Stunden bei
+                  Ihnen:
                 </p>
 
                 <form
@@ -85,27 +85,7 @@
                   data-aos-delay="200"
                 >
                   <div class="row gy-3">
-                    <div class="col-md-6">
-                      <label for="anrede" class="form-label visually-hidden"
-                        >Anrede</label
-                      >
-                      <select
-                        id="anrede"
-                        name="anrede"
-                        class="form-select form-control"
-                        required
-                      >
-                        <option value="" disabled selected hidden>
-                          Anrede auswählen *
-                        </option>
-                        <option value="Herr">Herr</option>
-                        <option value="Frau">Frau</option>
-                        <option value="Divers">Divers</option>
-                        <option value="keine Angabe">Keine Angabe</option>
-                      </select>
-                    </div>
-
-                    <div class="col-md-6">
+                    <div class="col-12">
                       <label for="name" class="form-label visually-hidden"
                         >Ihr Name</label
                       >
@@ -135,14 +115,15 @@
 
                     <div class="col-md-6">
                       <label for="telefon" class="form-label visually-hidden"
-                        >Telefon (optional)</label
+                        >Telefon für Rückruf</label
                       >
                       <input
                         type="tel"
                         id="telefon"
                         name="telefon"
                         class="form-control"
-                        placeholder="Telefonnummer (optional)"
+                        placeholder="Telefon für Rückruf (empfohlen)"
+                        autocomplete="tel"
                       />
                     </div>
 
@@ -154,10 +135,9 @@
                         id="betreff"
                         name="subject"
                         class="form-select form-control"
-                        required
                       >
-                        <option value="" disabled selected hidden>
-                          Betreff / Anliegen auswählen *
+                        <option value="" selected>
+                          Anliegen auswählen (optional)
                         </option>
                         <option value="Allgemeine Energieberatung">
                           Allgemeine Energieberatung
@@ -190,8 +170,8 @@
                     <div class="col-12">
                       <div class="contact-hint p-2 px-3 rounded-2">
                         <i class="bi bi-info-circle me-1 text-accent-green"></i>
-                        Die Nachricht unten wird passend zum Betreff
-                        vorausgefüllt – Sie können sie danach frei anpassen.
+                        Name und E-Mail genügen – wir melden uns bei Ihnen. Mit einem
+                        Anliegen wird die Nachricht passend vorausgefüllt.
                       </div>
                     </div>
 
@@ -203,9 +183,8 @@
                         id="nachricht"
                         name="message"
                         class="form-control"
-                        rows="6"
-                        placeholder="Ihre Nachricht an uns..."
-                        required
+                        rows="4"
+                        placeholder="Ihre Nachricht (optional)"
                       ></textarea>
                     </div>
 

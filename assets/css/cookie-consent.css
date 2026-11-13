@@ -174,4 +174,38 @@
     flex: 1;
     text-align: center;
   }
+
+  /* Compact on phones, and above the contact bar so neither covers the other */
+  #hk-cookie-banner {
+    padding: 0 0.5rem 0.5rem;
+  }
+
+  body.has-contact-bar #hk-cookie-banner {
+    bottom: calc(62px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .hk-cookie-inner {
+    gap: 0.5rem;
+    padding: 0.7rem 0.85rem;
+    border-radius: 12px;
+  }
+
+  .hk-cookie-title {
+    font-size: 0.85rem;
+    margin: 0;
+  }
+
+  .hk-cookie-desc {
+    font-size: 0.72rem;
+    line-height: 1.4;
+  }
+
+  .hk-cookie-desc-long {
+    display: none;
+  }
+
+  .hk-cookie-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.82rem;
+  }
 }

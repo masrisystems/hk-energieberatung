@@ -536,6 +536,24 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
   });
 
   /**
+   * Mobile contact bar: call, WhatsApp and enquiry stay one tap away on every page.
+   * The links are picked up by the click tracking above.
+   */
+  (function () {
+    const bar = document.createElement('nav');
+    bar.className = 'hk-contact-bar';
+    bar.setAttribute('aria-label', 'Schnellkontakt');
+    const formTarget = document.getElementById('expressForm') ? '#expressForm'
+      : document.getElementById('contact') ? '#contact' : '/#contact';
+    bar.innerHTML =
+      '<a href="tel:+491626985115"><i class="bi bi-telephone-fill" aria-hidden="true"></i>Anrufen</a>' +
+      '<a href="https://wa.me/491626985115" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i>WhatsApp</a>' +
+      '<a href="' + formTarget + '" class="hk-contact-bar-primary"><i class="bi bi-envelope-fill" aria-hidden="true"></i>Anfrage</a>';
+    document.body.appendChild(bar);
+    document.body.classList.add('has-contact-bar');
+  })();
+
+  /**
    * Universal AJAX Contact Form Handler
    */
   document.addEventListener('submit', function (e) {
@@ -564,6 +582,14 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
 
     const action = form.getAttribute('action') || 'https://masri.uber.space/forms/contact.php';
     const formData = new FormData(form);
+
+    // The message is optional on the page, but the mail handler needs one
+    if (formData.has('message') && !String(formData.get('message')).trim()) {
+      formData.set('message', 'Bitte um Kontaktaufnahme (keine Nachricht angegeben).');
+    }
+    if (formData.has('subject') && !String(formData.get('subject')).trim()) {
+      formData.set('subject', 'Allgemeine Anfrage');
+    }
 
     if (window.HK_AB_VARIANT) {
       formData.append('ab_variant', window.HK_AB_VARIANT);

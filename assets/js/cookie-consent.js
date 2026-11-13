@@ -80,7 +80,7 @@
       '    <p class="hk-cookie-title">Wir verwenden Cookies &amp; Analysedienste</p>' +
       '    <p class="hk-cookie-desc">' +
       '      Diese Website verwendet Cookies und Analysetools (Google Tag), um die Nutzung zu analysieren, unsere Services zu verbessern und Werbema&szlig;nahmen zielgerichtet zu messen.' +
-      '      Weitere Informationen finden Sie in unserer' +
+      '      <span class="hk-cookie-desc-long">Weitere Informationen finden Sie in unserer</span>' +
       '      <a href="/datenschutz.html" class="hk-cookie-link">Datenschutzerkl&auml;rung</a>.' +
       '    </p>' +
       '  </div>' +

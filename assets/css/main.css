@@ -26,6 +26,7 @@
   --heading-color: #2d465e;
   /* Color for headings, subheadings and title throughout the website */
   --accent-color: #ABD8C3;
+  --cta-color: #2e7d52; /* Primary buttons: dark green, white text stays readable */
   /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff;
   /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
@@ -3464,9 +3465,9 @@ button.btn-hk,
   text-decoration: none !important;
   cursor: pointer !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  background-color: var(--accent-color) !important;
+  background-color: var(--cta-color) !important;
   color: var(--contrast-color) !important;
-  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 60%) !important;
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--cta-color), transparent 70%) !important;
   outline: none !important;
 }
 
@@ -3484,10 +3485,10 @@ button.btn-hk:active,
 .btn-mediathek:hover,
 .btn-mint-pill:hover,
 .btn-submit-express:hover {
-  background-color: color-mix(in srgb, var(--accent-color), black 12%) !important;
-  color: color-mix(in srgb, var(--heading-color), black 20%) !important;
+  background-color: color-mix(in srgb, var(--cta-color), black 15%) !important;
+  color: var(--contrast-color) !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px color-mix(in srgb, var(--accent-color), transparent 40%) !important;
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--cta-color), transparent 55%) !important;
 }
 
 /* Secondary / Outline Variant */
@@ -3945,3 +3946,156 @@ button.btn-hk-outline:active {
 .faq-scale-seg.scale-f  { background: #f2792a !important; }
 .faq-scale-seg.scale-g  { background: #e6432b !important; }
 .faq-scale-seg.scale-h  { background: #c1121f !important; }
+
+/*--------------------------------------------------------------
+# Contact shortcuts: hero buttons, header phone, mobile contact bar
+--------------------------------------------------------------*/
+.hero .hero-contact-btn {
+  background-color: transparent !important;
+  color: var(--heading-color) !important;
+  border: 2px solid var(--cta-color) !important;
+  box-shadow: none !important;
+  padding: 13px 24px !important;
+}
+
+.hero .hero-contact-btn:hover,
+.hero .hero-contact-btn:focus {
+  background-color: var(--cta-color) !important;
+  color: var(--contrast-color) !important;
+}
+
+.header .header-phone {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  margin-left: 24px;
+  font-family: var(--nav-font);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--heading-color);
+  white-space: nowrap;
+}
+
+.header .header-phone i {
+  color: var(--cta-color);
+}
+
+@media (min-width: 1400px) {
+  .header .header-phone {
+    display: inline-flex;
+  }
+
+  .header .header-phone + .btn-getstarted {
+    margin-left: 16px;
+  }
+}
+
+.hk-contact-bar {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .hk-contact-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99998;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 0px));
+    background: var(--surface-color, #ffffff);
+    box-shadow: 0 -4px 18px rgba(45, 70, 94, 0.14);
+  }
+
+  .hk-contact-bar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 46px;
+    border-radius: 12px;
+    font-family: var(--nav-font);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--heading-color);
+    background: color-mix(in srgb, var(--accent-color), transparent 65%);
+    text-decoration: none;
+  }
+
+  .hk-contact-bar a i {
+    font-size: 1.05rem;
+    line-height: 0;
+  }
+
+  .hk-contact-bar a.hk-contact-bar-primary {
+    background: var(--cta-color);
+    color: var(--contrast-color);
+  }
+
+  body.has-contact-bar {
+    padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* The bar already carries WhatsApp */
+  body.has-contact-bar .wp-chat {
+    display: none;
+  }
+
+  body.has-contact-bar .scroll-top.active {
+    bottom: calc(74px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* Phones: contact buttons directly under the headline, before the intro text */
+@media (max-width: 575px) {
+  .hero {
+    padding-top: 118px;
+  }
+
+  .hero .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero .hero-content .company-badge {
+    margin-bottom: 1rem !important;
+    font-size: 0.8rem;
+  }
+
+  .hero .hero-content h1 {
+    margin-bottom: 1rem !important;
+  }
+
+  .hero .hero-content .hero-buttons {
+    order: 1;
+    width: 100%;
+    margin-top: 0.25rem !important;
+    gap: 10px !important;
+  }
+
+  .hero .hero-content > p,
+  .hero .hero-content > h2 {
+    order: 2;
+    margin-top: 1.25rem;
+    font-size: 1rem !important;
+  }
+
+  .hero .hero-content .hero-links {
+    order: 3;
+    justify-content: center;
+  }
+
+  .hero .hero-buttons .btn-hk-lg {
+    width: 100%;
+    padding: 14px 20px !important;
+  }
+
+  .hero .hero-buttons .hero-contact-btn {
+    flex: 1 1 0;
+    padding: 11px 10px !important;
+    white-space: nowrap;
+  }
+}
