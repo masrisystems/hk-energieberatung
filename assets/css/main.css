@@ -4099,3 +4099,127 @@ button.btn-hk-outline:active {
     white-space: nowrap;
   }
 }
+
+
+/*--------------------------------------------------------------
+# Reviews (Google)
+--------------------------------------------------------------*/
+.reviews {
+  padding: 48px 0;
+}
+
+.reviews .reviews-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-bottom: 24px;
+}
+
+.reviews .reviews-head h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.reviews .reviews-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--nav-font);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--cta-color);
+}
+
+.reviews .reviews-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.reviews .review-card {
+  margin: 0;
+  padding: 18px;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 40%);
+  border-radius: 16px;
+}
+
+.reviews .review-card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.reviews .review-avatar {
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--nav-font);
+  font-weight: 700;
+  color: var(--heading-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 45%);
+}
+
+.reviews .review-who {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  min-width: 0;
+}
+
+.reviews .review-who strong {
+  font-size: 0.92rem;
+  color: var(--heading-color);
+}
+
+.reviews .review-who small {
+  font-size: 0.75rem;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.reviews .review-card blockquote {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--default-color);
+}
+
+@media (max-width: 1199.98px) {
+  .reviews .reviews-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Phones: one swipeable row, so the section stays one screen tall */
+@media (max-width: 767.98px) {
+  .reviews {
+    padding: 32px 0;
+  }
+
+  .reviews .reviews-head h2 {
+    font-size: 1.4rem;
+  }
+
+  .reviews .reviews-list {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 0 -12px;
+    padding: 0 12px 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .reviews .review-card {
+    flex: 0 0 82%;
+    scroll-snap-align: center;
+  }
+}
