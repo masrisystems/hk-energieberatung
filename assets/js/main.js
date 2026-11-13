@@ -440,7 +440,7 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
     phone_send_to: 'AW-18393566004/jgbnCLfN97MdELSW3sJE',
     whatsapp_send_to: 'AW-18393566004/4ygYCLrN97MdELSW3sJE',
     express_send_to: 'AW-18393566004/G-jvCJyoibQdELSW3sJE',
-    email_send_to: '',      // Optional: 'AW-18393566004/<LABEL>'
+    email_send_to: 'AW-18393566004/Pyt5CJiS1bcdELSW3sJE',
     download_send_to: ''    // Optional: secondary action 'AW-18393566004/<LABEL>'
   };
 
