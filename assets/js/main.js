@@ -440,6 +440,7 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
     phone_send_to: 'AW-18393566004/jgbnCLfN97MdELSW3sJE',
     whatsapp_send_to: 'AW-18393566004/4ygYCLrN97MdELSW3sJE',
     express_send_to: 'AW-18393566004/G-jvCJyoibQdELSW3sJE',
+    email_send_to: '',      // Optional: 'AW-18393566004/<LABEL>'
     download_send_to: ''    // Optional: secondary action 'AW-18393566004/<LABEL>'
   };
 
@@ -519,6 +520,18 @@ ich habe folgendes Anliegen im Bereich Energieberatung:
         'value': 1.0,
         'currency': 'EUR'
       }, 'whatsapp_send_to');
+      return;
+    }
+
+    // 3. Email clicks
+    const mailLink = e.target.closest('a[href^="mailto:"]');
+    if (mailLink) {
+      sendConversion('contact_email_click', {
+        'event_category': 'Contact Email',
+        'event_label': (mailLink.getAttribute('href') || '').replace(/^mailto:/i, '').split('?')[0],
+        'value': 1.0,
+        'currency': 'EUR'
+      }, 'email_send_to');
     }
   });
 

@@ -1798,6 +1798,11 @@
         state.active[id] = !state.active[id];
         $('sub-' + id).classList.toggle('active', state.active[id]);
         update();
+        // Report the first selected measure once per page view
+        if (state.active[id] && !state.tracked && window.HKTrackConversion) {
+          state.tracked = true;
+          window.HKTrackConversion('calculator_used', { 'event_category': 'Foerderrechner', 'event_label': id });
+        }
       }
     });
 
